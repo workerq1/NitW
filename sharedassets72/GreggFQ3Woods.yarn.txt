@@ -1,0 +1,363 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: -215,159
+---
+<<setCanInteract Gregg 0>>
+<<if $gregg_fq3_woods is 0>>
+    <<wait .1>>
+    <<walk Mae Mae1>>
+    <<walk Gregg Gregg1>>
+    //enter from offscreen to the left and walk to locators we’ll set up when blocking happens//
+    Gregg: No, it’s like a kit you can get off the internet.
+    Gregg: Germ and me put it together.
+    Mae: So it’s a motorcycle now.
+    Gregg: No it’s like a motorized bike thing. It’s different.
+    Mae: why don't you just get a dirtbike again?
+    Gregg: I'm an adult now. I ride a bike.
+    Mae: So like... where are we?
+    <<waitForMove Gregg>>
+    Gregg: THE WOODS.
+    <<close>>
+    <<lookForward Gregg>>
+    //Gregg runs to the right//
+    <<run Gregg GreggOffRight1>>
+    <<wait 1>>
+    Mae: Alright.
+    <<close>>
+    //Wait til he’s offscreen to trigger movement for Mae again. You can freerun around now until you go talk to Gregg. Gregg’ll be doing some amusing animation until you do.//
+    <<waitForMove Gregg>>
+    <<warp Gregg Gregg2>>
+    <<flip Gregg -1>>
+    <<set $gregg_fq3_woods += 1>>
+<<elseif $gregg_fq3_woods is 1>>
+    // after knife fight
+    <<warp Gregg GreggOnLogKnifeFight>>
+    <<warp Mae MaeOnLogKnifeFight>>
+    <<playerFace -1>>
+    <<hide TriggerDialogue:Gregg1>>
+    <<hide TriggerDialogue:Gregg2>>
+    [[BreakLogConversation]]
+<<elseif $gregg_fq3_woods is 2>>
+    <<hide TriggerDialogue:Gregg1>>
+    <<hide TriggerDialogue:Gregg2>>
+    [[DoneShooting]]
+<<endif>>
+===
+title: Gregg1
+tags: 
+colorID: 0
+position: 90,171
+---
+<<walk Gregg Gregg3 1>>
+Gregg: DOOM DOOM DOOM DOOM
+<<close>>
+===
+title: Gregg2
+tags: 
+colorID: 0
+position: 397,173
+---
+<<playerFace -1>>
+Mae: log bridge to valhalla :) \o/
+Gregg: cross and die, mortal :) \o/
+Gregg: _o_
+Mae: this log is gonna snap and we’re gonna break our legs _o_
+Mae: and have to crawl back into town :|
+Gregg: or die of like bears and cold _o_ :|
+Mae: remember when we used to knife fight? :)
+Gregg: heh heh yeah :)
+Mae: we’d go home with like cuts all over our hands =_=
+Mae: so dumb
+Gregg: Well, I... :|
+Mae: What? :| o_o
+Gregg: i got knives. Right now. Just saying.
+Mae: holy shit. Yeah. you’re on. :)
+Gregg: first to wuss out 3 times loses
+Mae: :|
+<<close>>
+<<walk Mae MaeOnLogKnifeFight wait>>
+//mae walks to middle of log//
+Mae: come get cut, Greggor.
+<<close>>
+//gregg walks to middle of log//
+<<walk Gregg GreggOnLogKnifeFight wait>>
+Gregg: Say goodbye to your fingers. :)
+[[KnifeFight]]
+===
+title: BreakLog
+tags: 
+colorID: 0
+position: 45,780
+---
+Mae: geeeez
+Gregg: yeah man
+<<close>>
+<<wait 4>>
+Mae: I was thinking
+Gregg: Yeah?
+Mae: Like, if you see a rotting tree or a log or something in the woods
+Mae: or like, there’s ice and a big rock
+Mae: Like, you *HAVE* to kick the tree over or break the ice
+Mae: like I can’t not do that.
+Gregg: yeah
+Mae: hm
+<<close>>
+<<wait 3>>
+Gregg: The like feel of
+Gregg: IT’S DIFFERENT NOW!!!
+Gregg: BECAUSE I WAS HERE!!!!!!
+Mae: yeah ok yeah
+Mae: that makes sense
+Mae: These woods will never be the same, man
+Mae: I changed them.
+Gregg: We changed them.
+Mae: Butterfly effect.
+Gregg: Dude, someone’s gonna die or get born because we broke that log.
+Mae: crap, man.
+Gregg: yeah.
+<<close>>
+// gregg jumps up
+<<setAnimInt Gregg layingSide 0>>
+<<run Gregg GreggOffRight2 wait>>
+<<warp Gregg Gregg5>>
+<<setAnimInt Gregg crossbow 1>>
+Mae: uh...
+<<forceJumpToNormal>>
+===
+title: BreakLogConversation
+tags: 
+colorID: 0
+position: -198,461
+---
+Mae: Wait, why did you have two knives?
+Gregg: Huh. Good question.
+Mae: ...
+Gregg:  LET’S BREAK THIS LOG!!!! :)
+Mae: With the knives?
+Gregg: NO! :|
+//gregg runs into place and starts jumping//
+Mae: This is probably gonna kill us!
+Gregg: Naw, dude.
+Mae: Good point.
+//you can now jump, and then the log breaks, wooo//
+<<tell GreggLogBreakBrain Run>>
+===
+title: KnifeFight
+tags: 
+colorID: 0
+position: 151,477
+---
+<<irisOut .5 wait>>
+<<scene KnifeFight>>
+===
+title: Gregg3
+tags: 
+colorID: 0
+position: 636,195
+---
+//find Gregg and chat then shoot that beast!//
+//when you enter, gregg is set to Gregg_bod_crossbow_down//
+Gregg: SHHHHOOOWP.
+Mae: I was gonna say, I’m surprised you still have that.
+Gregg: Yeah well
+Gregg: Hunting wasn’t my thing,
+Gregg: but I mean
+Gregg: dude
+Gregg: like what *isn’t* fun about this thing?
+Gregg: Did you ever go?
+Mae: Nah, my dad wasn’t into it.
+Mae: Granddad was, but he definitely saw it as a guy thing.
+Gregg: hm.
+->That was fine I guess.
+	Gregg: You didn’t miss much.
+	Gregg: went out with my dad and uncle and cousin
+	Gregg: I shot a turkey
+	Mae: And?
+	//play Gregg_bod_crossbow_down2up//
+    //hold on Gregg_bod_crossbow_up//
+    <<setAnimInt Gregg crossbow 2>>
+	Gregg: I felt bad.
+	Mae: Hm.
+	Mae: Well, anyway.
+-> I was pretty annoyed by that at the time.
+	Gregg: Really?
+	//play Gregg_bod_crossbow_down2up//
+    //hold on Gregg_bod_crossbow_up//
+    <<setAnimInt Gregg crossbow 2>>
+	Gregg: Think you would’ve liked it?
+	Mae: Probably, actually.
+	Mae: Like, just buck hunting or something.
+	Gregg: Season starts day after tomorrow!
+	Mae: Yeah.
+	Mae: Well, anyway.
+Mae: I would've liked to have been asked at least.
+Gregg: You wanna shoot this guy?
+//there’s gonna be a camera panning over joke here//
+Mae: So like... what’s going on there?
+Gregg: The Forest God.
+Mae: Like in the story?
+Gregg: Yeah.
+Mae: Looks like you just stuck a bunch of targets and decoys together.
+Gregg: You work
+Gregg: *BANG BANG*
+Gregg: with what you got.
+Gregg: You wanna shoot it dude?
+Mae: Um. YES.
+Mae: you should go stand in front and i’ll like... shoot over your head
+<<close>>
+<<wait 2>>
+Gregg: Dude.
+Mae: Ok ok fine gimme it
+<<irisOut 1 wait>>
+<<scene FPS>>
+===
+title: Gregg4
+tags: temp
+colorID: 0
+position: 914,202
+---
+//aperture in//
+Mae: So,
+<<close>>
+//broken tv nearby pops on for a second. Loud static echoes through the woods//
+<<playOneShot event:/gregg_woods/tv_on AmbientSFX:tv>>
+<<tell AmbientSFX:tv Play1>>
+<<wait 2>>
+<<tell AmbientSFX:tv FadeOut1>>
+<<wait 2>>
+Mae: What the hell was that?
+Gregg: Yeah. That’s been happening lately.
+Mae: What has?
+Gregg: Electrical stuff
+<<if $did_gregg_friendship_quest_2>>
+	Mae: like me basically dying twice last night?
+	Gregg: Nah, I think that’s on you.
+<<endif>>
+Mae: hm.
+<<close>>
+<<playMusic sad_gregg 15>>
+<<walk Gregg GreggWatersEdge>>
+Mae: So I don’t wanna be nosey but
+<<close>>
+<<walk Mae MaeWatersEdge>>
+Mae: you seem a little up and down today?
+Gregg: Yeah.
+Gregg: It’s a thing.
+Gregg: I mean it’s been a thing in general lately but
+//gregg sits//
+<<wait 3>>
+Gregg: I'm... I'm a good person, right?
+    ->sure!
+        Gregg: ...
+    ->define "good"?
+Gregg: i dunno.
+Mae: what's up, man?
+Gregg: i try really hard.
+Gregg: Angus like... needs me.
+Gregg: He needs a gregg. badly.
+    ->is angus in trouble or something?
+        Gregg: nah, it's like.
+    ->we all need a gregg.
+        Gregg: yeah but with angus...
+Gregg: he hasn't had the best life.
+Gregg: his family is like pure trash.
+    ->how so?
+        Gregg: just like
+        Gregg: assholes.
+        Gregg: really stupid assholes.
+    ->i assumed his family was polite and quiet
+        Mae: like him?
+        Gregg: Angus is how he is
+        Gregg: because he's a super rad person
+        Gregg: who came out of complete shit.
+<<wait 2>>
+Gregg: I just don't ever want to lose him.
+Gregg: not ever.
+Gregg: i don't know what i'd do.
+Gregg: i... don't want to screw this up.
+    ->are you two doing alright?
+        Gregg: yeah. i think.
+        Gregg: we've had some arguments lately.
+        Mae: about what?
+        Gregg: uh... stuff.
+    ->what are you worried about doing?
+        Gregg: we've had some arguments lately.
+        Mae: about what?
+        Gregg: uh... stuff.
+        Gregg: maybe i'm inconsiderate
+        Gregg: maybe i'm not good.
+        Mae: you're good.
+Gregg: but I'm just parking lot trash.
+Gregg: i've known that all along.
+Gregg: i've got like no future if it was just me
+Gregg: when i'm awake at night
+Gregg: i listen to angus snore
+Gregg: and i stare at the ceiling
+Gregg: and i think about how i'm a complete piece of shit
+Gregg: and and and
+Mae: Gregg. Gregg.
+Mae: Calm down, dude.
+Mae: you're good.
+Mae: and Angus is good.
+<<wait 2>>
+Gregg: yeah.
+Gregg: Angus is good.
+Gregg: Nice, smart, hot, cool dude.
+Gregg: down to chill.
+Gregg: etcetera.
+Mae: -Greggcetera.
+Gregg: and you know...
+<<wait 2>>
+Gregg: he's got that ass
+Mae: oh my god *THANK YOU* for finally saying it.
+Gregg: it's a fantastic ass right?
+Mae: fantastic.
+Gregg: ok i'm not comfortable
+Gregg: with you objectifying my boyfriend.
+Mae: only his ass.
+Gregg: and who could blame you.
+<<wait 3>>
+Gregg: I forget what I was gonna say.
+Gregg: I dunno.
+Gregg: Probably worried about nothing.
+Gregg: I have really up up days and really down down days.
+Gregg: and i don't know which it is until it's over sometimes.
+Mae: i kinda coast through on general blaaaaaah right now.
+Gregg: heh heh.
+<<wait 6>>
+Gregg: what kind of birds are those?
+Mae: i have no idea.
+Gregg: HEY BIRD!!!!
+<<wait 2>>
+Gregg: northern dumbfowl
+Mae: eastern skinnybird
+Gregg: do they fly south?
+Mae: do you want me to make something up?
+Gregg: yeah.
+Mae: yes.
+Gregg: that's good.
+Gregg: that's real good.
+<<wait 2>>
+<<close>>
+<<wait 6>>
+<<fadeOut 5 wait>>
+<<unlockDoodle GreggFQ3>>
+<<set $night to 1>>
+<<set $did_gregg_friendship_quest_3 to 1>>
+<<set $completed_gregg_friendship_quests += 1>>
+<<scene MaeHouse left>>
+===
+title: DoneShooting
+tags: 
+colorID: 0
+position: 85,-89
+---
+<<fadeOutMusic 3>>
+<<warp Mae Gregg5>>
+<<warp Gregg GreggWatchMaeShootThing>>
+Gregg: Okay, enough shooting for one day.
+<<close>>
+<<run Gregg Gregg6 wait>>
+<<warp Gregg Gregg7>>
+===

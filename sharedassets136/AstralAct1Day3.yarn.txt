@@ -1,0 +1,112 @@
+title: GraveDigger
+tags: 
+colorID: 0
+position: 852,76
+---
+GraveDigger: Hey.
+Mae: Sup.
+GraveDigger: Been digging some graves.
+Mae: Okay?
+GraveDigger: Time to wake up!
+<<fadeOut 1 wait>>
+<<endDay>>
+
+===
+title: ManOnHill
+tags: 
+colorID: 0
+position: 1144,39
+---
+ManOnHill: [color=2B81A9]we know not when the lord will take us.[/color]
+ManOnHill: [color=2B81A9]brian knew the dangers of the mines[/color]
+ManOnHill: [color=2B81A9]but he loved his family.[/color]
+ManOnHill: [color=2B81A9]and like so many of us[/color]
+ManOnHill: [color=2B81A9]he put them before his own safety.[/color]
+ManOnHill: [color=2B81A9]But the god of heaven is the god of the tunnels.[/color]
+ManOnHill: [color=2B81A9]And we may rest in the knowledge[/color]
+ManOnHill: [color=2B81A9]That Brian is with Him now.[/color]
+Crowd: [color=2B81A9]Amen.[/color]
+ManOnHill: [color=2B81A9]We consign Brian to the dust, and to the care of the Lord.[/color]
+===
+title: ManOnFence
+tags: 
+colorID: 0
+position: 501,49
+---
+Mae:{align=middle,locator=MaeFenceTalk,width=2}Hello?
+ManOnFence: What? Who’s there?
+Mae:{align=middle,locator=MaeFenceTalk,width=2}I’m Mae Borowski.
+ManOnFence: What do you want, ghost?
+[[{align=middle,locator=MaeFenceTalk,width=2}Where am I?|ManOnFence_WhereAmI]]
+[[{align=middle,locator=MaeFenceTalk,width=2}Is this a funeral?|ManOnFence_IsThisAFuneral]]
+===
+title: ManOnFence_WhereAmI
+tags: 
+colorID: 0
+position: 321,335
+---
+ManOnFence: You are in the cemetery in Possum Springs, Pennsylvania.
+ManOnFence: But surely you know that
+ManOnFence: for you have come here to haunt me
+ManOnFence: on such a lonely afternoon.
+Mae:{align=middle,locator=MaeFenceTalk,width=2}I’m not haunting you!
+Mae:{align=middle,locator=MaeFenceTalk,width=2}And I’m not a ghost!
+Mae:{align=middle,locator=MaeFenceTalk,width=2}And it’s night!
+[[ManOnFence_2]]
+
+===
+title: ManOnFence_IsThisAFuneral
+tags: 
+colorID: 0
+position: 676,327
+---
+ManOnFence: Of Brian Rooke. He is like you now, ghost.
+Mae:{align=middle,locator=MaeFenceTalk,width=2}What happened to him?
+ManOnFence: Suffocated down the mines.
+ManOnFence: Ed Yacynich tripped over him three weeks later.
+ManOnFence: He was buried in coal dust.
+Mae:{align=middle,locator=MaeFenceTalk,width=2}Well that’s pretty horrible!
+ManOnFence: They pull him out of the ground
+ManOnFence: they cleaned him up
+ManOnFence: for awhile they looked at him
+ManOnFence: and now they’re burying him again.
+Mae:{align=middle,locator=MaeFenceTalk,width=2}Yeah I guess that’s kind of weird.
+[[ManOnFence_2]]
+===
+title: ManOnFence_2
+tags: 
+colorID: 0
+position: 464,659
+---
+ManOnFence: Why do you speak to me, ghost?
+Mae:{align=middle,locator=MaeFenceTalk,width=2}Good god what are we even talking about? :(
+ManOnFence: Did Granny send you? To torment me?
+Mae:{align=middle,locator=MaeFenceTalk,width=2, mood=5}Listen, I'm scared.
+Mae:{align=middle,locator=MaeFenceTalk,width=2}I don't remember how I got here.
+Mae:{align=middle,locator=MaeFenceTalk,width=2}Did I die?
+Mae:{align=middle,locator=MaeFenceTalk,width=2}Did my house burn down with me in it?
+Mae:{align=middle,locator=MaeFenceTalk,width=2}Oh my god... mom and dad...
+ManOnFence: why do you torment me?
+Mae:{align=middle,locator=MaeFenceTalk,width=2}PLEASE HELP ME!!!
+ManOnFence: sleep in the ground, ghost
+ManOnFence: where no one may wake you
+ManOnFence: and peace... peace... peace...
+<<close>>
+<<trigger AstralAct1Day3 AstralFreakout>>
+<<wait 13>>
+<<fadeOut 1 wait>>
+<<endDay>>
+
+===
+title: Sign
+tags: 
+colorID: 0
+position: 1590,168
+---
+Mae: can't read this thing...
+Mae: Something something mining company...
+Mae: I think this one part says
+Mae: population 562?
+Mae: huh.
+<<end>>
+===

@@ -1,0 +1,61 @@
+title: PamphletHarfest
+tags: 
+colorID: 0
+position: 220,270
+---
+MaePaws: Oh god, Harfest is coming up.
+MaePaws: Need to get a sweet costume going.
+MaePaws: Eat pumpkin pie and hella candy corn.
+MaePaws: Ride the unstable rides.
+MaePaws: Throw up all over everyone.
+MaePaws: ...Oh yeah
+<<set $pamphlet_harfest_done to 1>>
+===
+title: PamphletCasey
+tags: 
+colorID: 0
+position: -30,209
+---
+MaePaws: Casey knew what was up. 
+MaePaws: I wish they'd just accept that he hopped a train and got out.
+MaePaws: He wouldn't be the first to just up and disappear one day.
+MaePaws: Hope he's doing ok.
+<<set $pamphlet_casey_done to 1>>
+===
+title: PamphletMap
+tags: 
+colorID: 0
+position: 471,243
+---
+MaePaws: I can see my house from here
+MaePaws: is what I would say if this map wasn't like an amusement park map.
+MaePaws: Over here is Coal Mine Kingdom!
+MaePaws: Visit the abandoned Food Donkey!
+MaePaws: Ride the worst bus ever!
+<<set $pamphlet_map_done to 1>>
+===
+title: YarnBall
+tags: demo2
+colorID: 0
+position: 723,216
+---
+MaePaws: Ok well that's just patronizing. Who would leave this here? #line:444008
+<<set $yarn_ball_done to 1>>
+===
+title: YarnBallBounce
+tags: demo2
+colorID: 0
+position: 961,199
+---
+MaePaws: Oh man. It Bounces. #line:7c1e04
+<<set $yarn_ball_bounce_done to 1>>
+===
+title: PamphletCasey_A4D3
+tags: 
+colorID: 0
+position: -62,454
+---
+MaePaws: Casey...
+MaePaws: ...
+<<set $pamphlet_casey_done to 1>>
+===

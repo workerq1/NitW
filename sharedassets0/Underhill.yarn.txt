@@ -1,0 +1,447 @@
+title: InitLevel
+tags: 
+colorID: 0
+position: -2007,10636
+---
+<<if $act is 0 and $day is 0>>
+    <<hide Harley1>>
+    <<hide Harley2>>
+    <<hide Harley3>>
+    <<alwaysLookAt Varney Chazokov>>
+<<endif>>
+
+<<if $act is 1 and $day is 3 and $underhill_city_council_a1d3_done is 0>>
+    <<show Council1>>
+    <<show Council2>>
+    <<show Council3>>
+    <<show Council4>>
+<<else>>
+    <<hide Council1>>
+    <<hide Council2>>
+    <<hide Council3>>
+    <<hide Council4>>
+<<endif>>
+
+<<sit Selmers>>
+<<sit Varney>>
+
+<<if $act is 1 and $day is 1>>
+    <<unlockDoodle Houses1>>
+<<endif>>
+===
+title: Rick
+tags: 
+colorID: 2
+position: -962,11601
+---
+<<if $rick_sequence is 0>>
+    <<if $rick is 0>>
+        <<set $rick += 1>>
+        [[Rick_00_00]]
+    <<elseif $rick is 1>>
+        <<set $rick += 1>>
+        [[Rick_00_01]]
+    <<elseif $rick is 2>>
+        [[Rick_00_02]]
+    <<endif>>
+<<endif>>
+===
+title: Rick_00_00
+tags: 
+colorID: 2
+position: -1238,11922
+---
+Mae: Hello? Are you dead?
+Mae: Did you get run over?
+Rick: Nah kid I’m just fixin' 'er up.
+Mae: Isn't it dangerous to be under a car on a hill?
+Rick: I do not fear death, kid.
+Mae: Adult.
+Rick: Death fears me.
+Mae: yeah ok but
+Rick: I'll drive this car right over the grim reaper.
+Mae: ok.
+===
+title: Rick_00_01
+tags: 
+colorID: 2
+position: -943,11925
+---
+Mae: Do you live here or something?
+Rick: Yeah kid, Rekkage Manor is right behind you.
+Mae: Adult.
+Mae: Wait a sec- are you Rick Rekkage?
+Mae: Like, The Creeping Deadlies Rick Rekkage?
+Rick: Yeah kid. I’m him. He’s me.
+Mae: How’s the band?
+Rick: Great. Playin' out. Free beer.
+Rick: Stop by the bar some night and see us!
+Mae: I’m not 21 yet.
+Rick: Aw don't worry kid. You'll be a real person soon.
+Mae: Adu-
+Mae: whatever.
+===
+title: Rick_00_02
+tags: 
+colorID: 2
+position: -635,11920
+---
+Rick:{emote=wrench}
+===
+title: StoopKid_A0D0
+tags: demo
+colorID: 0
+position: -3327,11121
+---
+<<if $stoop_kid < 1>>
+    <<set $stoop_kid to 1>>
+    <<set $stoop_kid_done to 1>>
+    Mae: Hello child.
+    StoopKid: What do you want?
+    [[Your blooooood.|YourBlood]]
+    [[What are you doing?|WhatAreYouDoing]]
+<<endif>>
+===
+title: WhatAreYouDoing
+tags: demo
+colorID: 0
+position: -3551,11405
+---
+StoopKid: Watching squirrels. Squirrels are weird.
+Mae: They're really just fancy rats.
+[[End]]
+===
+title: YourBlood
+tags: demo
+colorID: 0
+position: -3094,11390
+---
+StoopKid: How much of it?
+Mae: All of it. Every last drop of sweet, sweet child bloooood.
+StoopKid: Are you a monster lady?
+Mae: The most monster of all ladies.
+[[End]]
+===
+title: End
+tags: demo
+colorID: 0
+position: -3327,11697
+---
+StoopKid: My mom says I'm not supposed to talk to you.
+Mae: Why?
+StoopKid: Because one time you hurt somebody and no one knows when you might do it again.
+Mae: That was a long time ago.
+StoopKid: She says you had a lot going for you but you threw it in the garbage.
+Mae: Your mom sounds great.
+StoopKid: She says you didn't even try when you went to college
+StoopKid: and now you've blown your only chance to avoid living in an abandoned train car.
+Mae: Wow, kid. Is your mom going to publish a newsletter?
+StoopKid: I'm not going to talk to you if that's ok.
+Mae: Tell your mom I said hey.
+<<addToJournal UnderhillStoopKid>>
+===
+title: Varney_Demo_00
+tags: 
+colorID: 0
+position: -1264,11066
+---
+Varney: If he falls through one of my windows I will not hesitate to take legal action. #line:f9228e
+Mae: Who? #line:ece263
+Varney: Him! Up there on the roof next door! #line:6a71ef
+Mae: If he falls from that roof through a window #line:9bb150
+Mae: you're going to have to pick which part of him you're going to sue. #line:d4fabb
+Varney: Whichever piece is biggest. #line:4705ba
+Chazokov: {align=middle,locator=icanhearyou} I can hear you, you know! #line:9a24a6
+<<set $varney to 1>>
+===
+title: Varney_Demo_01
+tags: 
+colorID: 0
+position: -1016,11071
+---
+Varney: Stupid Bear. #line:652333
+===
+title: ApplebaumBuilding
+tags: demo demo2
+colorID: 0
+position: -2508,11967
+---
+Mae: I remember when Bea's family had a house and not a tiny depressing apartment. #line:aabc92
+<<set $applebaum_building_done to 1>>
+===
+title: ApplebaumStatue
+tags: demo demo2
+colorID: 0
+position: -1878,11522
+---
+<<if $applebaum_statue is 0>>
+    [[ApplebaumStatueStart]]
+<<elseif $applebaum_statue is 1>>
+    [[ApplebaumStatuePlaque]]
+<<elseif $applebaum_statue is 2>>
+    [[ApplebaumStatueBea]]
+<<endif>>
+===
+title: ApplebaumStatueStart
+tags: demo demo2
+colorID: 0
+position: -2140,11875
+---
+Mae:{locator=applebaum}Arnold Applebaum. #line:3fa2d1
+Mae:{locator=applebaum}Owned the mining company like a thousand years ago. #line:aaa95f
+Mae:{locator=applebaum}Dad said he was a crook who hated the unions. #line:58c248
+Mae:{locator=applebaum}But we did get a library! #line:c853d5
+Mae:{locator=applebaum}...that got turned into apartments! #line:c0bd1b
+<<set $applebaum_statue to 1>>
+===
+title: ApplebaumStatuePlaque
+tags: demo demo2
+colorID: 0
+position: -1870,11874
+---
+<<set $applebaum_statue to 2>>
+Mae:{locator=applebaum}Hm. Don't think I've ever read this plaque before. #line:1801df
+Mae:{locator=applebaum}Arnold A. Applebaum. #line:b726c8
+Mae:{locator=applebaum}"A father to all workers," #line:a61066
+Mae:{locator=applebaum}"a grandfather to their children," #line:bb8651
+Mae:{locator=applebaum}"a great-grandfather to those children's children..." #line:5d1f8a
+Mae:{locator=applebaum}It keeps going like that for awhile. #line:68839c
+Mae:{locator=applebaum}Erected 1910. #line:d374b1
+===
+title: ApplebaumStatueBea
+tags: demo demo2
+colorID: 0
+position: -1609,11867
+---
+<<set $applebaum_statue to 3>>
+Mae:{locator=applebaum}Bea has this dude right outside her window. #line:f1b7f5
+Mae:{locator=applebaum}Constantly. #line:94720b
+Mae:{locator=applebaum}Arnold Stalkerbaum. #line:ca006b
+<<unlockDoodle Stalkerbaum>>
+<<set $applebaum_statue_done to 1>>
+===
+title: TriggerCityCouncil_A1D3
+tags: 
+colorID: 2
+position: -1777,10972
+---
+Council1: and if we don't *START* getting businesses in here
+Council1: there ain't gonna *BE* a possum springs.
+Council1: So we gotta do whatever we can do
+Council1: to get the market to notice us!
+Council4: can we get back to the topic at hand?
+Council1: yeah, so we allocate funds to preserve the statue of-
+Council3: Gary, you're not hearing me.
+Council1: Don't tell me I'm not hearing you, Andrew.
+Council3: It's NOT. OF. SUFFICIENT. HISTORICAL. NOTE.
+Council2: Your ass is not of sufficient historical note!!!!
+Council2: Guys, guys. Stop this.
+Council2: This is the stoplight fight all over again.
+Council1: Oh yeah? And remember who won that one?
+Council4: Can we move on?
+Council1: FINE.{noWait}
+Council2: FINE.
+<<close>>
+<<walk Council1 CouncilOffLeft>>
+<<walk Council2 CouncilOffLeft>>
+<<walk Council3 CouncilOffLeft>>
+<<walk Council4 CouncilOffLeft wait>>
+<<hide Council1>>
+<<hide Council2>>
+<<hide Council3>>
+<<hide Council4>>
+===
+title: Varney_A1D1.1
+tags: 
+colorID: 2
+position: -327,10693
+---
+Mae: Hello.
+Varney: Whatcher doin' on my porch?
+<<set $varney_done to 1>>
+===
+title: Varney_A2D1.1
+tags: demo2
+colorID: 3
+position: -366,10923
+---
+<<lookAt Varney Chazokov>>
+Varney: If he falls through one of my windows I will not hesitate to take legal action. #line:cbbe39
+Mae: Who? #line:53d90d
+Varney: Him! Up there on the roof next door! #line:d1ba8c
+<<lookAt Mae Chazokov>>
+Mae: <o> #line:0f8e1f
+Mae: If he falls from that roof through a window #line:8d9af5
+Mae: -_- #line:e73b60
+Mae: you're going to have to pick which part of him you're going to sue. #line:ddfcac
+Varney: Whichever piece is biggest. #line:2de9e5
+Mae: o_o #line:2c0c05
+Chazokov: {align=middle,locator=icanhearyou} I can hear you, you know! #line:312fc9
+<<lookNearest Mae>>
+Mae: _o_ #line:9c885c
+===
+title: Varney_A2D1.2
+tags: demo2
+colorID: 3
+position: -336,11149
+---
+<<lookAt Varney Mae>>
+Varney: I don't remember inviting you up here. #line:17fcbc
+Mae: Sorry. #line:75a29c
+Varney: This is awful familiar of you. #line:7620c9
+<<lookAt Varney Chazokov>>
+<<set $varney_done to 1>>
+===
+title: Laundry_A1D2
+tags: demo2
+colorID: 2
+position: -3191,10548
+---
+Mae: Ghosts. #line:ee9444
+<<unlockDoodle GhostLaundry>>
+<<set $underhill_laundry_done to 1>>
+===
+title: Laundry_A2D2
+tags: 
+colorID: 3
+position: -2932,10561
+---
+Mae: see i'd just leave my laundry out on rainy days.
+Mae: it's like a cheap wash!
+<<set $underhill_laundry_done to 1>>
+===
+title: Laundry_A3D2
+tags: 
+colorID: 4
+position: -2690,10561
+---
+Mae: Wonder if the squirrels ever steal undies?
+<<set $underhill_laundry_done to 1>>
+===
+title: Laundry_A4D3
+tags: 
+colorID: 6
+position: -2444,10557
+---
+Mae: I should start doing my own laundry.
+<<wait 2>>
+Mae: sometime.
+<<set $underhill_laundry_done to 1>>
+===
+title: Varney_A1D2.1
+tags: 
+colorID: 2
+position: -96,10703
+---
+Varney: This is my property.
+Mae: but it's myyyyyy street!
+Varney: you ain't changed since you was a kid.
+<<set $varney_done to 1>>
+===
+title: Varney_A1D3.1
+tags: 
+colorID: 2
+position: 142,10705
+---
+Varney: I can legally shoot you for being up here, ya know?
+Mae: ha ha you'd never
+Mae: i used to babysit your cat.
+Varney: ehhhhhh.
+<<set $varney_done to 1>>
+===
+title: Varney_A2D2.1
+tags: 
+colorID: 3
+position: -115,10931
+---
+Varney: My cat don't like folks on the porch.
+<<set $varney_done to 1>>
+===
+title: Varney_A2D3.1
+tags: 
+colorID: 3
+position: 108,10928
+---
+Varney: Yer gonna make my dog anxious,
+Varney: and she poops a lot when she's anxious.
+<<set $varney_done to 1>>
+===
+title: Varney_A2D4.1
+tags: 
+colorID: 3
+position: 334,10934
+---
+Varney: Don't touch my pumpkin.
+<<set $varney_done to 1>>
+===
+title: Varney_A3D1.1
+tags: 
+colorID: 4
+position: -367,11381
+---
+Varney: The missus varnished this porch herself.
+Varney: don't go trackin' mud all over it.
+<<set $varney_done to 1>>
+===
+title: Varney_A3D2.1
+tags: 
+colorID: 4
+position: -143,11383
+---
+Varney: I play a mean banjo. Clawhammer.
+Mae: Really? I play bass.
+Mae: we should play together sometime!
+Varney: you know Long Black Veil?
+Mae: yep!
+Varney: you know Tom Dooley?
+Mae: yep! My dad likes that stuff!
+Varney: you know Willer Garden?
+Mae: nope!
+Varney: eh.
+<<set $varney_done to 1>>
+===
+title: Varney_A3D3.1
+tags: 
+colorID: 4
+position: 101,11385
+---
+Varney: Bad weather comin' soon.
+Varney: i feel it in my bones.
+<<set $varney_done to 1>>
+===
+title: Varney_A3D4.1
+tags: 
+colorID: 4
+position: 352,11380
+---
+Varney: Getting cold early this year.
+Varney: don't bode well.
+<<set $varney_done to 1>>
+===
+title: Varney_A4D3.1
+tags: 
+colorID: 6
+position: 105,11612
+---
+Varney: Snow comin'.
+Varney: gonna be bad this year.
+<<set $varney_done to 1>>
+===
+title: TriggerHarleysA2D3
+tags: 
+colorID: 3
+position: -1550,10635
+---
+<<warp Harley1 Harley1RunStart>>
+<<warp Harley2 Harley2RunStart>>
+<<warp Harley3 Harley3RunStart>>
+<<show Harley1>>
+<<show Harley2>>
+<<show Harley3>>
+<<run Harley1 HarleyRunEnd>>
+<<run Harley2 HarleyRunEnd>>
+<<run Harley3 HarleyRunEnd>>
+<<setCanInteract Harley1 0>>
+<<setCanInteract Harley2 0>>
+<<setCanInteract Harley3 0>>
+===

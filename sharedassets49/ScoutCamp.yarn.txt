@@ -1,0 +1,186 @@
+title: EnterLevel
+tags: 
+colorID: 4
+position: -24,-146
+---
+<<flip Angus -1>>
+<<playerFace -1>>
+<<setCanInteract Angus 0>>
+[[Intro]]
+===
+title: Intro
+tags: 
+colorID: 4
+position: -22,102
+---
+Angus: wow.
+Mae: wow?
+Angus: my old scout camp
+Angus: used to come up here with my troop
+Angus: like a decade ago
+Mae: you're the ancient sea monster now.
+Angus: looks like it.
+<<walk Angus Angus1>>
+===
+title: AngusSteps
+tags: 
+colorID: 4
+position: 303,-145
+---
+Angus: Wow. Looks like some of the whirly note things came back.
+Mae: the what?
+Angus: uh we made these little windmill things
+Angus: and each put an anonymous note in them
+Angus: attached to this little spring-controlled helicopter
+Angus: and the idea was that when the wind would pick up
+Angus: the windmill would wind up the helicopter
+Angus: and the note would fly away.
+Angus: looks like some of them blew back.
+Mae: that's... an amazing coincidence.
+Angus: oh no that was the idea.
+Angus: each year we'd read notes left from the year before.
+Mae: i'm gonna see if i can find any more!
+Angus: i'm gonna hike up here. been a while.
+<<walk Angus AngusOnPlatform>>
+<<set $scout_camp_check_done to 0>>
+===
+title: Windmill00
+tags: 
+colorID: 4
+position: 574,-125
+---
+Mae: Got one!
+<<set $windmill_00_done to 1>>
+<<set $windmill_messages_collected += 1>>
+===
+title: Windmill01
+tags: 
+colorID: 4
+position: 796,-100
+---
+Mae: Got one!
+<<set $windmill_01_done to 1>>
+<<set $windmill_messages_collected += 1>>
+===
+title: Windmill02
+tags: 
+colorID: 4
+position: 1028,-132
+---
+Mae: Got one!
+<<set $windmill_02_done to 1>>
+<<set $windmill_messages_collected += 1>>
+===
+title: Windmill03
+tags: 
+colorID: 4
+position: 1261,-110
+---
+Mae: Got one!
+<<set $windmill_03_done to 1>>
+<<set $windmill_messages_collected += 1>>
+===
+title: Check
+tags: 
+colorID: 4
+position: 371,81
+---
+<<if $windmill_messages_collected >= $windmills_launched>>
+    Angus: I think you got 'em all!
+    Angus: from what i can spot at least.
+    Angus: and i got the high vantage point.
+    [[Notes]]
+<<else>>
+    Angus: I think there are some more?
+    Angus: i spotted 'em.
+    Mae: Oh cool! Gonna look.
+    Angus: Aye-aye.
+<<endif>>
+===
+title: Notes
+tags: 
+colorID: 4
+position: 543,379
+---
+Mae: let's read 'em let's read 'em!
+Mae: wait- should we, though?
+Mae: we gotta leave 'em for the scouts!!!
+Angus: oh, it's fine.
+Angus: any ones up here wouldn't last the winter anyway.
+Mae: ok ok ok ok let's read one!!!
+<<if $windmill_00_done>>
+    Angus: ok here's one.
+    Angus: "hi. i'm not supposed to write my name.
+    Angus: and that's fine, because i am a scout.
+    Angus: and that is the only name i need."
+    Mae: wow. that's intense.
+    Angus: it goes on.
+    Angus: "the scouts gave me more than a name,
+    Angus: they gave me badges. to show my worth."
+    Mae: geez.
+    Angus: "i would kill for the scouts."
+    Angus: that's it.
+    Mae: were you all like this?
+    Angus: kinda. sometimes. no. maybe.
+<<endif>>
+<<if $windmill_01_done>>
+    Angus: ok let's read this here.
+    Mae: reeeeeeead it!
+    Angus: ha ha ha. oh dear.
+    Mae: what?
+    Angus: "i am super, super gay."
+    Mae: ha ha ha niiiiiiiice
+    Mae: angus did you write this one?
+    Angus: geez. i could have.
+    Angus: i think my note was about like being strong and good.
+    Mae: and gay as hell, apparently.
+    Angus: i think my total gayness came through to the discerning reader.
+<<endif>>
+<<if $windmill_02_done>>
+    Angus: alright let's read this note.
+    Angus: *ahem*
+    Angus: "i like shooting arrows they are cool to shoot
+    Angus: in fact i think we should shoot arrows instead of
+    Angus: guns when we're in the army it has a tactical
+    Angus: advantage in that it is silent and also
+    Angus: elegant"
+    Mae: huh.
+    Angus: yeah. i got nothing.
+<<endif>>
+<<if $windmill_03_done>>
+    Angus: alright this one got kinda torn up
+    Angus: maybe a bird got it.
+    Mae: READ THE BIRD NOTE.
+    Angus: "i am extremely unhappy, and you're the only person who knows."
+    Mae: oh.
+    Angus: ok.
+    <<wait 2>>
+<<endif>>
+Angus: hm.
+Mae: what?
+Angus: not much changes.
+Angus: coulda just as easily been our notes from 10 years ago.
+Mae: yeah.
+Angus: there's like a
+Angus: timelessness
+Angus: about people.
+Angus: some things just don't stop being
+Angus: what we are.
+Mae: hmmm.
+Angus: yeah.
+Angus: hmmmm.
+<<wait 3>>
+<<close>>
+<<irisOut 1 wait>>
+<<scene PossumJump left>>
+===
+title: InitLevel
+tags: 
+colorID: 4
+position: -258,-142
+---
+<<set $scout_camp_check_done to 1>>
+<<if $windmills_launched is 0>>
+    <<scene PossumJump left>>
+<<endif>>
+===

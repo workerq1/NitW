@@ -1,0 +1,568 @@
+title: DS1
+tags: demo2
+colorID: 0
+position: 17983,-1246
+---
+Mae: Found one I think? #line:909994
+Chazokov: Let me have a look. #line:0827b6
+<<close>>
+<<tell Telescope ShowConstellation>>
+<<wait 2>>
+Chazokov: Ah yes. Castys. #line:f7c9b5
+    ->What's Castys? #line:9422ac
+    ->Totally it is. #line:e4244b
+        Chazokov: You know this one already? #line:63a943
+        Mae: Nope. #line:28b7f7
+Chazokov: This star tells the story of a woman who built a tower to heaven. #line:e8bdf0
+Chazokov: And for this the gods sunk her deep into the sea. #line:a5d5ab
+Mae: Wow. That's screwed up. #line:eb71e2
+Chazokov: But even in the depths, she refused to die. #line:e1c648
+Mae:[shake=.01]DAMN STRAIGHT.[/shake] #line:08d014
+Chazokov: Oh, will you never die as well? #line:3830cb
+    ->I guess, someday. #line:10b838
+    ->I dunno. #line:648731
+    ->[shake=.05]NEVER.[/shake] #line:f15b59
+        Chazokov: Beh heh heh heh! #line:125e56
+        Chazokov: Defy Castys' gods also, will you? #line:baf44b
+Chazokov: The gods in these stories are only stand-ins #line:fae4ed
+Chazokov: for things we cannot control. #line:1aefe0
+Chazokov: You might say floods, or the cancer, or such. #line:d5f55f
+Mae: No to all of them. #line:696e3a
+Chazokov: This is fair. #line:d6e440
+<<if $found_ds_1 is 1 and $found_ds_2 is 1>>
+    [[FoundBothForDay1]]
+<<endif>>
+===
+title: DS2
+tags: demo2
+colorID: 0
+position: 18286,-1252
+---
+Mae: Found one! #line:5da86e
+Chazokov: Let me have a look. #line:9d2464
+<<close>>
+<<tell Telescope ShowConstellation>>
+<<wait 2>>
+Chazokov: Ah yes. Dohr The Murderer. #line:7aced8
+Mae: Ok I'm interested. #line:b91366
+Chazokov: Dohr passed Behrn The King's procession on the street. #line:fc471b
+Chazokov: Dohr was quiet and said nothing, and the King took offense to this. #line:344272
+    ->Why? #line:735ceb
+        Chazokov: Royalty is strange. #line:7ae9cd
+    ->Geez. #line:e6c552
+Mae: So what happened? #line:ac93c3
+Chazokov: Behrn insulted Dohr, Dohr's family, Dohr's village, and so on #line:27f339
+Chazokov: until he was down to insulting Dohr's chickens. #line:c4d6a6
+    ->Damn. #line:905377
+    ->Chickens are kind of awful. #line:cd9168
+        Mae: Weird horrible angry dinosaurs. #line:a19dc0
+        Mae: They peck each others eyes out! #line:a9ec9a
+        Chazokov: They are delicious. #line:00173d
+        Mae: They deserve to be delicious. #line:a029ba
+Chazokov: Dohr first murdered Behrn's chickens. #line:80c609
+Chazokov: then his ancestral village #line:b42663
+Chazokov: then his family #line:056f4c
+Mae: Holy crap. #line:8fb487
+Chazokov: And when he came to Behrn #line:c33a1b
+Chazokov: the king was silent. #line:828164
+Mae: I'm going to get a tattoo of this guy. #line:15e138
+Chazokov: Is Dohr a hero? #line:b04272
+    ->Totally. #line:98592b
+    ->I dunno #line:74c743
+        Mae: but it doesn't really matter I think? #line:f40d5c
+Mae: Like if you've been told you're nothing before #line:4fc565
+Mae: A story like this sounds pretty ok. #line:272b5a
+Chazokov: Well it is a true story and real people died #line:314376
+Chazokov: and you should feel terrible. #line:9a2146
+Mae: Seriously? #line:f6fe47
+Chazokov: Beh heh heh. #line:695572
+<<if $found_ds_1 is 1 and $found_ds_2 is 1>>
+    [[FoundBothForDay1]]
+<<endif>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: 17685,-1208
+---
+<<tell AmbientSFX:telescope_flare Play>>
+<<set $did_chazokov_star_visits += 1>>
+<<if $found_all_dusk_stars>>
+    [[AllStars]]
+<<elseif $telescope_blind is 0>>
+    <<set $telescope_blind += 1>>
+    [[TelescopeBlind0]]
+<<elseif $telescope_blind is 1>>
+    <<set $telescope_blind += 1>>
+    [[TelescopeBlind1]]
+<<elseif $telescope_blind is 2>>
+    <<set $telescope_blind += 1>>
+    [[TelescopeBlind2]]
+<<endif>>
+===
+title: FoundBothForDay1
+tags: demo2
+colorID: 0
+position: 18102,-913
+---
+Chazokov: I believe we have seen both stars visible today. #line:aa95dc
+Mae: Oh really? #line:2c70db
+Chazokov: They come and go so fast. #line:b47b7d
+<<irisOut 1 wait>>
+<<scene Underhill>>
+===
+title: DS3
+tags: 
+colorID: 0
+position: 18707,-1223
+---
+Mae: Found one Found one found one!
+Chazokov: Let's have a look.
+<<close>>
+<<tell Telescope ShowConstellation>>
+<<wait 2>>
+Chazokov: Sterling the seer.
+Mae: how come I've never heard of these guys?
+Chazokov: eh
+Chazokov: by the time they got to these rare stars
+Chazokov: the well known myths and legends were taken.
+Mae: oh.
+Chazokov: This one, Sterling, is a tale of the world changing
+Chazokov: and leaving one behind.
+    ->these are all gonna be bummers, huh?
+        Chazokov: that is not for me to say.
+        Chazokov: is it a bad thing for the world to move on?
+        Mae: Well i mean this guy probably doesn't think so.
+    ->was he not psychic?
+        Chazokov: who can say?
+        Chazokov: do we believe any tale occurred?
+        Mae: hm.
+Chazokov: either way, one day his king met a new sage-
+Chazokov: an astronomer.
+Chazokov: and she showed the king how the planets and stars
+Chazokov: orbit in regular patterns, and why.
+Chazokov: and the king kicked Sterling out of his quarters
+Chazokov: for the seer had long told the king
+Chazokov: a different story about the stars.
+    ->did Sterling believe his own story?
+        Chazokov: i believe he did.
+        Mae: well that's how things go.
+    ->that sounds fair.
+Chazokov: is there no responsibility
+Chazokov: to care for those whose labors
+Chazokov: even one's universe
+Chazokov: are suddenly replaced with a new one?
+Chazokov: are they obsolete?
+    ->that's how life is!
+        Chazokov: so you believe
+        Chazokov: that some should go hungry
+        Chazokov: and without homes
+        Chazokov: because they are no longer useful
+        Chazokov: to those in power?
+        Mae: well geez mr. chazokov when you put it that way
+    ->no.
+        Chazokov: what is to be done?
+        Mae: i don't know.
+        Mae: uh
+        Mae: isn't there some other job the king could give him?
+        Mae: or some way
+        Mae: where he doesn't have to be useful to the king
+        Mae: in order to survive?
+        Chazokov: it's one to ponder!
+Chazokov: beh heh heh
+Chazokov: the stars! they make one think!
+<<if $found_ds_3 is 1 and $found_ds_4 is 1>>
+    [[FoundBothForDay2]]
+<<endif>>
+===
+title: DS4
+tags: 
+colorID: 0
+position: 19005,-1180
+---
+Mae: BOOM!
+Mae: Found one!
+Chazokov: let's see.
+<<close>>
+<<tell Telescope ShowConstellation>>
+<<wait 2>>
+Chazokov: Ah yes! Simone the fighter!
+Mae: she got a gun
+Chazokov: Simone lived in a good land
+Chazokov: but under every good land are the roots of oppression
+Chazokov: and in this land those roots took hold
+Chazokov: and choked out all else.
+    ->that was poetic, Mr Chazokov
+        Chazokov: thanks. I was just reading the summary off my phone.
+        Mae: oh
+        Chazokov: we may not have signal, but we have wifi!
+    ->geez.
+        Chazokov: it happens faster than one can imagine
+Chazokov: Anyway, when the borders closed and the curfew began
+Chazokov: Simone and her comrades began to plot.
+Chazokov: they infiltrated, they sabotaged, they freed prisoners.
+Mae: very nice.
+Chazokov: Simone was one of the first to be identified
+Chazokov: but she evaded capture even as the wanted posters went up.
+Chazokov: As whispers of her grew throughout the land
+Chazokov: more and more of her neighbors prayed in the night
+Chazokov: that Simone would be their salvation.
+    ->was she?
+    ->that's a lot of pressure for one person.
+        Chazokov: She was not alone, of course.
+        Chazokov: she was but one part in a growing organism
+        Chazokov: but she became a symbol.
+        Chazokov: it is difficult to think of many things
+        Chazokov: so sometimes having a symbol for all of them
+        Chazokov: is important.
+        Mae: like numbers.
+Chazokov: We do not know where Simone is buried.
+Mae: ah goddammit. i knew this wasn't going to be happy.
+Chazokov: we do know that when things boiled over
+Chazokov: she lead a charge against the palace gates
+Chazokov: and behind those gates were cannons.
+Mae: oh no.
+Chazokov: many years later when the mass graves were exhumed
+Chazokov: her bones were mixed with so many others
+Chazokov: it was said that she now lives on
+Chazokov: in the bones of all in her country.
+Mae: geez. that got dark. and sad. and spooky.
+Chazokov: Beh heh heh.
+Chazokov: that is history!
+<<if $found_ds_3 is 1 and $found_ds_4 is 1>>
+    [[FoundBothForDay2]]
+<<endif>>
+===
+title: FoundBothForDay2
+tags: 
+colorID: 0
+position: 18839,-871
+---
+Chazokov: That's both of them for today!
+Mae: neato!
+<<irisOut 1 wait>>
+<<scene Underhill>>
+===
+title: DS5
+tags: 
+colorID: 0
+position: 19422,-1159
+---
+Mae: FOUND! ONE!
+Chazokov: LET'S! SEE!
+<<close>>
+<<tell Telescope ShowConstellation>>
+<<wait 2>>
+Chazokov: big snake.
+Mae: "big snake?"
+Chazokov: yep.
+    ->anything else?
+    ->i saw a big snake once.
+        Chazokov: at the zoo?
+        Mae: in scouts we were hiking
+        Mae: and one was sunning itself on a rock.
+        Chazokov: what a treat!
+        Mae: i was thinking it's rare to see a snake just randomly relaxing.
+        Mae: what's up with this one?
+Chazokov: Big Snake emerged from the earth and made war upon the villages.
+Mae: what villages?
+Chazokov: you know. villages.
+Mae: ok.
+Chazokov: and as he wrapped himself around them
+Chazokov: the villagers saw that they were encircled by the same-
+Mae: big snake
+Chazokov: - and they came together
+Chazokov: and together slew the-
+Mae: big snake.
+Chazokov: you learn.
+Mae: why did big snake attack the people?
+Chazokov: do you have sympathy for the big snake?
+Mae: geez i dunno but can we just keep saying big snake?
+Chazokov: big snake
+Mae: big snake
+Chazokov: big
+Mae: snake
+<<if $found_ds_5 is 1 and $found_ds_6 is 1>>
+    [[FoundBothForDay3]]
+<<endif>>
+===
+title: DS6
+tags: 
+colorID: 0
+position: 19763,-1148
+---
+Mae: Star located, captain.
+Chazokov: Let us consult the guide.
+<<close>>
+<<tell Telescope ShowConstellation>>
+<<wait 2>>
+Chazokov: oh, you will like this one.
+Mae: really?
+Chazokov: because they are dead.
+Mae: ok yeah i'm into it.
+Chazokov: Tehrn The Medium
+Chazokov: in life he spoke with the dead?
+Mae: really?
+Chazokov: who knows.
+Chazokov: but when he died
+Chazokov: his own spirit returned and spoke through him.
+Mae: wait. that's dumb.
+Chazokov: how so?
+    ->that's just called being alive
+        Chazokov: not so! his body was dead!
+        Mae: so he was like a zombie?
+        Chazokov: but just as smart as before!
+        Chazokov: no looking for brains.
+        Mae: so like normal but he smelled bad?
+        Chazokov: just so.
+        Mae: why did they make this guy into a star?
+        Chazokov: i have no idea.
+        Mae: i guess it's kind of impressive.
+        Mae: dumb, but impressive.
+    ->how did... wait... what?
+        Chazokov: his own spirit possessed his body.
+        Mae: that's like literally the same thing as being alive.
+        Chazokov: no, he was dead but possessed
+        Mae: by himself.
+        Chazokov: yes.
+        Mae: oh god this is dumb.
+Mae: so what's the moral of this one?
+Chazokov: moral?
+Mae: yeah usually star things like this have some sort of moral.
+Chazokov: sometimes things are just strange!
+Mae: that's the moral?
+Chazokov: beh heh heh
+<<if $found_ds_5 is 1 and $found_ds_6 is 1>>
+    [[FoundBothForDay3]]
+<<endif>>
+===
+title: FoundBothForDay3
+tags: 
+colorID: 0
+position: 19519,-848
+---
+Chazokov: That is our pair for the day!
+Mae: Well gee willikers, mr Chazokov!
+Chazokov: beh heh heh
+Chazokov: "willikers".
+<<irisOut 1 wait>>
+<<scene Underhill>>
+===
+title: DS7
+tags: 
+colorID: 0
+position: 20170,-1117
+---
+Mae: I think a got one?
+Chazokov: let us see.
+<<close>>
+<<tell Telescope ShowConstellation>>
+<<wait 2>>
+Chazokov: Ferdinand the mountaineer.
+Mae: Ferrrrninand. It's a fun name.
+Chazokov: it is.
+Mae: so what's up with this guy?
+Chazokov: Ferdinand was from a flat land.
+Mae: this midwest?
+Chazokov: whatever the midwest of wherever he was from was.
+Mae: every place has a midwest.
+Chazokov: this is true.
+Chazokov: he dreamed of mountains
+Chazokov: and devoted his life to climbing them.
+Mae: ...because his hometown was flat?
+Chazokov: isn't this a common instinct?
+Chazokov: to seek that which is unlike where one grows up?
+    ->yeah
+        Mae: i mean people go to the city a lot.
+        Mae: like they move there because it's got stuff
+        Mae: and there's more people like them maybe.
+        Mae: sucks though. not everyone can just up and leave.
+        Chazokov: when I left my country
+        Chazokov: i felt this same thing.
+        Chazokov: but i have not regretted it.
+        Mae: you like possum springs?
+        Chazokov: it is beautiful in ways perhaps invisible
+        Chazokov: to those who have seen it every day of their lives.
+    ->not really.
+        Mae: I like home.
+        Mae: I like my neighborhood
+        Mae: I like the bad diner food.
+        Chazokov: it is not good.
+        Mae: but it's good bad
+        Mae: like a story a your friend wrote
+        Mae: and gave you to read.
+        Chazokov: i like the disco fries.
+Mae: so what happened to Ferdinand?
+Chazokov: he returned home
+Chazokov: and complained that the sky felt heavy
+Chazokov: he had been up into the clouds
+Chazokov: and now they rested hard upon him.
+Mae: that's a really specific complaint.
+Chazokov: when one leaves a place
+Chazokov: one brings something back when one returns.
+Mae: one.
+Chazokov: one.
+
+<<if $found_ds_7 is 1 and $found_ds_8 is 1>>
+    [[FoundBothForDay4]]
+<<endif>>
+===
+title: DS8
+tags: 
+colorID: 0
+position: 20480,-1115
+---
+Mae: Gotcha!
+Chazokov: oooh... which one is this?
+<<close>>
+<<tell Telescope ShowConstellation>>
+<<wait 2>>
+Chazokov: Adina Astra
+Mae: !!!!
+Chazokov: you know this one?
+Mae: YES! I KNOW THIS ONE!!!!
+Chazokov: It's a common story.
+Chazokov: how Adina journeyed to the frozen lake
+Chazokov: how she traversed unknown faraway lands
+Mae: i was very into Adina stories when I was a kid.
+Chazokov: so you must know what became of her?
+Mae: ...yeah
+Chazokov: how she, in her quest,
+Chazokov: turned her back on the sky
+Chazokov: and journeyed down into the earth
+Chazokov: where her stars were no longer over her head
+Chazokov: and how she was never seen again?
+Mae: yeah.
+Mae: whatever.
+Chazokov: is that not a sad ending?
+    ->yeah. i mean, she probably died.
+        Chazokov: she lived well. she did many amazing things.
+        Chazokov: it is not sad to die having done so much.
+        Mae: i guess. still sucks. dying.
+        Chazokov: it is a shame.
+    ->no. disappearing isn't the same as dying.
+        Mae: she probably went somewhere else completely
+        Mae: and did all kinds of cool shit.
+        Chazokov: oh my!
+        Mae: yeah so. whatever.
+
+<<if $found_ds_7 is 1 and $found_ds_8 is 1>>
+    [[FoundBothForDay4]]
+<<endif>>
+===
+title: FoundBothForDay4
+tags: 
+colorID: 0
+position: 20249,-858
+---
+Chazokov: Ooof! That's all for the day!
+Mae: That was nice.
+<<irisOut 1 wait>>
+<<scene Underhill>>
+===
+title: DS9
+tags: 
+colorID: 0
+position: 20927,-1075
+---
+Mae: Found it!
+Chazokov: let us consult the guide.
+<<close>>
+<<tell Telescope ShowConstellation>>
+<<wait 2>>
+
+Chazokov: The Firemaker.
+Mae: "the firemaker?"
+Chazokov: a wanderer in the cold and dark
+Chazokov: making a fire and huddling up to it.
+Chazokov: for light and warmth.
+Mae: sounds festive.
+Chazokov: sounds like survival.
+Mae: hm.
+Mae: this star makes me want to cry.
+Chazokov: crying? on my roof?
+Chazokov: do you wish to talk about it?
+Mae: no. it's fine.
+Chazokov: is it a happy cry, or a sad cry?
+Mae: i dunno. i don't have great words for it.
+Chazokov: it is ok.
+Chazokov: sometimes too many words.
+Mae: yeah.
+Mae: thank you for this.
+Chazokov: thank you for joining me.
+
+<<if $found_ds_1 and $found_ds_2 and $found_ds_3 and $found_ds_4 and $found_ds_5 and $found_ds_6 and $found_ds_7 and $found_ds_8 and $found_ds_9>>
+    <<set $found_all_dusk_stars to 1>>
+    Chazokov: I think we have discovered... them all?
+    Mae: Well, we didn't really discover them, right?
+    Mae: i mean someone else already saw them and named them
+    Mae: wrote a whole bunch of stuff about them
+    Mae: and we just like
+    Mae: found what they made for us.
+    Chazokov: is that not a discovery?
+    Mae: not really.
+    Chazokov: maybe not in the historical sense
+    Chazokov: we did not create the stars
+    Chazokov: or name them
+    Chazokov: but we had these autumn afternoons
+    Chazokov: and found them together.
+    Chazokov: isn't that something?
+    Mae: something something something.
+    Mae: my granddad said something like that once.
+    Mae: something about a story having really happened
+    Mae: because hearing it happened to you.
+    Chazokov: that is nice.
+    Mae: it's not bad.
+    <<close>>
+    <<tell Telescope Center>>
+    <<extraZoom -40 3>>
+    <<wait 4>>
+    <<waitForInteractOrJump>>
+    <<unlockAchievement Dusk_Stargazer>>
+<<endif>>
+
+<<close>>
+<<irisOut 1 wait>>
+<<scene Underhill>>
+===
+title: TelescopeBlind0
+tags: demo2
+colorID: 0
+position: 17404,-1221
+---
+Mae: [shake=.1]HOLY CRAP my eyes!![/shake] #line:3278bf
+Chazokov: Oh - you want to put the filter on like so... #line:04ac8f
+Mae: [shake=.05]GEEZ!![/shake] #line:66dc7b
+Chazokov: The sun is bright! Make you blind! #line:5c3c50
+Mae: You didn't think to mention this? #line:103d91
+Chazokov: I just did! #line:4be191
+===
+title: TelescopeBlind1
+tags: 
+colorID: 0
+position: 17424,-980
+---
+Mae: [shake=.1]Whaaaaaaaargh my eyes!![/shake]
+Chazokov: Filter!
+Mae: Uuuugh.
+===
+title: TelescopeBlind2
+tags: 
+colorID: 0
+position: 17651,-927
+---
+Mae: [shake=.1]AAARGH I'M BLIND!![/shake]
+Chazokov: This is your own fault at this point I would say.
+===
+title: VerifyQuit
+tags: 
+colorID: 0
+position: 17670,-639
+---
+Mae: Hmm... I can't figure this out
+-> Give Up
+    <<fadeOutMusic 1>>
+    <<fadeOut 1 wait>>
+    <<scene Underhill>>
+-> Try Again
+===

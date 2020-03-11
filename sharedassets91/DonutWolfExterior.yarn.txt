@@ -1,0 +1,412 @@
+title: InitLevel_A0D0
+tags: 
+colorID: 0
+position: -3430,4541
+---
+<<set $night to 1>>
+<<trigger Gregg Sit>>
+<<warp Gregg GreggSit Sit>>
+<<playerFace -1>>
+<<hide Angus>>
+===
+title: Intro
+tags: 
+colorID: 0
+position: -3438,5018
+---
+<<hide Angus>>
+<<sit>>
+<<if $gnome_tossed is 0>>
+	Gregg:{locator=left} "Gnomeo"?
+	Mae:{locator=right,width=1.5} Professor Lucius Von Gnomeo.
+	Mae:{locator=right,width=1.5} He's a vampire and a scientist.
+	Mae:{locator=right,width=1.5} He invented a blood rocket.
+	Gregg:{locator=left,width=2} Wow, you gave him a backstory too.
+	Mae:{locator=right,width=2} Don't talk about the professor like he isn't here.
+	Gregg:{locator=left,width=2}...
+	[[Hub]]
+<<else>>
+	Gregg:{locator=left,width=1}...I miss Mr. Gnome.
+	Gregg:{locator=left,width=1}Sigh.
+	Mae:{locator=right,width=1.5} I even gave him a name.
+	Mae:{locator=right,width=1.5} Professor Lucius Von Gnomeo. :)
+    Mae: :|
+	Gregg:{locator=left,width=1} Lucky for short.
+	[[Hub]]
+<<endif>>
+===
+title: Hub
+tags: 
+colorID: 0
+position: -3438,5278
+---
+[[Do you remember that one Witchdagger song about the well?|Well]]
+[[So you and Angus are really leaving?|Leaving]]
+
+===
+title: Well
+tags: 
+colorID: 0
+position: -2920,5490
+---
+Gregg: D:
+Gregg:{align=middle,locator=left}Yeah, the [shake=.1]DAH-DAH-DUUUUURGA[/shake] song?
+Gregg: :|
+Gregg:{locator=left,width=2}That song totally slays.
+Mae:{locator=right,width=1.5}You know how the one verse is like
+Mae:{locator=right,width=1.5}"[wave]Deep cold[/wave]
+Mae:{locator=right,width=1.5}[wave]darkest hole[/wave]
+Mae:{locator=right,width=2.5}[wave]in the center of everything[/wave]"?
+Gregg: D:
+Gregg:{locator=left}[shake=.2]DAH-DAH-DUUUUURGA!!![/shake]
+Gregg: :|
+Mae:{locator=right,width=3}I used to think that song was just badass witch stuff.
+[[But the other night I had a dream about it.|Dream]]
+[[But now it just makes me sad.|Sad]]
+===
+title: Leaving
+tags: 
+colorID: 0
+position: -3770,5528
+---
+Gregg:{locator=left,width=1}Mae, we gotta.
+Gregg:{locator=left,width=2}I'm too much for this town to handle
+Gregg:{locator=left,width=3}and Angus needs to be out of the sun as much as possible.
+Mae:{locator=right,width=2}You know they have the sun in Bright Harbor, right?
+Gregg:{locator=left,width=2}Mae, Bright Harbor has SO MANY Donut Wolfs.
+Gregg:{locator=left,width=1}And punk shows.
+Gregg:{locator=left,width=2}And people who aren't all straight gun nuts.
+[[I think they have guns in Bright Harbor too.|Guns]]
+[[You *HAVE* a gun! We shot your old tv with it!|TV]]
+
+
+
+
+
+===
+title: Dream
+tags: 
+colorID: 0
+position: -2756,5794
+---
+Gregg:{locator=left,width=1}What kind of dream?
+Mae:{locator=right,width=3}I was standing beside this well in the middle of some field.
+Mae:{locator=right,width=1.5}And it was all rainy and foggy.
+Gregg:{locator=left,width=1.5}Mmhmm?
+Mae:{locator=right,width=1.5}And I kept trying to back away from it
+Mae:{locator=right,width=3}but every time I moved I slipped in the mud and ended up closer to the well.
+Gregg:{locator=left,width=1}Crap.
+Mae:{locator=right,width=1.5}So I just had to stand still.
+Mae:{locator=right,width=1.5}Not move at all.
+Gregg:{locator=left,width=1}That sounds freaky, dude.
+Mae:{locator=right,width=1.5}And the worst thing was
+Mae:{locator=right,width=2}There was something deep down in the well.
+Mae:{locator=right,width=1.5}Looking up at me.
+<<wait= 1>>
+Gregg:{locator=left,width=3}Thanks a lot dude, I'm totally gonna have nightmares now.
+[[Entro]]
+===
+title: TV
+tags: 
+colorID: 0
+position: -3576,5803
+---
+Gregg:{locator=left,width=2}That was a hunting rifle my dad gave me.
+Gregg:{locator=left,width=1}That doesn't count.
+Mae:{locator=right,width=1.5}What does your dad think about you leaving?
+Gregg:{locator=left,width=1}I dunno.
+Gregg:{locator=left,width=3}He's always too nice for me to know what he actually thinks.
+Mae:{locator=right,width=1.5}Hey Gregg?
+Gregg:{locator=left,width=2}Yeah?
+Mae:{locator=right,width=3}I'm going to be really sad when you go, asshole.
+Gregg:{locator=left,width=2}I know.
+[[Entro]]
+
+
+
+
+
+===
+title: Sad
+tags: 
+colorID: 0
+position: -3292,5798
+---
+Gregg:{locator=left,width=1}Why?
+Mae:{locator=right,width=1.5}I think about, like, a really deep hole :\
+Mae:{locator=right,width=1.5}and not being able to get out.
+Gregg:{locator=left,width=3}Are you afraid someone is going to throw you down a well?
+Mae:{locator=right,width=1.5}No. :|
+Gregg:{locator=left,width=2}Because I am totally gonna chuck your ass down a well.
+Gregg: D:
+Gregg:{locator=left,width=5}[size=1.8][shake=.2]DAH-DAH-DUUUUURGA!!![/shake][/size]
+Gregg: :|
+[[Entro]]
+
+
+
+
+
+===
+title: Guns
+tags: 
+colorID: 0
+position: -4074,5826
+---
+Gregg:{locator=left,width=3}Mae, in my uncle's living room there are 8 different guns within reach of the couch.
+Mae:{locator=right,width=1.5}Wow, really?
+Gregg:{locator=left,width=2}Yeah I think he's waiting for the FBI to come over the hill.
+Mae:{locator=right,width=1.5}Coming for his 8 guns?
+Gregg:{locator=left,width=3}He's our last line of defense.
+Gregg:{locator=left,width=3}Hey remember that time in 9th grade when we made that bomb from off the internet?
+Mae:{locator=right,width=2}The megaboom! You lost your eyebrows!
+Gregg:{locator=left,width=2}A little more gasoline and I'd be wearing cool shades right now
+Gregg:{locator=left,width=3}to cover the horrifying ruin of my charred, empty eye sockets.
+Mae:{locator=right,width=1.5}Hey Gregg?
+Gregg:{locator=left,width=2}Yeah?
+Mae:{locator=right,width=3}I'm going to be really sad when you go, asshole.
+Gregg:{locator=left,width=2}I know.
+[[Entro]]
+===
+title: Entro
+tags: 
+colorID: 0
+position: -3368,6296
+---
+Mae: :(
+Mae:{locator=right,width=2}I'm just... sad. And angry.
+Gregg:{locator=left,width=2}Yeah for real, dude.
+Mae:{locator=right,width=3}I come back home and everyone's already made other plans.
+Mae:{locator=right,width=3}I just want to hold on to something
+Mae:{locator=right,width=3}and like...
+Mae:{locator=right,width=3}Everything is ending, but I want more.
+Gregg:{locator=left,width=3}Mae, we can't stay here forever.
+Mae:{locator=right,width=3}... :|
+<<wait .5>>
+Mae:{locator=right,width=1}I know.
+<<if $gnome_tossed is 0>>
+Gregg:{locator=left}How 'bout you, me and...
+Mae:{locator=right,width=1.5} Professor Lucius Von Gnomeo.
+Gregg:{locator=left,width=3}How 'bout you, me and the professor go break some lightbulbs behind the Snack Falcon?
+Mae:{locator=right,width=2}Yes? Obviously?
+Gregg:{locator=left,width=3}And Christine gave me a key for when I open,
+Gregg:{locator=left,width=3}Which means all you can slurp slushies, on me!
+Mae:{locator=right,width=2}These are the nights I'll remember when I'm 60.
+Gregg:{locator=left,width=3}Also I stole a bunch of lighter fluid so we can set something pretty big on fire!
+Mae:{locator=right,width=4}[size=1.2][shake=.03]AWWOOOOOOOOOOOO![/shake][/size]
+[[End]]
+<<else>>
+Gregg:{locator=left,width=3}You know, Christine gave me a key for when I open.
+Gregg:{locator=left,width=3}Which means free post-donut slushies!
+Mae:{locator=right,width=2}I wish that gnome was still with us.
+Gregg:{locator=left,width=3}Mae, some things you just have to let go.
+Mae:{locator=right,width=1}...
+Mae:{locator=right,width=1}Yeah.
+Gregg:{locator=left,width=3}Come on, let's go steal from my boss, who trusted me.
+Mae:{locator=right,width=2}These are the nights I'll remember when I'm 60.
+Gregg:{locator=left,width=3}Also I stole a bunch of lighter fluid so we can set something pretty big on fire!
+Mae:{locator=right,width=4}[size=1.2][shake=.03]AWWOOOOOOOOOOOO![/shake][/size]
+[[End]]
+<<endif>>
+
+
+
+
+
+
+
+===
+title: End
+tags: 
+colorID: 0
+position: -3440,6614
+---
+<<fadeOut 2 wait>>
+<<sectionTitle End ShowJournalDoodles>>
+===
+title: EnterLevel_A0D0
+tags: 
+colorID: 0
+position: -3432,4788
+---
+[[Intro]]
+
+===
+title: EnterLevel_A3D3
+tags: 
+colorID: 4
+position: -2460,4820
+---
+Mae: =_= :(
+<<sit>>
+<<wait 2>>
+Mae: ugh
+Mae: it was all weird colored.
+Gregg: puke usually isn't that color.
+Angus: it was like
+Angus: multiple colors.
+Gregg: you ok, mae?
+    ->yeah. no. ugh.
+    ->i have a really weak stomach
+        Gregg: yeah you puke a... lot.
+        Mae: i get pukey at like
+        Mae: baby food
+        Mae: the inside of pumpkins
+        Mae: any beer
+        Mae: too much donuts
+        Gregg: i never puke.
+Mae: my mouth tastes like broken dreams.
+<<wait 3>>
+Mae: I am really mad at you two.
+Gregg: why?
+Mae: i hate awkward silences. o_o
+Mae: am i like ruining your lives or something?
+Mae: just tell me if i am instead of whatever this is.
+    ->do you not like me anymore, Angus?
+        Angus: what?
+        Angus: no, mae. i like you fine.
+        Mae: why are you being weird, then?
+    ->am i like making things weird, Gregg?
+        Gregg: no!
+        Angus: ...
+        Gregg: kinda?
+Angus: um. so,
+Gregg: Angus. I'll take this.
+Angus: thanks hon.
+Gregg: Mae, remember my uncle?
+Gregg: sheep farm out past Briddle? out by the interstate?
+Mae: yeah. kinda. :|
+Gregg: when i was like 8 my parents got sick of me
+Gregg: and made me spend like a month there in the summer.
+Gregg: and i spent the whole time following him around.
+    ->sheep are cool.
+        Mae: i had a stuffed sheep named Gordon.
+    ->sheep are nice.
+        Mae: i got to pet one once.
+Gregg: sheep are real dumb is what they are.
+Gregg: one afternoon before dinner my uncle left me by the pen
+Gregg: and for some reason, i opened the gate.
+    ->why?
+        Gregg: i have no idea.
+        Gregg: kids are like sheep.
+        Gregg: real dumb.
+        Mae: they so are.
+    ->what did they do?
+Gregg: so a bunch of the sheep basically immediately bolted
+Gregg: and i chased after, being all
+Gregg: YOU DUMBASS SHEEP!
+Angus: you tried, bug.
+Gregg: they ran across the field
+Gregg: and into the woods
+Gregg: and there was this really steep hill
+Gregg: that went down to the interstate.
+Mae: oh... oh no...
+Mae: what happened?
+Gregg: 4 got splattered by a semi truck
+Gregg: some ran back up the hill
+Gregg: but three made it over the median
+Gregg: and across to the other side.
+Gregg: and they just... stopped.
+Gregg: and i got to the bottom of the hill, by the road
+Gregg: which was like covered in sheep guts and parts
+Mae: *urp*
+Gregg: and we just looked at each other across the interstate.
+Gregg: me waving my hands
+Gregg: two ran back, got hit by *another* truck
+    ->god.
+    ->did the trucks stop?
+        Gregg: THEY TOTALLY DIDN'T!
+        Mae: that's probably illegal.
+Gregg: but the other one
+Gregg: he ran down the hill on the other side
+Gregg: into the woods.
+Gregg: and no one ever saw him again.
+Mae: geez, dude.
+    ->hey- your tattoo!
+        Gregg: yeah.
+        Mae: ha ha. I sleuthed the meaning.
+    ->what happened after that?
+        Gregg: i mean i ran back to the farm, crying.
+        Gregg: my uncle hit me a bunch.
+        Mae: no.
+        Gregg: yeah.
+        Gregg: there was some legal stuff
+        Gregg: and they moved away not long after.
+Mae: that's awful for you.
+Mae: poor sheep.
+Gregg: but if i was in their position, i'd have run too
+Gregg: and i want to be the one that got away.
+Gregg: and i want angus to come with me.
+Gregg: I like, failed those sheep.
+Gregg: just like, you know... everything... has failed us.
+Mae: that's a bit-
+Gregg: no one even denies it.
+Gregg: no one tries to talk you out of leaving here.
+Gregg: and yeah, being the only queer people in town sucks.
+Mae: i'm here!
+Gregg: you already left once!
+Mae: but i'm...
+Mae: back.
+Gregg: i can't stay. *WE* can't stay.
+Mae: i guess.
+Gregg: and I love Angus.
+Angus: I love both of you.
+Angus: obviously in different ways.
+Mae: thanks for clarifying.
+Gregg: we have a plan and we're working our asses off to make it happen.
+Angus: two guys, full time, minimum wage.
+Gregg: i have to grow up a bit.
+Gregg: i *did* grow up a bit.
+Mae: 
+Gregg: Mae. You have to let me change.
+<<wait 4>>
+Angus: sorry i was rude earlier.
+Mae: it's ok.
+<<wait 3>>
+Mae: remember the time we almost burned down the school?
+Gregg: ha ha. yeah.
+Mae: fireworks. student council poster just *FWOOSH!*
+Gregg: god. that was a good night.
+Gregg: soaked from the sprinklers
+Gregg: running through the parking lot
+Gregg: laughing our asses off.
+Mae: ha ha oh my god yeah.
+<<wait 3>>
+Mae: that was maybe the best night of my entire life.
+Gregg: it's one of the all time greats.
+Gregg: kids still talk about it.
+Gregg: that night lives on, man.
+Mae: well
+Mae: we can at least be legends.
+Gregg: forever.
+<<wait 3>>
+Mae: well, tonight was a complete bust.
+Angus: i'm sorry.
+Mae: ha ha. stop apologizing, Angus.
+Gregg: i'm sorry too.
+Mae: it's cool.
+Mae: and I have an idea.
+Gregg: oh yeah?
+Mae: you up for one more big crime?
+Mae: you can come this time, Angus.
+Mae: do a crime with us.
+Angus: I...
+<<wait 2>>
+Angus: ok.
+Gregg: aw, cap'n. cap'n criminal.
+Mae: let's go.
+<<close>>
+<<irisOut 1 wait>>
+<<scene RoadsideClearing>>
+===
+title: InitLevel_A3D3
+tags: 
+colorID: 4
+position: -2466,4581
+---
+//Mae and Gregg and sitting basically where they were in the demo,
+//with Angus on the far side of Gregg//
+<<sit Gregg>>
+<<sit Angus>>
+<<hide GardenGnome>>
+===

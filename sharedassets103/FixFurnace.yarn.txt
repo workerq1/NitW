@@ -1,0 +1,465 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: 423,-24
+---
+Mae: So... got a gnome, a fishing pole, a badminton racket, and a fan.
+Mae: Got two wheels and a... turny thing... with no wheel.
+Mae: Probably just need to turn the turny thing...
+-> ...to open up the heat pipes.
+    Mae: Clanky’s probably got loads of heat but it can’t get out.
+-> ...to turn up the fire.
+    Mae: Clanky’s probably got a tiny fire going and could use some help.
+    Mae: We’ve all been there! Poor Clanky.
+Mae: to get Clanky all hot and bothered.
+Mae: We will teach Clanky to love. 
+Mae: I bet I could... hm...
+[[I think Gnomey could bite onto the turny thing where the wheel was.|GnomeyBite]]
+[[Could use racket as a handle.|RacketHandle]]
+===
+title: DoneSetup
+tags: 
+colorID: 0
+position: 362,2421
+---
+<<set $miranda_basement to 2>>
+<<irisOut 1 wait>>
+<<scene MirandaBasement>>
+===
+title: GnomeyBite
+tags: 
+colorID: 0
+position: 1416,254
+---
+Mae: Ok yeah. That’s the stuff.
+Mae: Probably could like... pull him?
+[[But we’re not always going to be here to pull him...|NotAlwaysGoingToBeHereToPull]]
+[[I think one good hard pull should be enough.|OneGoodHardPull2]]
+===
+title: RacketHandle
+tags: 
+colorID: 0
+position: -369,308
+---
+Mae: Yeah that would work.
+[[Although we’re not always going to be here to pull it...|NotAlwaysHereToPullIt]]
+[[One good hard pull should do it.|OneGoodHardPull]]
+===
+title: NotAlwaysHereToPullIt
+tags: 
+colorID: 0
+position: -1002,673
+---
+Mae: The fan could stay on, and then if this breaks you only have to replace the fan...
+Mae: It should be good for the environment too. That’s important.
+Mae: Like the turbines on the mountain by Fort Lucenne.
+Mae: God, I remember when everyone was so mad about that
+Mae: “It’s gonna ruin the view! It’s gonna kill birds!”
+Mae: You know what else is gonna ruin the view and birds?
+Mae: When a meteor hits the earth because it gets too hot.
+Mae: That’s what happened to the dinosaurs.
+Mae: ok where was I?
+[[Dinosaurs were effing rad.|DinosWereRad1]]
+[[Making a basement turbine out of a badminton racket.|BasementTurbineOutOfARacket]]
+===
+title: OneGoodHardPull
+tags: 
+colorID: 0
+position: -402,652
+---
+Mae: ok, focus. work this out Mae Borowski.
+[[I’m hungry.|ImHungry]]
+[[I wonder what it’s like to get stuck in a cave.|StuckInACave]]
+
+===
+title: NotAlwaysGoingToBeHereToPull
+tags: 
+colorID: 0
+position: 1902,759
+---
+Mae: The fan could stay on, and then if this breaks you only have to replace the fan...
+Mae: It should be good for the environment too. That’s important.
+Mae: Like the turbines on the mountain by Fort Lucenne.
+Mae: God, I remember when everyone was so mad about that
+Mae: “It’s gonna ruin the view! It’s gonna kill birds!”
+Mae: You know what else is gonna ruin the view and birds?
+Mae: When a meteor hits the earth because it gets too hot.
+Mae: That’s what happened to the dinosaurs.
+Mae: ok where was I?
+[[Dinosaurs were effing rad.|DinosWereRad2]]
+[[Making a basement turbine out of a garden gnome.|BasementTurbineOutOfAGardenGnome]]
+===
+title: DinosWereRad2
+tags: 
+colorID: 0
+position: 1929,1065
+---
+Mae: They had dinosaurs in the ocean too!
+Mae: I’m glad I wasn’t a fish back then.
+Mae: Did they have fish? Were they like dinosaur fish?
+[[No. Fish are fish, Mae. Get a grip.|FishAreFish2]]
+[[I mean they’d have to be dinosaur fish, right?|DinosaurFish2]]
+===
+title: OneGoodHardPull2
+tags: 
+colorID: 0
+position: 1028,433
+---
+Mae: Ok so... hm...
+Mae: How much space do we have down here?
+[[Looks like not much.|LooksLikeNotMuch]]
+[[We got plenty of room.|WeGotPlentyOfRoom]]
+===
+title: Join2
+tags: 
+colorID: 0
+position: 1752,1904
+---
+Mae: So there isn’t a lot of wind down here, but like
+Mae: Could put the fan on Gnomey’s butt
+Mae: And that would make it spin...
+Mae: Racket for the other fin part.
+Mae: Tie it all together with the fishing line and WOW
+<<close>>
+<<set $furnace_contraption to 5>>
+<<animationTrigger Contraption_E_GnomeTurbine Build>>
+<<wait 4>>
+Mae: I should, like, start a company
+Mae: SUSTAINABLE GARBAGE TURBINE!!!
+Bea: Ok done!
+Mae: What?!
+[[DoneSetup]]
+===
+title: BasementTurbineOutOfAGardenGnome
+tags: 
+colorID: 0
+position: 1596,1222
+---
+Mae: Right.
+[[Join2]]
+===
+title: DinosWereRad1
+tags: 
+colorID: 0
+position: -1239,965
+---
+Mae: They had dinosaurs in the ocean too!
+Mae: I’m glad I wasn’t a fish back then.
+Mae: Did they have fish? Were they like dinosaur fish?
+[[No. Fish are fish, Mae. Get a grip.|FishAreFish1]]
+[[I mean they’d have to be dinosaur fish, right?|DinosaurFish1]]
+===
+title: Join1
+tags: 
+colorID: 0
+position: -915,1697
+---
+Mae: So there isn’t a lot of wind down here, but like
+Mae: ok we stick Gnomey in the ground
+Mae: sorry Gnomey
+Mae: put the fan on top of his flat table-butt
+Mae: I feel that pain, Gnomey. I have one too.
+Mae: And tie the racket on like this...
+<<close>>
+<<set $furnace_contraption to 3>>
+<<animationTrigger Contraption_C_RacketTurbine Build>>
+<<wait 4>>
+Mae: Hey alright!
+Mae: I should, like, start a company
+Mae: SUSTAINABLE GARBAGE TURBINE!!!
+Bea: Ok done!
+Mae: What?!
+[[DoneSetup]]
+===
+title: ImHungry
+tags: 
+colorID: 0
+position: -575,979
+---
+Mae: Could go for some of that Wolf.
+Mae: That D-D-Donut Wolf.
+Mae: There’s that video online of their slammercake machine
+Mae: watching it was how I fell asleep like half the nights at school.
+Mae: Big complicated machine making delicious cake-ums.
+Mae: I can’t imagine how anyone built something like that
+Mae: Everything works perfectly but it’s so weird looking
+Mae: Like someone was just making it up as they went along
+Mae: and somehow created perfection.
+[[WingThisToo]]
+===
+title: StuckInACave
+tags: 
+colorID: 0
+position: -278,969
+---
+Mae: I saw this thing on tv about people that scuba dive in caves.
+Mae: Which, for my money, is really stupid.
+Mae: Like in normal swimming you can drown
+Mae: but you’re not in a cave, with horses and stuff.
+Mae: "Horses?" I meant hoses.
+Mae: Why am I thinking of horses?
+Mae: OMG.
+Mae: CAVE HORSES.
+Mae: What if you were trapped by a cave horse?
+Mae: I wonder how they’d pull you out?
+Mae: Probably just have to wing it, make some big complicated thing
+Mae: I can’t imagine there’s a machine made just for pulling scuba divers away from cave horses...
+Mae: Although who knows what happens down there?
+Mae: Aaaagh! Focus, Mae!
+[[WingThisToo]]
+===
+title: WingThisToo
+tags: 
+colorID: 0
+position: -380,1527
+---
+Mae: Maybe I should just wing this too? Just do it fast so I don’t overthink it?
+Mae: OK LET’S DO IT!
+Mae: (next parts scroll in quickly)
+Mae: ok tie the racket to the turny thing and then tie THAT to the fan but wait
+Mae: how am i going to keep the fan from rolling up like a big fan fish
+Mae: ok sorry gnomey i have to put you upside down like a vampire
+Mae: i think they used to bury vampires upside down so when they tried to dig out
+Mae: of their coffins they’d just dig down because ha ha ha ha stupid vampire
+Mae: now you’re in the center of the earth and you died.
+Mae: again.
+<<close>>
+<<set $furnace_contraption to 2>>
+<<animationTrigger Contraption_B_CaveHorse Build>>
+<<wait 4>>
+Mae: Hey this looks great!
+Mae: I’m like... an engineer!
+Mae: Or whoever makes machines!
+Mae: A machinegineer?
+Mae: Alright let’s give this baby a go-
+Bea: Ok done!
+Mae: What?!
+[[DoneSetup]]
+===
+title: BasementTurbineOutOfARacket
+tags: 
+colorID: 0
+position: -871,1022
+---
+Mae: Right.
+[[Join1]]
+===
+title: FishAreFish2
+tags: 
+colorID: 0
+position: 2190,1400
+---
+Mae: Fish were probably like aw man what the HELL.
+Mae: “I can’t believe future fish don’t have to deal with this BS.”
+Mae: “Sharks? Heh. Get a load of Piranha Nessie with rabies over here.”
+Mae: Documentary guy is all like
+Mae: “Millions of years ago the seas were full of Piranha Rabies Nessies.”
+Mae: Ok FOCUS Mae.
+Mae: Making a turbine.
+[[Join2]]
+===
+title: DinosaurFish2
+tags: 
+colorID: 0
+position: 1817,1357
+---
+Mae: Yeah, I mean back then they had dinosaur bugs, dinosaur trees, dinosaur poop.
+Mae: I’d like to see a dinosaur moose. I bet that would’ve been pretty great.
+Mae: Ok FOCUS Mae.
+Mae: Making a turbine.
+[[Join2]]
+===
+title: FishAreFish1
+tags: 
+colorID: 0
+position: -1410,1272
+---
+Mae: Fish were probably like aw man what the HELL.
+Mae: “I can’t believe future fish don’t have to deal with this BS.”
+Mae: “Sharks? Heh. Get a load of Piranha Nessie with rabies over here.”
+Mae: Documentary guy is all like
+Mae: “Millions of years ago the seas were full of Piranha Rabies Nessies.”
+Mae: Ok FOCUS Mae.
+Mae: Making a turbine.
+[[Join1]]
+===
+title: DinosaurFish1
+tags: 
+colorID: 0
+position: -1088,1275
+---
+Mae: Yeah, I mean back then they had dinosaur bugs, dinosaur trees, dinosaur poop.
+Mae: I’d like to see a dinosaur moose. I bet that would’ve been pretty great.
+Mae: Ok FOCUS Mae.
+Mae: Making a turbine.
+[[Join1]]
+===
+title: LooksLikeNotMuch
+tags: 
+colorID: 0
+position: 622,672
+---
+Mae: Ok so something compact.
+Mae: Think Mae...
+[[I wonder what Gregg’s up to?|WhatGreggsUpTo]]
+[[What was the name of that one movie?|NameOfThatOneMovie]]
+===
+title: WeGotPlentyOfRoom
+tags: 
+colorID: 0
+position: 1287,732
+---
+Mae: hm... focus, Mae.
+[[I wonder if I’ll ever get that motorcycle.|GetThatMotorcycle]]
+[[I wonder what happened to Casey’s boat?|CaseysBoat]]
+===
+title: StopFan
+tags: 
+colorID: 0
+position: 358,1809
+---
+Mae: Oh wait, what’s gonna stop the fan from moving?
+Mae: RACKET!!!
+<<close>>
+<<set $furnace_contraption to 1>>
+<<animationTrigger Contraption_A_CorpseDriver Build>>
+<<wait 4>>
+Mae: Alright well that looks perfect!
+Mae: Got Gnomey as the handle,
+Mae: the fan as the puller,
+Mae: the line connecting them,
+Mae: and the racket keeping the fan in place.
+Mae: This is amazing!
+Bea: Ok done!
+Mae: What?!
+[[DoneSetup]]
+===
+title: WhatGreggsUpTo
+tags: 
+colorID: 0
+position: 293,803
+---
+Mae: Wonder if he figured out that thing...
+Mae: I remember when Casey had that job at the BurgBear out by Briddle.
+Mae: And he let us behind the counter to make whatever burgs we wanted
+Mae: but then Jeff the manager came in and we had to jump out the drivethrough window
+Mae: and Gregg’s leg got caught in some sort of cable
+[[and a car almost ran over him|CarAlmostRanOverHim]]
+[[and he puked|AndHePuked]]
+===
+title: NameOfThatOneMovie
+tags: 
+colorID: 0
+position: 738,1127
+---
+Mae: The one where the guy got tied to that machine by that other guy.
+Mae: And like totally got ripped in half?
+Mae: That was pretty cool even if it looked faaaake.
+Mae: I remember when he exploded there were like
+Mae: twice as many bones as there should have been.
+[[I wonder how that slipped past them?|WonderHowThatSlippedPastThem]]
+[[Alright FOCUS Mae.|FocusMae]]
+
+===
+title: GetThatMotorcycle
+tags: 
+colorID: 0
+position: 1126,994
+---
+Mae: A cool bike that isn’t dumb and loud because that hurts my ears
+Mae: Drag-racin’.
+Mae: Can you drag race on bikes?
+Mae: Or is that like a car thing?
+Mae: That one old movie had the monster guy with the monster drag racer.
+Mae: And he had a cool helmet and cool boots and it was the coolest thing ever.
+Mae: Hm... could drag Gnomey...
+Mae: Use the fan as like a wheel?
+[[RevItUp]]
+===
+title: CaseysBoat
+tags: 
+colorID: 0
+position: 1401,1004
+---
+Mae: He had, like, a boat.
+Mae: I think it was his dad’s before he died.
+Mae: Lose a really shitty dad, get a boat!
+Mae: During that flood the year granddad died, he rode it through the neighborhood
+Mae: which was one of the coolest things I’ve ever seen.
+Mae: but he almost hit that swimming dog with the propeller
+Mae: life on the sea is dangerous
+Mae: ...hm... could use the fan as like a propeller... wheel... thing...
+[[RevItUp]]
+===
+title: RevItUp
+tags: 
+colorID: 0
+position: 1238,1730
+---
+Mae: rev it up and let it yank Gnomey?
+Mae: Tie gnomey to the racket, tie the racket to the fan...
+<<close>>
+<<set $furnace_contraption to 4>>
+<<animationTrigger Contraption_D_DragRacer Build>>
+<<wait 4>>
+Mae: Yeah Mae. That’s the stuff.
+Mae: This is genius. I am a genius.
+Mae: Alright let’s give this a shot-
+Bea: Ok done!
+Mae: What?!
+[[DoneSetup]]
+===
+title: CarAlmostRanOverHim
+tags: 
+colorID: 0
+position: 31,1141
+---
+Mae: but Jeff never caught us!
+[[HadToPullHimOut]]
+===
+title: AndHePuked
+tags: 
+colorID: 0
+position: 331,1123
+---
+Mae: like, upside down
+Mae: and he like... puked up his nose?
+Mae: and then he puked again and it was like
+Mae: perpetual puke for a few seconds
+[[HadToPullHimOut]]
+===
+title: HadToPullHimOut
+tags: 
+colorID: 0
+position: 192,1479
+---
+Mae: and I had to pull him out...
+Mae: and we couldn’t stop laughing...						
+Mae: ...could tie Gnomie to the to fan...
+Mae: In honor of Gregg.	
+[[StopFan]]
+===
+title: WonderHowThatSlippedPastThem
+tags: 
+colorID: 0
+position: 521,1393
+---
+Mae: Maybe better movies have a bone supervisor
+Mae: So things like this don’t happen.
+[[FocusMae]]
+===
+title: FocusMae
+tags: 
+colorID: 0
+position: 693,1646
+---
+Mae: Ok so let’s tie Gnomey to the fan...
+Mae: With the fishing line
+Mae: And THAT could pull him?
+Mae: But it won’t rip him in half.
+Mae: Gnomey don’t even got bones.
+Mae: CORPSEDRIVER! 
+Mae: What’s what the movie was called.
+Mae: I shall call my machine Corpsedriver.
+[[StopFan]]
+===

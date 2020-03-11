@@ -1,0 +1,688 @@
+title: EnterLevel_A1D1
+tags: 
+colorID: 2
+position: -13929,1776
+---
+<<sit>>
+<<irisIn 1 wait>>
+<<wait 4>>
+Mae: So...
+Mae: Working at the Ol Pickaxe?
+Bea: Yep.
+Mae: Are they training you to take over the family business?
+Bea: "They?"
+Mae: Um... your parents?
+Bea: ...
+<<close>>
+<<wait 1>>
+<<stopCarAbruptly>>
+<<wait .5>>
+Bea: Hey look we're here.
+Mae: Oh my house actually isn't for a few blocks.
+Bea: Get out.
+Mae: Ok!
+Mae: Uh... thanks for the ride.
+Bea: GO.
+[[End_A1D1]]
+
+===
+title: EnterLevel_A1D3
+tags: 
+colorID: 2
+position: -13088,1780
+---
+<<sit>>
+<<if $after_party is 0>>
+	[[ToParty_A1D3]]
+<<elseif $after_party>>
+	[[BackFromParty_A1D3]]
+<<endif>>
+
+===
+title: End_A1D1
+tags: 
+colorID: 2
+position: -13930,2123
+---
+<<close>>
+<<set $night to 1>>
+<<fadeOut 1 0 0 0>>
+<<wait 1>>
+<<tell CarMode GetOut>>
+<<wait 2>>
+<<scene MaeHouse left>>
+===
+title: ToParty_A1D3
+tags: 
+colorID: 2
+position: -13364,2173
+---
+<<irisIn 1 wait>>
+<<wait 3>>
+<<rotateHead Mae 10 .5>>
+Gregg: Hey Mae, I think Cole might be there tonight!
+<<if $knows_cole_will_be_there is 1>>
+	[[ToParty_Knows]]
+<<else>>
+	[[ToParty_DoesntKnow]]
+<<endif>>
+
+===
+title: BackFromParty_A1D3
+tags: 
+colorID: 2
+position: -12747,2161
+---
+<<wait 1>>
+<<sit>>
+<<rotateHead Mae -10 .5>>
+<<lookOut Mae>>
+<<dilate Mae 1.2 1>>
+Mae: =_=
+<<wait 1>>
+<<irisIn 1 wait>>
+Bea: If you puke in this car, so help me...
+[[(I owe you an apology, Bea.)|BackFromParty_Apology]]
+[[(I really am quite embarrassed.)|BackFromParty_Embarrassed]]
+===
+title: ToParty_A1D3_End
+tags: 
+colorID: 2
+position: -13397,2818
+---
+<<set $night to 1>>
+<<close>>
+<<fadeOut 1>>
+<<wait 1>>
+<<tell CarMode GetOut>>
+<<wait 2>>
+<<scene PartyClearing>>
+===
+title: BackFromParty_A1D3_End
+tags: 
+colorID: 2
+position: -12658,5079
+---
+<<close>>
+<<fadeOut 1>>
+<<wait 1>>
+<<tell CarMode GetOut>>
+<<wait 2>>
+<<scene MaeRoom>>
+===
+title: ToParty_Knows
+tags: 
+colorID: 2
+position: -13561,2496
+---
+Mae: YEAH I KNOW. =_=
+Gregg: Geez! Sorry.
+Mae: I don’t care if he’s there.
+Angus: He might not be.
+Bea: Well let’s hope so or not. I don’t even know what we’re talking about.
+Gregg: Mae and Cole went out in junior year.
+Mae: Yeah and it didn’t work out.
+Mae: So let’s stop talking about it. =_=
+Bea: Let’s.
+[[ToParty_A1D3_End]]
+===
+title: ToParty_DoesntKnow
+tags: 
+colorID: 2
+position: -13210,2494
+---
+<<dilate Mae .75 1>>
+<<lookOut Mae>>
+<<rotateHead Mae 0 .2>>
+Mae: WHAT?! :o / \
+Mae: Oh my god. \ /
+<<dilate Mae .9 1>>
+Bea: Who’s Cole?
+Angus: Um you remember him? He was in yearbook with us.
+Bea: Oh COLE. Yeah I remember him.
+Gregg: Mae and him were a thing for a while.
+Bea: Really? Wow.
+Bea: He was really smart.
+Mae: =_=
+<<lookLeft Mae>>
+<<dilate Mae 1 1>>
+Mae: I’m really smart!
+Gregg: Yeah you are dude. :)
+Bea: Well that’s settled then.
+[[ToParty_A1D3_End]]
+===
+title: BackFromParty_Apology
+tags: 
+colorID: 2
+position: -12902,2492
+---
+Mae: [wave]Im sory I don’t even knowhat hapdpend[/wave]
+[[BackFromParty_2]]
+===
+title: BackFromParty_Embarrassed
+tags: 
+colorID: 2
+position: -12535,2500
+---
+Mae:[wave]BEE Im so EMBARASSSS[/wave]
+[[BackFromParty_2]]
+===
+title: BackFromParty_2
+tags: 
+colorID: 2
+position: -12692,2814
+---
+Bea: You got sloppy-ass drunk after what
+Bea: Three cups of watered-down beer?
+[[(Remember when we used to be best friends?)|BackFromParty_BestFriends]]
+[[(I remember when we hung out as kids...)|BackFromParty_HungOutAsKids]]
+===
+title: BackFromParty_BestFriends
+tags: 
+colorID: 2
+position: -12904,3076
+---
+Mae: [wave]we uszsda b ee bess frien ds b eea and i stillove u b ee[/wave]
+Bea: i didn't get a word of that
+[[BackFromParty_3]]
+===
+title: BackFromParty_3
+tags: 
+colorID: 2
+position: -12698,3371
+---
+Mae: [wave]remmemmbr u uszta call me [speed=.5]maaaydaaaaay[/speed][/wave]
+Mae: [wave]and i called you [speed=.5]beeeeebeeeee[/speed][/wave]
+Bea: Oh you mean when we were like 10?
+Bea: No. I don’t.
+Mae: [wave]remmebber when we were scouts together[/wave]
+Mae: [wave]and we caught thatt tuuuuurdle??[/wave]
+Bea: Yeah. Boxy the turtle. He died.
+[[(Why are you so mean to me?)|BackFromParty_WhySoMean]]
+[[(I feel like you're mad at me all the time. Why?)|BackFromParty_WhySoMad]]
+===
+title: BackFromParty_HungOutAsKids
+tags: 
+colorID: 2
+position: -12503,3089
+---
+Mae:[wave]i re mbem brrr whenn wee e wrrr liikke bes frenns b ee e[/wave]
+[[BackFromParty_3]]
+===
+title: BackFromParty_WhySoMean
+tags: 
+colorID: 2
+position: -12886,3682
+---
+Mae: [wave][shake=.03]WHYOO SO MEANAMEE????[/all]o_o
+[[BackFromParty_4]]
+===
+title: BackFromParty_WhySoMad
+tags: 
+colorID: 2
+position: -12474,3679
+---
+Mae:[wave][shake=.03]WHYOO SO MADATME ALLATIME????[/all] o_o
+[[BackFromParty_4]]
+===
+title: BackFromParty_4
+tags: 
+colorID: 2
+position: -12674,3982
+---
+Mae: *hurp!*
+Mae: [wave]Awman if i puke inheer your parentz are gonna be so madat me[/wave] =_=
+Mae: [wave]Tellyour mom I’m sorry okay shes soo niiiiiiiice[/wave]
+Bea: GODDAMMIT MAE
+Mae: WHAA? o_o 
+Bea: MY MOTHER IS DEAD.
+Mae: WHAAAAA? :(
+Bea: SHE DIED.
+Bea: OF CANCER.
+Bea: SENIOR YEAR.
+Mae: [wave]OHnoooo she was soo niiiiiiiice![/wave] 
+Mae: [wave]Beebee aryou okaaa ayy?[/wave]
+Bea: HOW DO YOU NOT KNOW THIS?
+Bea: DID YOU FORGET ABOUT MY DEAD MOM?
+[[(This was a terrible lapse of memory, Bea. I’m so sorry.)|BackFromParty_LapseOfMemory]]
+[[(I’m mortified by my behavior. I am sorry.)|BackFromParty_Mortified]]
+===
+title: BackFromParty_LapseOfMemory
+tags: 
+colorID: 2
+position: -12873,4249
+---
+Mae: [wave]i don like, rebmember ANYTHING sometimes[/wave]
+Mae: [wave]dont take id personally[/wave]
+[[BackFromParty_5]]
+===
+title: BackFromParty_Mortified
+tags: 
+colorID: 2
+position: -12458,4254
+---
+Mae: [wave]awe bee, i am acting lika JERK[/wave]
+Mae: [wave]are you madat me???[/wave]
+[[BackFromParty_5]]
+===
+title: BackFromParty_5
+tags: 
+colorID: 2
+position: -12657,4580
+---
+Bea: WHAT HAPPENED TO YOU?
+Bea: YOU USED TO BE SMART!!!
+Bea: YOU USED TO BE COOL!
+Bea: YOU USED TO BE WORTH TALKING TO!
+Mae: *sniff* :o
+Bea: Why did you even come back?
+Bea: Oh, did college not work out for you?
+Bea: Was it INCONVENIENT?
+Bea: Were you not in the MOOD?
+Mae: *sniffle* :(
+Bea: I would have killed for that.
+Bea: I still would.
+Bea: I’d kick you out of this moving car right now
+Bea: if it meant I could go to college.
+<<setAnimInt Mae crying 1>>
+Mae: [shake=.1]WAAHAAAHAAA[/shake]
+<<close>>
+<<stopCarAbruptly>>
+Bea: We’re here. Get the hell out of my car.
+Mae: [size=1][shake=.2]AAAAHHHAA HAAAA HAAAA HAAAA AAAAHAA[/all]
+Bea: Oh god, let me help you in.
+[[BackFromParty_A1D3_End]]
+===
+title: InitLevel_A1D3
+tags: 
+colorID: 2
+position: -13082,1535
+---
+<<if $after_party is 0>>
+    <<setSpriteLayer Gregg TownsfolkBG>>
+<<else>>
+    <<hide Gregg>>
+    <<hide Angus>>
+<<endif>>
+
+<<setLookAtTalkingCharacters Mae 0>>
+<<setLookAtTalkingCharacters Bea 0>>
+<<setLookAtTalkingCharacters Gregg 0>>
+<<setLookAtTalkingCharacters Angus 0>>
+===
+title: InitLevel_A1D1
+tags: 
+colorID: 2
+position: -13943,1528
+---
+<<hide Gregg>>
+<<hide Angus>>
+===
+title: InitLevel_A2D3
+tags: 
+colorID: 3
+position: -11838,1615
+---
+<<if $bea_friendship_quest is 3>>
+    <<hide Gregg>>
+    <<hide Angus>>
+    <<setLookAtTalkingCharacters Mae 0>>
+    <<setLookAtTalkingCharacters Bea 0>>
+    <<setLookAtTalkingCharacters Gregg 0>>
+    <<setLookAtTalkingCharacters Angus 0>>
+<<endif>>
+===
+title: EnterLevel_A2D3
+tags: 
+colorID: 3
+position: -11869,1909
+---
+<<sit>>
+<<if $bea_friendship_quest is 3>>
+    [[BFQ3]]
+<<endif>>
+===
+title: BFQ3
+tags: 
+colorID: 3
+position: -11863,2280
+---
+<<irisIn 1 wait>>
+Mae: that was fun!
+Bea: yup. groceries.
+Bea: really makes you appreciate life.
+Mae: your sarcasm is invalid.
+Mae: shopping is fuuuuuuun!
+<<wait 3>>
+Bea: woohoo.
+<<close>>
+<<wait 1>>
+<<irisOut 1 wait>>
+<<tell CarMode GetOut>>
+<<wait 2>>
+<<scene BeaApartment>>
+===
+title: EnterLevel_A3D3
+tags: 
+colorID: 4
+position: -11001,1894
+---
+<<sit>>
+<<if $bea_friendship_quest is 4>>
+    [[BeaFQ4]]
+<<elseif $gregg_friendship_quest is 4>>
+    [[GreggFQ4]]
+<<endif>>
+===
+title: BeaFQ4
+tags: 
+colorID: 4
+position: -11106,2248
+---
+<<musicFadeOut 1>>
+<<irisIn 1 wait>>
+Mae: So what kind of party is this?
+Bea: Um.
+Bea: A Jackie Party?
+Mae: What’s a Jackie Party?
+Bea: You remember Jackie?
+    ->yeah, she hates me.
+        Bea: oh, that was years ago.
+        Mae: uh huh.
+    ->yeah, she's intense.
+        Bea: she's serious about serious stuff.
+        Bea: she's a lot of fun otherwise.
+Bea: anyway this is a party
+Bea: and Jackie invited me.
+Mae: look at you!
+Mae: all going to secret parties and shit.
+Bea: they're not secret, mae.
+Mae: well *I* wasn't invited.
+Bea: ok. i invite you. you are now invited.
+Mae: woohoo!
+Bea: ok we got like a 90 minute drive ahead so...
+Mae: geez. this better be some party.
+Bea: Jackie parties are worth the trip.
+<<close>>
+<<fadeOut 1 wait>>
+<<scene BeaTown>>
+===
+title: EnterLevel_A2D1
+tags: demo2
+colorID: 3
+position: -12185,1943
+---
+<<sit>>
+<<if $bea_friendship_quest is 1>>
+    <<lookDown Mae>>
+    <<lookOut Bea>>
+    <<dilate Bea .75 .1>>
+    <<wait 1>>
+    <<irisIn 1 wait>>
+    Mae: Glad I didn't puke in here. #line:0ffeaf
+    Bea: me too. #line:977681
+    Mae: maybe I just never drink again. #line:9b111f
+    Bea: orrrr maybe you just take it easy next time. #line:310058
+    <<lookAt Mae Bea>>
+    Mae: i don't know if i do moderation well. #line:f64e6b
+    Bea: i could see that. #line:9b7307
+    Mae: i think the term is "risk-taking behavior." #line:4ed73b
+    <<dilate Bea 1 .1>>
+    Bea: -_- #line:645f29
+    <<lookLeft Bea>>
+    Bea: ...are you seeing someone about this? #line:09539f
+    Mae: hanging with you is working pretty well tonight. #line:e1f502
+    Bea: ... #line:c544fa
+    -> ... #line:a3d1bc
+    -> No pressure. #line:6bda1e
+    Bea: I should be getting paid by the hour. #line:3c920e
+    Mae: I got gum. #line:c5ae58
+    Bea: I'm gonna turn on the radio now. #line:2f8028
+    <<close>>
+    <<playMusic bea_dance_in_car>>
+    <<close>>
+    <<wait 1>>
+    <<tell CarMode GetOut>>
+    <<wait 2>>
+    <<irisOut 1 wait>>
+    <<sectionTitle BeaFQ1Intro FortLucenneMall>>
+<<endif>>
+
+===
+title: InitLevel_A2D1
+tags: 
+colorID: 3
+position: -12150,1628
+---
+<<if $bea_friendship_quest is 1>>
+    <<hide Gregg>>
+    <<hide Angus>>
+    <<setLookAtTalkingCharacters Mae 0>>
+    <<setLookAtTalkingCharacters Bea 0>>
+    <<setLookAtTalkingCharacters Gregg 0>>
+    <<setLookAtTalkingCharacters Angus 0>>
+<<endif>>
+===
+title: InitLevel_A3D3
+tags: 
+colorID: 4
+position: -10967,1595
+---
+<<if $gregg_friendship_quest is 4>>
+    <<hide Bea>>
+    <<setLookAtTalkingCharacters Mae 0>>
+    <<setLookAtTalkingCharacters Bea 0>>
+    <<setLookAtTalkingCharacters Gregg 0>>
+    <<setLookAtTalkingCharacters Angus 0>>
+    <<warp Angus AngusDrive>>
+    <<warp Mae MaeBackSeat>>
+    <<warp Gregg GreggPassengerSeat>>
+    <<sit Gregg>>
+    <<setSpriteLayer Gregg FG1>>
+    <<setSpriteLayer Angus FG1>>
+<<elseif $bea_friendship_quest is 4>>
+    <<hide Gregg>>
+    <<hide Angus>>
+    <<setLookAtTalkingCharacters Mae 0>>
+    <<setLookAtTalkingCharacters Bea 0>>
+    <<setLookAtTalkingCharacters Gregg 0>>
+    <<setLookAtTalkingCharacters Angus 0>>
+<<endif>>
+===
+title: GreggFQ4
+tags: 
+colorID: 4
+position: -10842,2267
+---
+<<musicFadeOut 1>>
+<<irisIn 1 wait>>
+Mae: and that's all the people I’ve kissed.
+Gregg: that's 2 people
+Gregg: kinda
+Gregg: one and a half
+Mae: whatever. Like your average is any better.
+<<close>>
+<<wait 2>>
+Mae: Angus you've been really quiet.
+Angus: ...
+Angus: sorry.
+Mae: you ok?
+Angus: ...
+Gregg: We're gonna get pancakes!!!
+Angus: ...
+<<close>>
+<<wait 2>>
+Mae: Hey Angus
+Mae: Angus
+Mae: Hey
+Mae: gonna get them flapjacks
+Mae: Angus
+<<close>>
+<<wait 2>>
+Mae: *crrrrsch!*
+Mae: "Paging Doctor Jackson..."
+<<close>>
+<<wait 1>>
+Mae: "...Doctor Flap Jackson..."
+Mae: "...please report to my belly..."
+Angus: OK YES PANCAKES
+Gregg: Dude.
+Mae: Dude.
+<<close>>
+<<wait 2>>
+<<tell CarMode FlatTire>>
+<<wait 2>>
+Angus: God
+Angus: Damn
+Angus: It
+Gregg: Whoa, did we get a flat tire?
+Angus: I'm pulling over.
+Mae: No! Donut Wolf!
+Angus: Mae.
+<<close>>
+<<tell CarMode StopWithFlatTire>>
+<<wait 2>>
+Gregg: We'll get there. We'll push the car.
+Angus: Ok you all stay in here.
+<<close>>
+<<irisOut 1 wait>>
+<<scene Roadside>>
+===
+title: PreInitLevel
+tags: 
+colorID: 0
+position: -14388,1188
+---
+<<fadeIn 100000>>
+===
+title: InitLevel_A3D2
+tags: 
+colorID: 4
+position: -10401,1607
+---
+<<if $angus_investigation_quest>>
+    [[InitAngusIQ]]
+<<endif>>
+===
+title: InitAngusIQ
+tags: 
+colorID: 4
+position: -10130,1966
+---
+<<warp Angus AngusDrive>>
+<<hide Bea>>
+<<hide Gregg>>
+===
+title: InitLevel_A3D4
+tags: 
+colorID: 4
+position: -9791,1602
+---
+<<if $angus_investigation_quest>>
+    [[InitAngusIQ]]
+<<endif>>
+===
+title: EnterAngusIQ
+tags: 
+colorID: 4
+position: -10318,2699
+---
+<<sit>>
+<<irisIn 1 wait>>
+===
+title: EnterLevel_A3D2
+tags: 
+colorID: 4
+position: -10340,2302
+---
+<<if $angus_investigation_quest>>
+    <<if $did_angus_constellations>>
+        [[EnterAngusIQEnding]]
+    <<else>>
+        [[EnterAngusIQ]]
+    <<endif>>
+<<endif>>
+===
+title: EnterLevel_A3D4
+tags: 
+colorID: 4
+position: -9875,2311
+---
+<<if $angus_investigation_quest>>
+    <<if $did_angus_constellations>>
+        [[EnterAngusIQEnding]]
+    <<else>>
+        [[EnterAngusIQ]]
+    <<endif>>
+<<endif>>
+===
+title: EnterAngusIQEnding
+tags: 
+colorID: 4
+position: -9928,2693
+---
+<<sit>>
+<<irisIn 1 wait>>
+<<set $night to 1>>
+<<set $did_angus_investigation_quest to 1>>
+<<if $act is 3 and $day is 2>>
+    <<set $did_angus_investigation_quest_on_a3d2 to 1>>
+<<endif>>
+<<set $completed_investigation_quests += 1>>
+<<set $angus_investigation_quest to 0>>
+<<unlockDoodle AngusIQ>>
+<<unlockDoodle AngusPsychic>>
+Angus: *wheeeeeeze*
+Angus: *wheeeeeeeeeeze*
+Mae: You ok, big guy?
+Angus: yeah, I’ll be ok in a few minutes.
+Angus: i’m resilient.
+Mae: So that was it! That was the ghost!
+Angus: Or *wheeze* it was *wheeze* some weirdo who lives out there.
+Angus: they probably get lots of kids throwing parties back there
+Angus: I mean the party we went to where you threw up
+Mae: ugh
+Angus: that wasn’t *TOO* far from there.
+<<if $act is 3 and $day is 4>>
+    Mae: WHY DOES NOB-
+    <<close>>
+    //freakout animation and sound plays//
+    <<enableAnimator BeaCar>>
+    <<playAnimation Mae MaeFreakoutHeadRight>>
+    <<trigger BeaCar Freakout>>
+    <<wait 12>>
+    <<playAmbientSFX _AmbientSFX:mae_head_hurt 3>>
+    <<wait 3>>
+    Mae:{width=4} AAAAAAAAAAAAAAAGH!!!
+    Angus: Mae?
+    Mae:{width=4} AAAAAUUGHHHGH.
+    Angus: What’s wrong?!?!?
+    Angus: Do you need me to pull over?
+    Mae: Ugh. My head... geez... ugh
+    Angus: Ok well let’s get you home...
+    Mae: NO!
+    Mae: Need to talk to... everyone... tonight...
+    Angus: What?
+    Mae: All of us.
+    Mae: I need all of us.
+    <<fadeOut 1 wait>>
+    <<scene GreggAngusApartment>>
+<<else>>
+    //if A3D2//
+	Mae:{width=4} uuuuuuuuuuuuuuuuuuuuuuugh
+	Mae: WHY DOES NOBODY BELIEVE ME?
+    Angus: Mae it's like
+    Angus: every other explanation is more likely
+    Angus: than "ghost".
+    Mae: ok fine whatever.
+    <<wait 1>>
+    Mae: sorry.
+    Mae: grouchy.
+	Mae: headache.
+    Mae: that was scary.
+    Angus: it's cool.
+    Angus: it was.
+	<<fadeOut 1 wait>>
+	<<scene MaeHouse left>>
+<<endif>>
+===

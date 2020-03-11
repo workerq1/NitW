@@ -1,0 +1,114 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: 47,294
+---
+[[HomeQuest]]
+===
+title: HomeQuest
+tags: 
+colorID: 0
+position: 324,330
+---
+<<hide Collision:Right>>
+
+<<warp Mae Mae0>>
+<<warp Germ Germ0>>
+
+<<walk Mae Mae1>>
+<<walk Germ Germ1>>
+
+<<waitForMove Mae>>
+
+//Germ is standing in the middle of the room. Mae walks in from the right and stops behind him.//
+Germ: oh, here she is.
+<<close>>
+<<wait 2>>
+GermGramma: Sturdy girl.
+Mae: ...
+Mae: My granddad said that.
+Mae: Did you...
+Germ: this is Gramma.
+Mae: Hello.
+GermGramma: Mmhmm.
+<<wait 2>>
+Germ: ok, well, see ya!
+<<walk Germ Germ0>>
+Mae: Wait, what?
+<<close>>
+<<walk Germ Germ0>>
+<<wait 3>>
+Mae: You're looking at me.
+GermGramma: Sturdy's a good word for you.
+GermGramma: Big bones. Stout.
+Mae: Yep.
+<<wait 2>>
+Mae: is that it?
+GermGramma: Here's what you need to know
+GermGramma: it wasn't til the main branch closed
+GermGramma: and the men were out of work
+GermGramma: that I started walking
+GermGramma: in dreams.
+GermGramma: something was
+GermGramma: opened
+GermGramma: in some deep place.
+Mae: ...
+GermGramma: You're going to listen now.
+Mae: what?
+//lamp flickers here and gramma goes into a trance... eyeball rolling back animation?//
+GermGramma: a hole in the center of everything
+GermGramma: a hunger neverending
+GermGramma: a great black goat in the trees
+GermGramma: a figure at the end of the hall
+Mae: stop.
+Mae: this doesn't feel good.
+GermGramma: shapes...
+Mae: no.... stop...
+GermGramma: you've... seen it...
+Mae: what?
+GermGramma: shapes instead of faces
+GermGramma: bat in your hand
+GermGramma: red shapes all over the grass
+Mae: STOP!!!!
+//lamp flickers and gramma wakes up//
+<<wait 3>>
+GermGramma: oh, I'm sorry.
+GermGramma: did I upset you?
+Mae: yes. no. it's fine.
+GermGramma: too bad. you need to be upset.
+GermGramma: what's coming to you, little girl
+GermGramma: is three times the trouble you deserve
+GermGramma: you are going to go down hard
+GermGramma: not far from here
+GermGramma: you will go down
+GermGramma: in these woods
+Mae: are you like, telling my fortune?
+GermGramma: little girl, i don't know what you did
+GermGramma: or what your mom or daddy
+GermGramma: or their moms and their daddies did
+GermGramma: but you, you've got a dark spot in you
+GermGramma: that one day is gonna take a life. 
+GermGramma: might be someone else's. or it might be yours.
+Mae: ok. i'll uh... try to remember that.
+GermGramma: i can't stop what's coming
+GermGramma: but ask you a question you can't answer
+GermGramma: can you unhaunt a haunted house?
+Mae: i... i... what?
+<<wait 2>>
+GermGramma: heh heh heh
+GermGramma: had you going there for a second
+Mae: what?
+GermGramma: i'm just joshin' ya
+GermGramma: i have my fun
+Mae: that was seriously messed up
+GermGramma: hee hee hee
+GermGramma: you go outside now, dear!
+GermGramma: let gramma watch Judge Janice
+Mae: ok... uh... see ya around!
+GermGramma: not likely
+GermGramma: little girl.
+<<close>>
+
+<<irisOut 1 wait>>
+<<scene GermHouse left>>
+===

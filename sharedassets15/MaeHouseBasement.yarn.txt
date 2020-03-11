@@ -1,0 +1,49 @@
+title: BossTooth
+tags: 
+colorID: 0
+position: 795,264
+---
+<<if $safe_combination is 0>>
+    <<if $tried_safe is 0>>
+        // checking it out for the first time, no safe combo tho
+        Mae: Hmm, an old safe. 
+        Mae: how am i gonna open this thing?
+        Mae: ...
+        Mae: dynamite?
+        Mae: ...
+        Mae: no.
+        <<set $tried_safe to 1>>
+    <<else>>
+        // repeated checking of the safe without the combo
+        Mae: Hrm... gotta be a way to open this safe...
+    <<endif>>
+<<else>>
+    // opening the safe with the combination
+    Mae: oh wait. ha ha ha ha, i know how to open this.
+    Mae: left 45, Right 100, left 22, left 90, right 15.
+    Mae: thanks, granddad.
+    Mae: Aha... it's opening
+    <<wait 2>>
+    Mae: What the hell?
+    Mae: it's an old... tooth?
+    Mae: yeah. that's a tooth.
+    Mae: granddad put a tooth. in a safe. in the basement.
+    <<if $knows_tooth>>
+        // if mae found out about the tooth from the microfiche already
+        Mae: Oh holy shit.
+        Mae: this is like
+        Mae: one of the boss teeth...
+        Mae: like... from that thing?
+        Mae: oh my god.
+        Mae: what am i gonna do with it????
+    <<else>>
+        // if mae has no idea what the tooth is
+        Mae: welp!
+        Mae: Never know when you'll need an extra tooth.
+        Mae: you and me, tooth. we're gonna go far.
+    <<endif>>
+    Mae: I'll take it.
+    <<unlockDoodle Tooth>>
+    <<set $has_tooth to 1>>
+<<endif>>
+===

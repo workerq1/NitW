@@ -1,0 +1,2001 @@
+title: EndBandPractice_A1D1
+tags: 
+colorID: 2
+position: 1996,-1146
+---
+<<if $band_practice_0_right is 100>>
+    // player played the song perfectly!
+    Gregg: Um, that was pretty much... perfect.
+    Bea: Uh... whoa.
+    Angus: Yeah.
+    Mae: All in a day's work. :)
+    Mae: :|
+<<elseif $band_practice_0_right > 90>>
+    // player did pretty alright!!
+    Gregg: Pretty good!
+    Bea: Yeah, that was okay.
+    Mae: Not bad considering I don't know this song!
+<<elseif $band_practice_0_played < 50>>
+    // player played less than 50% of the notes registered
+    Gregg: So... you just not gonna play mostly?
+    Bea: Yeah is this your thing?
+    Mae: My thing is barely knowing this song to begin with.
+<<elseif $band_practice_0_right < 20>>
+    // player probably mashed random buttons for the whole song
+    Bea: Something makes me think you're not taking this seriously.
+    Gregg: Like at all.
+    Mae: Well...
+<<elseif $band_practice_0_right < 50>>
+    // pretty baaaad
+    Gregg: AAAAGH. Geez.
+    Bea: Yeah that was not good.
+<<else>>
+    // a catch-all for doing pretty meh
+    Gregg: Wow, Mae that was uh...
+    Bea: Pretty bad is what it was.
+    Mae: I literally do not know this song.
+<<endif>>
+
+<<unlockDoodle DieAnywhereElse>>
+<<if $band_practice_0_right > 90>>
+    <<unlockDoodle DieAnywhereElseResult 1>>
+<<else>>
+    <<unlockDoodle DieAnywhereElseResult 2>>
+<<endif>>
+
+[[Finish_A1D1]]
+===
+title: TriggerAngusA1D1
+tags: 
+colorID: 2
+position: 1631,-1114
+---
+Mae: Hi Angus! o/
+Mae: _o_
+Angus: Hey. It's You.
+Gregg: It's Mae!!! :)
+Angus: It's Mae!
+Gregg: AAAAAAAAAAGH!!!! \o/
+Gregg: _o_
+<<close>>
+<<flip Gregg 1>>
+<<run Gregg OffRight>>
+<<wait 1>>
+Mae: So the Party Barn went out, huh?
+Angus: Yeah. Not sure how it ever stayed open.
+Mae: Like how many parties are there, really?
+Angus: You need a lot of parties to keep a barn running.
+Gregg: I HAVE YOUR OLD BASS!!! :|
+<<close>>
+<<walk Bea BeaOnLeft>>
+Mae: Oh dude I don't think I even remember...
+Angus: Hey Bea. Uh. Mae's back.
+Bea: ...
+Mae: Wow. Hi. :o
+Bea: Yeah. Hi.
+Gregg: SHE'S TOTALLY BACK!!!!
+Bea: Wait, what?
+Mae: Are you... uh... here for band practice? :|
+Bea: I play drums.
+Mae: That's not drums. :\
+Mae: That's computer.
+Angus: It's fine. She also does your bass parts.
+Bea: Well, I understood them as “the” bass parts
+Bea: But I can turn them off. -_-
+Mae: "Turn them off." On your computer.
+Bea: o_o
+Gregg: Mae we're totally gonna play a song! You totally have to play bass!
+Mae: I DON'T EVEN REMEMBER! :o
+Mae: THOSE AREN'T EVEN DRUMS! :\
+Mae: :|
+<<runBandPractice 0>>
+===
+title: Gregg_A2D1
+tags: demo2
+colorID: 3
+position: 2837,-591
+---
+<<if $did_band_practice is 0>>
+    [[StartBandPractice_A2D1]]
+<<elseif $gregg_a2d1_bandpractice is 0>>
+    <<set $gregg_a2d1_bandpractice to 1>>
+	Gregg: Hey hey duder.
+    Mae: Angus leaving for the night?
+    Gregg: yeah. gonna be bored.
+    Gregg: or rather I *would* be, if i didn't have plaaaaaans.
+    Mae: Plaaaaaaans?
+    Gregg: crimes.
+    Mae: oooh! crimes!!!
+    [[UpForSomeCrimes]]
+<<else>>
+    [[UpForSomeCrimes]]
+<<endif>>
+
+===
+title: InitLevel
+tags: 
+colorID: 0
+position: 1184,-1004
+---
+<<set $did_band_practice to 0>>
+
+<<setSpriteLayer Gregg FG1>>
+
+<<if $act is 1 and $day is 1>>
+    <<warp Bea OffLeft>>
+    <<flip Bea 1>>
+    <<hide Germ>>
+<<elseif $act is 4 and $day is 3>>
+    <<warp Mae OffLeft>>
+    <<warp Bea OffLeft>>
+    <<warp Gregg OffLeft>>
+    <<warp Germ OffLeft>>
+    <<warp Angus OffLeft>>
+    <<hide Collision:Left>>
+<<endif>>
+
+<<set $angus_done to 0>>
+<<set $gregg_done to 0>>
+<<set $germ_done to 0>>
+<<set $bea_done to 0>>
+===
+title: Angus_A2D1
+tags: demo2
+colorID: 3
+position: 3182,-637
+---
+<<if $did_band_practice is 0>>
+    Mae: So uh... when are we starting? #line:9f0e5a
+    Angus: Ask Gregg. #line:5f6a4a
+    Angus: He's usually what's holding us up or making us go faster. #line:35981a
+    Mae: All purpose Gregg. #line:ec7ed0
+    Angus: Unto every time, a Gregg. #line:e6c7b8
+    <<set $angus_done to 1>>
+<<else>>
+	Angus: That was pretty loud. #line:896ef0
+    Mae: Is that good? #line:2ca754
+    Angus: Loud's fine. #line:22b53e
+    <<set $angus_done to 1>>
+<<endif>>
+
+===
+title: Bea_A2D1
+tags: 
+colorID: 3
+position: 3526,-682
+---
+<<if $did_band_practice is 0>>
+	Bea: {emote=music}
+<<elseif $bea_a2d1_band_practice is 0>>
+    <<set $bea_a2d1_band_practice to 1>>
+	Mae: You wanna do something tonight? #line:d90c32
+    Bea: Um. #line:720da3
+    Mae: I promise it'll be an improvement on last night. #line:86f91c
+    Mae: :) #line:ed8327
+    Bea: What were you thinking of doing? #line:5ff258
+    Mae: uh... hmm... #line:e4bed8
+    Mae: :| #line:2e7f28
+    Mae: Want to go to the mall? #line:e3e17d
+    Bea: "The mall?" #line:71ccb1
+    Mae: Yeah! Fort Lucenne! Like we did when I were kids! :) #line:e6b9fd
+    Bea: When's the last time you were at the Fort Lucenne mall? #line:94be73
+    Mae: I dunno. 5 years ago?  #line:aadd7d
+    Bea: Yeah. Uh. #line:ee4d75
+    Mae: :| #line:44acd9
+    Mae: What? #line:ee6eda
+    Bea: You know what? Yeah. Let's go. #line:c13207
+    Mae: Great! #line:9899e9
+    Bea: Yep. Great. #line:948753
+    Mae: I promise it'll be great. =_= :) #line:1cc5d2
+    [[BeaWeSureWereDoingThis]]
+<<else>>
+    [[BeaWeSureWereDoingThis]]
+<<endif>>
+
+===
+title: Germ_A2D1
+tags: demo2
+colorID: 3
+position: 3845,-680
+---
+<<if $did_band_practice is 0>>
+	Germ: Practice. #line:b7562c
+	Mae: Yes. #line:a1da7e
+    Germ: I crashed my bike once an a broken spoke went through my leg. #line:05f6cc
+    Mae: GEEZ :( #line:ae2403
+    Germ: It was kinda cool. #line:3fbd0b
+    Mae: Oh yeah I can see that. :| #line:677135
+    <<set $germ_done to 1>>
+<<else>>
+	Germ: Good practice. #line:f10de7
+    Mae: Was it? #line:4baabc
+    Germ: eh. #line:d11653
+    <<set $germ_done to 1>>
+<<endif>>
+
+
+===
+title: EndBandPractice_A2D1
+tags: demo2
+colorID: 3
+position: 2888,-1177
+---
+Mae: o_o :|
+<<if $band_practice_1_right is 100>>
+    // player played the song perfectly!
+    Gregg: Um, that was pretty much... perfect.
+    Bea: Uh... whoa.
+    Angus: Yeah.
+    Mae: All in a day's work. :)
+    Mae: :|
+<<elseif $band_practice_1_right > 90>>
+    // player did pretty alright!!
+    Gregg: Pretty good!
+    Bea: Yeah, that was okay.
+    Mae: Not bad considering I don't know this song!
+<<elseif $band_practice_1_played < 50>>
+    // player played less than 50% of the notes registered
+    Gregg: So... you just not gonna play mostly?
+    Bea: Yeah is this your thing?
+    Mae: My thing is barely knowing this song to begin with.
+<<elseif $band_practice_1_right < 20>>
+    // player probably mashed random buttons for the whole song
+    Bea: Something makes me think you're not taking this seriously.
+    Gregg: Like at all.
+    Mae: Well...
+<<elseif $band_practice_1_right < 50>>
+    // pretty baaaad
+    Gregg: AAAAGH. Geez.
+    Bea: Yeah that was not good.
+<<else>>
+    // a catch-all for doing pretty meh
+    Gregg: Wow, Mae that was uh...
+    Bea: Pretty bad is what it was.
+    Mae: I literally do not know this song.
+<<endif>>
+
+<<unlockDoodle WeirdAutumn>>
+<<if $band_practice_1_right > 90>>
+    <<unlockDoodle WeirdAutumnResult 1>>
+<<else>>
+    <<unlockDoodle WeirdAutumnResult 2>>
+<<endif>>
+
+<<set $angus_done to 0>>
+<<set $gregg_done to 0>>
+<<set $germ_done to 0>>
+<<set $bea_done to 0>>
+
+
+[[Finish_A2D1]]
+===
+title: Finish_A1D1
+tags: 
+colorID: 2
+position: 1987,-806
+---
+Mae: holy crap.
+Mae: that was hard to do!
+Angus: you'll get back in practice.
+Mae: i hope. geez.
+Mae: my wrist hurts.
+Gregg: that was great, man
+Gregg: like just seeing you back
+Gregg: playing my old horrible bass.
+Bea: ok are we doing this diner thing?
+Mae: YEAAAAH!!!!!!!!!
+Gregg:{width=8} WOOOOOOOOOOOOOOOOOO!!!!
+Angus: yay.
+Bea: hip hip.
+<<fadeOut .5 wait>>
+<<scene PawsModeDiner>>
+===
+title: Gregg_A3D1
+tags: 
+colorID: 4
+position: 5088,-552
+---
+<<if $did_band_practice is 0>>
+	Gregg: Hey dude.
+    Mae: you ok? you look tired.
+    Gregg: ugh i was up all night.
+    Gregg: they were fixing the roof door
+    Gregg: and it was super loud.
+    Mae: "roof door?"
+    Gregg: yeah the door at the top of the stairs
+    Gregg: that goes out on to the roof.
+    Gregg: now i can like
+    Gregg: i dunno. run from that door down in the lobby
+    Gregg: up to the roof
+    Gregg: and pee off the side of the building?
+    Mae: yeah maybe not.
+    Gregg: but what's to stop random people from doing that too???
+    Mae: dude. it'll be fine.
+    Gregg: sorry, I'm just tired.
+    Mae: fair. ready to go?
+    Gregg: yeah let's do this shit.
+	<<runBandPractice 2>>
+	<<set $did_band_practice to 1>>
+<<endif>>
+
+===
+title: EndBandPractice_A3D1
+tags: 
+colorID: 4
+position: 4562,-1063
+---
+<<if $band_practice_2_right is 100>>
+    // player played the song perfectly!
+    Gregg: Um, that was pretty much... perfect.
+    Bea: Uh... whoa.
+    Angus: Yeah.
+    Mae: All in a day's work. :)
+    Mae: :|
+<<elseif $band_practice_2_right > 90>>
+    // player did pretty alright!!
+    Gregg: Pretty good!
+    Bea: Yeah, that was okay.
+    Mae: Not bad considering I don't know this song!
+<<elseif $band_practice_2_played < 50>>
+    // player played less than 50% of the notes registered
+    Gregg: So... you just not gonna play mostly?
+    Bea: Yeah is this your thing?
+    Mae: My thing is barely knowing this song to begin with.
+<<elseif $band_practice_2_right < 20>>
+    // player probably mashed random buttons for the whole song
+    Bea: Something makes me think you're not taking this seriously.
+    Gregg: Like at all.
+    Mae: Well...
+<<elseif $band_practice_2_right < 50>>
+    // pretty baaaad
+    Gregg: AAAAGH. Geez.
+    Bea: Yeah that was not good.
+<<else>>
+    // a catch-all for doing pretty meh
+    Gregg: Wow, Mae that was uh...
+    Bea: Pretty bad is what it was.
+    Mae: I literally do not know this song.
+<<endif>>
+
+<<unlockDoodle PumpkinHeadGuy>>
+<<if $band_practice_2_right > 90>>
+    <<unlockDoodle PumpkinHeadGuyResult 1>>
+<<else>>
+    <<unlockDoodle PumpkinHeadGuyResult 2>>
+<<endif>>
+
+<<wait 2>>
+
+// adjust these numbers later
+// also see these in Continuity.cs
+<<if $band_practice_0_right > 90 and $band_practice_1_right > 90 and $band_practice_2_right > 90>>
+    <<unlockAchievement Maestro>>
+    <<wait 2>>
+<<elseif $band_practice_0_right < 50 and $band_practice_1_right < 50 and $band_practice_2_right < 50>>
+    <<unlockAchievement Bass_Ackwards>>
+    <<wait 2>>
+<<endif>>
+
+[[Finish_A3D1]]
+===
+title: Bea_A3D1
+tags: 
+colorID: 4
+position: 4828,-542
+---
+<<if $did_band_practice is 0>>
+    Bea: Ready to play?
+    Mae: yeah!
+    Bea: go convince gregg. he's all slow today.
+    Mae: can do!
+    <<set $bea_done to 1>>
+<<endif>>
+
+===
+title: Angus_A3D1
+tags: 
+colorID: 4
+position: 4841,-787
+---
+Mae: Hey angus.
+Angus: Hey hey Mae.
+Mae: what's up?
+Angus: uh. nothing.
+Angus: i'm having a very boring week.
+Mae: geez. i'm envious.
+Angus: eh.
+<<set $angus_done to 1>>
+===
+title: Finish_A3D1
+tags: 
+colorID: 4
+position: 4565,-801
+---
+Mae: Whew.
+Bea: So fast.
+Mae: you just pushed a button!
+Bea: ...
+Gregg: i am so tired.
+Angus: I strained my vocal chords yelling.
+Gregg: awesome.
+Angus: i'm gonna sound so husky.
+<<fadeOut 1 wait>>
+[[TalkAboutLibrary]]
+===
+title: Germ_A3D1
+tags: 
+colorID: 4
+position: 5094,-807
+---
+Mae: Back to watch this fiasco again, huh?
+Germ: Yep!
+Mae: you're our only fan, germ.
+Germ: i'm just here to be entertained.
+Germ: i'm a gentleman on leisure.
+Mae: nice.
+<<set $germ_done to 1>>
+===
+title: StartBandPractice_A2D1
+tags: demo2
+colorID: 3
+position: 2497,-524
+---
+Angus: alright kids, i gotta head out soon.
+Bea: where you going?
+Angus: family stuff.
+Bea: oh. ok.
+Angus: just for a night.
+Bea: ...
+Angus: ok we doing this?
+Gregg: yeah! let's do this!!! #line:d02545
+Mae: Wait! I don't know the song! #line:2d0bcd
+Mae: Like, at all! #line:b3d3c2
+Mae: And I barely remember how to play bass! #line:d80125
+Gregg: You'll be fine! #line:6bfa55
+Mae: I completely will not be fine! #line:838dd0
+Angus: Zero self confidence, huh? #line:729e8a
+Mae: \o/ NO! I JUST DON'T KNOW THE SONG!!! #line:5f08af
+Mae: _o_ #line:375066
+<<close>>
+<<wait 2>>
+Mae: You stupid jerks! #line:ba2baf
+<<runBandPractice 1>>
+<<set $did_band_practice to 1>>
+===
+title: EnterLevel_A4D3
+tags: 
+colorID: 6
+position: 5762,-1479
+---
+<<if $dom_friend_gregg>>
+    [[DomFriendGreggEnding]]
+<<else>>
+    [[DomFriendBeaEnding]]
+<<endif>>
+===
+title: DomFriendGreggEnding
+tags: 
+colorID: 6
+position: 5604,-1194
+---
+//Gregg Domfriend
+//fade in on empty bad practice room//
+<<wait 3>>
+//from offscreen to the left//
+<<playAmbientSFX AmbientSFX:band_door_open>>
+<<wait 3>>
+<<toggleSitSwings Mae false>>
+Gregg: geez. That door never gets any less stuck.
+<<if $found_pentagrams >= 3>>
+	Mae: holy crap is that a pentagram sticker?
+    <<close>>
+	<<walk Gregg CharEnter1 wait>>
+	Gregg: yeah it’s a corpsedriver sticker
+	Mae: wonder what 4 pentagrams mean
+	Gregg: what?
+    <<close>>
+	<<walk Mae CharEnter2 wait>>
+	Mae: nothing
+<<else>>
+	Gregg: worse when it’s cold somehow
+	Mae: i’m so ready for cold weather
+    <<close>>
+	<<walk Gregg CharEnter1 wait>>
+	Gregg: uuugh i haaate winter
+    <<close>>
+	<<walk Mae CharEnter2 wait>>
+	Mae: winter’s good actually
+<<endif>>
+Mae: nobody here yet.
+Gregg: buncha slackers.
+Mae: It’s like they don’t even want this band to succeed.
+Gregg: heh heh
+Mae: where would we even play if we wanted to?
+Gregg: hmmmm
+Gregg: I have no idea.
+Gregg: Go play those VFW hall shows in Fort Lucenne
+Mae: Oh wow those were fun.
+Gregg: We’d be the oldsters now.
+Mae: yup.
+<<close>>
+<<walk Mae MaeNearSitOnStage wait>>
+<<sit>>
+Gregg: so… uh…
+Gregg: you ok?
+->i guess
+	Mae: I mean as much as I can even tell today.
+	Gregg: yeah.
+->not really
+	Mae: I mean, are any of us?
+	Gregg: I dunno. Angus slept pretty soundly last night.
+Mae: hmm. Suspicious.
+<<close>>
+<<walk Gregg GreggNearSitOnStage wait>>
+<<jumpAndSit Gregg>>
+<<wait 2>>
+Mae: do you think those guys can get out of the mine?
+Gregg: i guess we’re gonna find out pretty quick.
+Gregg: did you notice anyone missing today?
+Mae: i don’t know
+Mae: but i don’t think a lot of those guys were people i knew.
+Gregg: never can tell.
+Mae: “never can tell”?
+Mae: this kind of thing happen to you often?
+Gregg: oh all the time.
+Gregg: so like
+Gregg: i don’t really get what even happened down there
+Gregg: with you
+Gregg: and the… whatever that was?
+->the murder cult of dads?
+	Gregg: sure.
+	Mae: i kinda get them.
+	Gregg: really???
+	Mae: no.
+	Mae: yes.
+	Mae: i don’t know.
+->the cosmic horror?
+	Gregg: ok yeah. That.
+	Mae: um. It’s old.
+	Mae: something older than anything i can think of.
+	Mae: and you can feel it inside
+	Gregg: and it’s… in a hole outside town?
+	Mae: yes.
+	Mae: no.
+	Mae: like, the thing in the hole is...
+	Mae: ...geez i lost it.
+	Gregg: it’s ok.
+Mae: it’s like
+Mae: a porch light that’s on
+Mae: and there are all these bugs around it
+Mae: and then the light goes out.
+Mae: and there’s a hole where the light was.
+Mae: it’s like what happened to me way back.
+Mae: like i was telling you about on the couch last night.
+Gregg: god, that was last night?
+Gregg: seems like 2 weeks ago.
+Mae: heh heh yeah.
+<<wait 4>>	
+<<if $found_pentagrams < 3 and $did_lori_friendship_quest_2 is 0 and $germ_friendship_quest_3 is 0>>
+	Mae: it’s going to be weird when you’re gone.
+	Gregg: well i mean
+	Gregg: you’ve already been gone.
+	Gregg: and you’ve been gone at least once since you got back.
+	<<if $did_gregg_friendship_quest_2>>
+		Mae: at least.
+		Mae: i died a little getting that battery the other day.
+		Gregg: see?
+	<<endif>>
+	Gregg: you’re a goner.
+	Mae: like, last night-
+	Mae: it feels sometimes like there’s so much horrible past
+	<<if $did_gregg_investigation_quest>>
+		Mae: still trapped in the historical society from the other night
+		Mae: ha ha just realized i know what that painting was
+		Gregg: what was it?
+		Mae: nevermind.
+		Mae: but it feels like the past can’t just… *LEAVE*.
+	<<endif>>
+	Mae: and it’s still here
+	Mae: you’re like swimming in it
+	Mae: and you can’t have a future.
+	Gregg: nah brah
+	<<wait 2>>
+	Mae: “nah brah”? That’s it?
+	Gregg: what was our biggest crime ever?
+	->almost burning down the school
+		Mae: that was like our highschool high point
+	->bringing a horrible robot son into the world?
+		Mae: and then leaving him to haunt the woods out by the highway?
+	Gregg: actually it was probably trapping those dudes in the mine and leaving them to die
+	Mae: that was self defense!!!!
+	Gregg: all of that stuff-
+	Gregg: like, today’s different now because that happened.
+	Gregg: we’re different.
+	Mae: yeah
+	Gregg: so like
+	Gregg: things change.
+	Mae: i guess.
+	<<if $did_gregg_friendship_quest_3>>
+		Mae: like you said the other day in the woods
+		Mae: gonna be different because we were here.
+		Gregg: that’s something.
+		Mae: something something something
+	<<endif>>
+<<else>>
+	Gregg: what a weird fall it’s been
+	Mae: yeah. I mean even aside from last night.
+	Mae: weirdest couple weeks of my life
+	<<if $found_pentagrams >= 3 and $did_lori_friendship_quest_2 is 0 and $did_germ_friendship_quest_3 is 0>>
+		// if only did pentagrams //
+		Mae: like so i was asking about that pentagram sticker?
+		Mae: yeah so there were these weird teens who told me i was
+		Mae: uh… nevermind. It’s really stupid saying it out loud.
+		Gregg: ok
+		Mae: like i dunno sometimes weird coincidences
+		Mae: it’s like having the tv on in the room so you don’t feel alone
+		Mae: or something
+		Gregg: one of the best things about living with Angus
+		Gregg: is he’s always there
+		Mae: angus is your TV
+		Gregg: and my space heater.
+		Mae: so those teens told me i’d see a bunch of pentagrams
+		Mae: you’ll like this- one was on a donut the other night
+		Gregg: they got the devil in ‘em
+		Mae: and another was down in the tunnel last night
+		Gregg: i mean you know what Angus would say
+		<<if $did_angus_investigation_quest>>
+			Mae: ha ha yeah
+			Mae: pattern seeking
+		<<else>>
+			Mae: what?
+			Gregg: he goes off about how people see like patterns they want to see
+			Gregg: like it’s in our brains. Our brains do that.
+		<<endif>>
+		Gregg: you know he used to make videos online?
+		Mae: really?
+		Gregg: yeah he’d like tell about atheism and also cook
+		Gregg: “Reason and Cookies”
+		Mae: holy crap
+		Gregg: i think i mellowed him out.
+		Mae: does he still make cookies?
+		Gregg: yeah and he still yells about atheism too but 
+		Gregg: irl.
+		Mae: huh.
+	<<elseif $found_pentagrams < 3 and $did_lori_friendship_quest_3 is 1 and $did_germ_friendship_quest_3 is 0>>
+		//if only did lori tracks 2//
+		Mae: there’s this kid i was hanging out with, lori
+		Gregg: you’ve been hanging out with kids?
+		Mae: eh. She seems like she needs guidance.
+		Gregg: that’s nice of you dude
+		Mae: she like goes to the train tracks
+		Mae: and squashes these little metal toy dudes
+		Mae: and they turn into these awesome little messed up monsters
+		Gregg: i used to do that with pennies
+		Gregg: wasn’t thinking big enough i guess
+		Mae: idk. Was thinking about what it’d be like being one of those toys
+		Mae: like run over by this big massive thing you have no control over
+		Mae: and it leaves you all deformed and… i dunno...
+		Gregg: sounds like here
+		Mae: sounds like here
+		Gregg: you know my dad really wanted me to go to college
+		Mae: oh trust me, i remember.
+		Gregg: oh right. I forgot you were around for that.
+		Gregg: anyway, he was all
+		Gregg: “i don’t want you to have to work in a mill”
+		Mae: ha ha what
+		Gregg: hey dad. Dude. the factories were half gone when you were my age.
+		Mae: yeah dad. We work at Snack Falcon now.
+		Gregg: get with it, dad.
+		<<if $did_bea_friendship_quest_1>>
+			Mae: yeah I got bad news about the fort lucenne mall too
+			Gregg: oh god dude that’s a deadmall now
+			Mae: it is extremely dead.
+			Mae: it’s just a building though. It doesn’t mind.
+		<<endif>>
+	<<elseif $found_pentagrams < 3 and $did_lori_friendship_quest_3 is 0 and $did_germ_friendship_quest_3 is 1>>		
+		//if only did Germ FQ3//
+		Mae: you ever been to Germ’s house?
+		Gregg: nope. Where does he live?
+		Mae: back up in the woods past the big parking lot
+		Mae: like last night we were basically in his backyard
+		Gregg: oh right. Yeah.
+		Mae: he’s got this spooky grandma
+		Mae: she like told my fortune then kinda died for a minute
+		Gregg: you know… germ told my fortune once
+		Mae: really???
+		Gregg: yeah we were at the clik clak
+		Gregg: and he like looked at how i bit a pizza slice
+		Mae: pizzamancy or some shit
+		Gregg: it was weird. He got all serious.
+		Mae: what was your fortune?
+		Gregg: said i’d die getting hit by a bus
+		Mae: wow
+		Gregg: yeah what a downer right
+		<<if $did_gregg_friendship_quest_1>>
+			Mae: I thought you were gonna die the other night
+			Mae: when we were moving that box of parts upstairs
+			Gregg: you and me both
+		<<endif>>
+		Gregg: so what did Germ's grandma say?
+		Mae: i mean basically what happened last night
+		Mae: sorta
+		Gregg: they’re just kind of a spooky family i guess
+		Mae: they got a trampoline
+		Gregg: aw man! Lucky.
+		Mae: Germ is pretty great. Not gonna lie.
+		Gregg: i’m a big fan.
+	<<elseif $found_pentagrams >= 3 and $did_lori_friendship_quest_3 is 1 and $did_germ_friendship_quest_3 is 0>>	
+		//if only did pentagrams and lori//
+		Mae: Teens, man.
+		Gregg: Teens?
+		Mae: I was just thinking like
+		Mae: so you know how I asked you about that corpsedriver sticker?
+		Gregg: yeah
+		Mae: so these three weird teens told me I’d see a bunch of them
+		Mae: you’ll like this- one was on a donut the other night
+		Gregg: infernal hails to donut wolf
+		Mae: and another was down in that tunnel last night
+		Gregg: i mean you know what Angus would say
+		<<if $did_angus_investigation_quest>>
+			Mae: ha ha yeah
+			Mae: pattern seeking
+		<<else>>
+			Mae: what?
+			Gregg: he goes off about how people see like patterns they want to see
+			Gregg: like it’s in our brains. Our brains do that.
+		<<endif>>
+		Mae: but wait- there was this OTHER teen, Lori
+		Mae: she’s like 15. we’ve been hanging out
+		Gregg: so you’re just... hanging out with teens?
+		Mae: ew no. but lori...
+		Mae: she needs a good influence
+		Gregg: that’s nice of you
+		Mae: so she's like into horror movies and cool shit
+		Mae: and she squashes these little toy guys on the railroad tracks
+		Gregg: sounds awesome
+		Mae: i dunno. Like remember when we were teens
+		Mae: and we could do crazy shit
+		Mae: and it was like expected
+		Gregg: dude since you got home it’s been like crazy shit 24-7
+		Mae: yeah but like
+		Mae: that’s shit that *happened* to us
+		Mae: like seeing the pentagrams
+		Mae: or if you were one of those toy guys squashed by the train
+		<<if $did_bea_friendship_quest_2>>
+			Mae: or I dunno Bea and I getting trapped in a basement the other night
+		<<endif>>
+		Gregg: i guess
+		Mae: is that the difference between being a kid and being an adult?
+		Gregg: no. not at all.
+		Mae: yeah i dunno where I was going with that.
+	<<elseif $found_pentagrams >= 3 and $did_lori_friendship_quest_3 is 0 and $did_germ_friendship_quest_3 is 1>>	
+		//if only did pentagrams and germ fq3//
+		Mae: this has been like the spookiest couple weeks of my life
+		Gregg: i think it’s up there for all of us
+		Mae: like even aside from all the other stuff
+		Mae: you know how i was asking you about that pentagram sticker?
+		Gregg: yeah corpsedriver’s really good
+		Mae: these three weird teens… ok, this sounds stupid…
+		Gregg: i’m up for some stupid right now
+		Mae: yeah they said i’d see some pentagrams
+		Gregg: ok
+		Mae: you’ll like this- one of them was on a donut the other night
+		Gregg: ride the chariot to donut hell. It’s right in the motto.
+		Mae: yeah so i saw another one at germ’s house
+		Mae: and then his grandma told my fortune and then kinda died for a minute
+		Gregg: you know Germ told my fortune once?
+		Mae: Whoa really?
+		Gregg: yeah he told me I was gonna get hit by a bus.
+		Gregg: like he read it in the bite I’d taken out of a slice of pizza
+		Mae: did you get hit by a bus and die?
+		Gregg: not yet!
+		<<if $did_gregg_friendship_quest_1>>
+			Gregg: I didn’t get killed when we were moving that box up the stairs the other night either.
+		<<endif>>
+		Mae: i think that means you’re winning.
+		Gregg: maybe that’s what winning is.
+		Mae: whoa
+		Mae: so this is kind of my point-
+		Mae: are these just random things and we’ve just been lucky to not die
+		Mae: or is there like some sort of pattern or
+		Mae: i mean not god, but like…
+		Mae: something?
+		Gregg: i mean you know what Angus would say
+		<<if $did_angus_investigation_quest>>
+			Mae: ha ha yeah
+			Mae: pattern seeking
+		<<else>>
+			Mae: what?
+			Gregg: he goes off about how people see like patterns they want to see
+			Gregg: like it’s in our brains. Our brains do that.
+		<<endif>>
+		Mae: you do kinda *want* there to be something making all this happen, right?
+		Mae: like even if it’s bad, it means there some sort of control
+		Mae: like someone real smart could figure it out
+		Gregg: nah. That’s creepy.
+		Mae: not any creepier than germ and his grandma and those three teens
+		Gregg: germ’s not creepy. Spooky, maybe.
+		Mae: yeah. Germ’s the bomb.
+		Mae: life’s spooky, man.
+		Gregg: you ain’t lyin
+	<<elseif $found_pentagrams < 3 and $did_lori_friendship_quest_3 is 0 and $did_germ_friendship_quest_3 is 1>>
+		//if only did lori tracks 2 and germ fq3//
+		Mae: So I went up to Germ’s house the other day
+		Gregg: whoa, really?
+		Gregg: i’ve never been up there.
+		Mae: yeah it’s back up in the woods
+		Mae: actually last night we were basically in his backyard
+		Gregg: oh right
+		Gregg: what’s his house like?
+		->nice. Cozy.
+			Mae: he’s got younger siblings
+			Mae: his grandma lives there too.
+		->they got a trampoline
+			Gregg: aaaaaaaaaaw
+			Mae: i totally jumped on it
+			Gregg: AAAAAAAAAAAAAAAAAAAAAWWW!!!!
+			Gregg: lucky.
+		Mae: anyway his grandma told my fortune and then died for a minute.
+		Mae: that was weird.
+		Gregg: Germ told my fortune once.
+		Mae: really?
+		Gregg: yeah said I’d get hit by a bus
+		Gregg: could tell from how I ate a slice of pizza
+		Mae: was he joking?
+		Gregg: hard to tell with Germ sometimes.
+		Gregg: what did his gramma say?
+		Mae: basically what happened last night
+		Mae: not like the details but
+		Mae: like half of it at least
+		Gregg: whoa. Spooky family.
+		Mae: i dunno. I guess.
+		Mae: there’s this teen I’ve been hanging out with, Lori
+		Gregg: hanging out with teens are you?
+		Mae: nah. Like, she needs a role model.
+		Gregg: nice
+		Mae: anyway she lives out by the tracks
+		Mae: and she like squishes these little metal toy guys
+		Mae: by putting them on the tracks when a train goes by
+		Gregg: oh yeah i used to do that with pennies
+		Gregg: i guess i needed to think bigger
+		Mae: So like when Germ’s grandma told my fortune
+		Mae: i couldn’t shake this feeling that it was like something else i’d seen
+		Mae: and i realized what it was last night when we were down there
+		Mae: like it all felt like i was getting squashed on the tracks
+		Mae: and i was getting all deformed and weird and shit
+		Gregg: huh
+		Gregg: that’s intense
+		Mae: like when they did that mountaintop mining south of here
+		Gregg: ugh.
+		Mae: i know right
+		Mae: like things just got all messed up and it looked all squashed down
+		Mae: i don’t know where I’m going with this
+		Mae: man, I need like the longest nap you can imagine
+		Mae: like one that *isn’t* in the hospital.
+		<<if $did_gregg_friendship_quest_2>>
+			Gregg: I mean we can go steal another car battery
+			Mae: ha ha ha ha oh my god
+			Gregg: put you right out
+			Mae: sharkle can visit me again
+			Gregg: what?
+		<<else>>
+			Gregg: i can like bonk you over the head with something
+			Mae: yeah do that
+			Mae: actually no
+			Mae: after the other night it might cause actual brain damage
+			Gregg: how is your head?
+			Mae: still working.
+		<<endif>>
+	<<elseif $found_pentagrams >= 3 and $did_lori_friendship_quest_3 is 1 and $did_germ_friendship_quest_3 is 1>>
+		//if did pentagrams, lori tracks 2, germ fq3//
+		Mae: oh man if you even knew
+		Mae: so when we were at Donut Wolf the other night?
+		Gregg: yeah
+		Mae: I got that donut with the pentagram on it
+		Mae: that was part of some shit these three weird teens told me would happen
+		Mae: like it was gonna help me
+		Mae: and last night I saw another pentagram down in the tunnel
+		Gregg: that why you asked me about that sticker?
+		Mae: yeah.
+		Gregg: i mean you know what Angus would say
+		<<if $did_angus_investigation_quest>>
+			Mae: ha ha yeah
+			Mae: pattern seeking
+		<<else>>
+			Mae: what?
+			Gregg: he goes off about how people see like patterns they want to see
+			Gregg: like it’s in our brains. Our brains do that.
+		<<endif>>
+		Mae: ok so get this- I went to Germ’s house the other day
+		Gregg: HOLY SHIT
+		Gregg: i’ve never been there!
+		Mae: oh it’s nice. Up in the woods. Got a trampoline.
+		Gregg: aw luckyyyyyyyyyy.
+		Mae: so his grandma told my fortune and then she kinda died for a minute
+		Gregg: Germ told my fortune once. Maybe it’s like a family thing?
+		Gregg: But he didn’t die or anything.
+		->what did he say?
+			Gregg: that i’d die
+			Gregg: getting hit by a bus
+			Mae: wow. That’s kind of a downer.
+			Gregg: eh.
+		->how’d he do it?
+			Gregg: he looked at like bite marks in some pizza we were eating
+			Mae: pizzamancer
+			Gregg: did you eat pizza with Germ’s gramma or something?
+			Mae: nah. Just looked at me.
+		Gregg: so what did she tell you?
+		Mae: I mean basically what happened last night.
+		Mae: not like, specifics, and not all of it
+		Mae: but like…
+		Mae: ok so there’s this OTHER person, this girl Lori I’ve been hanging out with?
+		Gregg: who’s Lori?
+		Mae: Lori Meyers. She’s like 15, lives out by the tracks
+		Gregg: you’re… hanging out with teens now?
+		Mae: eh. She needs a role model. 
+		Gregg: that’s nice of you dude
+		Mae: we were doing this thing where you put these little metal guys on the tracks
+		Mae: and the train runs over them and they get all deformed
+		Gregg: oh yeah i used to do that with pennies
+		Gregg: guess i wasn’t thinking big enough
+		Mae: the pentagram thing and germ’s grandma and just all of this
+		Mae: like there’s some sort of thing under this holding it all together
+		Mae: but not because it cares about us
+		Mae: the thing in the hole, the ghost dreams or whatever, which i barely remember now
+		Mae: even like Possum Springs, like we used to have a lot more jobs and people and stuff
+		Mae: and now we don’t. And none of it’s anyone’s fault really
+		Mae: anyone here and now at least
+		Mae: when i was squashing those little toy guys with Lori
+		Mae: i was like whoa this is us
+		Mae: i dunno. It’s all like dream logic or whatever
+		Mae: i feel like there are these giant
+		Mae: like when the mills and mine shut down
+		Mae: but those assholes down in the tunnels thought they could bring it back
+		Mae: or like nobody goes to the church anymore
+		Mae: but god’s still gonna come back or something
+		Mae: or like you leaving the sheep thing open
+		Gregg: hey!
+		Mae: like to them the gate’s gone
+		Mae: and to you the sheep are gone and...
+		Mae: then like *my* whole bullshit, and…
+		Mae: ...
+		Mae: ok lost my train of thought
+		Gregg: man
+		Gregg: you’re right.
+		Gregg: you *have* had a weird couple of weeks
+		Gregg: you need like… something...
+		Mae: yeah man.
+		Mae: looking forward to longest night
+		Mae: something to like reset everything
+		Gregg: we got in all that Longest Night stuff at work
+		Gregg: you can just come down there
+		Mae: earlier and earlier every year
+	<<endif>>
+<<endif>>
+
+<<if $mallard_rats>>
+	Mae: oh i also gave us a rat infestation in town?
+	Gregg: what?
+	Mae: eh. It’s like the one good thing that’s happened.
+	Mae: Hope springs. Rats Multiply.
+	Gregg: very poetical dude.
+	Mae: i’m extremely poetical.
+<<endif>>
+Gregg: ...
+<<wait 2>>
+Gregg: they killed casey.
+Mae: yeah they did. they killed casey.
+Gregg: i'm trying not to think about it.
+Gregg: do we like... tell his parents?
+Mae: what do we tell them?
+Gregg: i don't know.
+Gregg: is it worse to let them think he's alive
+Gregg: or tell them he's in a bottomless hole
+Gregg: in a tunnel
+Gregg: in the woods
+Gregg: with a bunch of guys who are gonna be dead soon?
+    ->we should tell them
+        Gregg: ok
+        Gregg: you get to figure out what we say.
+        Mae: i'll let you know if i ever come up with anything.
+        Gregg: sounds good.
+    ->we shouldn't tell them
+        Gregg: none of this feels good.
+        Mae: how could it, man?
+Mae: i think it's important that we know at least
+Mae: makes it... mean something?
+Mae: i dunno how to say it...
+Mae: i think we might be the only things in the universe
+Mae: who care about anything.
+Mae: or who even *can* care.
+Mae: do you think any of this means anything?
+Mae: or like, meant anything?
+Gregg: hm.
+Mae: dooooooooes it, greggory?
+
+<<close>>
+<<playAmbientSFX AmbientSFX:band_door_open>>
+<<wait 3>>
+<<close>>
+<<walk Angus AngusEnterEnd wait>>
+Angus: hey babies
+Gregg: hey hon.
+Mae: “babies”?
+Gregg: how was work?
+Angus: geez, i’m sore from like… everything.
+<<if $mine_woods_run_away_hits > 0>>
+    //if hit obstacle during minewoods//
+	Mae: i ran into like a zillion bushes the other night.
+	Mae: basically my body hates me right now.
+<<endif>>
+Gregg: gotta do stretches 
+Mae: so like
+Mae: can I move to Bright Harbor with you guys?
+Gregg: !
+Angus: !
+Gregg: uh
+Angus: um
+Gregg: i thought you like couldn’t leave home?
+Mae: eh. You guys are home enough.
+Angus: …
+Mae: orrrrrr maybe I’ll just visit for a while once you get settled in.
+Angus: of course!
+Gregg: yeah dude that’d be rad.
+Mae: hey guys
+Angus: yeah?
+Mae: thanks for saving me last night. Like, repeatedly.
+Gregg: not even a problem dude.
+Gregg: we’ll save you as many times as it takes
+
+<<close>>
+<<playAmbientSFX AmbientSFX:band_door_open>>
+<<wait 2>>
+<<walk Bea CharEnter2 wait>>
+Gregg: hey bea.
+Mae: heeeey bea.
+Bea: ...
+<<wait 3>>
+Mae: aaaare you gonna say something?
+Bea: i don’t really know what to say
+Bea: what in the hell even happened last night?
+->ugh. Don’t ask me.
+	Mae: can’t we just like
+	Mae: play a song
+	Mae: and get pizza
+	Mae: and think about this tomorrow?
+	Bea: i had a dream that the world was ending.
+	Mae: song. and. pizza.
+	<<wait 2>>
+	Bea: alright.
+	Mae: sweeeeet.
+	<<wait 1>>
+	Gregg: it does, dude.
+	Mae: what?
+	Gregg: answering your question like 2 minutes ago.
+	Mae: what question?
+	Mae: what were we even talking about?
+->uh. Nothing. Nothing at all.
+	Bea: oh good so i was just having the worst weirdest nightmare ever
+	Bea: by the way, nice messages to wake up to
+	Mae: ooooooh god i was half asleep let’s not talk about it
+	Bea: i think i twisted my ankle last night
+	Mae: can we just like not talk about last night for the rest of the day?
+	Bea: uh
+	Bea: no promises
+	Mae: can’t we just play a song 
+	Mae: and get pizza
+	Mae: and talk about this tomorrow?
+	<<wait 2>>
+	Angus: sure
+	Bea: whatever
+	Bea: we can all talk about it in therapy for years
+	Mae: that’s the spirit
+	Mae: i mean we have to go on, right?
+	Mae: obviously the world is seriously screwed up but
+	Mae: we’re all gonna die if we don’t keep living
+	Gregg: that’s some bumper sticker shit right there
+	Mae: hey, i know what i’m talking about
+	Mae: we gotta make plans
+	Mae: we gotta change things
+	Mae: we gotta play a goddamn song and get a goddamn pizza
+	Angus: ok so what are we playing?
+<<wait 5>>
+<<scene EndCredits>>
+===
+title: DomFriendBeaEnding
+tags: 
+colorID: 6
+position: 5943,-1208
+---
+//fade it on empty bad practice room//
+<<wait 3>>
+//from offscreen to the left//
+<<playAmbientSFX AmbientSFX:band_door_open>>
+<<wait 3>>
+<<toggleSitSwings Mae false>>
+Bea: god. This door just does not like to open.
+Mae: bet it’s worse in the summer.
+<<if $found_pentagrams >= 3>>
+	Mae: oh wow there’s a pentagram on this sticker
+	Bea: i can’t read the band name on it
+	Mae: cops...driller?
+	Bea: i guarantee you it’s not Cops Driller.
+	Mae: maybe it’s like a german band with a name in english
+	Mae: sounds like that
+	Bea: Guten Tag. Ve are Cops-Driller.
+	Mae: Off Vedersen.
+	Bea: close enough.
+<<else>>
+	Mae: so did you all get keys to the back door?
+	Bea: Gregg got one and we made copies.
+	Mae: how’d he even get a key?
+	Bea: i have no idea.
+<<endif>>
+<<close>>
+<<walk Bea CharEnter1>>
+<<wait 1>>
+<<walk Mae CharEnter2>>
+<<waitForMove Bea>>
+<<waitForMove Mae>>
+Bea: where’s gregg?
+Mae: oh yeah he had to “spring” Angus from work
+Bea: what does that mean?
+Mae: zero clue.
+Bea: huh.
+Mae: I’m a little unclear about how both of them still have jobs
+Mae: since they seem to just up and leave work early a lot.
+Bea: There’s a lot about those two I don’t understand.
+Mae: I think they just plain need each other.
+Bea: Gregg more than Angus I think.
+Mae: I don’t think Angus would agree.
+Bea: that’s because it wouldn’t occur to Angus to think otherwise
+Bea: because Angus is an extremely nice person.
+->Gregg’s a nice person!
+	Bea: oh yeah he definitely is
+	Bea: but he’s also bratty and irresponsible
+	Bea: and has like zero attention span.
+	Bea: Gregg needs a parent as much as he needs a boyfriend.
+	Bea: and he’s really lucky Angus is a little bit of both.
+->do you not think they’ll last or something?
+	Bea: i mean, they’re high school sweethearts!
+	Bea: once they move and change
+	Bea: and meet new people
+	Bea: and become new people		
+	Bea: i think angus is gonna find he’s got more options.
+<<if $did_angus_investigation_quest>>
+	Mae: Angus thinks Gregg, like, *saved* him.
+	Bea: Listen, I’m not saying he didn’t, if he thinks so.
+	Bea: Angus might also just be attracted to really sincere guys in leather jackets..
+	Bea: who carry knives.
+	Bea: i mean if i met the right guy those would all be plusses.
+<<endif>>
+Mae: geez. You’ve thought this out.
+Bea: before you came back
+Bea: they were the only people i hung out with most of the time
+Bea: i’ve had a lot of time to study.
+<<close>>
+<<walk Mae MaeNearSitOnStage wait>>
+<<sit>>
+Bea: so like
+Bea: how *are* you?
+->i’m… uh… Good.
+	Bea: Really?
+	Mae: I feel like right now I could convince myself I was fine or completely shattered.
+	Mae: just like… stuck in neutral.
+->i don’t even know
+	Mae: i’m still processing
+	Mae: i’m here, though.
+	Bea: yeah.
+Mae: you?
+Bea: um. Not great?
+Bea: had a dream the world was ending.
+Mae: might be.
+Bea: do you think we’re safe?
+Mae: no idea.
+Bea: great feeling.
+Mae: yup.
+<<close>>
+<<walk Bea BeaNearSitOnStage wait>>
+Bea: so like… i’m a little confused about what even happened last night…
+->well, there’s apparently a deathcult of dads
+	Mae: or was
+	Mae: who knows if that was all of them
+	Bea: i can’t believe they even exist. Or existed.
+	Mae: probably take them a few days to die.
+	Bea: …
+	Bea: yup.
+	Mae: i dunno. I kinda understand them in a weird way.
+	Bea: really?!
+->the whole cosmic horror thing?
+	Bea: yeah. That.
+	Mae: could you even see or feel it?
+	Bea: nope. But between you and the… dads…
+	Bea: something had to be going on
+	Mae: it’s old. It’s very old.
+	Mae: you can like smell how old.
+Mae: it’s like
+Mae: a porch light that’s on
+Mae: and there are all these bugs around it
+Mae: and then the light goes out.
+Mae: and there’s a hole where the light was.
+Mae: it’s like what happened to me way back.
+Mae: like i was telling you about on the couch last night.
+Bea: holy crap that was last night.
+Bea: seems like 2 lifetimes ago.
+Bea: heh heh yeah.
+<<wait 4>>
+<<if $found_pentagrams < 3 and $did_lori_friendship_quest_2 is 0 and $did_germ_friendship_quest_3 is 0>>
+	Mae: the world is extremely bad
+	Bea: yes. Yes it is.
+	<<if $failed_state_joke>>
+		Mae: a… failed state?
+		Bea: getting pretty close.
+    <<endif>>
+	Mae: weird question-
+	Mae: how do you like get up every day
+	Mae: and go open the store
+	Mae: and keep doing it?
+	Bea: i don’t really have a choice, do i?
+	->i mean, you definitely do.
+		Mae: you don’t give yourself enough credit
+		Mae: you keep all of this running because you care
+		Bea: i guess.
+		Bea: caring doesn’t always seem to be voluntary.
+		Bea: caring can be really terrifying
+		Bea: i feel like it’s always there right out of sight
+		Bea: following me.
+	->i guess not.
+		Mae: but still. Lots of people would be like
+		Mae: destroyed by what you’ve been through.
+		Bea: my mom was extremely tough. And smart.
+		Bea: when i found out she was going to die
+		Bea: it just didn’t occur to me that she was fragile
+		Bea: like we’re all fragile.
+		Bea: i don’t want to let her down i guess.
+	Bea: i can’t *not* give a shit.
+	Bea: i mean i do the store
+	Bea: and our bills at home
+	Bea: stuff with the chamber of commerce
+	Bea: i’m doing free study courses online
+	Bea: and i’m a member of the young socialists.
+	Mae: i sleep a lot and sometimes eat pizza.
+	Bea: “to each according to their ability”
+	Mae: well, on the bright side, you got meeeee!
+	Bea: heh heh yeah.
+	Mae: we can fix the world togetherrrrrr!
+	Bea: yup. Fix it right up.
+	<<if $did_bea_friendship_quest_2>>
+		Mae: we fixed that furnace!
+		Bea: *I* fixed that furnace.
+		Mae: well i fixed us getting trapped in the basement.
+		Bea: you sure did, Mae. you sure did.
+	<<endif>>
+	Bea: ugh. I guess last night wasn’t so weird.
+	Mae: it was pretty weird.
+	Bea: old men killing the youngs and the poors
+	Bea: to get back some past that barely existed.
+	Bea: same ol same ol
+	Bea: they’re like ghosts in some old mansion
+	Bea: killing the new owners.
+	Bea: makes you want to either give up or try harder.
+	Mae: or get really upset and take a nap
+	Bea: yeah. Naps fix everything.
+	Mae: or like drop an elevator on them
+	Bea: that works too i guess.
+	<<wait 4>>
+<<else>>
+	//if did pentagrams, lori tracks 2, or germ fq3//
+	Mae: god i can’t even wrap my head around these past two weeks.
+	Bea: i think that’s pretty understandable, mae.
+	<<if $found_pentagrams >= 3 and $did_lori_friendship_quest_2 is 0 and $did_germ_friendship_quest_3 is 0>>
+		//if just did pentagrams//
+		Mae: there were these three weird teens
+		Mae: and they told me i’d see bunch of pentagrams.
+		Bea: what teens?
+		<<if $did_bea_investigation_quest>>
+			Mae: the ones we bumped into in the graveyard
+			Bea: oh god. Those teens.
+		<<else>>
+			Mae: met them up by the water tower
+			Mae: just some dorky kids.
+		<<endif>>
+		Mae: anyway, they said if I saw three pentagrams
+		Mae: I’d get some sort of help.
+		Mae: I actually saw one at that party we went to.
+		Mae: and last night, i saw the last one down in the tunnel
+		Mae: and it made me think…
+		Mae: you remember Adina and The Frozen Lake?
+		Bea: the folk tale? Yeah sure.
+		Mae: that astronomer under the ice or whatever that couldn’t find a star
+		Mae: until after she died?
+		Bea: the ghost star.
+		Mae: just thinking stars are upside down if you’re looking at their reflections.
+		Bea: that’s… true.
+		Mae: which is what you’d see if you were a reflection in the ice-
+		Bea: yeah i get it. I read the story.
+		Mae: i barely noticed it when we were down there last night but today
+		Mae: just thinking about that. This feeling like
+		Mae: at the end of everything you can hold on to something.
+		Mae: or anything.
+		Mae: find the spooky ghost star
+		Mae: put it on a map
+		Mae: then you… uh… have a map?
+		Mae: i dunno. I’m hungry and tired
+		Mae: and i feel like i got run over by a train that was carrying other trains.
+		Bea: i’m really impressed you got all of that out of teens being weird and spooky.
+		<<if $did_angus_investigation_quest>>
+			Mae: pattern-seekers.
+			Bea: what?
+			Mae: something angus said.
+			Mae: we’re good at finding patterns.
+			Bea: yeah. It’s like a survival thing.
+			Mae: yeah.
+		<<else>>
+			Mae: i dunno.
+			Mae: it meant something to me.
+			Mae: is that enough?
+			Bea: far be it from me to condemn spooky meaning.
+			Mae: spooky.
+			Mae: spoooook-k-k-k-y
+		<<endif>>
+		<<wait 4>>
+	<<elseif $found_pentagrams < 3 and $did_lori_friendship_quest_2 and $did_germ_friendship_quest_3 is 0>>
+		//if just did lori tracks 2//
+		Mae: there’s this kid Lori
+		Mae: i’ve been like… uh…
+		Mae: maybe trying to be a role model?
+		Bea: how old is she?
+		Mae: i think 15 or so.
+		Bea: so you’re just hanging out with a 15 year old?
+		Mae: oh shut up. Anyway.
+		Mae: she does this thing where she puts little metal dudes on the train tracks
+		Mae: and like squashes them together
+		Mae: and it makes these rad little monsters.
+		Bea: oooh that sounds cool.
+		Mae: yeah it’s awesome.
+		Mae: it also made me think like
+		Mae: if they were alive when it happened
+		Bea: god, that’s grim
+		Mae: if they were just destroyed and crushed by this massive unknowable thing
+		Mae: and crammed into being one thing
+		Mae: they’re like a new monster.
+		Bea: twice the monster, even.
+		<<if $did_bea_friendship_quest_1>>
+			Mae: like me and the fort lucenne fish god
+			Bea: i think you actually injured a few of those people
+			Mae: eh.
+			Mae: anyway
+		<<endif>>
+		Mae: but like look at where we live
+		Mae: big giant things rolled over this place
+		Mae: and i don’t know if it made us all stronger
+		Mae: or just made some monsters
+		Bea: i… think it did both.
+		Bea: like anything traumatic on that scale does both?
+		Bea: but as much as i hate this shithole sometimes
+		Bea: it’s home.
+		Mae: Remember when Mrs Crangler taught us to squaredance in girl scouts?
+		Bea: ha ha yeah. Geez. she had that stick
+		Mae: yeah she’d hit the ground to the beat
+		Bea: Mrs Crangler was serious about squaredancing.
+		Mae: she died recently i guess.
+		Bea: yeah. She was extremely old though.
+		Mae: squaredancing was weird
+		Mae: all of us just like jumbled up
+		Mae: trying to dance, trying not to trip over each other
+		Bea: Mr Crangler is dead, but the squaredance lives on.
+		Mae: i wonder if Lori knows how to squaredance.
+		Mae: we should teach her?
+		Bea: oh, am i being drafted into this makeshift sisterhood?
+		Mae: sisterhood of squaredancing monsters
+		Bea: we’ll rule the floor at the state farm show
+		Mae: we’ll rule any floor we lay our eyes on.
+		<<wait 4>>
+	<<elseif $found_pentagrams < 3 and $did_lori_friendship_quest_2 is 0 and $did_germ_friendship_quest_3>>
+		//if just did germ FQ3//
+		Mae: so i went to Germ’s house.
+		Bea: WHAT?!
+		Bea: oh my god tell me about it
+		Bea: i can’t believe he even has a house.
+		Mae: oh yeah, he does. He’s from somewhere.
+		Mae: uh it’s a big double-wide with a built-on basement and a deck
+		Mae: really nice, actually.
+		Mae: he’s got a trampoline.
+		Bea: oof. Those always make me sick.
+		Mae: anyway his grandma lives there
+		Mae: and she like told my fortune and then kinda died for a minute
+		Bea: holy crap.
+		Mae: she came right back. It’s ok.
+		Bea: what did she say?
+		Mae: basically what happened last night
+		Mae: or part of it.
+		Bea: you know, if you go back in regional history and stuff
+		Bea: there’s like stories about witches and stuff
+		Mae: you believe in witches?
+		Bea: oh geez don’t ask me what i believe in today
+		Bea: but yeah. It’s in the history books.
+		Mae: so you’re telling me she was actually psychic
+		Bea: how would that even work?
+		Bea: does that mean the future is just set?
+		Mae: maybe it’s the future depending on what choices we make
+		Bea: but if the choices haven’t been made yet that’s part of the future
+		Bea: so it should be part of the… something...
+		Bea: uuuugh. My brain.
+		Mae: no, that’s a good point. Didn’t think about that.
+		Mae: well anyway. What she said was scary but
+		Mae: it was nice to feel like there was some sort of order to all of this.
+		<<if $did_bea_friendship_quest_3>>
+			Mae: like when i picked out dinner the other night
+			Mae: was that like the only dinner i could have picked?
+		<<endif>>
+		<<if $did_bea_friendship_quest_2>>
+			Mae: were we like, destined to get trapped in mrs miranda’s basement?
+		<<endif>>
+		Bea: god, i hope not.
+		->yeah
+			Bea: thinking that the future is just like an equation playing out
+			Bea: it’s really claustrophobic, right?
+			Mae: yeah.
+		->why not?
+			Bea: i don’t want my mom to have to have died.
+			Bea: i don’t want me to have to have missed college.
+			Bea: i don’t want the Pickaxe to be some hard-coded destiny.
+			Mae: hm. Yeah.
+		Mae: eff that noise.
+		Bea: eff it right into the stratosphere.
+		<<wait 4>>
+	<<elseif $found_pentagrams >= 3 and $did_lori_friendship_quest_2 and $did_germ_friendship_quest_3 is 0>>
+		//if did just pentagrams and lori tracks 2//
+		Mae: remember that story… uh… adina and the frozen lake?
+		Bea: isn’t it Adina and The Forest God?
+		Mae: ok whatever.
+		Mae: there were these weird teens
+		Bea: i don’t remember that part of the story
+		Mae: no dummy, this part actually happened
+		Bea: i know. I was joking.
+		Mae: i don’t know how to interpret jokes today!
+		Bea: ok so you saw some teens
+		Mae: anyway they were being all spooky
+		<<if $did_bea_investigation_quest>>
+			Mae: actually you met them- in the graveyard
+			Bea: oh THOSE teens.
+			Bea: the teens that tortured you
+			Mae: yeah. Them.
+		<<endif>>
+		Mae: they told me i’d see some pentagrams, and then it happened?
+		Mae: i think they’re like witches or something.
+		Bea: you think they’re… uh.. psychic?
+		Mae: i dunno. I think they’re just weird.
+		Mae: but i saw the last pentagram when we were down there last night.
+		Mae: it was like in the tunnel supports where the… hole… was.
+		<<if $did_angus_investigation_quest>>
+			Mae: angus would laugh at that
+			Mae: say i’m just pattern-seeking
+			Bea: yeah that’s angus. He’d say it nicely though.
+		<<endif>>
+		Mae: it didn’t really register much with me at the moment
+		Mae: but like in that story there’s like a dead astronomer or something
+		Mae: and they’re like a reflection in the ice
+		Mae: and there’s this star they can’t see until they’re dead
+		Bea: yeah. The ghost star.
+		Mae: and if you saw a reflection of the ghost star it’d be like a pentagram.
+		Bea: that is true.
+		Mae: i dunno. There’s this other kid, Lori Myers.
+		Mae: we were hanging out by the tracks
+		Bea: so you’re just hanging out with teenagers all over the place.
+		Mae: oh hush.
+		Mae: so lori like squishes these little metal dudes on the train tracks
+		Mae: and they become like these cool little monsters.
+		Bea: oh that’s cool.
+		Mae: yeah Lori’s pretty rad.
+		Mae: but watching her do that, it felt like this… uh… ritual?
+		Mae: like what was that old magic where they tried to make gold out of shit?
+		Bea: alchemy.
+		Mae: yeah. It was like alkamee. She was like doing magic.
+		Bea: so you’re saying you’ve met like 4 witches.
+		Mae: not real ones but
+		Mae: i don’t know what i’m getting at.
+		Mae: when i felt like everything was over, like there was no hope
+		Mae: remembering like… ghost stars and adina and teen witches
+		Mae: and lori making monsters out of toy people and real trains
+		Mae: just suddenly felt like life was happening
+		Mae: and teens were doing weird magic.
+		Mae: so things couldn’t be that hopeless.
+		Bea: this is like those inspirational stories religious people put in books
+		Bea: and like old people read them
+		Bea: about how angels like stopped a car from hitting them
+		Bea: or sold them a house for almost no money
+		Bea: except your angels are teen dipshits
+		Mae: you work with what you have i guess.
+		Bea: hm.
+		<<wait 4>>
+	<<elseif $found_pentagrams >= 3 and $did_lori_friendship_quest_2 is 0 and $did_germ_friendship_quest_3>>
+		//if just did pentagrams and germ fq3//
+		Mae: you believe in like psychics and shit?
+		<<if $did_bea_investigation_quest>>
+			Mae: oh wait sorry we already talked about this.
+			Bea: when?
+			Mae: at the graveyard the other night!
+			Mae: you said you might believe in ghosts and stuff
+		<<else>>
+			Bea: “and shit?”
+			Mae: just like… supernatural shit in general?
+		<<endif>>
+		Bea: sure yeah i’m open to it. Kinda. whatever.
+		<<if $did_bea_investigation_quest>>
+			Mae: remember the weird teens we met there?
+			Bea: ha ha yeah the ones that like tortured you?
+			Mae: yeah. Them.
+			Mae: i met them before.
+		<<else>>
+			Mae: so i met these three weird teens
+			Mae: out by the watertower
+			Mae: they were all spooky and shit
+		<<endif>>
+		Mae: they said i’d like see some pentagrams and i’d get like some sort of help.
+		Mae: i think they’re witches.
+		Bea: that’s weird and friendly.
+		Mae: ok, hold that thought- the other day I went to Germ’s house, and-
+		Bea: HOLY SHIT!!!
+		Bea: you want to GERM’S HOUSE?!?!?
+		Bea: what’s it like?
+		Mae: it’s nice. It’s like a doublewide with a finished basement.
+		Mae: got a trampoline.
+		Bea: oof. Those always make me sick.
+		Mae: i effin loved it dude.
+		Mae: i bounced so high and talked about like unions with his dad and uncle
+		Bea: this all sounds amazing.
+		Mae: anyway before that i met his grandma
+		Mae: and she told my fortune and then kinda died for a minute?
+		Bea: holy geez.
+		Bea: what did she say?
+		Mae: she said i’d go down. Hard. in the woods.
+		Mae: and she was right on the money.
+		Bea: sounds pretty accurate.
+		Mae: and i think she knew about like all of it somehow. Anyway.
+		Mae: when I was down there last night,
+		Mae: i saw the last of the pentagrams.
+		Mae: it was in the support beams
+		<<if $did_angus_investigation_quest>>
+			Mae: Angus would laugh if I told him
+			Mae: he’d talk about how i’m just pattern-seeking.
+			Bea: yeah that sounds like Angus.
+		<<endif>>
+		Mae: when i saw it i didn’t like really register it until today
+		Mae: and it was like whoa
+		Mae: the teens were right
+		Mae: germ’s grandma was right
+		Bea: was what they said helpful?
+		Mae: yeah… i felt like i like wasn’t alone in this
+		Mae: i mean you were all there
+		Mae: but this was help like… inside my head
+		Mae: like the fact that someone knew about all of this
+		Mae: and were trying to help me
+		Mae: like they’re *all* witches
+		Mae: and like… i don’t believe in magic really but… i dunno
+		Bea: sounds like you believe in magic
+		Mae: i for real don’t.
+		Bea: you believe in witches
+		Mae: no
+		Bea: you are all witched up omg
+		Mae: ok forget it
+		Bea: mae.
+		Mae: yeah?
+		Bea: i’m glad you’re ok.
+		Mae: thanks.
+		<<wait 4>>
+	<<elseif $found_pentagrams < 3 and $did_lori_friendship_quest_2 and $did_germ_friendship_quest_3>>
+		//if did just lori tracks 2 and germ FQ3//
+		Mae: so i went to germ’s house the other day.
+		Bea: OH MY GOD!!!!!!
+		Bea: I like can’t even picture where he would live.
+		Bea: like in a treehouse somewhere?
+		Mae: nah, it’s nice.
+		Mae: it’s like a double-wide with a built on basement
+		Mae: got a trampoline
+		Bea: oof. I get pukey on those.
+		Mae: it was awesome. We ate sloppy joes.
+		Bea: mmmm. I could go for one of those right about now.
+		Mae: god, they’re so good.
+		Mae: like you forget about them until you hear someone mention it
+		Mae: and suddenly that’s all you want.
+		<<if $did_bea_friendship_quest_3>>
+			Mae: shoulda just made those for dinner at your place the other night
+			Bea: ooooh yeah
+			Bea: hey sorry again about yelling at you.
+			Mae: oh don’t worry i already forgot that entire conversation.
+			Bea: oh.
+		<<endif>>
+		Mae: anyway, before all that
+		Mae: his grandma told my fortune and then kinda died for a minute
+		Bea: holy crap!
+		Bea: what did she say?
+		Mae: uh basically what happened last night. Kinda. 
+		Mae: but it wasn’t so much what she said, but more like, who she was
+		Bea: who was she?
+		Mae: just an old lady getting involved in all this weirdness. For some reason.
+		Bea: uh huh.
+		Mae: ok so also there’s this kid, Lori, that I’ve been hanging out with?
+		Bea: “kid”?
+		Mae: like 15 or something.
+		Bea: so you’re just hanging with children and the elderly these days?
+		Mae: anyway.
+		Mae: Lori lives over by the tracks
+		Mae: and i don’t think her home life is great.
+		Mae: at all.
+		Mae: but she’s awesome. Loves horror movies.
+		Mae: makes these little monsters by putting little metal dudes on the tracks
+		Bea: oh and they get all squished and stretched? That’s rad.
+		Mae: yeah see? Cool kid.
+		Mae: then she’ll take like two of them and squash ‘em together.
+		Bea: doublemonster.
+		Mae: i feel like i’m like a kind of a older sister to her when we hang out?
+		Mae: My grandma died a while back
+		Mae: and germ’s grandma was trying to grandma me.
+		Mae: and you’re like my… sister? Cousin?
+		Bea: the crazy uncle.
+		Mae: ok whatever.
+		Mae: point being: we’re all stuck together like Lori’s squashed monster guys
+		Mae: like you and me and like Germ’s grandma and lori and
+		<<if $did_bea_friendship_quest_2>>
+			Bea: gonna add like Mrs Miranda in there?
+			Mae: no. she makes mummies. That’s not allowed.
+		<<endif>>
+		Bea: so we’re all part of… something?
+		Mae: we’re all a part of the same squashed monster.
+		<<wait 2>>
+		Bea: deep.
+		<<wait 4>>
+	<<elseif $found_pentagrams >= 3 and $did_lori_friendship_quest_2 and $did_germ_friendship_quest_3>>
+		//if did pentagrams, lori tracks 2, and germ fq3//
+		Mae: the world is extremely messed up, huh?
+		Bea: yes. Yes it is.
+		<<if $failed_state_joke>>
+			Mae: a… failed state?
+			Bea: getting pretty close.
+        <<endif>>
+		Mae: my granddad, before he died
+		Mae: his last words were like “This house is haunted”
+		Bea: ok that’s spooky. Was he in your house?
+		Mae: no, he was like looking out the window at the hospital.
+		Mae: but i think i get what he meant.
+		Mae: this whole… place.
+		Mae: the other day I ran into these three weird teens
+		<<if $did_bea_investigation_quest>>
+			Mae: actually wait you met them too
+			Mae: at the graveyard.
+			Bea: ha ha ha yeah. The ones that tortured you.
+			Mae: yeah them.
+		<<endif>>
+		Mae: they told me i’d see a bunch of pentagrams and it’d like “aid” me
+		Mae: i think they’re witches.
+		Mae: and then it actually happened?
+		Bea: how… so?
+		Mae: i dunno. I saw the last of them in the tunnel last night.
+		Mae: made from like the support beams.
+		<<if $did_angus_investigation_quest>>
+			Mae: Angus would say it was pattern-seeking
+			Bea: that sounds like angus. He’d say it nicely though.
+		<<endif>>
+		Mae: when i saw it it reminded me of something 
+		Mae: didn’t really register until this morning-
+		Mae: remember Adina and the Frozen lake?
+		Bea: the folk tale? I think it’s called Adina and the Forest God.
+		Mae: whatever. Remember how there was like a dead astronomer
+		Mae: who was like a reflection in the ice?
+		Bea: yeah. Uh. looking for a star you could only see when you’re dead.
+		Bea: the Ghost Star.
+		Bea: my mom had a ghost star tattoo.
+		Mae: anyway, like if you’re looking at a reflection of a star from below
+		Mae: it’s gonna look kinda like a pentagram
+		Bea: that’s… true?
+		Mae: woke up this morning and was like oh wow
+		Mae: i feel like i  found my ghost star
+		Mae: and then lived.
+		Bea: and this is because of teen witches?
+		Mae: ok see i thought that was dumb BUT
+		Mae: I met Germ’s grandma. 
+		Bea: WHAT?????
+		Mae: yeah I went to his house!
+		Bea: What’s it like????
+		Mae: um it’s nice?
+		Mae: double wide with a finished basement.
+		Mae: got a trampoline.
+		Bea: ugh. Those things make me sick.
+		Mae: anyway his grandma told my fortune and then kinda died for a minute?
+		Bea: holy shit.
+		Bea: what was your fortune?
+		Mae: oh it was vague and only half right but it basically what happened last night?
+		Mae: and she seemed to know about all the weird dream stuff too.
+		Bea: wow.
+		Mae: yeah see? So like I’m thinking, maybe *she’s* a witch too.
+		Mae: not like an actual witch. The teens aren’t *real* witches either.
+		Bea: so….
+		Mae: there’s this other kid, Lori M. we’ve been hanging out.
+		Bea: you just hanging with teens all over the place these days?
+		Mae: hush. I’m like a role model.
+		Bea: oh well then.
+		Mae: Lori does this thing where she puts little metal dudes on the train tracks.
+		Bea: oooh! And the train squishes them? That’s so cool.
+		Mae: yeah she’s great.
+		Mae: i dunno. Maybe this is just me not being a kid anymore
+		Mae: but watching her do that. Open her little bag
+		Mae: and pull out these things
+		Mae: and then like using actual trains
+		Mae: making little monsters.
+		Mae: i came to the only logical conclusion.
+		Mae: Witch.
+		Bea: Well gee Mae you seem to be just swimming in witches.
+		Mae: Hey listen you could be one too.
+		Bea: oh god i wish. I have some hexes to hand out.
+		Mae: and I mean obviously i count as a witch. I’m like spooky magic as eff.
+		Bea: of course
+		Mae: i dunno. Last night, today… 
+		Mae: everything is extremely bad here right now.
+		Mae: everything is bad in the world.
+		Bea: guys last night,
+		Bea: they’re like ghosts in an old mansion
+		Bea: don’t know they’re dead
+		Bea: just stalking around killing whoever moves in.
+		Mae: like granddad said. It’s haunted.
+		Mae: but there’s also a lot of witches in it.
+		Mae: and that makes me feel a tiny bit better.
+		Bea: so the entire rust belt is just lousy with ghosts and witches?
+		Mae: yeah but not all ghosts are bad, like… i mean… ugh.
+		Mae: I don’t really know where I’m going with this. It’s been a long week.
+		Bea: it’s fine.
+		<<wait 4>>
+    <<endif>>
+<<endif>>
+
+Mae: so,
+<<if $mallard_rats>>
+	Mae: have you had any new… uh… rat problems at the shop?
+	Bea: uh… yeah. How did you know?
+	Mae: I heard there were some rats around town.
+	Mae: makes me happy for some reason.
+	Bea: well there’s no such thing as a small rat problem
+	Bea: there’s just gonna be more of them
+	Mae: Hope springs. Rats Multiply.
+	Bea: cute. we literally sell rat poison.
+	Bea: they’re going down
+	Mae: we’ll see.
+	Mae: hey, speaking of nothing,
+<<endif>>
+Mae: how good is your car?
+Bea: good how?
+Mae: like, can it drive real far?
+Bea: Mae do you know anything ab-… what?
+Mae: we should like do a roooooad trip.
+Bea: to where?
+Mae: out west
+Mae: it gets all flat
+Bea: that it does.
+Mae: we can go where it’s really flat
+->and they sell barbeque.
+	Bea: i think BBQ is south
+	Mae: not all of it
+	Mae: it’s everywhere, Bea-Bea-Q.
+	Mae: all different kinds. Dry. Wet. Ultra.
+-> and you can see like the world’s largest pierogi.
+	Mae: or a museum of toy rocket ships
+	Mae: or a factory where they make pretzels
+	Mae: or a house that looks like a big chicken!
+Bea: i could… ok let’s talk about it next year
+Mae: i’ll start planning it now.
+Bea: i thought you couldn’t leave home because of your… issue?
+Mae: eh. You’re home enough.
+Mae: i mean if we’re trapped here together
+Mae: we might as well be trapped out there together.
+Mae: i mean if we’re not dead by then. L O L.
+Bea: you have a way of making doom sound like a lot of fun, maeday.
+Bea: that is actually kind of a gift.
+
+//from offscreen to the left//
+<<close>>
+<<playAmbientSFX AmbientSFX:band_door_open>>
+<<wait 2>>
+Gregg: GODDAMN THIS DOOR!
+Angus: I think god already has.
+Mae: there they are!
+<<close>>
+<<walk Angus CharEnter1 wait>>
+Angus: hey guys.
+<<close>>
+<<walk Gregg CharEnter2 wait>>
+Gregg: sup nerds.
+->pssh. It’s you who are the nerds.
+	Gregg:{width=8} whaaaaaaaaaaaaaat?
+	Angus: geez. We’ve never been so insulted.
+	Gregg: take it right back, dork.
+	Mae: fat chance.
+->how did you get Angus out of work?
+	Gregg: i made up a family emergency.
+	Angus: my uncle got run over by a tractor.
+	Mae: ha ha wow.
+	Angus: i mean he did in real life too but that was years ago.
+Bea: hey gregg, so…
+Bea: i didn’t really know Casey.
+Gregg: …
+Gregg: yeah.
+Bea: I just wanted to say I’m really sorry.
+Gregg: yeah.
+Gregg: thanks.
+Gregg: Casey was a good one.
+Mae: Casey was good.
+Bea: should we like… tell his parents?
+->probably?
+	Angus: what do we tell them?
+	Mae: i dunno.
+	Mae: can we like… make up something that sounds real?
+	Bea: oh what, the truth isn’t real enough?
+	<<wait 2>>
+	Bea: no you’re right the truth is insane
+->no????
+	Mae: i mean, tell them what?
+	Bea: uh. Ok yeah.
+	Bea: hm
+	Bea: good point.
+Angus: so like, what do we do?
+Mae: about Casey?
+Angus: no, like, in general
+<<wait 3>>
+Mae: can we think about this tomorrow?
+Mae: can we just play a song and get a pizza?
+Bea: i don’t think “song and pizza” is an answer, really.
+Mae: can we just be normal for like one day?
+Bea: i don’t know how today can possibly feel normal.
+->when i was in that coma or whatever
+	Mae: i saw the future
+	Mae: or maybe it’s now the future
+	Mae: or was the future
+	Angus: like flying cars and shit?
+	Angus: actually those would be a disaster
+	Gregg: ha ha FINALLY you admit it. You owe me 5 bucks.
+	Angus: bet’s a bet.
+	Mae: no, it was like the town was abandoned
+	Mae: like being eaten and reclaimed by nature or some shit
+	Mae: i went to where my house used to be
+	Mae: when i was there i felt completely hopeless
+	Mae: but now i think i could just build another house.
+	Mae: or i could just move on.
+	Mae: knowing when to hold on
+	Mae: and when to let go
+	Mae: …
+	Mae: ok i lost my entire train of thought.
+	Mae: i had it for a second.
+	Mae: then it was gone.
+	<<wait 2>>
+	Bea: song and pizza sounds good, mae.
+	Gregg: song and pizza.
+	Mae: yeah.
+	Mae: good enough.
+->when i was down there last night
+	Mae: i like made the decision not to die
+	Mae: or at least not to die without a fight
+	Mae: and the… thing down there…
+	Mae: told me nothing would save me forever
+	Bea: wait, it was like, talking to you?
+	Mae: it’s been talking to me for a long time.
+	Mae: i just didn’t know what it was.
+	Mae: but anyway like nothing is gonna save us forever
+	Mae: but a lot of things can save us today.
+	Angus: that’s really pretty, mae.
+	Mae: ha ha thanks i totally made it up
+	Mae: like right on the spot last night
+	Bea: i said it before. You’re good with doom.
+	Gregg: doom doom doom
+	Mae: so anyway. Song and pizza.
+	Mae: we earned it by still being alive for another day
+	Bea: that’s a decent reason.
+	Gregg: decent.
+	Angus: decent.
+	<<wait 2>>
+	Mae: decent.
+
+<<wait 5>>
+<<scene EndCredits>>
+===
+title: TalkAboutLibrary
+tags: 
+colorID: 4
+position: 4562,-539
+---
+<<fadeIn 1 wait>>
+Mae: ...and anyway i don't even know if they're dreams or not.
+Mae: and this guy, who i think was a ghost
+Mae: kidnapped some kid and also i think was in my head after
+Mae: while i was sleeping
+Mae: and anyway yeah I think I need to do something
+Mae: because this is scary.
+<<wait 2>>
+Bea: well that's not what i was expecting to hear tonight.
+Gregg: are you ok, dude?
+    ->yeah!
+        Mae: i'm not like losing it or something.
+    ->no!
+        Mae: i'm kinda freaked out!
+Angus: it probably wasn't a ghost.
+Gregg: yeah probably not.
+Bea: yeah definitely.
+Mae: uuuugh.
+Mae: ok fine I'll go figure this out myself.
+Gregg: aw dude don't be like that.
+Angus: you got us!
+Mae: aw... dudes....
+<<wait 2>>
+Bea: ok fine.
+Mae: so we need to maybe see
+Mae: if there's like
+Mae: some ghosty stuff happening around here?
+Mae: like, from a source we can trust.
+Angus: such as...
+Mae: does the newspaper have like a ghost section?
+<<wait 2>>
+Mae: What? Why is that a dumb question?
+Bea: you know, we could go check the Library.
+Mae: for... books? about it?
+Bea: no, they have the local paper on file
+Bea: going back a century.
+Bea: if there's some secret history of kidnapper ghosts
+Bea: we'll find it there probably.
+Mae: oh wow! i didn't know they had that!
+Mae: i thought it was just like a broken down old bunch of books?
+Bea: when's the last time you were at the library?
+Bea: we actually have one of the nicer ones around.
+Mae: oh. how?
+Bea: rich dude who paid for it way back when?
+Bea: yeah they set up a foundation, and...
+Mae: ?
+Bea: nevermind. let's go.
+Mae: can we regroup after?
+Gregg: uh
+Angus: sure!
+Mae: ok! we'll be back!!!!
+Bea: wooohooo. ghosties.
+Mae: that's the spirit!
+<<set $bea_investigation_quest to 1>>
+<<irisOut 1 wait>>
+<<sectionTitle TheLibrary Library>>
+===
+title: UpForSomeCrimes
+tags: 
+colorID: 3
+position: 2851,-301
+---
+Gregg: you up for some crimes???
+Mae: Hm
+-> I might be hanging out with bea, let me check first.
+    Gregg: coooool. let me know.
+-> DEFINITELY!
+    Gregg:{width=8} AWOOOOOOOOOOOOOOOOOOOO!
+    Mae:{width=8} AWOOOOOOOOOOOOOOOOOOOOOO!
+    <<set $gregg_friendship_quest to 1>>
+    <<set $did_gregg_friendship_quest_1 to 1>>
+    <<fadeOut 1 wait>>
+    <<sectionTitle GreggFQ1Intro Outskirts>>
+===
+title: BeaWeSureWereDoingThis
+tags: 
+colorID: 3
+position: 3515,-357
+---
+Bea: ok, we sure we're doing this?
+Mae: o_o :|
+-> Let me check with gregg real quick.
+    Bea: okeydoke.
+-> Yeah. Let's go malling.
+    Bea: Great. #line:14af92
+    <<close>>
+    <<set $bea_friendship_quest to 1>>
+    <<set $did_bea_friendship_quest to 1>>
+    <<fadeOut 1 wait>>
+    <<scene BeaCar>>
+===
+title: Finish_A2D1
+tags: temp
+colorID: 3
+position: 2896,-913
+---
+
+===

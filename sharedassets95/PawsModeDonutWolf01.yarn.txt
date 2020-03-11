@@ -1,0 +1,88 @@
+title: Start
+tags: 
+colorID: 0
+position: -128,294
+---
+MaePaws: Gregg.
+MaePaws: These are the most important donuts.
+GreggPaws: I am unworthy.
+MaePaws: [shake=.03]Bow your head, you dirty fox![/shake]
+MaePaws: We are in the presence of something greater than either of us.
+===
+title: Donut1
+tags: 
+colorID: 0
+position: 116,308
+---
+<<animateBloomIntensity .5 5>>
+MaePaws: Oh deepest darkest god.
+MaePaws: These donuts are a planet unto themselves.
+GreggPaws: I've died and gone to donut.
+MaePaws: I was dead but the donut gave me life.
+GreggPaws: [size=1.2][shake=.03]All glories to the donut.[/shake][/size]
+===
+title: Donut2
+tags: 
+colorID: 0
+position: 347,327
+---
+<<animateBloomIntensity 1 5>>
+GreggPaws: The donut's best secret is its middle.
+MaePaws: The middle is a hole.
+GreggPaws: It's nothing, surrounded by [wave]everything.[/wave]
+MaePaws: But I'm sad when I get to the middle.
+MaePaws: Just chomping air.
+GreggPaws: Naw dude, like the hole makes you appreciate the donut.
+===
+title: Donut3
+tags: 
+colorID: 0
+position: 574,294
+---
+<<animateBloomIntensity 2 5>>
+<<set $paw_shake to 2>>
+GreggPaws: Another thing, the hole is a handy grip!
+MaePaws: Yes. How else are you going to pick things up
+MaePaws: If they don't have holes in them.
+GreggPaws: Naw, it's like a [wave]contrast.[/wave]
+GreggPaws: Like something and nothing.
+GreggPaws: And the nothing, like, helps you get a grip.
+GreggPaws: On the something.
+GreggPaws: Crap, I had it for a second.
+MaePaws: Dude, this is getting deep.
+GreggPaws: It's the donuts talking.
+
+===
+title: Donut4
+tags: 
+colorID: 0
+position: 836,303
+---
+<<animateBloomIntensity 3.5 5>>
+<<set $paw_shake to 4>>
+MaePaws: [shake=.02]I think I can see the past and future.[/shake]
+MaePaws: [shake=.02]I think I can see the birth and death of all things.[/shake]
+GreggPaws: [shake=.02]I can see the sun exploding.[/shake]
+MaePaws: [shake=.02]Are we high?[/shake]
+GreggPaws: [shake=.02]No, these are just very[/shake]
+GreggPaws: [shake=.02]very[/shake]
+GreggPaws: [shake=.02]good donuts,[/shake]
+GreggPaws: [shake=.02]dude.[/shake]
+===
+title: Donut5
+tags: 
+colorID: 0
+position: 1077,301
+---
+<<animateBloomIntensity 4.5 5>>
+<<set $paw_shake to 6>>
+MaePaws: [shake=.03]I have achieved perfect donut.[/shake]
+GreggPaws: [shake=.04]Dude, I am donut.[/shake]
+MaePaws: [shake=.05]D O N U T[/shake]
+GreggPaws: [shake=.06]W O L F[/shake]
+MaePaws: [shake=.07]RIDE THE CHARIOT[/shake]
+GreggPaws: [shake=.08]TO DONUT HELL!!![/shake]
+<<fadeOutSound DonutWolfMusic 2>>
+<<fadeOut 2 wait>>
+<<scene DonutWolfExterior>>
+===

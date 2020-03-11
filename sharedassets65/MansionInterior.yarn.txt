@@ -1,0 +1,665 @@
+title: EnterLevel
+tags: 
+colorID: 4
+position: 152,-550
+---
+<<setCanInteract Gregg 0>>
+
+<<if $gregg_iq_mansion is 0>>
+    <<follow Gregg Mae 1>>
+    <<set $gregg_iq_mansion to 1>>
+    [[BasementIntro]]
+<<else>>
+    <<warp Gregg Mae>>
+    <<follow Gregg Mae 1>>
+<<endif>>
+===
+title: Locked00
+tags: elevator8-9
+colorID: 4
+position: 1472,-44
+---
+<<if $mansion_cellar_door_done>>
+    [[ItsLocked]]
+<<elseif $mansion_checked_locked_elevator>>
+    Gregg: See if we can get out through the back!
+<<elseif $has_paperclip and $has_pliers>>
+    Gregg: ok, just gotta pick this
+    <<close>>
+    <<run Gregg GreggLockPick2 wait>>
+    <<flip Gregg -1>>
+    <<setAnimBool Gregg lockPicking 1>>
+    Gregg: ...in the dark...
+    Mae: geez. Sorry.
+    Gregg: it’s cool, I-
+    <<close>>
+    <<cameraLookAt CameraElevatorGoingBack 2>>
+    <<wait 2>>
+    //sound of other elevator going back up to the third floor//
+    Mae: SHIT.
+    Gregg: I’m gonna keep picking
+    Gregg: You see if we can get out through the back
+    <<close>>
+    <<cameraFollowPlayer 1>>
+    <<stopFollowing Gregg>>
+    <<createLocatorAt Mae MaeByElevator8>>
+    <<set $mansion_checked_locked_elevator to 1>>
+<<else>>
+    Mae: Locked!
+    Gregg: DANGIT!
+<<endif>>
+
+===
+title: Locked01
+tags: 
+colorID: 4
+position: 1748,-56
+---
+<<if $has_paperclip and $has_pliers>>
+    <<set $mansion_unlock_01 to 1>>
+    Mae: Alright, we ready to go?
+    Gregg: yeah for sure.
+    Gregg: gonna get to work
+    Gregg: i'm gonna like
+    Gregg: break out of county jail someday
+    Gregg: with these skills?
+    Mae: dude what are you going to jail for?
+    Gregg: probably something like this, honestly.
+    <<close>>
+    <<walk Gregg GreggLockPick1 wait>>
+    <<flip Gregg -1>>
+    <<setAnimBool Gregg lockPicking true>>
+    <<wait 1>>
+    <<playOneShot event:/mansion/footsteps_01>>
+    <<wait 5>>
+    Mae: Uh dude...
+    Mae: you need to hurry
+    Gregg: What?
+    <<playMusic spooky_mansion_intense 10>>
+    Mae: Someone’s coming.
+    Mae: They’re in the hallway downstairs...
+    Gregg: Crap. Ok. I’ll have it done in...
+    <<close>>
+    <<wait 2>>
+    <<playOneShot event:/mansion/footsteps_02>>
+    <<wait 2>>
+    <<playOneShot event:/mansion/elevator_bell SceneLink4>>
+    <<cameraLookAt CameraToElevator4 3>>
+    Mae: oh god
+    Mae: uh dude
+    Mae: the elevator
+    Gregg: Shit
+    Gregg: shiiiiit
+    Mae: HURRY!!!
+    <<cameraFollowPlayer 3>>
+    <<setAnimBool Gregg lockPicking false>>
+    Gregg: There I got it!
+    <<close>>
+    <<tell SceneLink6 Open>>
+    <<wait 1>>
+    Mae: GO!!!
+    //they get in and they zoom down to the basement//
+    <<tell SceneLink6 Activate>>
+<<elseif $has_paperclip>>
+    Mae: ok ok ok we got the paperclip
+    Gregg: Just need the pliers.
+<<elseif $has_pliers>>
+    Mae: ok ok ok we got the pliers
+    Gregg: Just need a paperclip.
+<<elseif $looking_for_lockpick>>
+    Gregg: Need a paperclip and pliers. Crime stuff.
+<<endif>>
+===
+title: Elevator
+tags: 
+colorID: 4
+position: 2000,-59
+---
+-> Going Up!
+    <<set $elevator_choice to 0>>
+-> Going Down!
+    <<set $elevator_choice to 1>>
+===
+title: Office
+tags: 
+colorID: 4
+position: 2385,-549
+---
+Mae: Huh. It’s an office.
+Gregg: This is boring.
+Mae: Anything interesting here?
+Gregg: Office supplies.
+Gregg: There’s a calendar.
+Mae: Looks like covered bridges.
+Gregg: The one over there’s got famous disasters.
+Mae: That’s the cool person’s desk.
+Mae: The other person is boring.
+Gregg: I wonder if they’re friends
+Gregg: I mean, you can work with someone and not be friends.
+Mae: Hm yeah.
+Gregg: Maybe this room isn’t so boring after all.
+Mae: No, it definitely is.
+<<set $mansion_office_done to 1>>
+<<set $visited_mansion_office to 1>>
+===
+title: PaperClip
+tags: 
+colorID: 4
+position: 2541,-1
+---
+Mae: FOUND ONE!
+<<if $has_pliers>>
+	Gregg: Alright so we got the stuff.
+	Gregg: Let’s get that elevator open and see what’s upstairs.
+	Mae: Gonna guess it’s like 12 more elevators
+<<else>>
+	Mae: Well, that’s the easy part I guess.
+	Gregg: Yeah... pliers are gonna be a bit more tricky to find.
+	Mae: Hmm...
+	Mae: Well, let’s head back up.
+<<endif>>
+<<set $has_paperclip to 1>>
+===
+title: Office00
+tags: 
+colorID: 4
+position: 2845,-45
+---
+Mae: gum!
+<<set $office_00_done to 1>>
+===
+title: Office01
+tags: 
+colorID: 4
+position: 3078,-38
+---
+Mae: notecards!
+<<set $office_01_done to 1>>
+===
+title: Office02
+tags: 
+colorID: 4
+position: 3337,-26
+---
+Mae: pins!
+<<set $office_02_done to 1>>
+===
+title: Office03
+tags: 
+colorID: 4
+position: 3579,-29
+---
+Mae: phone charger!
+<<set $office_03_done to 1>>
+===
+title: Office04
+tags: 
+colorID: 4
+position: 3821,-38
+---
+Mae: one of those little hula girls!
+<<set $office_04_done to 1>>
+===
+title: Office05
+tags: 
+colorID: 4
+position: 4069,-32
+---
+Mae: picture of some dang kids!
+<<set $office_05_done to 1>>
+===
+title: Office06
+tags: 
+colorID: 4
+position: 4319,-34
+---
+Mae: picture of a dang hound dog!
+<<set $office_06_done to 1>>
+===
+title: Office07
+tags: 
+colorID: 4
+position: 4555,-35
+---
+Mae: donut wolf reciept!
+Mae: ride that chariot, nancy.
+<<set $office_07_done to 1>>
+===
+title: Office08
+tags: 
+colorID: 4
+position: 4812,-28
+---
+Mae: big-ass stapler!
+<<set $office_08_done to 1>>
+===
+title: Locked01b
+tags: 
+colorID: 4
+position: 1747,-268
+---
+Mae: Locked!
+Gregg: UGH.
+===
+title: WeirdArt
+tags: 
+colorID: 4
+position: 2284,272
+---
+Mae: oh my god
+Mae: what *IS* this place?
+Gregg: Forbidden Zone.
+<<close>>
+<<cameraLookAt WeirdArt 3>>
+<<wait 2>>
+<<playAmbientSFX _AmbientSFX:amb_ibon 8>>
+Mae: are they starting like a weird art museum?
+Gregg: This is bad art.
+Mae: this is weird.
+Gregg: it’s art, dude.
+Mae: what the...
+Mae: no, this is familiar
+Mae: how do I know this?
+<<close>>
+// elevator sound! it's going down
+<<playAmbientSFX _AmbientSFX:elevator_run_other>>
+<<fadeOutAmbientSFX _AmbientSFX:elevator_run_other 10>>
+<<wait 3>>
+Gregg: Shit, dude! 
+Gregg: The elevator!
+Mae: Why do I know this painting?
+<<close>>
+<<flip Gregg -1>>
+<<run Gregg OffLeft>>
+<<wait 1>>
+Gregg: DUDE! COME ON!!!
+<<close>>
+<<wait 2>>
+// window breaking sound
+<<playAmbientSFX _AmbientSFX:window_smash>>
+<<wait 3>>
+Gregg: THE ELEVATOR’S COMING BACK UP!!!
+<<playAmbientSFX _AmbientSFX:elevator_run_other 10>>
+<<wait 2>>
+
+<<set $mansion_wall_left_top_done to 1>>
+<<stopFollowing Gregg>>
+<<run Mae OffLeft>>
+
+<<fadeOutMusic 2>>
+<<wait 1>>
+<<irisOut 1 wait>>
+<<scene MansionFireEscape -1>>
+===
+title: BasementIntro
+tags: bikeCrash
+colorID: 4
+position: 405,-370
+---
+//Mae and Gregg are laying on the floor, having fallen down the stairs//
+//Gregg: FRIGGIN’
+//Gregg: OWL!
+//Mae: Are you ok?
+//Gregg: I think so.
+//Gregg: That was dangerous!
+//Mae: I didn’t know owls attacked like that!
+//Mae: What was his effing deal?
+Gregg: You ok?
+Mae: Hurt my knee falling off the bike.
+Mae: reeeeally looking forward to all the stairs we’re gonna have to climb in here..
+Gregg: Alright well.
+//both get up//
+Mae: so we’re in the basement.
+Gregg: Where are we actually looking for, by the way?
+Mae: The thing I read said that sometimes when someone stays late
+Mae: They hear weird things.
+Mae: In something called The Map Room
+Mae: and in some off-limits area?
+Gregg: Technically all of this is an off-limits area right now.
+Mae: True, dude. True.
+
+===
+title: BetweenElevators
+tags: 
+colorID: 4
+position: 1204,-526
+---
+<<set $looked_between_elevators to 1>>
+Gregg: Dude, is that like... two elevators?
+Gregg: And not, like, old ones.
+Gregg: Locked, too.
+Mae: Geez. Maybe this place is all elevators.
+Gregg: Weird. Why would you have two?
+Mae: One for the ghosts, one for the normies.
+Gregg: Private rooftop ghost party.
+Mae: with a ghost pool.
+Gregg: i hope you get squished by the elevator.
+Mae: i hope your head gets stuck in the door
+Mae: and gets chopped off.
+Gregg: i hope you fall down an elevator shaft.
+Mae: i hope you get trapped in a dark elevator
+Mae: filled with water
+Mae: and an angry shark.
+Gregg: holy crap dude that's...
+Gregg: *shivers*
+===
+title: Stairs
+tags: 
+colorID: 4
+position: 1488,-490
+---
+Mae: “Closed For Insurance Purposes”
+Gregg: “Caution: Stairs Not For Climbing”
+Mae: “These Stairs Are Original To The House
+Mae: And Are Not Functional At This Time.”
+Gregg: What the hell are “nonfunctioning” stairs?
+Mae: So are we just supposed to like...
+Gregg: Levitate?
+Mae: Huh.
+<<set $mansion_stairs_done to 1>>
+===
+title: Elevator1-2
+tags: 
+colorID: 4
+position: 2002,-325
+---
+<<if $looked_between_elevators>>
+	Mae: Oh check it out.
+	Gregg: Elevator number 3
+	Mae: Looks like it’s not locked either.
+	Gregg: Elevators for miles, dude.
+	Mae: Yeah. This is weird.
+<<else>>
+	Mae: Hey. It’s an elevator.
+	Gregg: Alright.
+	Mae: Yeah that’s definitely gonna be easier than the stairs.
+<<endif>>
+<<set $elevator_1_2_done to 1>>
+===
+title: SecondFloor
+tags: 
+colorID: 4
+position: 1801,-533
+---
+<<fadeOutMusic 5>>
+<<walk Mae MaeWalkOut1 wait>>
+<<wait 3>>
+Mae: are you gonna go?
+Gregg: are *you* gonna go?
+Mae: why do i have to go first?
+Gregg: it’s your ghost!
+Mae: ok fine
+Gregg: ...itsnotevenreal...
+Mae: What?
+Mae: Dude, r-
+<<wait 1>>
+<<playOneShot event:/mansion/muffled_thump CreepyNoise1>>
+//interrupted by distant creepy noise (does it close the text window when it happens?). This noise is the animatronic guy upstairs (RUNNING GREGG THEME!) but we don’t know that yet, so it’s this distant muffled indistinct voice/thump that is spooky. Not like a scream or anything, just like a WMMWAAHMMWWAAAMUHHMUHH voice and then a BUMP. Shouldn’t come off as robotic until we’re in the same room as it, which will be in the Map Room//
+<<wait 2>>
+Mae: ...
+Gregg: What
+Gregg: the hell
+Gregg: was that?
+Mae: I don’t know.
+Mae: Is someone here?
+Gregg: No! Lights off, doors locked, no cars outside!
+Mae: ok so...
+Gregg: Do you want to go back?
+->Do you have your knife?
+	Gregg: Yeah.
+	Mae: Ok.
+	Gregg: Wait, is the assumption that I’m gonna stab someone?!
+	Gregg: Is that the plan now?!
+	Mae: No, I mean just in case.
+	Mae: I mean,
+->No.
+	Mae: And anyway
+Mae: the basement door locked behind us.
+Gregg: Oh right. Crap.
+Mae: Gonna have to find another way out too.
+Gregg: Hold on, let me add that to the list
+Gregg: Map Room, Forbidden Zone, Find A Way Out
+Mae: This is complicated.
+Gregg: Crimes.
+Mae: Crimes.
+<<playMusic spooky_mansion>>
+===
+title: FirstFloor
+tags: bikeCrash
+colorID: 4
+position: 959,-547
+---
+<<set $mansion_floor_chunk to 1>>
+Gregg: looks pretty empty
+Mae: and dark
+Gregg: hey, where’s the flashlight?
+Mae: crap
+Mae: I totally forgot about that.
+Mae: I.. uh... dropped it when we fell off the bike.
+Gregg: Dude.
+Mae: Shut up.
+Gregg: Alright well
+Gregg: I can see ok
+Mae: Me too. Let’s look around.
+<<set $mansion_basement_done to 1>>
+<<playMusic spooky_mansion>>
+===
+title: Attic
+tags: 
+colorID: 4
+position: 2013,266
+---
+<<fadeOutMusic 10>>
+<<walk Mae MaeWalkOut4 wait>>
+Mae: They have an elevator that goes from the basement to the attic
+Mae: with no stops in between.
+Mae: what the actual crap?
+Gregg: quick, let’s find a way out
+<<close>>
+<<createLocatorAt Gregg GreggReturn>>
+<<stopFollowing Gregg>>
+//Gregg runs to the left, waits for a sec and then runs back to you//
+<<run Gregg OffLeft wait>>
+<<playAmbientSFX _AmbientSFX:attic_window_locked>>
+<<wait 1>>
+<<run Gregg GreggRunBack wait>>
+Gregg: I FOUND A WINDOW!
+Gregg: I THINK THERE’S A FIRE ESCAPE!
+Gregg: window doesn’t open, though...
+//you are free to run into the weird room//
+<<generateFollowPoints Mae Gregg>>
+<<follow Gregg Mae>>
+===
+title: OfficeForLockpick
+tags: 
+colorID: 4
+position: 2676,-556
+---
+<<walk Mae MaeWalkOut2 wait>>
+Mae: Other people go on weird ghost hunting adventures
+Mae: and they’re looking for, like, cool shit...
+<<if $did_bea_investigation_quest>>
+	Mae: I guess I found an ancient skeleton body last night...
+	Gregg: yeah dude
+	Gregg: at least we haven’t met anyone dead yet
+<<endif>>
+//muffled soft noise below//
+Gregg: Ok well
+Mae: Yeah, let’s find a paperclip.
+===
+title: Elevator3
+tags: 
+colorID: 4
+position: 2241,-307
+---
+<<fadeOutMusic 5>>
+<<if $looked_between_elevators>>
+	Mae: Holy crap, is that elevator number 4?
+	Gregg: How?
+	Gregg: Why?
+	Mae: Granddad would be complaining about local tax dollars right now.
+<<else>>
+	Mae: Hey... it’s another elevator?
+	Gregg: Huh. Weird.
+<<endif>>
+<<close>>
+<<playOneShot event:/mansion/creepy_noise_02 CreepyNoise2>>
+<<wait 3>>
+Mae: AAAGH.
+Gregg: That is... not cool.
+Mae: Maybe it’s like
+Mae: someone left a phone here and that’s... uh
+Gregg: probably that.
+Mae: probably.
+Gregg: probably.
+Mae: Crimes.
+Gregg: Crimes.
+<<set $elevator_3_done to 1>>
+<<playMusic spooky_mansion>>
+===
+title: Elevator6-7
+tags: 
+colorID: 4
+position: 2485,-315
+---
+<<if $looked_between_elevators>>
+	Gregg: You’re kidding me.
+	Mae: Elevator number 5.
+<<else>>
+	Mae: They’ve uh...
+	Mae: They’ve got a lot of elevators in here.
+	Gregg: That’s really weird.
+<<endif>>
+Gregg: Hm.
+Gregg: Locked. 
+Mae: I think this is as high as we’re going without picking some locks, so
+Gregg: AW, CRAP
+Mae: You’re kidding me.
+Gregg: Dropped the lockpick stuff when we crashed the bike.
+Mae: You’re *KIDDING* me.
+//Gregg: I WAS BEING ATTACKED BY AN OWL!!!
+<<wait 2>>
+Mae: Ok.
+Mae: Sorry.
+Mae: Can you like, improvise?
+Gregg: Um. Need some pliers...
+Gregg: and...
+Gregg: you got a paperclip?
+Mae: Uh, no. Who walking around on earth today is carrying a paperclip?
+<<if $visited_office>>
+	Mae: Hey! Bet that office has one!
+	Gregg: i bet they use paper and need to like
+    Gregg: clip that shit?
+	Mae: nice nice nice.
+<<else>>
+	Gregg: Nobody.
+<<endif>>
+Mae: so like, ok, just so I got this straight now...
+Gregg: shoot
+Mae: Map Room, Forbidden Zone, Find A Way Out, Find Pliers, Find Paperclip
+<<fadeOutMusic 5>>
+Gregg: I think that’s it
+Mae: THIS IS SO STUPID!!!
+Mae: This is like work! This is all work!
+<<close>>
+<<playOneShot event:/mansion/creepy_noise SfxMuffledThump>>
+<<wait 3>>
+Gregg: Did you hear that?
+Mae: yeah...
+Mae: didn’t sound like a person
+Gregg: yeah. I don’t know what that was.
+Mae: ok well, let’s hurry.
+<<set $looking_for_lockpick to 1>>
+<<playMusic spooky_mansion>>
+===
+title: Basement
+tags: 
+colorID: 4
+position: 2249,-48
+---
+<<walk Mae MaeWalkOut3 wait>>
+Mae: Holy shit are we in the basement?
+Gregg: Oh ok.
+<<if $looked_between_elevators>>
+	Mae: oh hey! That’s where that elevator goes?
+	Gregg: this elevator.
+<<else>>
+	Mae: holy crap, i didn’t even notice this when we came in?
+	Gregg: huh. There’s another one over there too.
+<<endif>>
+Mae: yeah so...
+Gregg: this doesn’t make a lot of sense
+Mae: Maybe like
+Mae: this elevator is for loading things for the map room?
+Mae: and like... they use the other one to avoid the stairs...
+Mae: but even then,
+Gregg: Dude, none of this makes sense.
+<<close>>
+<<wait 3>>
+Gregg: It doesn’t look like whatever that is is following us down here.
+Mae: “whatever?” not “whoever?”
+Gregg: whoever
+Mae: are you coming around on this ghost thing?
+Gregg: ghosts don’t use elevators
+Mae: why? So a ghost can walk up stairs or something
+Mae: but elevators are out of the question?
+Gregg: ...
+Gregg: so the question I have is
+//camera pans over to other elevator//
+Gregg: where does that one go?
+<<close>>
+<<wait 2>>
+Mae: ok
+Gregg: crimes?
+Mae: crimes.
+===
+title: AutoStairs
+tags: 
+colorID: 4
+position: 673,-557
+---
+Mae: ok
+Gregg: here we go
+<<close>>
+<<walk Mae MaeUpStairs wait>>
+[[FirstFloor]]
+===
+title: ItsLocked
+tags: 
+colorID: 4
+position: 1543,202
+---
+<<set $mansion_unlock_00 to 1>>
+Mae: It’s locked!!!! Something locked it!!
+Gregg: SomeONE.
+Mae: We can go back upstairs?
+Mae: Actually no, we’re just gonna get chased around in a circle
+Mae: by whatever it is.
+Gregg: Whoever it is.
+Mae: DUDE.
+<<close>>
+<<generateFollowPoints Mae Gregg>>
+<<follow Gregg Mae>>
+//other elevator is now returning//
+Gregg: aaaaaaand...
+<<setAnimBool Gregg lockPicking 0>>
+Gregg: Got it!
+<<tell SceneLink8 Open>>
+Mae: We don’t know where this is gonna go.
+Gregg: Got any better ideas?
+Mae: DUDE. Clearly I don’t.
+<<fadeOutMusic 6>>
+<<tell SceneLink8 Activate>>
+===
+title: CellarDoor
+tags: 
+colorID: 4
+position: 1256,204
+---
+<<playAmbientSFX _AmbientSFX:basement_door_locked>>
+<<wait 2>>
+Mae: Stuck!
+Mae: we are so screwed!
+Gregg: i'm working i'm working!
+<<set $mansion_cellar_door_done to 1>>
+===

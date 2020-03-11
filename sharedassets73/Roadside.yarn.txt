@@ -1,0 +1,170 @@
+title: EnterLevel
+tags: 
+colorID: 4
+position: -150,-17
+---
+[[FQ400]]
+===
+title: FQ400
+tags: 
+colorID: 4
+position: 195,36
+---
+<<cameraLookAt CameraArgument>>
+Angus: because it's a flat.
+Angus: you don't drive on a flat.
+Gregg: why?
+Mae: yeah why?
+Angus: ...
+Angus: you just don't! it messes up the wheel or something!
+Mae: how do you know so much about cars?
+Gregg: we can fix it!
+Angus: with what? 
+Angus: we gonna get some sticks?
+Mae: that's silly.
+Gregg: no, i mean...
+Gregg: people fix tires!
+Gregg: it's a thing people do!
+Angus: it's a thing people do
+Angus: when they have a goddamn tire!
+Mae: guys,
+Gregg: why are you being such a dick?
+Angus: why am i the one
+Angus: that has to be the responsible one!
+Mae: guys!
+Angus: WHAT, MAE!?!?!?
+Gregg: Don't yell at Mae!!!
+Mae: AAAAgh I’m gonna wander.
+Angus: Fine!
+Gregg: Fine!
+Mae: OK AAAGH
+<<cameraFollowPlayer 1>>
+//now free to wander and stuff. Look around and then talk to Gregg and Angus,
+// who are having some sort of auto-rolling argument or emoticon convo or something
+<<runDialogue BackgroundDialogue ArgumentLoop>>
+===
+title: FQ401
+tags: 
+colorID: 4
+position: 596,35
+---
+<<stopDialogue BackgroundDialogue>>
+Mae: So what are we doing?
+Angus: Well, I’m trying to figure out what we’re gonna do.
+Gregg: We could call... someone?
+Angus: Oh, do we suddenly carry phones?
+Angus: because there’s magically signal now?
+Angus: in this piece of shit town?
+Gregg: Geez!
+Mae: Ok. well.
+<<set $roadside_trunk to 1>>
+<<setCanInteract Gregg 0>>
+<<setCanInteract Angus 0>>
+<<runDialogue BackgroundDialogue ArgumentLoop>>
+===
+title: Trunk
+tags: 
+colorID: 4
+position: 1016,47
+---
+<<stopDialogue BackgroundDialogue>>
+<<cameraLookAt CameraArgument 1>>
+<<closeAll>>
+Mae: Hey dinguses!
+<<close>>
+<<wait 1>>
+<<runNextLinesTogether 2>>
+Gregg: WHAT
+Angus: WHAT
+Mae: There’s a spare tire back here.
+Gregg: Oh! Oh nice!
+Angus: That’s one good thing.
+Mae: Anyone know how to like
+Mae: do the tire?
+Angus: Yeah.
+Mae: Can I help?
+Angus: No.
+Gregg: Dude.
+Angus: Mae, you’re not a bad person
+Angus: but I do not trust you with any part of this process.
+<<close>>
+<<wait 2>>
+Mae: Geez, man.
+Gregg: Geez.
+<<close>>
+<<wait 4>>
+<<irisOut 1 wait>>
+<<scene DonutWolfInterior>>
+===
+title: Gregg
+tags: 
+colorID: 4
+position: 464,-256
+---
+[[FQ401]]
+===
+title: Angus
+tags: 
+colorID: 4
+position: 705,-252
+---
+[[FQ401]]
+===
+title: ArgumentLoop
+tags: 
+colorID: 4
+position: 371,272
+---
+Angus:{emote=cloud_lightning}
+Gregg:{emote=spiral}
+Angus:{emote=heart}
+Gregg:{emote=heartbreak}
+Angus:{emote=eyecry}
+[[ArgumentLoop]]
+===
+title: LeftOfCar.1
+tags: 
+colorID: 4
+position: 1408,76
+---
+Mae: geez.
+Mae: look at those woods.
+Mae: this is like the perfect place to dump a body.
+Mae: that’s tough to find.
+Mae: good body-dumpin’ woods.
+===
+title: LeftOfCar.2
+tags: 
+colorID: 4
+position: 1680,78
+---
+Mae: could go see if there are any bodies in there.
+<<wait 2>>
+Mae: eh.
+<<end>>
+===
+title: RightOfCar.1
+tags: 
+colorID: 4
+position: 1405,350
+---
+Mae: ok what can fix a flat tire
+Mae: uh.
+Mae: sticks
+Mae: rocks
+Mae: leaves
+Mae: wood
+Mae: dirt
+Mae: maybe i can whittle a wrench out of a log
+===
+title: RightOfCar.2
+tags: 
+colorID: 4
+position: 1679,355
+---
+Mae: wonder if i could like
+Mae: train an owl
+Mae: to do owl tricks.
+Mae: no! Focus, mae!
+<<end>>
+===

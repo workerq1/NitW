@@ -1,0 +1,502 @@
+title: Scriggins_A3D1_old
+tags: 
+colorID: 0
+position: -31,702
+---
+Mae: Oh god, what are you doing here?
+SteveScriggins: Lotta copper in these walls.
+Mae: What even is this place?
+SteveScriggins: Back when they first got internet in Possum Springs
+SteveScriggins: it came outta here.
+Mae: Whoa.
+SteveScriggins: Just junk now.
+===
+title: Scriggins_A3D2_old
+tags: 
+colorID: 0
+position: 196,758
+---
+Mae: So what do you get for this?
+SteveScriggins: Paid by weight.
+SteveScriggins: I got a guy who buys it.
+Mae: "You got a guy?"
+===
+title: Scriggins_A3D4_old
+tags: 
+colorID: 0
+position: 649,1066
+---
+Mae: Hey dickhead.
+SteveScriggins: I'm genuinely menacing today.
+Mae: Ok I'm actually leaving now.
+===
+title: Scriggins_A3D3_old
+tags: 
+colorID: 0
+position: 394,909
+---
+Mae: I thought your brother did demolition?
+SteveScriggins: Yeah, he has his own crew.
+Mae: Then why are you doing this?
+SteveScriggins: He's got his job, I got mine.
+Mae: This is your job?
+SteveScriggins: Oh my god shut up.
+===
+title: Sadie_A3D3_old
+tags: 
+colorID: 0
+position: 844,689
+---
+Mae: This place used to be a thing, huh?
+Sadie: Yeah definitely. A total thing.
+Mae: Wow.
+Sadie: That band from astral mode, they were the house band
+Sadie: back a very long time ago.
+Mae: Huh.
+Sadie: They all went a little nuts by the end.
+Sadie: Place closed down in the 80s.
+Sadie: They talked about reopening it for a long time
+Sadie: but now that the owner's gone wherever he went
+Sadie: whole place is just sitting here
+Sadie: being the largest birdhouse in Possum Springs.
+===
+title: Sadie_A3D2_old
+tags: 
+colorID: 0
+position: 1075,628
+---
+Mae: So you play (insert instrument)?
+Sadie: I sure do.
+Mae: Why here?
+Sadie: Been coming here since I was 14, around your age.
+Mae: I'M 20!!!!
+Sadie: Oh. Ok.
+Sadie: Then (life experiences that seemed like the end of everything)
+Sadie: and I started coming back after work.
+Mae: That's depressing.
+Sadie: No, it's not.
+===
+title: SteveScriggins
+tags: 
+colorID: 4
+position: -294,671
+---
+<<if $steve_scriggins_birdland_sequence is 0>>
+    <<if $did_gregg_friendship_quest_1>>
+    	Mae: Oh. It’s Steve.
+    	SteveScriggins: What do you want?
+    <<else>>
+    	SteveScriggins: What do you want?
+    	Mae: Holy crap.
+    	Mae: Steve? Steve Scriggins?
+    	SteveScriggins: Hey. I remember you.
+    	Mae: Yeah... uh... same.
+    <<endif>>
+    Mae: What are you doing?
+    SteveScriggins: Side job.
+    Mae: What’s your regular job?
+    SteveScriggins: I’m on my bro’s construction crew.
+    Mae: So what’s your side-job?
+    SteveScriggins: stuff on the ground over there?
+    SteveScriggins: that's copper.
+    SteveScriggins: building's full of it
+    SteveScriggins: and nobody using it
+    Mae: so you're like
+    Mae: pulling pipes out of the walls?
+    SteveScriggins: wires too. some wires.
+    Mae: and--?
+    SteveScriggins: geez you're a fast learner.
+    SteveScriggins: YOU SELL IT.
+    Mae: that isn't really a job.
+    SteveScriggins: hell it ain't
+    SteveScriggins: gotta get it out of the walls
+    SteveScriggins: gotta saw up the pipes sometimes
+    Mae: ok. well,
+    SteveScriggins: gotta strip the plastic off the wires
+    SteveScriggins: and sort 'em into piles by quality
+    SteveScriggins: cuz not everyone'll take stuff that ain't grade A
+    Mae: well that's all really interesting
+    SteveScriggins: there's other stuff too you can grab in places like this
+    SteveScriggins: doorknobs and stuff
+    Mae: i'm gonna go now but keep talking
+    SteveScriggins: ...
+    <<set $steve_scriggins_birdland_sequence += 1>>
+<<elseif $steve_scriggins_birdland_sequence is 1>>
+    Mae: How's your non-job going?
+    SteveScriggins: do you even have a job?
+    SteveScriggins: like any kinds of job?
+    Mae: listen, I just got back, so
+    SteveScriggins: have you *EVER* had a job?
+        -> I bagged groceries for a while when I was at college.
+            SteveScriggins: how long is a while?
+            Mae: ...
+            Mae: 2 months?
+            SteveScriggins: *snort*
+            Mae: what?
+            SteveScriggins: what, was it too hard for you?
+            Mae: ugh. bye steve.
+        -> Actually I have a job right now. I'm a manager.
+            SteveScriggins: what do you manage?
+            Mae: I manage not to puke when I see your face!
+            Mae: heh heh heh
+            SteveScriggins: funny.
+            Mae: you walked into that
+            SteveScriggins: i sure did.
+    <<set $steve_scriggins_birdland_sequence += 1>>
+<<elseif $steve_scriggins_birdland_sequence is 2>>
+    Mae: Hey Sturve. Sturve Skurgrns.
+    SteveScriggins: mmmhmmm
+    Mae: Still ripping shit out of the walls?
+    SteveScriggins: yep
+    Mae: preeeeetty dumb
+    SteveScriggins: geez man shut up
+    SteveScriggins: you *NEVER* stop talking
+    SteveScriggins: why do you even come around here?
+    SteveScriggins: we aren't friends
+    SteveScriggins: and why do you always talk to me
+    SteveScriggins: like i'm some kind of asshole?
+    Mae: Steve, you *ARE* an asshole.
+    SteveScriggins: What is your problem with me?
+    Mae: Back in school? You were such a bully!
+    Mae: You made people's lives miserable!
+    Mae: and now, years later, you're what-
+    Mae: ripping apart buildings for scrap?
+    Mae: like, actively destroying the town?
+    SteveScriggins: ok well you can just stop right there
+    SteveScriggins: you know the only reason anyone in town remembers you
+    SteveScriggins: is because you nearly killed a kid, right?
+    SteveScriggins: like, his face is still kinda messed up!
+    SteveScriggins: i never did *ANYTHING* like that
+    SteveScriggins: and you and Gregg have smashed plenty of shit
+    SteveScriggins: all over the place, just for fun
+    SteveScriggins: you think i'd be in here doing this if i didn't need the cash?
+        ->I-
+        ->uh
+    SteveScriggins: you're like my niece, a big stupid baby
+    SteveScriggins: just walking around bumping into stuff.
+    SteveScriggins: and yeah i know what people say about me
+    SteveScriggins: and yeah i probably did some bad stuff
+    SteveScriggins: but at least *I* can admit that.
+    SteveScriggins: you're no better than me.
+    SteveScriggins: you're just more in love with yourself.
+    SteveScriggins: or you're stupider.
+    SteveScriggins: can't say which.
+    SteveScriggins: don't care.
+    Mae: Ok, I think it's-
+    SteveScriggins: SHUT. UP.
+    SteveScriggins: don't test me, ok?
+    SteveScriggins: don't get near a man when he's like this.
+    Mae: HA.
+    Mae: or what?
+    Mae: or effing what, steve?
+    SteveScriggins: ...
+    Mae: ...
+    SteveScriggins: get out of here. let me work.
+    SteveScriggins: and don't come back.
+    <<set $steve_scriggins_threat to 1>>
+    <<set $steve_scriggins_birdland_sequence += 1>>
+<<endif>>
+
+<<set $steve_scriggins_done to 1>>
+===
+title: Sadie
+tags: 
+colorID: 4
+position: -296,427
+---
+<<if $did_birdland_quest and $act is 3 and $day is 4>>
+	Mae: Hey!
+	Sadie: Hey.
+    <<startInteractingWithPlayer Saleem>>
+	Saleem: Hello.
+	Mae: You guys gonna play together?
+	Sadie: Yeah ha ha
+    Saleem: Thanks for making this happen, kid.
+    Mae: ha ha wow
+    Mae: ...
+    Mae: ...
+    Mae: huh.
+    Sadie: what?
+	Mae: I just realized that like...
+	Mae: I did something helpful.
+	Mae: Like I came up with a plan and did something good.
+	Saleem: Is that strange?
+	Mae: I feel like I just stumble into things all the time
+	Mae: introducing you two is like...
+	Mae: I *MEANT* to help out two strangers. And I did.
+	Mae: And now you’re gonna play together
+	Mae: and fall in love...
+	Sadie: What? No.
+	Saleem: I’m in a long term monogamous relationship.
+	Sadie: I am not in the market.
+    Sadie: And my son takes up most of my attention.
+	Mae: Oh.
+	Mae: Did I make it weird?
+	Saleem: You made it weird.
+	Sadie: Very weird.
+    Mae: dammit
+    <<unlockDoodle BirdlandComplete>>
+    <<stopInteractingWithPlayer Saleem>>
+    <<set $birdland_can_interact_posters to 1>>
+    <<unlockAchievement Finish_Birdland_Quest>>
+<<else>>
+	<<if $sadie_sequence is 0>>
+		Mae: Um. Hello.
+		Sadie: Hello.
+        Mae: I'm Mae.
+        Sadie: Sadie.
+        Mae: what are you doing up here?
+        Sadie: what are *YOU* doing up here?
+            ->exploring
+                Sadie: same way I found it.
+            ->i mean... do i need a reason?
+                Sadie: nope.
+        Sadie: did you know
+        Sadie: this the only stage in town.
+            ->are you on stage a lot?
+                Sadie: nope. not for a long, long time at least
+            ->that's not true!
+                Mae: we just did a play at the hardware store!
+                Mae: we used the counter as a stage!
+                Sadie: ok, this is the only stage in town
+                Sadie: that's only a stage.
+        Mae: looks like no one's played here in a long time
+        Sadie: yeah, been a few decades.
+        Mae: are you gonna like
+        Mae: put on something here?
+        Sadie: oh, i don't think anyone's gonna be putting anything on here
+        Sadie: at least not anytime soon.
+        Sadie: no electricity, probably structurally unsound.
+        Sadie: infested with rats and pigeons.
+        Mae: other than the electricity that's like most of the town.
+        Sadie: ha ha ha
+        Sadie: that it is. that it is.
+		<<set $sadie_sequence += 1>>
+	<<elseif $sadie_sequence is 1>>
+		Mae: Hi again.
+		Sadie: It’s you, kid.
+		Mae: I’m actually 20.
+		Sadie: I’m 38. You’re a kid.
+		Mae: Ok.
+		Mae: How'd you find this place?
+        Sadie: I mean I knew this was up here since I was a kid
+        Sadie: but only got up the nerve to break in recently
+        Mae: why is that?
+        Sadie: not getting any younger
+        Sadie: and this place could fall in any day
+        Sadie: you get to a point in life
+        Sadie: where the number of first-evers gets lower
+        Sadie: and the number of never-agains gets higher
+        Sadie: i dunno
+        Mae: i know what you mean
+        Sadie: no you don't.
+		<<set $sadie_sequence += 1>>
+	<<elseif $sadie_sequence is 2>>
+		Mae: do you have a job or something?
+		Sadie: i did.
+        Sadie: had some troubles, though.
+        Sadie: living with my parents for now
+        Sadie: me and my kid
+        Sadie: so i got a little free time.
+        Mae: same with me, actually.
+        Mae: except no kid.
+        Sadie: small world.
+		<<set $sadie_sequence += 1>>
+	<<endif>>
+
+	<<if $sadie_saleem_sequence is 0 and $saleem_sequence is 1>>
+		Mae: Funny.
+		Sadie: What?
+		Mae: I just met this guy over by the church steps
+        Mae: he was also hanging by himself
+		Mae: and playing music.
+		Sadie: Small world.
+		Mae: Heh heh. Well...
+		Mae: Small town at least.
+		Sadie: Definitely.
+		Mae: See ya.
+		<<set $sadie_saleem_sequence += 1>>
+	<<elseif $sadie_saleem_sequence is 1 and $saleem_sequence is 2>>	
+		Mae: you know, that guy across town?
+		Sadie: what guy?
+		Mae: they guy I told you about ?
+		Sadie: yeah
+		Mae: he seems lonely
+        Mae: and you seem lonely
+        Sadie: um
+        Mae: you two could play together!
+        Sadie: uh...
+        Mae: did i make this weird?
+        Sadie: no, it's fine.
+        Sadie: what's he play?
+        Mae: violin? fiddle? are they the same?
+		Sadie: huh. ok.
+        Sadie: Well, if you see him again, tell him to stop by.
+		Sadie: unless he’s a creep or something
+		Mae: he doesn’t seem like a creep.
+		Sadie: well, I got mace.
+		<<set $will_complete_birdland_quest to 1>>
+		<<set $sadie_saleem_sequence += 1>>
+	<<endif>>
+<<endif>>
+
+<<set $sadie_done to 1>>
+===
+title: InitLevel_A3D2
+tags: 
+colorID: 4
+position: -8,-25
+---
+<<hide Saleem>>
+===
+title: InitLevel_A3D3
+tags: 
+colorID: 4
+position: 292,-25
+---
+<<hide Saleem>>
+===
+title: InitLevel_A3D4
+tags: 
+colorID: 4
+position: 565,-21
+---
+<<if $did_birdland_quest>>
+    <<show Saleem>>
+    <<setCanInteract Saleem 0>>
+<<else>>
+    <<hide Saleem>>
+<<endif>>
+===
+title: InteractPosters
+tags: 
+colorID: 4
+position: -12,459
+---
+//this interaction is enabled only after talking to them after their quest is completed//
+<<startInteractingWithPlayer Sadie>>
+<<startInteractingWithPlayer Saleem>>
+Mae: This wasn’t here before.
+Sadie: Yeah! Found them backstage.
+Saleem: Can’t believe they’re still intact.
+Saleem: Must be 60... 70 years old now?
+Mae: “The Original Deep Hollow Hollerers”
+Sadie: Try saying *that* three times fast
+    ->Deep Hollow Hollerers
+    	Mae: Deep Hollow Hollellers
+    ->Deep Hollow Hollerers Deep Hollow Hollerers
+    	Mae: Deep Hollow Hollellers Deep Hollol Horellers
+    ->Deep Hollow Hollerers Deep Hollow Hollerers Deep Hollow Hollerers
+		Mae: Deep Hollow Hollellers Deep Hollol Horellers Deep Hloler Hollerwers
+Saleem: *ahem*
+Saleem: DEEP. HOLLOW. HOLLER-ERS.
+Sadie: D. H. H.
+Mae: Who are they?
+Saleem: Geez kid, how long have you lived here?
+	->My whole life!
+		Saleem: Well then you got no excuse.
+	->I’m 20.
+		Sadie: You look younger.
+		Sadie: You’ll appreciate that later in life.
+Saleem: The Deep Hollor Horrelors - goddammit
+Mae: HA HA.
+Saleem: The D.H.H. were *THE* premier dance band in Deep Hollow County
+Sadie: This was their club.
+Sadie: Four of ‘em. Violin, sax, tuba, accordion.
+Saleem: Polkas, Waltzes, old tunes from the hills.
+Saleem: 20’s through the 40’s.
+Saleem: Took this town through some hard times.
+Saleem: They were on that famous anthology of appalachian music from the 60s.
+Sadie: Yeah. Big piece of local history.
+->What happened to them?
+	Sadie: oh yeah
+	Sadie: weird story there
+->What happened to this place?
+	Sadie: After they were found out in the woods
+	Sadie: it passed from owner to owner for a long time
+	Mae: “Found”? “Out in the woods?”
+	Sadie: oh yeah. Uh.
+	Sadie: Weird story there.
+Saleem: They got spooky.
+Sadie: or kinda religious?
+    ->spooky?
+        Saleem: yeah they talked about taking trips out of their bodies
+        Saleem: and were playing for the ghosts that have been through here.
+        Mae: huh.
+        Saleem: folks thought they were just being weird and poetic but
+    ->religious
+        Sadie: yeah they started talking about how
+        Sadie: they were playing for gods?
+        Sadie: but like gods nobody knew about?
+        Sadie: and they they were taking trips out of their bodies?
+Saleem: who knows. They were also getting kind of old.
+Mae: that's weird.
+Sadie: In the end they stopped coming here
+Sadie: and started playing out in the woods
+Sadie: on these little… band box thingies they built
+Saleem: Or at least that’s what people figured
+Saleem: In November of ‘49 they found them dead way out there
+Saleem: Died of exposure!
+Saleem: Frost froze ‘em to their instruments!
+Sadie: Had to peel ‘em off the ground.
+Saleem: One of the great wtf moments in Possum Springs history.
+Mae: Holy crap.
+Sadie: How have you not heard this story?
+Mae: No it’s just...
+Mae: I...
+Mae: nothing. The world is big and weird.
+Saleem: After they were gone this place’s days were numbered.
+Saleem: And now! for the first time in god knows how long!
+Saleem: The Husker Bee Ballroom shall hear music again!
+Sadie: Ha ha ha.
+Saleem: And it’s a full house! Pigeons appreciate quality!
+Mae: This makes me happy.
+Sadie: Save the happiness for when we’re good.
+Saleem: Yeah. Let’s get good.
+Sadie: This place could use some good.
+Saleem: Well, that's one thing about music-
+Saleem: it fills empty space!
+<<stopInteractingWithPlayer Saleem>>
+<<stopInteractingWithPlayer Sadie>>
+<<set $birdland_interact_posters_done to 1>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: 373,216
+---
+<<setSpriteLayer Saleem BG1>>
+<<setSpriteLayer Sadie BG1>>
+<<unlockDoodle Birdland>>
+===
+title: LottaBirds
+tags: 
+colorID: 0
+position: 804,223
+---
+Mae: holy shit. That’s a lot of birds.
+<<end>>
+===
+title: PeopleUsedToComeHere
+tags: 
+colorID: 0
+position: 1052,220
+---
+Mae: wow.
+Mae: people used to like
+Mae: come here.
+<<end>>
+===
+title: Pentagram
+tags: temp
+colorID: 4
+position: -347,141
+---
+Mae: Whoa. Pentagram.
+Mae: doesn't prove anything, weird teens.
+<<wait 2>>
+Mae: Spooky though.
+<<set $found_pentagrams += 1>>
+<<unlockPentagramDoodle>>
+<<set $birdland_pentagram_done to 1>>
+===

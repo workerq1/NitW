@@ -1,0 +1,214 @@
+title: Switch00
+tags: 
+colorID: 4
+position: -478,437
+---
+<<playOneShot event:/mansion/switch_on Mae>>
+<<trigger Map Button1>>
+<<set $map_switch_0_done to 1>>
+<<set $map_switches += 1>>
+Gregg: oh hey it's my neighborhood.
+Mae: and the highway.
+Mae: no ham panther, though.
+Gregg: must be old.
+Mae: Oh wait.
+Mae: we're in the map room.
+Gregg: well let's be extra careful.
+Mae: ok.
+Mae: crimes.
+Gregg: crimes.
+[[CheckSwitches]]
+===
+title: Switch01
+tags: 
+colorID: 4
+position: -256,439
+---
+<<playOneShot event:/mansion/switch_on Mae>>
+<<trigger Map Button2>>
+<<set $map_switch_1_done to 1>>
+<<set $map_switches += 1>>
+Mae: there's the graveyard
+Gregg: and the building we're in RIGHT NOW.
+Mae: spooky.
+Mae: like we're being watched.
+[[CheckSwitches]]
+===
+title: Switch02
+tags: 
+colorID: 4
+position: -27,432
+---
+<<playOneShot event:/mansion/switch_on Mae>>
+<<trigger Map Button3>>
+<<set $map_switch_2_done to 1>>
+<<set $map_switches += 1>>
+Mae: hey it's my neighborhood!
+Gregg: wow there's a tiny you in there i bet.
+Mae: whoa. that's...
+Mae: sorry, that like made me dizzy.
+Gregg: i'm dangerous.
+[[CheckSwitches]]
+===
+title: Switch03
+tags: 
+colorID: 4
+position: 197,449
+---
+<<playOneShot event:/mansion/switch_on Mae>>
+<<trigger Map Button4>>
+<<set $map_switch_3_done to 1>>
+<<set $map_switches += 1>>
+Gregg: good ol' towny centry.
+Mae: towne centre, the centre of our towne.
+Gregg: quite.
+[[CheckSwitches]]
+===
+title: Switch04
+tags: 
+colorID: 4
+position: 426,453
+---
+<<playOneShot event:/mansion/switch_on Mae>>
+<<trigger Map Button5>>
+<<set $map_switch_4_done to 1>>
+<<set $map_switches += 1>>
+Mae: aw. i think that's the old food donkey.
+Gregg: and the woods your ghost guy ran into?
+Mae: yep.
+Gregg: he sure gets around for a dead guy.
+Mae: that he does.
+[[CheckSwitches]]
+===
+title: Statue
+tags: 
+colorID: 4
+position: 789,420
+---
+<<trigger MansionRobot ComeToLife>>
+<<wait 4>>
+Mae: Augh it's alive!
+Gregg: geez that thing's ugly.
+Mae: Well this was the source of the noise I guess.
+Gregg: Mystery solved.
+Gregg: wait
+Gregg: no
+Gregg: if it was making that noise that means
+Gregg: that someone was in here
+Gregg: while we were walking around.
+Mae: ohhhh
+Mae: shit.
+Gregg: yeah, let's maybe go.
+Mae: no! we have to find... stuff!
+Gregg: oh, stuff?
+Gregg: dude, we're gonna get tasered or something
+Gregg: by a big bulking uh...
+Mae: historical society employee.
+Gregg: whatever. i am blaming you if this goes bad.
+Mae: fine!
+Gregg: fine!
+<<wait 2>>
+Gregg: i'm sorry dude.
+Mae: me too.
+Gregg: i'd never turn you in.
+Mae: me either.
+Gregg: crimes.
+Mae: crimes.
+<<set $mansion_checked_robot to 1>>
+[[CheckCanLeave]]
+===
+title: Toolbox
+tags: 
+colorID: 4
+position: 1134,426
+---
+Mae: Hey check it out! Toolbox.
+Gregg: Repair guy musta left for the night halfway through fixing him.
+Mae: And hey- some pliers!
+Gregg: Oh cool cool cool
+Gregg: I was thinking we’d never find them and just like
+Gregg: starve in here
+Mae: ...
+Mae: There’ll be people here in the morning.
+Gregg: Oh right.
+<<if $has_paperclip>>
+	Gregg: Alright so we got the stuff.
+	Gregg: Let’s get that elevator open and see what’s upstairs.
+	Mae: Gonna guess it’s like 12 more elevators
+<<else>>
+	Gregg: Sooo... we need a paperclip.
+	<<if $visited_mansion_office>>
+		Mae: let’s check out the boring office
+		Mae: for the boring paperclip
+		Mae: probably just find like 7 more elevators
+	<<else>>
+		Mae: i’m sure there’s a paperclip SOMEWHERE in this place
+		Mae: they probably have like
+		Mae: an office or something?
+		Gregg: probably with like 9 elevators in it
+	<<endif>>
+<<endif>>
+
+<<set $has_pliers to 1>>
+[[CheckCanLeave]]
+===
+title: InitLevel
+tags: 
+colorID: 4
+position: -1021,399
+---
+<<generateFollowPoints Mae Gregg>>
+<<follow Gregg Mae>>
+<<setCanInteract Gregg 0>>
+<<flip Gregg -1>>
+<<flip Mae -1>>
+===
+title: CheckSwitches
+tags: 
+colorID: 0
+position: 26,749
+---
+<<if $map_switches is 1>>
+    <<tell _AmbientSFX:map_buzz_loop Play>>
+<<endif>>
+<<if $map_switches >= 5 and $did_mansion_map_room_train is 0>>
+    <<set $did_mansion_map_room_train to 1>>
+    <<flipTo Mae CameraMap>>
+    <<flipTo Gregg CameraMap>>
+    <<close>>
+    <<cameraLookAt CameraMap 2>>
+    <<fadeOutMusic 4>>
+    <<wait 4>>
+    <<playMusic mansion_train>>
+    <<trigger Map MapDance>>
+    <<wait 16>>
+    <<playOneShot event:/mansion/creepy_noise_inroom SfxNoise>>
+    <<trigger CornerLight Go>>
+    <<wait 5>>
+    Mae: That creepy noise again.
+    Gregg: In this room.
+    <<cameraFollowPlayer 1>>
+    <<set $mansion_gotta_check_robot to 1>>
+<<endif>>
+===
+title: ExitLevel
+tags: 
+colorID: 4
+position: -819,631
+---
+<<set $map_switch_0_done to 0>>
+<<set $map_switch_1_done to 0>>
+<<set $map_switch_2_done to 0>>
+<<set $map_switch_3_done to 0>>
+<<set $map_switch_4_done to 0>>
+<<set $map_switches to 0>>
+===
+title: CheckCanLeave
+tags: 
+colorID: 0
+position: 984,722
+---
+<<if $mansion_checked_robot and $has_pliers>>
+    <<set $mansion_gotta_check_robot to 0>>
+<<endif>>
+===

@@ -1,0 +1,126 @@
+title: Trigger
+tags: 
+colorID: 0
+position: 371,228
+---
+<<playMusic cat_god 10>>
+Mae: Hello?
+<<close>>
+<<wait 4>>
+Mae: Can you talk?
+CatGod: Yes.
+Mae: For some reason, you’re the first thing here I’ve thought to talk to.
+<<close>>
+<<wait 4>>
+Mae: Are you... god?
+CatGod: No...
+Mae: oh
+<<close>>
+<<wait 2>>
+Mae: So,
+CatGod: Seconds ago little creatures are coming
+CatGod: and they are asking if I am god
+CatGod: and I am asking what god is
+CatGod: and they are telling me
+CatGod: and I am not this god
+CatGod: and this god is nowhere
+->well, you can’t see god
+	CatGod: you are seeing what you are wishing, little creature
+->well, that’s where faith comes in i guess
+	CatGod: little creatures are explaining faith
+	CatGod: and moments ago is the beginning
+	CatGod: and i am here then and here now
+	CatGod: and there is nowhere for god to be hiding
+Mae: ...
+Mae: so what am i doing here?
+CatGod: monstrous existence
+Mae: no, i mean what am I doing *here*?
+Mae: what are you? What are those other giant animals?
+Mae: have i been seeing ghosts?
+Mae: there were like bits of the world...
+Mae: i think i was on a train, but it was like a town?
+Mae: it’s all-
+Mae: ugh. I lost it.
+<<close>>
+<<wait 2>>
+Mae: Ok, so-
+CatGod: A great beast is walking through the sands
+CatGod: and they are climbing into the air
+CatGod: and now they are making a tear
+CatGod: and now they are gone
+CatGod: and now you are here
+->what?
+->a... tear?
+	CatGod: With their hooves
+	CatGod: they are making a tear
+CatGod: little creatures are wandering through the air
+CatGod: and they are dragging in places and echoes of lives
+CatGod: and they are asking me about god
+Mae: my head hurts
+CatGod: i am going to tell you something, little creature
+CatGod: you are swimming further and further out to sea
+CatGod: and beyond are things blind and terrible
+CatGod: and i am showing you now
+<<close>>
+<<playMusic unknowable 6>>
+//flash to horrifying things//
+<<trigger AstralAct3Day2 BeyondThings>> 
+<<wait 9>>
+<<fadeOutMusic 3>>
+<<wait 3>>
+<<playMusic cat_god 10>>
+Mae: aaagh
+Mae: oh god. oh god.
+CatGod: they are blind, but they are seeing you
+CatGod: and you are coming to them
+CatGod: after this you are not returning here
+CatGod: i am climbing into the air
+CatGod: and closing the sky
+->why?
+	CatGod: I am tired of speaking with little creatures
+	CatGod: I am tired of speaking of god
+->closing the sky?
+	CatGod: yes
+Mae: ok...
+CatGod: I will tell you a second thing
+CatGod: There is a hole at the center of everything
+CatGod: and it is always growing
+CatGod: between the stars i am seeing it
+CatGod: it is coming	
+CatGod: and you are not escaping
+CatGod: and the universe is forgetting you
+CatGod: and the universe is being forgotten
+CatGod: and there is nothing to remember it
+CatGod: not even the things beyond
+CatGod: and now there is only the hole
+Mae: so... does anything mean anything?
+CatGod: this is not a question worth answering
+-> what about my home? What about my friends?
+	CatGod: soon they are dying
+	CatGod: soon they are rotting
+-> what about trees in the fall? What about the leaves?
+	CatGod: bare existence, meaning nothing
+CatGod: you are atoms
+//begin blurry fade to black//
+CatGod: and your atoms are not caring if you are existing
+CatGod: your atoms are monstrous existence
+Mae: then why am I here goddammit? Why was i chosen to see all of this?
+Mae: where is this going?
+CatGod: little creature, you are not chosen
+CatGod: there is no one to choose you
+CatGod: this is going nowhere
+CatGod: we are not meeting again
+//fully black now//
+CatGod: and the universe is forgetting you
+CatGod: and I am remembering you
+CatGod: but not because I am caring
+CatGod: the beginning is moments ago
+CatGod: the end is moments away
+CatGod: there is no time to forget
+CatGod: before all is forgotten
+CatGod: goodbye, little creature
+<<close>>
+<<fadeOut 5 wait>>
+<<wait 3>>
+<<endDay>>
+===

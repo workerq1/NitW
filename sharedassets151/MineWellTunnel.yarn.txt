@@ -1,0 +1,229 @@
+title: InitLevel
+tags: 
+colorID: 5
+position: 460,-1880
+---
+<<flip Mae -1>>
+<<set $death_walk to 0>>
+<<playIdleAnimationPlayer>>
+<<playerCanJump 0>>
+<<flip Gregg -1>>
+<<flip Bea -1>>
+<<flip Angus -1>>
+<<setCanInteract Angus 0>>
+<<setCanInteract Bea 0>>
+<<setCanInteract Gregg 0>>
+===
+title: WellBottom
+tags: 
+colorID: 5
+position: 926,-1010
+---
+<<cameraLookAt CameraWellBottom 2>>
+<<setSpriteLayer Angus AngusFG>>
+<<walk Gregg GreggBottom2 1>>
+<<walk Angus AngusBottom2 1>>
+<<walk Bea BeaBottom2>>
+<<waitForMove Bea>>
+//when you walk up to friends //
+Mae: what is this?
+Bea: might be a vent or something
+Bea: keep the miners from suffocating way back when
+Bea: looks old enough at least
+Mae: ?
+Bea: brochure
+Gregg: HELLO!!!!
+Gregg: WE’RE DOWN HERE!!!!!
+Gregg: DON’T ASK US WHY PLEASE
+Angus: Could get lucky and someone’s out here in the woods at night.
+Mae: I... I can try to make it out
+Angus: no, i can like...
+Bea: ...
+Gregg: ...
+Angus: ...ok yeah are you up for this?
+    ->yeah
+        Mae: i dunno.
+        Mae: i'm like all hyper now.
+        Mae: like dolphins.
+        Gregg: hyper like dolphins?
+        Mae: no like when your body is like uh whoa i almost died
+        Mae: and you get all hyper because you're filled with dolphins.
+        Bea: ok i am seriously confused. are you ok, mae?
+        Angus: Endorphins.
+        Bea: aaaaah ok.
+        Mae: There! Thank you. Those.
+        Gregg: ok well
+        Gregg: ride those dolphins up outta here.
+    ->no
+        Mae: but that doesn't really matter.
+        Mae: because i'm even less up for us starving to death.
+        Gregg: aw dude.
+        Bea: thanks mae, that's very nice of you.
+Mae: ugh. that's assuming i can even do this.
+Angus: we'll watch.
+Mae: ok.
+<<set $death_walk to 0>>
+<<playerCanJump 1>>
+<<cameraFollowPlayer 1>>
+//mae can now jump! How do we make this platforming more interesting?//
+===
+title: EnterLevel
+tags: 
+colorID: 5
+position: 916,-1846
+---
+Angus: Yep. That’s some fresh air alright.
+Angus: *sniff sniff*
+Angus: and water.
+Gregg: Dude. That’s amazing.
+Bea: You can smell water?
+Angus: Hopefully it’s not a river
+Angus: cave rivers are deathtraps
+Gregg: Mine river. We’re in a mine.
+Angus: right.
+<<walk Gregg GreggEdge>>
+<<walk Angus AngusEdge>>
+<<walk Bea BeaEdge>>
+===
+title: WatersEdge
+tags: 
+colorID: 5
+position: 913,-1569
+---
+Angus: hm. 
+Gregg: i can see the bottom.
+Mae: i don't think we're gonna die in the one foot of water.
+Angus: right.
+===
+title: IbonFight
+tags: 
+colorID: 5
+position: 932,-1308
+---
+<<tell _AmbientSFX:bg1 FadeOut1>>
+
+<<setCameraMode Stationary>>
+<<playOneShot event:/finale/mae_enter_void Mae>>
+<<lerp Mae MaeUnderwater .5>>
+<<wait .5>>
+
+<<wait .5>>
+<<cameraLookAt CameraUnderwater .25>>
+<<wait .25>>
+<<fadeOut .25 wait>>
+
+<<cameraLookAt CameraIbonScene 0>>
+<<warp Mae MaeIbonScene>>
+<<playAnimation Mae MaeFlailLeft1>>
+<<playAmbientSFX AmbientSFX:amb_ibon_void_underwater>>
+<<fadeIn 1 wait>>
+
+//at a point about halfway in, mae plunges underwater and into this inky blackness. It’s mostly blackness and she just floats there so this isn’t like super intensive or anything so I think we can do something simple here?//
+<<wait 4>>
+Mae: I know what you are now
+Mae: I think I knew before
+Mae: but
+Mae: you know
+	Mae: after I sent that kid to the hospital
+        Mae: years ago
+        Mae: they said I had an anger problem
+		Mae: but that’s not true.
+		Mae: I was angry because of something else.
+		Mae: something I’d lost
+		Mae: trying so hard since not to be angry
+        Mae: got me all defenseless
+		Mae: and i lost more, and more, and more...
+		Mae: that's not getting better
+		Mae: i want to be angry
+    Mae: when I ran home, from college,
+		Mae: on the bus I had this dream
+		Mae: or maybe I saw it out the window
+		Mae: last leaf on the tree
+		Mae: finally blown off
+        Mae: i'm so scared
+        Mae: all the time
+        Mae: and the fear *hurts*
+        Mae: feeling like everything is over
+        Mae: was over long before i got here
+Mae: so long, hiding
+Mae: or trying to outrun this.
+Mae: i get it.
+Mae: this won’t stop
+Mae: until i die
+Mae: but when i die
+Mae: i want it to hurt
+Mae: when my friends leave
+Mae: when i have to let go
+Mae: when this entire town is wiped off the map
+Mae: i want it to hurt. Bad.
+Mae: i want to lose
+Mae: i want to get beaten up
+Mae: i want to hold on
+Mae: until I’m thrown off
+Mae: and everything ends
+Mae: and you know what?
+Mae: until that happens
+Mae: i want to hope again
+Mae: and i want it to hurt.
+Mae: because that means it meant something
+Mae: it means i am... something, at least
+Mae: heh heh ha haheheh heh
+Mae: pretty amazing to be something, at least
+Ibon: 1837582
+Mae: you know I can’t understand you, right?
+Ibon: 3487234
+Mae: oh shut up already
+Mae: i know this won’t save me in the end
+Mae: but I don’t need it to save me forever
+Mae: i just need it to save me now
+Mae: so if you’re gonna kill me right here
+Mae: then do it
+Mae: if not,
+//trigger ibon swarming animation that lasts like 2 seconds//
+//abruptly cut to black//
+<<fadeOutAmbientSFX AmbientSFX:amb_ibon_void_underwater .0001>>
+<<fadeOut .0001 wait>>
+
+//cut to everyone standing on the opposite bank
+//and mae standing near them still in the water//
+<<warp Angus AngusBank>>
+<<warp Mae MaeShallows>>
+<<warp Gregg GreggBank>>
+<<warp Bea BeaBank>>
+<<playIdleAnimationPlayer>>
+
+<<cameraLookAt CameraBank 0>>
+
+<<flip Gregg 1>>
+<<flip Angus 1>>
+<<flip Bea 1>>
+
+<<wait 2>>
+
+<<tell _AmbientSFX:bg2 Play1>>
+<<fadeIn 1 wait>>
+Bea: Mae!
+Gregg: Dude, you ok?
+Mae: whoa.
+Bea: you got all sleepwalky there for a sec
+Angus: you want me to carry you?
+Mae: no... I think I’m good... I’m just
+Mae: ... very, very tired.
+Gregg: hang here for a bit if you need to. We’re safe.
+Mae: uh huh.
+
+//others walk over to the bottom of the well//
+<<walk Angus AngusBottom>>
+<<walk Gregg GreggBottom>>
+<<walk Bea BeaBottom>>
+//as they go//
+Angus: Hey! There’s light over here!
+Bea: Did you smell that?
+Gregg: I bet he did.
+
+<<setCanInteract Bea 0>>
+<<setCanInteract Gregg 0>>
+<<setCanInteract Angus 0>>
+
+<<cameraFollowPlayer 1>>
+===

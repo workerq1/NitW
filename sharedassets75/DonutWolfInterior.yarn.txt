@@ -1,0 +1,163 @@
+title: EnterLevel
+tags: 
+colorID: 4
+position: -210,935
+---
+<<if $bathroom_mirror is 0>>
+    [[FQ4Intro]]
+<<endif>>
+===
+title: FQ4Intro
+tags: 
+colorID: 4
+position: 171,988
+---
+Mae: too bad you didn't get partially eaten by a shark.
+Gregg: too bad you didn't get serial killed.
+Mae: too bad you didn't start doing drugs.
+Mae: and then died from drugs.
+Gregg: we tried weed a while back.
+Mae: too bad you didn't O.D. and die from it.
+Angus: ok are you two done?
+<<close>>
+<<walk Mae MaeEnter>>
+<<walk Gregg GreggEnter>>
+<<walk Angus AngusEnter>>
+<<waitForMove Mae>>
+Mae: FINALLY HERE!
+Angus: yup.
+Gregg: AW YEAH
+Gregg: THAT WOLF OF THE DONUT
+Mae: awoooooooo
+Angus: yup
+<<close>>
+<<cameraLookAt CameraDWCashier 4>>
+<<walk Mae MaeCounter>>
+<<walk Gregg GreggCounter>>
+<<walk Angus AngusCounter>>
+<<waitForMove Mae>>
+<<playerFace -1>>
+DWCashier: Welcome to Donut Wolf home of the slammercake now featuring pan-
+DWCashier: cakes with special Howlin Mad Maple Syrup how would you like to ride
+DWCashier: the chariot today?
+Mae: Hello sir. :) =_= <o>
+Mae: Mighty fine donuts ya got there.
+DWCashier: Thank you ma'am.
+Angus: We'll take a half dozen Go-Nuts.
+Gregg: Dude.
+Gregg: We should get chariot wheels.
+Angus: we got chariot wheels last time...
+Mae: i want slammercakes! o_o
+DWCashier: actually we are out of slammercakes
+Mae: WHAT?! :( _o_
+Mae: HOW CAN YOU BE OUT OF SLAMMERCAKES?!?!? \o/
+Mae: THAT'S LIKE HALF THE REASON TO COME HERE!!!!
+Angus: Dude just pick something.
+Gregg: ...
+Mae: _o_
+Angus: Ok we'll take half a dozen chariot wheels.
+DWCashier: would you like them with eternity sauce
+Angus: No.
+Mae: -_- :|
+Mae: Alright alright. I'll take...
+->6 chariot wheels.
+    Mae: no eternity sauce o_o
+    Mae: last time i had that
+    Mae: i stayed up all night cleaning the entire house.
+->6 Doomnuts.
+    Mae: are those new? o_o
+    DWCashier: limited edition, ma'am.
+    Mae: well they're about to be even more limited.
+    Mae: and *NO* eternity sauce
+    Mae: last time i had that
+    Mae: i stayed up all night digging a hole in our backyard.
+    Mae: they found me asleep in the morning
+    Mae: at the bottom of a hole.
+    <<set $found_pentagrams += 1>>
+    <<unlockPentagramDoodle>>
+    <<set $donut_set_doom to 1>>
+DWCashier: yes ma'am.
+Angus: Are we eating here?
+Mae: I guess. Whatever.
+Gregg: Um.
+Gregg: Yeah, let's eat here!
+Angus: Fine. I’m gonna go find a seat.
+<<close>>
+<<walk Angus AngusOffscreen>>
+<<wait 3>>
+Mae: I have to go to the bathroom.
+Gregg: ...ok...
+<<close>>
+//Mae walks over to the bathroom. Camera stays on Gregg as she walks away. Poor Gregg. Or… poor Gregg???//
+<<setCameraMode Stationary>>
+<<walk Mae MaeBathroom>>
+<<wait 3>>
+Gregg: this is fun.
+<<close>>
+<<wait 1>>
+<<fadeOut 1 wait>>
+<<scene BathroomMirror>>
+
+===
+title: InitLevel
+tags: 
+colorID: 4
+position: -176,662
+---
+<<setCanInteract Gregg 0>>
+<<setCanInteract Angus 0>>
+
+<<if $bathroom_mirror is 0>>
+    //characters start offscreen to the left and start walking in to some locators by the door//
+    <<hide Collision:Left>>
+<<else>>
+    <<warp Mae MaeBathroom>>
+    <<warp Angus AngusSit>>
+    <<sit7 Angus>>
+    <<warp Gregg GreggSit>>
+    <<sit Gregg>>
+    <<setSpriteLayer Gregg BG3>>
+    <<setSpriteLayer Angus BG3>>
+    <<flip Angus -1>>
+<<endif>>
+===
+title: SitDown
+tags: 
+colorID: 4
+position: 449,791
+---
+<<fadeOut 1 wait>>
+<<warp Mae MaeSit>>
+<<sit>>
+<<setSortingLayerName BG3>>
+<<wait .1>>
+<<fadeIn 1 wait>>
+<<wait 4>>
+Mae: So. :)
+<<wait 3>>
+Mae: =_=
+Mae: how you guys doing...?
+<<wait 2>>
+Mae: anything new?
+Mae: other than, you know
+Mae: all this stuff that's been happening.
+<<wait 2>>
+Mae: o_o :|
+Mae: ghosts and stuff.
+Mae: yep.
+Mae: that's pretty new.
+<<wait 3>>
+Mae: hey angus, how'd you get bea's car for tonight?
+Angus: she was going to go to a party out of town
+Angus: but i guess she lost her nerve.
+Mae: oh.
+Angus: and gregg and i were *supposed* to do something
+Mae: this is something!
+<<wait 3>>
+Angus: let's just eat.
+Gregg: yes please let's eat.
+Mae: woohoo! :)
+<<close>>
+<<irisOut 1 wait>>
+<<scene PawsModeDonutWolfGreggAngus>>
+===

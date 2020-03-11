@@ -1,0 +1,211 @@
+title: InitLevel
+tags: 
+colorID: 0
+position: 114,-168
+---
+<<if $act is 4 and $day is 1>>
+    <<cameraLookAt CameraComa>>
+    <<warp Mae MaeComa>>
+    <<warp Pastor PastorComa>>
+    <<flip Pastor -1>>
+    <<show Mom>>
+    <<show Dad>>
+    <<show Penderson>>
+    <<show Pastor>>
+<<else>>
+    <<hide Mom>>
+    <<hide Dad>>
+    <<hide Penderson>>
+<<endif>>
+
+<<if $act is 4 and $day is 1>>
+    <<if $did_lori_friendship_quest_1 and $did_lori_friendship_quest_2>>
+        <<show Lori>>
+    <<else>>
+        <<hide Lori>>
+    <<endif>>
+    
+    <<if $did_chazokov_star_visits >= 2>>
+        <<show Chazokov>>
+    <<else>>
+        <<hide Chazokov>>
+    <<endif>>
+    
+    <<if $saw_selmers_deliver_poem_at_poets_society>>
+        <<show Selmers>>
+    <<else>>
+        <<hide Selmers>>
+    <<endif>>
+<<else>>
+    <<hide Chazokov>>
+    <<hide Twigmeyer>>
+    <<hide Lori>>
+    <<hide Selmers>>
+    <<hide Penderson>>
+    <<hide Janitor>>
+<<endif>>
+
+<<if $act is 4 and $day is 1>>
+    <<setAnimInt Mae layingSide 1>>
+    <<setAnimInt Mae eyes 4>>
+    <<togglePlayerFallEnabled false>>
+    <<warp Mae MaeDeadOnThing>>
+    <<trigger ChurchAnimate FadeIn>>
+    <<fadeOutAmbientSFX _AmbientSFX:amb_sanctuary 0>>
+    <<playAmbientSFX _AmbientSFX:amb_deathprairie_church 10>>
+    <<togglePlayerEarTwitch false>>
+<<endif>>
+===
+title: EnterLevel_A4D1
+tags: 
+colorID: 5
+position: 536,81
+---
+<<playMusic church_hospital 10>>
+<<wait 8>>
+Pastor: God is here.
+Pastor: In this room.
+Pastor: I believe that.
+Pastor: times like this, we can call out
+Pastor: and know that our cries are heard
+Mom: *sniff*
+Pastor: ...
+Dad: ...
+Pastor: While we’re here, maybe someone would like to say something about Mae?
+Mom: that’d be nice.
+
+<<if $did_lori_friendship_quest_1 and $did_lori_friendship_quest_2>>
+	Lori: Mae is... my friend.
+	Lori: Please god let Mae be ok.
+	Lori: She’s really a nice person
+	Lori: even if she doesn’t know it.
+	Lori: I wrote her a part in a movie I want to make.
+	Lori: Thrill Kill Witch Cult.
+	Dad: I know she’d appreciate that.
+	Mom: Who are you again?
+	Lori: Lori Meyers.
+	Pastor: Thank you, Lori.
+
+	Pastor: Anyone else?
+<<endif>>
+
+<<if $did_chazokov_star_visits >= 2>>
+	Chazokov: Mae is a good girl.
+	Chazokov: She and I explored the stars.
+	Chazokov: And... and she loved to hear about them...
+	Chazokov: she...
+    <<close>>
+    <<wait 1>>
+	Chazokov: I am sorry.
+	Pastor: It can be difficult.
+
+	Pastor: Anyone else?
+<<endif>>
+
+<<if $saw_selmers_deliver_poem_at_poets_society>>
+	Selmers: I’ve always known Mae as the kid down the street.
+	Selmers: A little younger than me, but tough.
+	Selmers: I been through it in the past couple years.
+	Selmers: Addiction, jail, rehab, divorce.
+	Selmers: And...
+	Selmers: I just think it’s not fair
+	Selmers: that Mae of all people should have trouble.
+	Selmers: Where’s the god in that?
+	Selmers: Where’s the higher power?
+	Selmers: this is all a bunch of bullshit.
+    Pastor: Thank you, Selma.
+	Mom: ...
+	Dad: ...
+	Pastor: Anyone else?
+<<endif>>
+
+Penderson: I’ll say somethin'
+Penderson: Mae Borowski’s always been a menace
+Penderson: and I called the police on her more’n once.
+Penderson: I hope she wakes up and learns a lesson.
+Penderson: That’s all I got to say.
+Dad: uh... ok.
+Pastor: ...thank you, William.
+Twigmeyer: I’ll speak up.
+Pastor: go ahead
+Twigmeyer: Mae was a daughter to all of us on the block.
+Penderson: Speak for yerself.
+Twigmeyer: Sometimes folks is in the wrong place at the wrong time.
+Twigmeyer: I hope we find out what exactly happened to her.
+Mom: Oh, we know. Her friends told us.
+Dad: Yeah. They were out in the woods at night
+Dad: down the end of Centre Ave
+Dad: and someone was out there hunting illegally
+Dad: and they got shot at
+Dad: and Mae fell and...
+Mom: she musta fallen off a million things a million times
+Mom: all it takes is landing the wrong way one time... and...
+Twigmeyer: Oh.
+Twigmeyer: Well.
+Twigmeyer: I hope she wakes up soon and tells us allll about it.
+Twigmeyer: See if she remembers who done it.
+Pastor: I’m sure she-
+<<close>>
+<<walk Janitor JanitorComa wait>>
+<<playAmbientSFX _AmbientSFX:hospital_fade_in>>
+<<trigger ChurchAnimate Morph>>
+
+// fade out characters //
+<<if $saw_selmers_deliver_poem_at_poets_society>>
+    <<lerpOffset Selmers 0 -3 6 sineIn>>
+<<endif>>
+<<if $did_lori_friendship_quest_1 and $did_lori_friendship_quest_2>>
+    <<lerpOffset Lori 0 -3 6 sineIn>>
+<<endif>>
+<<if $did_chazokov_star_visits >= 2>>
+    <<lerpOffset Chazokov 0 -3 6 sineIn>>
+<<endif>>
+<<lerpOffset Penderson 0 -3 6 sineIn>>
+<<lerpOffset Twigmeyer 0 -3 6 sineIn>>
+
+//<<fadeOutMusic 7>>
+<<fadeOutAmbientSFX _AmbientSFX:amb_deathprairie_church 7>>
+//<<playAmbientSFX _AmbientSFX:amb_hospital 7>>
+<<playMusic amb_hospital 7>>
+<<wait 7>>
+Janitor: Oh, I’m sorry. I didn’t mean to interrupt.
+Janitor: what’s happened to this one?
+Mom: do we know you?
+Pastor: are you here to clean up?
+Janitor: nah. Supposed to be fixing a door.
+Pastor: in here?
+Janitor: nope!
+Dad: ok, so-
+Janitor: She’s gonna be fine.
+Janitor: For today, leastways.
+Mom: What?
+Janitor: What?
+Dad: who are you?
+Janitor: Janitor!
+<<close>>
+<<walk Janitor JanitorOffRight wait>>
+//mae opens her eyes//
+Mae: the house is gone
+Dad: MAE!
+Mom: oh thank god
+Pastor: what did you say, mae?
+Mae: it’s dead.
+Mom: what’s dead, honey?
+Mae: ...
+Dad: Mae, honey?
+Mae: everything
+<<close>>
+//<<fadeOutAmbientSFX _AmbientSFX:amb_hospital 1>>
+<<playAmbientSFX _AmbientSFX:hospital_fade_out>>
+<<fadeOut 4 wait>>
+<<wait 2>>
+<<overrideLoadingScreenType Blank>>
+<<endDay>>
+===
+title: ChurchHospital
+tags: 
+colorID: 5
+position: 530,329
+---
+
+===

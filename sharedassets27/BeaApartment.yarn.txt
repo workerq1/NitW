@@ -1,0 +1,395 @@
+title: EnterLevel_A2D3
+tags: 
+colorID: 3
+position: 2910,9935
+---
+<<if $bea_friendship_quest_3 is 0>>
+    <<wait 1>>
+    <<walk Bea Bea1 wait>>
+    <<walk Mae Mae1 wait>>
+    [[Dinner]]
+<<elseif $bea_friendship_quest_3 is 1>>
+
+<<endif>>
+===
+title: AfterDinner
+tags: 
+colorID: 3
+position: 2888,10589
+---
+<<cameraLookAt CameraAfterDinner>>
+<<warp Mae MaeStool>>
+<<sit>>
+<<setSortingLayerName Player>>
+<<setSpriteLayer Bea Bea>>
+<<warp BeaDad BeaDadCouch>>
+<<sit BeaDad>>
+<<warp Bea BeaCouch>>
+<<sit Bea>>
+<<tell AmbientSFX:tv Play1>>
+<<irisIn 1 wait>>
+Bea: So yeah, we’re all paid up til the 15th next month.
+BeaDad: N’alright.
+<<close>>
+<<wait 2>>
+BeaDad: That rock salt sorted?
+Bea: Yeah, should be fine.
+BeaDad: Is Rob still drivin that big truck?
+Bea: As far as I know.
+Bea: Ok uh I need you to sign some things. Left them on the bar.
+BeaDad: Think I might just get to them.
+Bea: Please do. We have to pay the guys in a few days.
+BeaDad: I don’t need you to remind me.
+Bea: I know, but-
+BeaDad: I don’t, Beatrice. Who’s name’s on the deed?
+Bea: Yours, dad.
+BeaDad: Who’s name’s on the checks?
+<<close>>
+<<wait 2>>
+Bea: Yours.
+Mae: ...
+<<close>>
+<<wait 2>>
+<<if $grocery_quality is 1>>
+	BeaDad: Good dinner, Mae. Real good.
+    <<unlockAchievement Bea_FQ3_Recipe>>
+<<elseif $grocery_quality is -1>>
+	BeaDad: Urgh. Dinner ain’t gonna set well.
+<<endif>>
+BeaDad: Smelters playin tonight.
+Bea: We’re gonna go hang out in my room.
+Mae: Yeah...
+BeaDad: You girls have a nice time!
+BeaDad: Thanks for dinner, Mae!
+Mae: Yep!
+<<close>>
+<<setAnimInt Bea sitting 0>>
+<<warp Bea BeaCouch>>
+<<walk Bea BeaExitRight wait>>
+<<tell _AmbientSFX:bea_door_indoor Play>>
+<<cameraFollowPlayer 1>>
+<<set $bea_apartment_block_left to 1>>
+<<getUp>>
+<<fadeOutMusic 6>>
+===
+title: BeaDad
+tags: 
+colorID: 3
+position: 3211,10327
+---
+<<if $bea_friendship_quest_3 is 0>>
+    <<set $bea_dad_done to 1>>
+    Mae: Smelters, huh?
+    BeaDad: You a fan?
+    -> Not really.
+        BeaDad: You don’t know what yer missing!
+        Mae: Oh trust me, I know exactly what I’m missing.
+        Mae: My parents watch the Smelters pretty religiously.
+        BeaDad: Ha ha! They raised you right, then! What happened?
+        Mae: I have no idea.
+    -> I like hockey.
+        BeaDad: Hockey? Pssh.
+        Mae: What’s not to like about hockey?
+        BeaDad: Buncha men prancing around on ice skates.
+        Mae: And beating the living crap out of each other!
+        BeaDad: eeeeh. Can’t get excited about a puck.
+        Mae: But... but it’s like *expected* that someone is gonna be bleeding by the end!
+        BeaDad: No sportsmanship in it.
+        Mae: How is what I described *not* sportsmanship?
+        BeaDad: Eeeeeh.
+<<else>>
+    <<if $grocery_quality is -1>>
+        <<if $grocery_meat is 1>>
+            BeaDad: ...beef... bad beef...
+        <<elseif $grocery_meat is 2>>
+            BeaDad: ...chicken... never again...
+        <<elseif $grocery_meat is 3>>
+            BeaDad: ... horrible fish...
+        <<elseif $grocery_meat is 4>>
+            BeaDad: ...bad pork... why?
+        <<endif>>
+    <<elseif $grocery_quality is 1>>
+        <<if $grocery_meat is 1>>
+            BeaDad: ...thank you, delicious cow...
+        <<elseif $grocery_meat is 2>>
+            BeaDad: ...wonderful chicken, yessir...
+        <<elseif $grocery_meat is 3>>
+            BeaDad: ...delicious fish... so nice...
+        <<elseif $grocery_meat is 4>>
+            BeaDad: ...pork chop... pork chop... so sweet and tasty...
+        <<endif>>
+    <<else>>
+        <<if $grocery_meat is 1>>
+            BeaDad: ...beef... can’t go wrong...
+        <<elseif $grocery_meat is 2>>
+            BeaDad: ...chicken dinner... like mom...
+        <<elseif $grocery_meat is 3>>
+            BeaDad: ...fishy fish... eat the fishes...
+        <<elseif $grocery_meat is 4>>
+            BeaDad: ...pork’s ok... pork’ll do...
+        <<else>>
+            BeaDad: ...no food selected... no food at all...
+        <<endif>>
+    <<endif>>
+    <<set $bea_dad_done to 1>>
+<<endif>>
+===
+title: Dinner
+tags: 
+colorID: 3
+position: 2899,10287
+---
+Bea: Dinner time!
+<<close>>
+<<irisOut 1 wait>>
+<<warp Mae MaeBehindCounter>>
+<<warp Bea BeaBehindCounter>>
+<<warp BeaDad BeaDadBehindCounter>>
+<<setSpriteLayer Bea BG2>>
+<<setSortingLayerName BG2>>
+<<setSpriteLayer BeaDad BG2>>
+<<sit Bea>>
+<<sit BeaDad>>
+<<sit>>
+<<cameraLookAt CameraDinner>>
+<<playMusic bea_dinner>>
+<<irisIn 1 wait>>
+<<if $grocery_quality is -1>>
+    BeaDad: Um.
+    Bea: Yeah.
+    Mae: What?
+    Bea: Do you want me to order a pizza?
+    BeaDad: Nah, I got sandwich stuff.
+    Bea: Alright.
+    Mae: Aw, did I ruin dinner?
+    BeaDad: Yep, but we’ll live I think!
+    BeaDad: HA HA HA!!
+    <<if $grocery_meat is 3 and $grocery_bakey_shakey is 1>>
+        BeaDad: I don't think the fish worked out.
+        Mae: I thought hey fish is ok, Bakey Shakey is good...
+    <<elseif $grocery_meat is 1 and $grocery_bakey_shakey is 1>>
+        BeaDad: I think Bakey Shakey needs something... else.
+        Mae: I thought like... uh... two good things...
+        Mae: probably make one really good thing?
+    <<elseif $grocery_meat is 1 and $grocery_box != 1>>
+        BeaDad: I don't think ground beef was meant to stand alone.
+        Bea: Like, in a pile.
+        Mae: Awwwwww...
+    <<elseif $grocery_meat is 3 and $grocery_canned_goods is 3>>
+        BeaDad: I think I might actually be a little ill.
+        Mae: I thought like... fish is good! Chicken is good!
+        Bea: Not like this. Not like this.
+        Mae: No. Ok.
+        Mae: If you go to Admiral Fry's and order the number 7.
+        Mae: IT'S CHICKEN AND FISH!
+        Bea: Yeah but they're separate. And fried.
+        Mae: uuuurgh
+    <<elseif $grocery_meat is 2 and $grocery_bakey_shakey is 1 and $grocery_canned_goods is 3>>
+        Bea: I can see the thought process here.
+        Bea: with the Bakey Shakey.
+        Mae: Chicken and cream of chicken!
+        Mae: Creamy chicken!
+        Bea: and you're thinking hey
+        Bea: how do I improve this.
+        Mae: Yeah see you get it.
+    <<elseif $grocery_meat is 4 and $grocery_canned_goods is 3>>
+        BeaDad: I don't think pork and chicken were supposed to meet this way.
+        Mae: Aw, really?
+    <<elseif $grocery_meat is 1 and $grocery_canned_goods is 3>>
+        BeaDad: I don't think creamy beef and chicken soup
+        BeaDad: is gonna win you any blue ribbons at the fair.
+        Mae: Oh come on I GUARANTEE this is an actual recipe.
+    <<endif>>
+    <<if $did_bea_friendship_quest_2 is 1>>
+        Mae: Am I just bad at everything?
+        Bea: No, just fixing things and planning meals.
+        Mae: Those are big life skills!
+    <<endif>>
+    Bea: Did you like it?	
+    Mae: No I agree it is very terrible.
+<<elseif $grocery_quality is 0>>
+    BeaDad: This’s ok.
+    Mae: Thanks!
+    Bea: Yeah it’s alright.
+    Mae: Thanks.
+    BeaDad: Yeah it’ll do.
+    Mae: Thanks?
+    Bea: You did fine, Mae. Thanks.
+    Mae: Can’t go wrong with meat and carbs.
+    BeaDad: Thank you Mae
+    -> I’m really good at foooooood.
+        BeaDad: Food is good.
+        Bea: It’s ok sometimes.
+        Mae: Sometimes?!?!?
+        Mae: FOOD IS REALLY GOOD.
+        Bea: Noted.
+        BeaDad: Heh heh heh!
+    -> I don’t know if I’ve mentioned this,
+        Mae: But I got a REALLY good grade in Home Ec back in high school.
+        Mae: I made this shirt!
+        BeaDad: Hey hey can you fix my pants!
+        Mae: Any money in it?
+        Bea: Dad we can get you some new pants.
+<<elseif $grocery_quality is 1>>
+    BeaDad: Hey this is pretty good.
+    Bea: Yeah. This is like... alarmingly good.
+    Mae: Thanks! 
+    <<if $grocery_meat is 1 and $grocery_bakey_shakey is 0 and $grocery_box is 1 and $grocery_canned_goods is 1>>
+        BeaDad: My mom used to make Beefy Mac n' Cheese
+        Bea: It's very good.
+        Mae: There's no part of it that isn't good! It's a no brainer!
+        BeaDad: And the veggies too. Exactly like mom.
+        Mae: Maybe I’m your mom.
+        BeaDad: What
+        Bea: What
+        Mae: I don’t know. That got weird.
+    <<elseif $grocery_meat is 4 and $grocery_box is 2 and $grocery_canned_goods is 2>>
+        BeaDad: Bakey Shakey pork chops!
+        Mae: I know right?
+        Mae: I used to like scrape off the Bakey Shakey
+        Bea: ew no
+        Mae: and eat JUST THAT.
+    <<elseif $grocery_meat is 2 and $grocery_bakey_shakey is 0 and $grocery_canned_goods is 3 and $grocery_cooler is 1>>
+        BeaDad: My gramma used to make Chicken n' Biscuits!
+        BeaDad: Back on the farm...
+        Bea: Great gramma had a farm?
+        Bea: I thought they had a shoe shop?
+        BeaDad: Eh, details.
+    <<elseif $grocery_meat is 2 and $grocery_bakey_shakey is 1 and $grocery_box is 4 and $grocery_box is 3>>
+        BeaDad: MMM. Bakey chicken n' rice n' taters.
+        Mae: It's a classic for a reason.
+        Bea: Oh we're familiar with it.
+        Mae: I never promised to cook exotic!
+    <<elseif $grocery_meat is 3 and $grocery_bakey_shakey is 0 and $grocery_box is 1 and $grocery_cooler is 2>>
+        BeaDad: Fish and Mac and spinach.
+        BeaDad: What they used to serve at the local parish when I was a boy.
+        BeaDad: During whatever holiday where you're supposed to eat fish.
+        Mae: Is that a thing?
+        Bea: It's a thing.
+    <<endif>>
+    BeaDad: She should pick out our meals every night!
+    Bea: No dad we’d die of some sort of sugar shock.
+    Mae: Not true!
+    -> I also do burgers and tacos and pizza!
+        Bea: Well then we’d just die of that.
+        BeaDad: Worse ways.
+    -> I know how to cook rice and hamburger casserole!
+        BeaDad: Bea’s mother used to make that.
+        Bea: Ha ha you said that to me.
+        BeaDad: Ok, Mae: Bea’s mother used to make that.
+        Bea: And even she learned we can’t eat that every night.
+        BeaDad: Not after that week at Horker’s Gorge.
+    -> I know how to scramble eggs and cook those biscuits from a tube!
+        BeaDad: I like sausages.
+        Bea: Can’t eat breakfast for every meal.
+    Mae: I can do a salad!
+    Bea: Hallelujah.
+    BeaDad: Heh heh Mae, you’re alright!
+    BeaDad: HA HA HA HA HA!!!
+    <<if $did_bea_friendship_quest_2 is 1>>
+        Bea: This definitely turned out better than whatever it is you made in that basement last night.
+        BeaDad: What?
+        Bea: Nothing.
+    <<endif>>
+    Mae: Thanks. I’m pretty great.
+<<endif>>
+<<irisOut 1 wait>>
+[[AfterDinner]]
+===
+title: EnterLevel_A4D2
+tags: 
+colorID: 5
+position: 4878,9869
+---
+<<if $laptop_vignettes>>
+    <<playMusic laptop_vignettes 10>>
+    <<if $dom_friend_bea>>
+        [[DomFriendVignette]]
+    <<else>>
+        [[SubFriendVignette]]
+    <<endif>>
+<<endif>>
+===
+title: DomFriendVignette
+tags: 
+colorID: 5
+position: 4779,10208
+---
+<<cameraLookAt CameraVignetteStart 0>>
+<<cameraLookAt CameraVignetteEnd 30>>
+<<fadeIn 1 wait>>
+//fade in on bea, sitting in her living room doing bills as her dad is asleep on the couch. Mae chat continues in black box somewhere//
+MaeLaptop: None of us asked for any of this.
+MaeLaptop: and it didn't happen to us because we're like special.
+MaeLaptop: You can work as hard as you want but
+MaeLaptop: the universe is gonna keep doing what it does.
+MaeLaptop: and i don't think any of us deserved all this.
+MaeLaptop: this is all stuff that started long before we were born.
+MaeLaptop: it's all like moving so fast and you're dropped into it
+MaeLaptop: and you're just trying to grab onto something.
+MaeLaptop: All of you are what kept me from floating off tonight.
+MaeLaptop: Also you kinda killed that guy to save me.
+MaeLaptop: Don't think i didn't appreciate that.
+MaeLaptop: L O L
+<<fadeOut 1 wait>>
+<<overrideLoadingScreenType Blank>>
+<<scene GreggAngusApartment>>
+===
+title: SubFriendVignette
+tags: 
+colorID: 5
+position: 5188,10233
+---
+<<cameraLookAt CameraVignetteStart 0>>
+<<cameraLookAt CameraVignetteEnd 30>>
+<<fadeIn 1 wait>>
+//fade in on bea, sitting in her living room doing bills as her dad is asleep on the couch.//
+MaeLaptop: am i ever going to have a handle on what just happened?
+MaeLaptop: i kinda hope not.
+MaeLaptop: i just hope it's over.
+MaeLaptop: i want us all to get free of it.
+MaeLaptop: i don't want us to just be part of some horrible story.
+MaeLaptop: I want to like grow giant
+MaeLaptop: and pick you all up
+MaeLaptop: and carry you someplace safe
+MaeLaptop: sorry, i'm all rambling now.
+MaeLaptop: i just gotta believe there's ways to
+MaeLaptop: escape.
+MaeLaptop: or at least move on.
+//fade out. Fade in on germ in a parking lot. This will need to be a new scene//
+<<fadeOut 1 wait>>
+<<overrideLoadingScreenType Blank>>
+<<scene GermVignette>>
+===
+title: InitLevel_A2D3
+tags: 
+colorID: 3
+position: 2888,9703
+---
+<<if $bea_friendship_quest_3 is 1>>
+    <<set $bea_apartment_block_left to 0>>
+    <<set $night to 1>>
+    <<set $did_bea_friendship_quest_3 to 1>>
+    <<set $completed_bea_friendship_quests += 1>>
+    <<sit BeaDad>>
+    <<setAnimInt BeaDad sleeping 1>>
+    <<hide Bea>>
+    <<warp Mae MaeExitBeaRoom>>
+    <<playerFace -1>>
+    <<set $block_bea_room to 1>>
+    <<set $bea_dad_done to 0>>
+    <<tell AmbientSFX:tv Play1>>
+<<endif>>
+===
+title: InitLevel_A4D2
+tags: 
+colorID: 5
+position: 4885,9635
+---
+<<warp Bea BeaBehindCounter>>
+<<sit Bea>>
+<<setSpriteLayer Bea BG2>>
+<<hide BeaDad>>
+<<hide Mae>>
+<<setAnimInt Bea headSlant 1>>
+===

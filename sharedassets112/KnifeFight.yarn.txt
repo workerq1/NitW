@@ -1,0 +1,163 @@
+title: Start
+tags: 
+colorID: 0
+position: 443,-315
+---
+Gregg: stab me once, shame on you
+Gregg: stab me thrice, shame on y... ice
+Mae: ok ok ok ok
+Gregg: first one to wuss out 3 times
+Mae: yeah yeah I got it STOP STALLING
+Gregg: on gard!
+Mae: GET STABB'D
+===
+title: MaeLose1
+tags: 
+colorID: 0
+position: 721,-317
+---
+Mae: AAAGH
+Gregg: HA HA HA EAT IT
+Mae: I'm rusty.
+Mae: Unlike you, I'm not street trash
+Gregg: Mae, you're trash wherever you go.
+Mae: oooooh ho ho so that's how it is
+Mae: i am gonna stab you repeatedly with this knife
+Gregg: YEEEEEEEEEEEEAH!!!!
+[[StartAgain]]
+===
+title: GreggLose1
+tags: 
+colorID: 0
+position: 949,-348
+---
+Gregg: AAAAAAAGH!!!
+Mae: HA HA HA HA HA HA
+Gregg: Laugh now, laugh now.
+Gregg: won't be laughing when it GUT YOU
+Mae: oh no my poor guts
+Mae: Try not to stab a tree instead of me
+[[StartAgain]]
+===
+title: End
+tags: 
+colorID: 0
+position: 1866,196
+---
+Gregg: Ok well that's probably enough stabbing for today.
+Mae: All this blood gonna attract predators.
+Gregg: GOOD POINT.
+<<close>>
+<<irisOut .5 wait>>
+<<scene GreggFQ3Woods>>
+===
+title: StartAgain
+tags: 
+colorID: 0
+position: 743,32
+---
+Gregg: ok ok ok ok
+Gregg: ready ready ready?
+Mae: yeah yeah yeah yeah
+Gregg: cool cool cool
+Mae: GO GO GO GO
+===
+title: MaeLose2
+tags: 
+colorID: 0
+position: 1217,-328
+---
+Mae: AAAAAAAAAAAAGH
+Gregg: You ok?
+Mae: NO PITY, GREGG.
+Mae: NO. PITY.
+[[StartAgain]]
+===
+title: GreggLose2
+tags: 
+colorID: 0
+position: 1458,-331
+---
+Gregg: FFFFFFFFFFF-
+Gregg: UGH
+Mae: Geez, you ok dude?
+Gregg: NO.
+Gregg: I AM NOT OK.
+Mae: We can st-
+Gregg: NO. AGAIN.
+[[StartAgain]]
+===
+title: MaeLose3
+tags: 
+colorID: 0
+position: 1727,-355
+---
+Mae: SSSHHHHHHHHHHHHHHHH
+Mae: RRRAAAAAAAGHH!!!
+Gregg: Did I get your knuckle there?
+Mae: Oh man I'm gonna have to explain this to my parents.
+Gregg: Attacked by a dog again?
+Mae: Nah they'd ask why it had a knife.
+[[StartAgain]]
+===
+title: GreggLose3
+tags: 
+colorID: 0
+position: 1974,-293
+---
+Gregg: Ok. I might be done.
+Gregg: That really hurt.
+Mae: Really?
+Gregg: NO.
+Gregg: LET'S GO.
+Gregg: ONE. LAST. TIME.
+Mae: Prepare to die.
+[[StartAgain]]
+===
+title: MaeLose4
+tags: 
+colorID: 0
+position: 1768,-69
+---
+<<playMusic knife_fight_defeat>>
+Mae: OK OK! GEEZ! DONE!
+Gregg: Ha ha ha you suck
+Gregg: you wouldn't last a day on the streets
+Gregg: also are you ok
+Mae: I'm feeling a little woozy.
+Mae: It might shock you to find out
+Mae: that I don't knife fight much
+Gregg: I wouldn't either if I was that bad at it.
+Mae: uuuugh my poor hand
+===
+title: GreggLose4
+tags: 
+colorID: 0
+position: 2042,-34
+---
+<<playMusic knife_fight_victory>>
+<<set $won_knife_fight to 1>>
+Gregg: ALRIGHT! I'M ACTUALLY DONE!
+Mae: you ok?
+Gregg: yeah, I'll be fine.
+Mae: do you need me to like
+Mae: call your mommy
+Gregg: yeah
+Gregg: tell her that her precious boy got stabbed in the woods
+Mae: this was always how it was gonna end for one of us
+<<unlockAchievement Gregg_FQ3_Win_Knife_Fight>>
+===
+title: MaeHurt1
+tags: 
+colorID: 0
+position: 132,507
+---
+Mae: Ow!
+===
+title: GreggHurt1
+tags: 
+colorID: 0
+position: 127,780
+---
+Gregg: Ow!
+===

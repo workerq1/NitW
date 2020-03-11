@@ -1,0 +1,57 @@
+title: OutsideDoor
+tags: 
+colorID: 0
+position: 124,124
+---
+Mae: Well I'm right outside town.
+Mae: Mom and dad nowhere to be found.
+Mae: Dark and cold.
+Mae: Guess I'm walking.
+Mae: Alone.
+<<end>>
+===
+title: Bench1
+tags: 
+colorID: 0
+position: 355,120
+---
+Mae: Wow.
+Mae: I didn't realize how much I missed the sound of that train.
+Mae: I used to hear it in my bed at night
+Mae: during the winter when the leaves were down.
+<<end>>
+===
+title: Bench2
+tags: 
+colorID: 0
+position: 576,120
+---
+Mae: This bus station is maybe the newest thing in Possum Springs.
+Mae: Guess they got state funding or something.
+Mae: It makes a good first or last impression I suppose
+Mae: if not for the abandoned glass factory back there.
+Mae: Not getting rid of that anytime soon.
+<<end>>
+===
+title: Woods
+tags: 
+colorID: 0
+position: 796,119
+---
+Mae: Well, I guess I'm gonna hike through the woods.
+Mae: Through the woods is home,
+Mae: my bed,
+Mae: and my negligent parents.
+<<end>>
+===
+title: Highway
+tags: 
+colorID: 0
+position: 909,396
+---
+Mae: I'm not walking back out to the highway.
+Mae: Probably get hit by a car or something.
+Mae: Hey where did that Janitor go?
+Mae: Did he walk?
+<<end>>
+===

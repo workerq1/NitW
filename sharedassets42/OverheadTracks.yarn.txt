@@ -1,0 +1,187 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: 621,68
+---
+<<if $did_lori_friendship_quest_1 is 0>>
+    [[Tracks1]]
+<<else>>
+    [[Tracks2]]
+<<endif>>
+===
+title: Tracks2
+tags: 
+colorID: 4
+position: 805,431
+---
+<<freezePlayer>>
+<<wait 4>>
+Lori: you know what we don’t have around here?
+Mae: a taco place.
+Lori: serial killers.
+Mae: oh yeah. hm.
+Mae: i mean i'd vote for us getting a taco place first but
+Mae: yeah we never got around to getting our own serial killer
+Lori: you ever think about murdering someone?
+Lori: like ok so
+Lori: a few Longest Night's ago i went to Bright Harbor with my aunt and cousin
+Lori: and we went on the subway
+Lori: and like there's no railing down there above the tracks
+Lori: and i had this sudden urge to like shove someone off it?
+Lori: it was weird and i felt guilty about it for a long time
+Lori: but like i didn't actually do it so
+Lori: i mean is that normal?
+Mae: i think that's pretty normal
+Lori: i guess you actually *did* try to kill someone
+    -> that was different
+        Lori: how?
+        Mae: that was like... not planned
+    -> no i didn't
+        Lori: a lot of people think so
+        Mae: yeah well
+        Mae: a lot of people are really stupid
+Mae: and i wasn't trying to kill him
+Mae: it was just a thing that happened
+Mae: so yeah
+Mae: it wasn't like my first step
+Mae: on the way to serial killer-dom
+<<wait 2>>
+Lori: sorry.
+<<setAnimInt Lori laying 2>>
+<<playOneShot event:/lori_quest/legs_move Lori>>
+<<wait 1>>
+<<setAnimInt Mae laying 2>>
+<<playOneShot event:/lori_quest/legs_move Mae>>
+<<wait 1>>
+//mae pulls her feet in as the train passes//
+<<trigger OverheadTracks TrainPassBottom>>
+<<wait 13>>
+<<setAnimInt Lori laying 1>>
+<<playOneShot event:/lori_quest/legs_move Lori>>
+<<wait 1>>
+<<setAnimInt Mae laying 3>>
+<<playOneShot event:/lori_quest/legs_move Mae>>
+<<wait 1>>
+Mae: it's cool.
+Lori: you know what I like?
+Mae: tacos
+Lori: pictures of the meteor that killed the dinosaurs
+Lori: where the dinosaurs are watching it in the sky
+Mae: oh yeah
+Mae: that’s like every single picture of that meteor
+Mae: weird
+Lori: wonder if they knew
+//lori pulls her feet in as the train passes//
+<<setAnimInt Lori laying 2>>
+<<playOneShot event:/lori_quest/legs_move Lori>>
+<<wait 1>>
+<<setAnimInt Mae laying 2>>
+<<playOneShot event:/lori_quest/legs_move Mae>>
+<<wait 1>>
+<<trigger OverheadTracks TrainPassBoth>>
+<<wait 13>>
+Lori: ok ok ok ok 
+Lori: let’s see what we got!
+<<irisOut 1 wait>>
+<<scene Tracks>>
+===
+title: Tracks1
+tags: 
+colorID: 3
+position: 486,431
+---
+<<freezePlayer>>
+<<wait 4>>
+Lori: I come out here at night sometimes
+Lori: and fall asleep between the tracks
+	->That sounds dangerous
+	-> why?
+		Lori: I don’t know.
+Lori: I feel excited and I can sleep
+Lori: you ever have that
+Lori: where you’re so excited you go to sleep
+	->Coffee makes me sleepy
+		Lori: ha ha. Wuss.
+		Mae: guilty.
+	->I have stress dreams if I’m too keyed up
+		Lori: I don’t remember my dreams
+//train noise in the distance to the right//
+<<tell _AmbientSFX:train_whistle Play>>
+<<close>>
+<<wait 4>>
+Lori: sometimes I fall asleep for like 5 minutes
+Lori: but sometimes it’s for like an hour
+Mae: that’s some risky business there
+<<close>>
+<<setAnimInt Lori laying 2>>
+<<playOneShot event:/lori_quest/legs_move Lori>>
+<<wait 1>>
+<<setAnimInt Mae laying 2>>
+<<playOneShot event:/lori_quest/legs_move Mae>>
+<<wait 1>>
+//train flies past//
+<<trigger OverheadTracks TrainPassBottom>>
+<<wait 13>>
+//after train passes//
+<<setAnimInt Lori laying 1>>
+<<playOneShot event:/lori_quest/legs_move Lori>>
+<<wait 1>>
+<<setAnimInt Mae laying 3>>
+<<playOneShot event:/lori_quest/legs_move Mae>>
+<<wait 1>>
+Lori: I have weird thoughts
+Lori: like sometimes I want to go sleep in the woods
+Lori: or in the basement of an abandoned house during the day
+Lori: and only come out at night
+Lori: and be, like, a monster
+Lori: and, like, beautiful.
+	->I know the feeling
+		Mae: I want to eat people sometimes
+		Lori: Really???
+		Mae: Pretty much as soon as I meet anyone
+		Mae: I wonder what they taste like
+		Lori: I feel like the world is full of bad people
+		Lori: who would be good to eat
+		Mae: Mmmmmmmhmm.
+	->Those are, like, really attainable dreams
+		Lori: oh ha ha
+		Lori: i’m not beautiful
+		Mae: oh you’re fine
+		Mae: no one your age likes how they look
+		Lori: i’m objectively gross
+		Mae: way less gross than I was
+		Lori: do you think?
+		Mae: guaranteed
+<<close>>
+<<setAnimInt Lori laying 2>>
+<<playOneShot event:/lori_quest/legs_move Lori>>
+<<wait 1>>
+<<setAnimInt Mae laying 2>>
+<<playOneShot event:/lori_quest/legs_move Mae>>
+<<wait 1>>
+//train flies past going other direction//
+<<trigger OverheadTracks TrainPassBoth>>
+<<wait 13>>
+Lori: ok ok ok ok 
+Lori: let’s see what we got
+<<irisOut 1 wait>>
+<<scene Tracks>>
+===
+title: InitLevel
+tags: 
+colorID: 0
+position: 299,16
+---
+<<playerFace -1>>
+<<if $did_lori_friendship_quest_1 is 0>>
+    <<setAnimInt Lori laying 1>>
+    <<setAnimInt Mae laying 1>>
+<<else>>
+    <<warp Lori Lori2>>
+    <<warp Mae Mae2>>
+    <<toggleUpdateTargetNormal 0>>
+    <<rotate Mae -180>>
+    <<setAnimInt Lori laying 1>>
+    <<setAnimInt Mae laying 1>>
+<<endif>>
+===

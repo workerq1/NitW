@@ -1,0 +1,21 @@
+title: Zapped
+tags: 
+colorID: 0
+position: 891,297
+---
+<<fadeOutMusic .1>>
+Mae: {width=4}YAAAAAAAAAAAAAAARGH!!!!!!
+Gregg: WHOOOOA!!!
+<<set $gregg_friendship_quest_2 to 2>>
+<<fadeOut .1 wait>>
+<<scene SharkleDream>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: 244,202
+---
+Gregg: Ok, so just grab one of the wires and yank it off!
+Mae: Thanks! I think I can figure it out!
+Mae: Gotta get rid of these leaves first...
+===

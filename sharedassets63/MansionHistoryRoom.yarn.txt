@@ -1,0 +1,85 @@
+title: EnterLevel
+tags: 
+colorID: 4
+position: 514,315
+---
+
+===
+title: LeaveRoom
+tags: 
+colorID: 4
+position: 785,321
+---
+Mae: Ok well. Nothing weird here.
+Gregg: educational, even.
+Mae: i feel like we're getting smarter.
+Gregg: my brain is too huge as it is, dude.
+Gregg: gonna pop.
+Mae: if that happens i'm leaving your headless corpse here.
+Gregg: ha ha ha they'll be so freaked out in the morning.
+Mae: niiiiiiiiiice.
+Gregg: "oh, ronald, i'm going to open this room for the day"
+Mae:{width=8} "aaaaaaaaaaaaaaaaaaagh!"
+Gregg: "i say! this chap's brain appears to have burst!"
+Mae: "bring the mop, won't you ronald?"
+<<set $mansion_history_room_done to 1>>
+===
+title: LookAtThing
+tags: 
+colorID: 4
+position: 1083,322
+---
+Mae: oh hey.
+Mae: possum massacre.
+Gregg: oh nice.
+Gregg: you remember this, right?
+    ->sorta?
+        Mae: really cool though.
+        Mae: just like the whole strike thing
+        Mae: and how other people joined them
+        Mae: and even when the bosses sent in soldiers
+        Mae: they were like all united
+        Mae: and like could not give one shit.
+        Gregg: yeah it's the best history dude.
+        Mae: still makes me like
+        Mae: proud and angry.
+        Gregg: bosses are bad, dude.
+        Mae: bosses are bad.
+    ->not super well.
+        Gregg: yeah there was this big explosion at one of the old mines
+        Gregg: and it could have been avoided or something
+        Gregg: and then the miners went on strike
+        Gregg: because they were getting screwed and killed
+        Gregg: and like it went on a while
+        Gregg: and other mines and places joined up
+        Gregg: like to be like "you've messed with all of us"
+        Mae: that's awesome.
+        Gregg: yeah the the bosses and the governor
+        Gregg: they sent in like soldiers and stuff?
+        Gregg: because they're assholes?
+        Gregg: and some kid or something threw a rock at one of them
+        Gregg: and the soldiers like opened fire!
+        Mae: holy crap?
+        Mae: where did this happen?
+        Gregg: northwest end of town.
+        Gregg: there's like a marker for it.
+        Mae: ugh. that's awful.
+        Gregg: bosses and bad.
+        Mae: bosses are bad.
+Mae: weird how like we're all supposed to look up to
+Mae: like, bosses.
+Mae: just in general.
+Mae: like even bad ones.
+Gregg: yeah i refuse.
+Mae: extremely ditto.
+<<set $mansion_history_room_will_leave to 1>>
+===
+title: InitLevel
+tags: 
+colorID: 4
+position: 261,310
+---
+<<playerFace 1>>
+<<follow Gregg Mae>>
+<<setCanInteract Gregg 0>>
+===

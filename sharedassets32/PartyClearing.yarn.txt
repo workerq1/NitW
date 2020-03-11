@@ -1,0 +1,648 @@
+title: Bea
+tags: 
+colorID: 0
+position: -8156,1534
+---
+<<if $beer_phase is 0>>
+	<<if $bea is 0>>
+		Bea: What?
+		Mae: Nothing.
+		<<set $bea += 1>>
+	<<elseif $bea is 1>>
+		Mae: Cool party!
+		Bea: Yep.
+		<<set $bea += 1>>
+	<<elseif $bea is 2>>
+		Mae: Whoya talking to?
+		Bea: Not you.
+		<<set $bea_done to 1>>
+	<<endif>>
+<<elseif $beer_phase is 1>>
+	<<if $bea is 0>>
+		Mae: Yooooo.
+		Bea: What?
+		Mae: You’re kinda grouchy, did you know that?
+		Bea: No. I didn’t.
+		Jackie: Rude.
+		<<set $bea += 1>>
+	<<elseif $bea is 1>>
+		Mae: How long are you planning on staying?
+		Bea: Mae, we just got here like 10 minutes ago.
+		Mae: Oh.
+		Bea: Are you... how many beers have you had?
+		Mae: TWO!
+		Bea: Pace it out, Mae. You’re tiny.
+		<<set $bea_done to 1>>
+	<<endif>>
+<<elseif $beer_phase is 2>>
+	<<if $bea is 0>>
+		Mae: HEY BEA
+		Bea: Yeah?
+		Bea: Oh god.
+		Bea: You’re drunk.
+		Bea: Already.
+		Mae: That’s why we came out here right???
+		Bea: Not really. I have to drive.
+		Bea: And even if I didn’t...
+		Mae: Well I don’t have my license!!!
+		Mae: So wooohooo for meeeee!!!!
+		<<set $bea += 1>>
+	<<elseif $bea is 1>>
+		Mae: HEY BEA
+		Bea: What?
+		Jackie: Who is that?
+		Bea: Remember Mae Borowski?
+		Jackie: Oh god.
+		<<set $bea += 1>>
+	<<elseif $bea is 2>>		
+		Bea: Mae, you’re drunk.
+		Bea: You need to go chill by the fire.
+		Mae: I’m gonna go run around naked in the wooooods!!!!!
+		Bea: GO. SIT. NOW.
+        <<set $should_sit_log to 1>>
+		<<set $bea_done to 1>>
+	<<endif>>
+<<elseif $beer_phase is 3>>
+<<endif>>
+
+
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: -8465,1136
+---
+<<set $night to 1>>
+[[SceneStart]]
+===
+title: Beer
+tags: 
+colorID: 0
+position: -8811,1242
+---
+<<if $can_drink_beer is 1>>
+	<<set $beer_phase += 1>>
+	<<fadeOut 1 wait>>
+	<<wait 1>>
+    <<playAmbientSFX AmbientSFX:beer_drink>>
+    <<wait 3>>
+	<<fadeIn 1 wait>>
+	[[SceneStart]]
+<<else>>
+	Mae: I don't know if I should have another drink right now.
+<<endif>>
+
+===
+title: SceneStart
+tags: 
+colorID: 0
+position: -8573,1604
+---
+<<set $bea to 0>>
+<<set $gregg_angus to 0>>
+<<set $cole to 0>>
+
+<<set $angus_done to 0>>
+<<set $bea_done to 0>>
+<<set $gregg_done to 0>>
+<<set $cole_done to 0>>
+
+<<set $can_drink_beer to 0>>
+
+<<if $beer_phase is 0>>
+	Mae: Ugh.
+	Mae: That was awful.
+	Mae: I hate beer.
+	Mae: I can't remember the last time I drank beer.
+	Mae: It’s not a delicious drink at all.
+<<elseif $beer_phase is 1>>
+	Mae: *sigh*
+	Mae: I guess beer is just one of those horrible things adults do.
+	Mae: Like doing taxes and having babies.
+<<elseif $beer_phase is 2>>
+	Mae: Screw it! I’m doing two beers!
+	(immediately drinks another beer)
+	Mae: I’m doing beer! 
+	<<if $ate_tacos>>
+		Mae: I still taste tacos!
+	<<endif>>
+	Mae: OK?!
+	Bea: What?
+	Mae: NOTHING!
+<<endif>>
+
+===
+title: End
+tags: 
+colorID: 0
+position: -9034,1731
+---
+<<fadeOut .5 wait>>
+<<scene BeaCar>>
+===
+title: GreggAngus_BP0
+tags: 
+colorID: 0
+position: -7769,1470
+---
+<<if $gregg_angus is 0>>
+	Mae: Hey dudes.
+	Gregg: Yo did you see Cole’s here?
+	Mae: OH GOD.
+	Angus: You ok?
+	Mae: Yeah. Totally fine.
+	Gregg: You gonna talk to him?
+	[[NO.|GreggAngus_No]]
+	[[Yeah sure.|GreggAngus_YeahSure]]
+<<elseif $gregg_angus is 1>>
+	Mae: Urg.
+	Mae: He's just standing there! Like it’s no big deal!
+	Gregg: That jerk.
+	Angus: Totally.
+	Mae: You know what? I’m not gonna stand by
+	Mae: and let him stand by
+	Mae: while my night gets ruined!
+	Gregg: Yeah!
+	Mae: I’m going over there. I'm gonna talk to Cole.
+	Angus: Ruin your own evening!
+	Gregg: If anyone's gonna ruin your night, Mae, it really should be you.
+	Mae: Thanks guys.
+	<<set $talking_to_cole to 1>>
+    <<set $cole_done to 0>>
+	<<set $gregg_angus += 1>>
+<<elseif $gregg_angus is 2>>
+	Mae: Can you guys believe this dude playing guitar?
+	Gregg: Yep. Playing the douchebag hits.
+	Angus: I like this song!
+	Angus: Is this a douchebag song?
+	<<set $douchebag_song to 1>>
+	Mae: Naw don’t worry big guy.
+	Angus: ...
+	<<set $gregg_angus += 1>>
+<<elseif $gregg_angus is 3>>
+	Gregg: There is a douchebag like this at every party.
+	Mae: You have no idea, Gregg.
+	Mae: Back in school you’d always have some frat boy
+	Mae: hanging out on the lawn
+	Mae: trying to look all sensitive.
+	<<set $try_to_look_sensitive to 1>>
+	Angus: Why is this a douchebag song???
+	<<set $angus_done to 1>>
+	<<set $gregg_done to 1>>
+<<endif>>
+
+===
+title: GreggAngus_YeahSure
+tags: 
+colorID: 0
+position: -7618,1797
+---
+<<set $talking_to_cole to 1>>
+<<set $gregg_angus += 1>>
+<<set $cole_done to 0>>
+Gregg: Yeah man!
+Angus: You sure, Mae?
+Mae: Yeah! I mean why should I be weird about it?
+Gregg: Well, I mean, you did write that song afterwards...
+[[GreggAngus_Song]]
+
+===
+title: GreggAngus_No
+tags: 
+colorID: 0
+position: -7885,1806
+---
+Angus: Probably a good idea.
+Gregg: I mean, you did write that song...
+[[GreggAngus_Song]]
+===
+title: GreggAngus_Song
+tags: 
+colorID: 0
+position: -7778,2157
+---
+Gregg: What was it called?
+Angus: "Go Get Dead, Angel Face"?
+Mae: Uuuuuuuuuuuugh.
+Mae: We don’t talk about Go Get Dead, Angel Face.
+<<set $gregg_angus += 1>>
+===
+title: Cole
+tags: 
+colorID: 0
+position: -6862,1423
+---
+<<if $beer_phase is 0>>
+	Mae: Oh god. It’s...
+	<<if $talking_to_cole is 1>>
+		Mae: Maybe I need another drink.
+		<<set $can_drink_beer to 1>>
+	<<else>>
+        <<set $cole_done to 1>>
+    <<endif>>
+<<elseif $beer_phase is 1>>
+	<<if $cole is 0>>
+		<<if $whats_your_name is 1>> 
+			Mae: Oh hey, I’m Mae! What’s your name?
+			Cole: Is that you, Mae?
+			Mae: Oh, I think I know you from somewhere...
+			Cole: Uh yeah. Highschool.
+			Mae: Probably when we were lovers
+			Cole: Ha ha. Yeah I guess.
+			Mae: and we beat up that street gang
+			Cole: Oh yeah!
+			Mae: with chains and garbage cans.
+			Cole: Good times, Mae.
+			Cole: I still have that game, by the way.
+			Cole: My girlfriend back in school -
+			Mae: What the hell is your problem?
+			Cole: What?
+		<<else>>
+			Mae: Heyyyyy.
+			Cole: Mae? Is that you?
+			Cole: Wow. How are you?
+			<<if $dropout_week is 1>>
+				Mae: Well earlier this week I dropped out of school
+				Mae: and now I’m drinking in the woods.
+				Cole: Wow ok!
+				Mae: What the hell is your problem?
+				Cole: What?
+			<<elseif $hows_it_going is 1>>
+				Mae: Hi, I’m Mae! How’s it going?
+				Cole: I just asked you that?
+				Cole: I mean, I’m fine.
+				Cole: Just back visiting for the weekend.
+				Mae: Really? That’s fascinating!
+				Cole: I guess.
+				Cole: I think that’s the first time in a while
+				Cole: anyone has called my life fascinating.
+				Mae: That is so true! Well, see you later! 
+				Cole: Ok...
+				Mae: What the hell is your problem?
+				Cole: What?
+			<<endif>>
+		<<endif>>
+        <<set $cole += 1>>
+		<<set $has_talked_to_cole_1 to 1>>
+	<<elseif $cole is 1>>
+		Mae: Be cool, Mae.
+		Mae: Go get a drink and be cool.
+		<<set $can_drink_beer to 1>>
+	<<endif>>
+<<elseif $beer_phase is 2>>
+    Mae: Ugh, I don't know if I can do this.
+<<endif>>
+===
+title: GreggAngus
+tags: 
+colorID: 0
+position: -7517,1023
+---
+<<if $beer_phase is 0>>
+	[[GreggAngus_BP0]]
+<<elseif $beer_phase is 1>>
+	[[GreggAngus_BP1]]
+<<elseif $beer_phase is 2>>
+	[[GreggAngus_BP2]]
+<<endif>>
+===
+title: GreggAngus_BP1
+tags: 
+colorID: 0
+position: -7417,1439
+---
+<<if $gregg_angus is 0>>
+	<<if $has_talked_to_cole_1 is 1>>
+		Mae: AAAAAAAGH
+		Gregg: How’d it go?
+		Mae: AAAAAAAAGH
+		<<set $can_drink_beer to 1>>
+	<<endif>>
+
+	<<if $people_dont_like is 1>>
+		Mae: Ugh
+		Angus: You ok?
+		Mae: Sometimes I think that people just don’t like me.
+		Gregg: Aw dude.
+		Gregg: That sucks.
+		Angus: Yeah Mae you shouldn’t be so down on yourself.
+		Gregg: Yeah, who cares if people don’t like you?
+		Angus: Ok. That’s not what I-
+		Gregg: SCREW EVERYONE MAE’S THE BEST!!! D: \o/
+		<<set $maes_the_best to 1>>
+		DoucheBag: Yeah buddy!
+		Gregg: SHUT UP DOUCHEBAG! _o_ :|
+		DoucheBag: ...what?
+		Mae: Thanks guys.
+	<<elseif $you_dont_like is 1>>
+		Mae: Ugh.
+		Angus: Problem?
+		Mae: Sometimes I think I just don’t like people.
+		Gregg: Yeah man eff the world.
+		Angus: Yeah eff it.
+		Mae: God someone really should just eff the world already.
+		Gregg: The world has gone uneffed for too long.
+		Angus: Effin’ right.
+		<<set $eff_the_world to 1>>
+	<<endif>>
+
+	<<set $gregg_angus += 1>>
+	
+<<elseif $gregg_angus is 1>>
+	Mae: Did you guys hear something?
+	Angus: Like what?
+	Mae: Something in the woods over there...
+	Gregg: Oh yeah two people are making out on the rock behind us.
+	Mae: That can’t be very comfortable.
+	Gregg: Who needs comfort when you have makeouts?
+	Angus: But preferably you have both.
+	Gregg: It ain’t a perfect world, Angus.
+	<<set $rock_makeouts to 1>>
+	<<set $gregg_angus += 1>>
+<<elseif $gregg_angus is 2>>
+	Mae: They really are going at it up there.
+	Gregg: They suuuuuuure are.
+	Mae: You guys wanna... I dunno... stand somewhere else?
+	Gregg: Naw dude!
+	Angus: Why should we move?
+	Gregg: They’re the indecent ones.
+	Angus: We are gentlemen.
+	<<set $gregg_angus += 1>>
+<<elseif $gregg_angus is 3>>
+	Mae: I’m starting to feel these two beers.
+	Angus: Yeah. I don’t really drink much.
+	Mae: I only had one beer before.
+	Gregg: Ha ha ha yeah and you spit it out!
+	Angus: Mae if you don’t drink you really should be careful.
+	Mae: Naw man, I’m cool.
+	Angus: Ok, well we’ll keep an eye on you.
+	Gregg: We will watch you like hawks.
+	Angus: Chaperone hawks.
+	Mae: Thanks dudes.
+	<<set $chaperone_hawks to 1>>
+	<<set $gregg_angus += 1>>
+<<elseif $gregg_angus is 4>>
+	Gregg: Yep, they’re still making out.
+	<<set $gregg_done to 1>>
+	<<set $angus_done to 1>>
+<<endif>>
+
+===
+title: GreggAngus_BP2
+tags: 
+colorID: 0
+position: -7184,1435
+---
+<<if $gregg_angus is 0>>
+	<<if $porn_log is 1 and $rock_makeouts is 1>>
+		Mae: HEY GREGGGG!
+		Gregg: Whoa dude.
+		Angus: You ok, Mae?
+		Mae: do you think the people makin’ out on
+		Mae: on that rock
+		Mae: met up there because
+		Mae: THERE’S A PORN LOGGG???
+		Gregg: OH MY GOD I BET THERE IS.
+		Angus: A what?
+		Gregg: You see it’s a log
+		Mae: where oldendays people
+		Mae: WOULD PUT POOOORN
+		Angus: How old we talking?
+		Angus: Like Revolutionary War era?
+		Angus: I think there’s an old cemetery from then back here somewhere...
+		Mae: These woods are full of old ghosts and porn logs and people making out!!!
+	<<else>>
+		Mae: HEY GREGGGG!
+		Gregg: Whoa dude. Are you ok?
+		Mae: Hey Gregg did you know I think
+		Mae: you an Angyyy
+		Mae: ...
+		Angus: “Angy?”
+		Mae: ARE SO CUUUUTE!!!
+		Gregg: I did know that, dude.
+		Mae: well GOOD
+	<<endif>>
+	<<set $gregg_angus += 1>>
+<<elseif $gregg_angus is 1>>
+	<<if $dad_knows_angus is 1>>
+		Mae: Hey Angyyyy... my dad knows your dad!
+		Mae: They used to worrrk together back in the 80s.
+		Angus: Ok.
+		Mae: He used to hang out at the barrr with your daddddy.
+		Gregg: Dude.
+		Gregg: Don’t ever say “daddy” again!
+		<<if $stop_saying_daddy is 1>>
+			Gregg: You’re saying “daddy”!
+			Gregg: Douchebag’s playing a song about someone’s "daddy"!
+			Gregg: I can’t deal with this!
+            Gregg: My skin is crawling off of my skeleton!
+		<<endif>>
+		Mae: pssst!
+		Angus: What?
+		Mae: My dad had to stop drinkin’ because
+		Mae: he was a danger to me n’ my mom.
+		Mae: HA HA HA HA HA HA HA HA HA!!!
+		Gregg: Dude.
+		Angus: Ok Mae you’re not allowed to drink anymore.
+		Angus: Ever.
+		<<set $gregg_angus += 1>>
+	<<else>>
+		<<set $gregg_angus += 1>>
+		[[GreggAngus_BP2]]
+	<<endif>>
+<<elseif $gregg_angus is 2>>
+	Angus: Ok Mae I’m a little worried about you.
+	<<if $chaperone_hawks is 1>>
+		Gregg: We failed at being chaperone hawks.
+		Angus: Someday, Bug.
+		Mae: Awwwww. I forgot you called him Buuuuug.
+		<<set $knows_gregg_is_bug to 1>>
+		Gregg: ...
+        Angus: ...
+	<<endif>>
+	Mae: Well I’m having a great time here in the woods ok.
+	Angus: Gregg, don’t you think Mae should maybe sit down?
+	Gregg: Yeah dude. You should sit.
+    <<set $should_sit_log to 1>>
+	<<set $gregg_angus += 1>>
+<<elseif $gregg_angus is 3>>
+	Gregg: Dude sit down by the fire and chill, ok?
+    <<set $should_sit_log to 1>>
+	<<set $gregg_done to 1>>
+	<<set $angus_done to 1>>
+<<endif>>
+
+===
+title: Gregg
+tags: 
+colorID: 0
+position: -7854,873
+---
+[[GreggAngus]]
+===
+title: ColeByFireEnding
+tags: 
+colorID: 0
+position: -6553,1431
+---
+<<cameraLookAt CameraEnd 3>>
+<<wait 6>>
+<<flip Cole -1>>
+<<wait 1>>
+<<walk Cole ColeByFire wait>>
+Cole: Hey Mae.
+Mae: Hey Cooole-io.
+Cole: Wow. Haven't heard that in forever. 
+Mae: Iz been like THREE YEARS!
+Mae: Thaz not long AT ALL!
+Cole: ...well, it was good to see you.
+Cole: I’m just back for a couple days from school, and-
+Mae: SHUT UP ALREADY.
+Cole: What?
+<<if $no_smooches is 1>>
+	Mae: We never even kissed!
+	Cole: Didn't we?
+	Mae: NO!
+	Cole: I'm... sorry?
+	Mae: I DON’T EVEN CARE!
+<<endif>>
+<<if $whatever_god is 1>>
+	Mae: I was like SO worried you were gonna be here.
+	Cole: Oh.
+	Mae: I PRAYED TO WHATEVERGOD!!!
+	Cole: what?
+	Mae: I FIGURED SOMEONE WOULD LISTEN!
+	Mae: BUT NO!
+	Mae: BECAUSE HERE YOU ARE!
+<<endif>>
+<<if $not_cute_ones is 1>>
+	Mae: The girl at the video store is all like
+	Mae: Woowoo! CUTE BOYS!!!
+	Mae: and you're a cute boy, cole
+    Cole: Oh! Thanks Mae, I-
+	Mae: BUT I HATE CUTE PEOPLE!!!
+	Mae: CUTE IS THE WORST!!!
+<<endif>>
+Cole: Ok, well I’m gonna go...
+<<close>>
+<<playerJump>>
+<<lookAt Mae Cole>>
+<<wait 1>>
+Mae: And iz not my fault I'm a total trashfire!
+<<flip Bea -1>>
+<<clearBGChatPartner Bea>>
+<<walk Bea BeaByFire>>
+<<walk Gregg GreggByFire>>
+<<walk Angus AngusByFire>>
+<<set $nightmare_eyes to 1>>
+<<fadeOutAmbientSFX AmbientSFX:DoucheBagGuitar 1>>
+<<fadeOutAmbientSFX AmbientSFX:Walla 1>>
+<<wait 1>>
+<<setAnimInt DoucheBag state 0>>
+<<if $nightmare_eyes>>
+    Mae: I GOT NIGHTMARE EYES!!!!! O_O
+    Mae: And the lazt thing you see iz my eyes oudside the window o_o
+    Mae: And then I ztab you with my knife!!! :) \o/
+    Mae: STAB STAB STAAAAABBB!!!! :| /o\
+    Mae: Boom! Dead! _o_
+    Mae: When the police get there you’re all
+    Mae: {width=4}[color=aaa][shake=.01][wave]N I G H T M A R E  E Y E S.[/all]
+    Gregg: NEW NICKNAME!
+<<elseif $dog_bite_dead>>
+    Mae: YOU SHOULD HAVE SEEN THE DOG THAT BIT MY EAR.
+    Cole: What?
+    Mae: Yeah he grabbed on and wouldn't let go!
+    Mae: And he was like RAWARWARRAWARARARR
+    Mae: And I thought I was gonna DIE!!!
+    Mae: But then I grabbed a STICK!
+    Mae: And I beat his ass with it!
+    Mae: And I'll do the same thing to anyone!!!!
+<<endif>>
+Mae: SO DON'T EFF WITH ME, KID!
+<<if $eff_the_world>>
+	Gregg: EFF THE WORLD!
+<<endif>>
+Bea: Ok Mae, you're threatening people now.
+<<if $body_posi>>
+	Mae: No Bea, this is me being BODY POSITIVE.
+	Mae: READ THE INTERNET!!!!	
+<<elseif $eat_everything_i_see>>
+	Mae: I am gonna get in shape and kick all asses!
+    Mae: I'm gonna eat everyone! Everyone I see!
+<<endif>>
+Bea: Mae, I think you need to-
+<<if $maes_the_best>>
+	Gregg: EFF EVERYONE! MAE'S THE BEST!
+	Angus: I agree! But maybe you should pace yourself!
+    Bea: I'm never driving any of you anywhere again.
+<<endif>>
+Mae: EFF COLLEGE!!!
+Gregg: Yeah!
+Mae: ALL THOSE RICH KIDS AND HOT PEOPLE 
+Mae: ALL WRITING SEX AND HAVING PAPERS WITH EACH OTHER!
+Angus: Close enough!
+Mae: And that damn statue... pointing at me every day
+Mae: supposed to be the founder
+Mae: but just shapes...
+Mae: I...
+Mae: I'M A TOTAL TRASH MAMMAL!
+Mae: AND NOTHING IS EVER GOING TO WORK OUT!
+Mae: we never had a chance here
+Mae: but i can't go anywhere else
+Mae: ...
+Mae: i'm home again
+Mae: and i can do something besides sleep
+Mae: and cry alone
+Mae: *urp*
+Mae: because things aren’t just things here, you know?
+Mae: oh god
+Mae: i'm so
+Mae: sick
+Mae: to
+Mae: death
+Mae: Does that make sense? Cole-io?
+Cole: Mae, I'm so sorry. I didn't mean to upset you.
+Cole: I think you’re a really great-
+Mae: HOME AGAIN!!!! \o/ :)
+Gregg: WOOOO!
+Mae: WAAAAAAAAAAUGH :|
+<<close>>
+<<swapRig Player MaePuke>>
+<<trigger MaePuke Puke>>
+<<wait 5>>
+<<if $ate_tacos>>
+	Mae: Tacos.
+<<endif>>
+<<set $after_party to 1>>
+<<fadeOutAmbientSFX AmbientSFX 1>>
+<<fadeOutAmbientSFX AmbientSFX:Campfire 1>>
+<<fadeOutAmbientSFX AmbientSFX:Walla 1>>
+<<fadeOut 1>>
+<<wait 1>>
+<<scene BeaCar>>
+===
+title: Log
+tags: 
+colorID: 0
+position: -6553,1064
+---
+<<sit>>
+<<if $should_sit_log is 1>>
+    [[ColeByFireEnding]]
+<<else>>
+    <<waitForInteractOrJump>>
+<<endif>>
+===
+title: TestEnding
+tags: 
+colorID: 0
+position: -6277,1111
+---
+<<close>>
+<<playerJump>>
+<<lookAt Mae Cole>>
+<<wait 2>>
+<<swapRig Player MaePuke>>
+<<trigger MaePuke Puke>>
+<<wait 5>>
+===

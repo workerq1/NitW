@@ -1,0 +1,177 @@
+title: EnterLevel
+tags: 
+colorID: 5
+position: 540,260
+---
+[[OutOfWell]]
+===
+title: OutOfWell
+tags: 
+colorID: 5
+position: 775,258
+---
+<<fadeIn 1>>
+<<hide Mae>>
+<<wait 1>>
+//animation of mae dragging herself out of the well//
+<<trigger MaeClimboutWell Climbout>>
+<<wait 9>>
+<<show Mae>>
+<<wait 2>>
+Mae: this place.
+Mae: huh.
+<<close>>
+<<walk Germ GermIn>>
+<<wait 1>>
+Germ: Hey Mae.
+Mae: GERM?!
+Germ: Yeah!
+Mae: What are you doing out here?
+Germ: I live right up the hill!
+Germ: I heard Gregg yelling!
+Mae: We were all stuck down there!
+Germ: Y-you were at the bottom of the old well in my backyard?
+Mae: It’s been a really bad night.
+Germ: Sounds like it.
+Mae: Got any rope or something?
+Germ: Yeah!
+<<close>>
+<<wait 2>>
+Mae: caaaan you go get it?
+<<close>>
+<<run Germ GermOff>>
+<<wait 2>>
+//friend bubbles come from the well//
+BeaWell: Hey Mae!
+Mae: Yeah? 
+GreggWell: Was that... Germ?
+Mae: Yeah he’s getting some rope!
+AngusWell: What is he doing out here?
+Mae: He lives here!
+BeaWell: In the woods?
+<<close>>
+<<fadeOut 1 wait>>
+
+//everyone is laying on the ground, tired//
+<<warp Angus AngusOnGround>>
+<<warp Bea BeaOnGround>>
+<<warp Gregg GreggOnGround>>
+<<warp Germ GermOnGround>>
+
+<<playMusic well_woods>>
+<<fadeIn 1 wait>>
+Angus: *wheeeeeze*
+Bea: my entire body hurts
+Gregg: that was a loooong way
+Germ: I brought some sodas!
+Mae: you're the best, Germ.
+Germ: you need the sugar and caffeine!!!
+<<fadeOut 1 wait>>
+
+<<cameraLookAt CameraStartToLeave>>
+
+<<warp Angus AngusStanding>>
+<<warp Bea BeaStanding>>
+<<warp Gregg GreggStanding>>
+<<warp Germ GermStanding>>
+
+//everyone is standing//
+<<fadeIn 1 wait>>
+Mae: oh uh. anyone else want to get far away from this well?
+Bea: yuuuuuuuuuuuuuuup.
+Mae: Germ, can you like... i dunno. seal up this well?
+Germ: hmmm
+<<wait 3>>
+Germ: i got dynamite!
+Bea: what?
+Germ: yeah. i mean i can get some.
+Mae: how big an explosion is that?
+Germ: i mean.
+Germ: not small?
+Mae: ok that works.
+Gregg: Thanks Germ!
+Angus: yeah thanks buddy.
+Germ: Um. ok.
+Germ: bye guys.
+<<close>>
+<<walk Germ GermOff>>
+<<wait 4>>
+Bea: There goes a weird, weird guy.
+Gregg: He saved our lives.
+Mae: Germ is good. Germ is a good man.
+<<close>>
+<<wait 1>>
+<<lookRight Mae>>
+<<wait 1>>
+
+<<cameraLookAt CameraLeave 8.5>>
+//you can walk now and this convo happens while you do that.
+<<walk Bea BeaWalk1>>
+<<walk Gregg GreggWalk1>>
+<<walk Angus AngusWalk1>>
+<<walk Mae MaeWalk1>>
+<<wait 1>>
+<<lookNearest Mae>>
+Bea: it strikes me that we just murdered all of those dudes down there
+Mae: how do you figure?
+Bea: well, i mean
+Bea: the elevator's broken and we caused a cave in.
+Gregg: that was self-defense.
+Bea: i guess. but we did cause the deaths of like a dozen guys.
+Mae: no no no! they're all still alive down there!
+<<wait 3>>
+Mae: oh god.
+Bea: yeah.
+Mae: geez.
+Gregg: well we're blameless. they attacked us.
+Bea: *one* of them attacked us.
+Mae: so we're worrying about... like...
+Bea: it's morally gray!
+Mae: we're not murderers!
+Mae: like if we'd had a choice, we wouldn't have done it.
+<<wait 2>>
+Angus: i would have.
+<<wait 2>>
+Bea: uh
+Angus: what??? they like killed people!
+Angus: they were trying to get us to kill people!
+Angus: screw 'em! 
+Angus: i don't even believe in hell and i hope they all go straight there.
+Gregg: geez, angus.
+Angus: well that's what i think at least.
+Mae: hm. this is like that trolley thing.
+Gregg: what trolley thing?
+Bea: ok, i'll explain it if we keep walking.
+<<close>>
+
+<<waitForMove Bea>>
+<<waitForMove Gregg>>
+<<waitForMove Angus>>
+<<waitForMove Mae>>
+
+//<<cameraLookAt CameraLeave 1>>
+
+<<wait 1>>
+
+<<walk Bea OffRight>>
+<<walk Gregg OffRight>>
+<<walk Angus OffRight>>
+<<walk Mae OffRight>>
+
+<<wait 3>>
+//When you get to the right edge of the screen, you all stop and hang for a sec until the convo is done//
+
+//they walk offscreen to the right//
+
+
+<<set $night to 1>>
+<<wait 3>>
+<<scene Laptop>>
+===
+title: InitLevel
+tags: 
+colorID: 5
+position: 540,33
+---
+<<cameraLookAt CameraWell 0>>
+===

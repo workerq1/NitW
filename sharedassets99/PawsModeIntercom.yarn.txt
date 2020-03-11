@@ -1,0 +1,153 @@
+title: GreggAndAngus
+tags: 
+colorID: 0
+position: 236,311
+---
+<<if $act is 1 and $day is 2>>
+    <<if $laptop_fixed is 0>>
+        Intercom: *CLICK*
+        Angus: Hello?
+        Mae: AAAAGH!!!
+        Angus: Who is this?
+        Mae: Hi! It's Mae.
+        Angus: Mae?
+        Mae: Yeah Mae.
+        Mae: I just got electrocuted!
+        Angus: Oh yeah it's fiddly.
+        Mae: there's no button!
+        Angus: yeah you can like stick a screwdriver in and
+        Angus: well it's too late now.
+        Angus: Uh...come on up!
+        Intercom: *CLICK*
+        <<close>>
+        [[TakeElevator]]
+    <<endif>>
+<<endif>>
+===
+title: Intercom1
+tags: 
+colorID: 0
+position: 21,308
+---
+<<if $intercom_1 is 0>>
+    Intercom: *CLICK*
+    Intercom: Hello? Hello?!?
+    Mae: Hello.
+    Mae: You're not Angus.
+    Intercom: Who is this?
+    Intercom: Who are you?
+    Mae: Mae Borowski.
+    Intercom: What are you selling?
+    Mae: do you get a lot of people selling you stuff?
+    Intercom: Hello?
+    Intercom: *CLICK*
+    <<set $intercom_1 += 1>>
+<<endif>>
+===
+title: Intercom3
+tags: 
+colorID: 0
+position: 463,303
+---
+<<if $intercom_3 is 0>>
+    Intercom: *CLICK*
+    Intercom: MMMMMMyes?
+    Mae: uh. Hi, Angus?
+    Intercom: AAAAAAaaaangus, you say?
+    Mae: Dude. It's Mae.
+    Intercom: Tellllll me about yourself, Mabelynne
+    Mae: This isn't Angus.
+    Intercom: Woooould you like it to be?
+    Mae: Nope! Bye!
+    Intercom: *CLICK*
+    <<set $intercom_3 += 1>>
+<<endif>>
+===
+title: Intercom4
+tags: 
+colorID: 0
+position: 703,323
+---
+<<if $intercom_4 is 0>>
+    Intercom: *CLICK*
+    Intercom: Maurice?
+    Mae: Mae.
+    Mae: Angus?
+    Intercom: Mae?
+    Mae: Yeah!
+    Mae: You're not Angus.
+    Intercom: And you ain't Maurice.
+    Mae: Well I'm glad we sorted that out.
+    Intercom: *CLICK*
+    <<set $intercom_4 += 1>>
+<<endif>>
+===
+title: Intercom5
+tags: 
+colorID: 0
+position: 939,298
+---
+<<if $intercom_5 is 0>>
+    Intercom: *CLICK*
+    Mae: Hello? Angus?
+    Intercom: Are you searching, my child?
+    Mae: Yeah.
+    Mae: For Angus.
+    Intercom: You can search all you like for your Angus
+    Intercom: Everyone has a different Angus
+    Intercom: For some, Angus is a happy marriage
+    Intercom: For some, a good career
+    Intercom: For some, a fancy car
+    Mae: My Angus is a guy named Angus. Lives here.
+    Intercom: My child, no Angus will ever compare
+    Intercom: to the one true Angus, The Lord God Above.
+    Mae: oooook.
+    Intercom: Dear, have you encountered god this day?
+    Mae: look, my mom works at the church.
+    Mae: I'm in the club by default.
+    Intercom: *CLICK*
+    <<set $intercom_5 += 1>>
+<<endif>>
+===
+title: Intercom6
+tags: 
+colorID: 0
+position: 1170,310
+---
+<<if $intercom_6 is 0>>
+    Intercom: *CLICK*
+    Intercom: Hello.
+    Mae: Hello?
+    Intercom: Hello.
+    Mae: I'm looking for Angus?
+    Mae: Any idea where Angus lives?
+    Intercom: I believe he is at number 2.
+    Intercom: Written on the button I think.
+    Mae: It looks... uh... broken.
+    Intercom: I think the little guy he lives with kicked it in.
+    Mae: Gregg?
+    Intercom: or something.
+    Mae: how...?
+    Intercom: Beats me, kid. I just live here.
+    Intercom: *CLICK*
+    <<set $intercom_6 += 1>>
+<<endif>>
+===
+title: TakeElevator
+tags: 
+colorID: 0
+position: 338,596
+---
+<<fadeOut 1>>
+<<wait 1>>
+<<set $take_elevator to 1>>
+<<scene GreggAngusApartmentLobby>>
+===
+title: Hole
+tags: 
+colorID: 0
+position: 240,84
+---
+Mae: What? There's no... button?
+Mae: Hmm... There's gotta be some way to make this work...
+===

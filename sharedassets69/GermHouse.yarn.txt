@@ -1,0 +1,315 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: -530,361
+---
+<<if $germ_home_quest is 0>>
+    [[HomeQuestIntro]]
+<<elseif $germ_home_quest is 1>>
+    [[HomeQuestTrampoline]]
+<<endif>>
+
+<<if $germ_home_quest > 0>>
+    <<hide Collision:GermOnPorch>>
+<<endif>>
+===
+title: HomeQuestIntro
+tags: 
+colorID: 0
+position: -251,290
+---
+<<warp Mae Mae0>>
+<<warp Germ Germ0>>
+
+<<hide Collision:Right>>
+
+Mae: This is really weird
+Germ: why?
+<<close>>
+
+//<<walk Mae Mae1>>
+//<<walk Germ Germ1>>f
+
+//<<waitForMove Mae>>
+
+//Germ: Dialogue 1.
+//Mae: Dialogue 1.
+//<<close>>
+
+<<walk Mae Mae2>>
+<<walk Germ Germ2>>
+
+Mae: I like...
+Mae: I never pictured you coming from somewhere
+Mae: thought you just like
+Mae: appeared one day in a parking lot
+Germ: oh.
+Mae: sorry. That was weird.
+Germ: it’s cool. Lotta folks from town never come back up here.
+Mae: got a lot of cars
+Germ: my uncles are here a lot
+Germ: they fix cars with my dad
+Mae: do you drive?
+Germ: i bike.
+Germ: better for the environment
+Mae: i just keep finding things out about you
+Germ: What? We’re all gonna die from temperatures and water!
+<<close>>
+
+<<waitForMove Germ>>
+<<waitForMove Mae>>
+<<wait 1>>
+
+Mae: is this uh... your tire?
+Germ: nah it's for my sisters and my cousins
+Mae: you have sisters?
+Germ: yeah they're out at church stuff right now.
+Germ: that's why i invited you over.
+Germ: it's like... adults night here.
+Mae: "adults night"?
+Germ: one night a week! no kids!
+<<close>>
+
+<<waitForMove Germ>>
+<<walk Germ Germ3 1>>
+<<wait 4>>
+
+<<show Collision:Right>>
+===
+title: Germ
+tags: 
+colorID: 0
+position: 369,294
+---
+<<if $germ_home_quest is 0>>
+    <<flip Germ 1>>
+    Germ: ok ok ok
+    Mae: ok ok ok?
+    Germ: ok you should meet my mom
+    Mae: "should" I?
+    Germ: It’s polite since you’re eating dinner here
+    Mae: ...I was kidding.
+    Germ: I couldn’t tell!!!!
+    Mae: You ok?
+    Germ: I’M NERVOUS!!!!
+    Mae: why?
+    Germ: come on!!!!!
+    
+    <<walk Mae Mae4>>
+    <<walk Germ Germ4>>
+    
+    <<set $germ_home_quest to 1>>
+    
+    <<irisOut 1 wait>>
+    <<scene GermKitchen -1>>
+<<elseif $germ_home_quest is 1>>
+    <<alwaysRequireButtonToAdvance 1>>
+    Mae: So, like, why-
+    //offscreen//
+    GermMom: Dinner!
+    Germ: Hold that thought.
+    <<alwaysRequireButtonToAdvance 0>>
+    [[Dinner]]
+<<endif>>
+===
+title: HomeQuestTrampoline
+tags: 
+colorID: 0
+position: -248,546
+---
+<<warp Mae Mae10>>
+<<warp Germ Germ10>>
+<<flip Germ 1>>
+
+<<hide Collision:TrampolineRight>>
+<<setCanInteract Germ 0>>
+
+<<walk Mae Mae11 wait>>
+
+Germ: Don’t tell me what Gramma said.
+Mae: Why?
+Germ: When Gramma tells you something for you
+Germ: it’s yours, and if you give it away it’s gone.
+Mae: What does that mean?
+Germ: Watch this!!!
+<<close>>
+<<runAndJumpOffPorchToTrampoline Germ>>
+<<cameraLookAt CameraTrampoline 2>>
+<<wait 3>>
+// Germ runs and jumps off the porch onto the trampoline.
+Mae: HOLY CRAP!
+Germ: Come on!!!
+<<close>>
+<<cameraFollowPlayer 1>>
+<<wait 1>>
+===
+title: Dinner
+tags: 
+colorID: 0
+position: 646,303
+---
+<<irisOut 1 wait>>
+<<hide GermDad>>
+<<hide GermUncle>>
+<<resetRig Germ>>
+<<warp Mae MaeSitDinner>>
+<<warp Germ GermSitDinner>>
+<<flip Germ -1>>
+<<playerFace -1>>
+<<warpSit>>
+<<sit Germ>>
+<<irisIn 1 wait>>
+Mae: That was really good.
+Germ: Glad you liked Sloppy Joe’s.
+Mae: Who doesn’t?
+<<close>>
+<wait 3>>
+Germ: What were you going to say before dinner?
+Mae: Oh yeah
+Mae: weird to ask, but
+Mae: why did you invite me up here?
+Mae: I don’t think even Gregg’s been up here?
+Germ: Nah.
+Germ: Gregg’s cool but like
+Germ: Gregg’s got things pretty much figured out.
+Mae: yeah. Gregg’s the best.
+Germ: Like, it seems like you’ve been having a hard time lately
+Germ: and I thought you’d like to just like... chill out for a bit.
+Germ: Everybody else is like
+Germ: Going somewhere
+Germ: or wishes they were
+Germ: but you’re just like
+Germ: Not.
+Germ: I dunno.
+<<close>>
+<<wait 2>>
+Mae: Yeah.
+<<close>>
+//Mae kinda slumps to the side and leans her head on Germ and closes her eyes//
+<<close>>
+<<wait 2>>
+Mae: Thanks for dinner.
+Germ: Thank my mom.
+Mae: No, just
+Mae: thanks.
+Mae: I-
+Mae: I’ve had a really long fall.
+Germ: I know.
+Germ: glad you like Sloppy Joes.
+<<close>>
+<<wait 2>>
+Mae: Who doesn’t?
+<<close>>
+<<fadeOut 1 wait>>
+<<scene Outskirts>>
+===
+title: GermKids
+tags: 
+colorID: 0
+position: 55,294
+---
+Mae: germ's tire.
+Mae: germ has a tire.
+Mae: germ has like little sisters.
+Mae: how is this the weirdest thing that's happened this week?
+
+<<set $germ_kids_done to 1>>
+===
+title: TrampolineTalk
+tags: 
+colorID: 0
+position: 91,579
+---
+<<wait 8>>
+
+<<show GermDad>>
+<<show GermUncle>>
+
+<<setCanInteract GermDad 0>>
+<<setCanInteract GermUncle 0>>
+
+<<walk GermDad GermDad0>>
+<<waitForMove GermDad>>
+
+<<alwaysRequireButtonToAdvance 1>>
+
+GermDad: Hey, there’s a familiar face!
+Mae: What?
+GermDad: I seen you a whole bunch!
+Mae: I don’t...
+GermDad: I’m I N V I S I B L E!
+<<walk GermUncle GermUncle0>>
+GermUncle: Don’t let him spook ya.
+GermUncle: He’s been working on your street.
+GermDad: Department of Transportation.
+GermDad: You don’t see us, but we see you.
+Mae: Oh yeah! Hi!
+Mae: Thanks for uh... fixing our street!
+GermDad: Yep, yep.
+GermDad: Wern’t nothing.
+GermUncle: Yeah he’s been doing the easy work.
+GermUncle: My crew’s been out climbing all over those bridges in Saltztown
+Mae: Oh, they open yet?
+GermUncle: Hell no!
+GermDad: 'at’ll be the day.
+<<if $austerity_bearity>>
+	Mae: Austerity Bearity!
+	Germ: what?
+	Mae: nothin'.
+<<endif>>
+GermDad: You're Stan Borowski's kid, right?
+Mae: Yeah?
+GermDad: We used to see him down at Miller's a bunch.
+GermDad: Probably good we see him less now.
+Mae: ...yeah...
+GermUncle: He didn’t mean nothing by it.
+Mae: it’s cool.
+GermDad: Back when, your dad was something else.
+GermDad: He’s up at Ham Panther now, right?
+Mae: yeah.
+GermDad: They’re pretty anti-union, huh.
+Mae: Yeah, he’s mentioned that.
+GermUncle: Hrm.
+GermDad: Yep, yep.
+GermUncle: Your dad's alright, kid.
+Mae: ok!
+Germ: Yeah he’s good!
+Mae: how do you know my dad?
+Germ: I don't! I just felt left out of the conversation.
+GermUncle: you tell him Ham Panther management can go straight to hell.
+Mae: ok, that's... uh... weird!
+GermDad: ain't nothing weird about it.
+GermDad: Jeremy, we going out to Hunwick this weekend?
+Germ: Yeah!
+Mae: What’s in Hunwick?
+<<runNextLinesTogether 2>>
+GermDad: Old computer show!
+Germ: Old computer show!
+GermDad: gonna look for an old Compydon-80
+Germ: play some Wanderers of Klorgen!
+GermUncle: buncha dweebs, over here!
+GermDad: yep, yep.
+<<close>>
+<<wait 2>>
+Mae: ok well if I bounce anymore I’m gonna puke.
+Germ: no need to keep bouncing
+Germ: i’m not gonna be lonely
+Mae: alright
+<<close>>
+<<hide Collision:TrampolineLeft>>
+<<hide Collision:TrampolineRight>>
+<<hide Collision:GermOnPorch>>
+<<setCanInteract Germ 1>>
+// this next command prevents Germ from making Mae walk and pause
+<<setUsePlayerInteractStates Germ 0>>
+<<alwaysRequireButtonToAdvance 0>>
+//<<cameraFollowPlayer 1>>
+===
+title: InitLevel
+tags: 
+colorID: 0
+position: -771,357
+---
+<<hide GermDad>>
+<<hide GermUncle>>
+===

@@ -1,0 +1,322 @@
+title: EnterLevel
+tags: 
+colorID: 4
+position: -293,612
+---
+<<if $did_bea_coffin is 0>>
+    <<playMusic graveyard_old_section>>
+    [[Intro]]
+<<else>>
+    [[InSinkhole2]]
+<<endif>>
+===
+title: Intro
+tags: 
+colorID: 4
+position: -34,683
+---
+Bea: So like
+Bea: ghosts.
+Mae: ghosts?
+Bea: like i dunno if i believe in them but
+Mae: yeah?
+Bea: So you know how you said you’ve been seeing ghosts at night?
+Bea: I mean I don’t super believe it's not just dreams.
+Bea: because obviously it's dreams.
+Mae: ok that's certainly your take on it.
+Bea: but like...
+Bea: did you ever see my mom?
+->yes
+	Mae: it's hard to like recognize anyone
+    Mae: but you can get a sense of people
+    Mae: and i uh i'm pretty sure i saw her
+    Bea: ...
+    Bea: really?
+    Mae: as far as i can tell.
+    Bea: I just... want to know she's somewhere
+    Bea: and ok.
+    Mae: she's somewhere, bea. and ok.
+    Bea: thanks. i don't know if you're just lying
+    Bea: or you dreamed it
+    Bea: or what.
+    Bea: but... even if you just made all that up
+    Bea: it was nice of you.
+    <<wait 2>>
+->no
+	Mae: i mean, i can't really tell?
+    Mae: and i don't think the ghosts were like
+    Mae: people?
+    Mae: like they're not sitting around being ghosts.
+    Mae: it's more like
+    Mae: echoes?
+    Mae: echoes of shit that happened and people that were here?
+    Bea: ...
+    Bea: oh.
+    Mae: trust me, none of the places looked like super much fun.
+    Mae: your mom was rad as hell
+    Mae: too rad to hang there.
+    Bea: ha ha. that's like...
+    Bea: i appreciate you trying to turn this around.
+    Mae: i'm doing my best, beatrice.
+Bea: alright anyway
+Bea: so the bad news is that we're locked out.
+Bea: by that big-ass gate.
+Mae: ugh why make a giant gate in a graveyard?
+Bea: um to keep people like you out
+Bea: and stop what you're probably gonna do.
+Mae: hm. yeah we'll never know for sure.
+Bea: alright well i'm not climbing it.
+Bea: go do your thing.
+Mae: my thing?
+Bea: you're good at this kinda thing!
+Bea: brute force and shit.
+Mae: geez. gotta do everything around here.
+Bea: it's your ghost! i'm just the driver.
+Mae: fine. hang out. i'll be back.
+<<walk Bea BeaByGate>>
+<<setCanInteract Bea 0>>
+===
+title: GateBreak
+tags: 
+colorID: 4
+position: 336,500
+---
+<<freezePlayer>>
+<<playerCanRun 0>>
+<<playerCanJump 0>>
+Bea: Uh.
+Bea: I sure hope nobody saw that.
+Bea: We’re gonna get sued.
+Mae: I don’t think anyone’s back here.
+Mae: And it’s getting late.
+Bea: mmhm.
+Mae: You’re welcome, by the way!
+Bea: Yeah see? I told you you're good at this.
+Mae: my back hurts.
+Bea: so what do we need to do?
+Mae: uh I'm gonna go find Little Joe's grave
+Mae: and if he doesn't show up
+Mae: i'm gonna knock on it until he does.
+Bea: you're not allowed to destroy anything, mae.
+Mae: ok fine! whatever! let's go!
+<<set $at_joes_grave_done to 0>>
+<<walk Bea BeaInPit>>
+===
+title: AtJoesGrave
+tags: 
+colorID: 4
+position: 637,541
+---
+Bea: "Joe Shade"
+Bea: Yeah, this is him.
+Bea: Ground here’s all swampy.
+Mae: Ugh. Gross.
+Bea: So what do we do here?
+Mae: Um. I guess I'm gonna just look around?
+Bea: for... ghosts?
+Mae: ugh don't make this a thing.
+Bea: it's not a thing! it's cool!
+Bea: mae, i am here for *you* right now.
+Mae: sorry. you had a tone.
+Bea: tone stowed.
+Mae: thank you.
+<<set $at_joes_grave_done to 1>>
+<<set $check_old_section_1_done to 0>>
+<<set $check_old_section_2_done to 0>>
+<<set $check_old_section_3_done to 0>>
+===
+title: InitLevel
+tags: 
+colorID: 4
+position: -628,593
+---
+<<setCanInteract Bea 0>>
+<<set $check_old_section_1_done to 1>>
+<<set $check_old_section_2_done to 1>>
+<<set $check_old_section_3_done to 1>>
+<<set $at_joes_grave_done to 1>>
+
+<<if $did_bea_coffin>>
+    <<warp Mae MaeInPit>>
+    <<warp Bea BeaInPit>>
+    <<flip Mae -1>>
+    <<cameraLookAt CameraEnd>>
+    //<<hide Collision:Ground>>
+<<else>>
+    //<<hide Collision:Ground2>>
+<<endif>>
+
+<<setSpriteLayer Bea CharacterFG>>
+===
+title: CheckOldSection1
+tags: 
+colorID: 4
+position: 934,583
+---
+Mae: I found some old stuff!
+Bea: what kind of old stuff?
+Mae: graves?
+Bea: wow.
+<<close>>
+<<set $check_old_section_1_done to 1>>
+<<set $checked_old_section_count += 1>>
+[[CheckOldSectionCount]]
+===
+title: CheckOldSection2
+tags: temp
+colorID: 4
+position: 1189,643
+---
+Mae: This grave is for a horse I think?
+Bea: I don't think they ever buried horses in people graves.
+Mae: imagine the big horse-sized coffin.
+Bea: imagine.
+<<close>>
+<<set $check_old_section_2_done to 1>>
+<<set $checked_old_section_count += 1>>
+[[CheckOldSectionCount]]
+===
+title: CheckOldSection3
+tags: 
+colorID: 4
+position: 1469,608
+---
+Bea: any ghosts over there?
+Mae: no, bea.
+Mae: you'd know.
+Mae: I'd say.
+Bea: ha ha ok ok
+<<set $check_old_section_3_done to 1>>
+<<set $checked_old_section_count += 1>>
+[[CheckOldSectionCount]]
+===
+title: CheckOldSectionCount
+tags: 
+colorID: 4
+position: 1206,940
+---
+<<if $checked_old_section_count >= 3>>
+    <<setCanInteract Bea 1>>
+<<endif>>
+===
+title: Bea
+tags: 
+colorID: 4
+position: 1163,1206
+---
+<<wait 2>>
+Mae: THIS IS STUPID!
+Bea: What were you expecting?
+Mae: SOMETHING!
+Mae: It’s just... STUPID!!!
+Mae: HE DIDN’T POP OUT OF THE GROUND OR ANYTHING!
+Bea: Is... is that what you were expecting to happen?
+Mae: THIS IS STUPID!
+Mae: I’m gonna smash his shit up!
+Bea: uh whoa dude hold up no
+Mae: [shake=.05]WAKEY WAKEY LITTLE JOE!!![/shake]
+<<playerCanRun 1>>
+<<playerCanJump 1>>
+<<setCanInteract Bea 0>>
+===
+title: JumpOnJoeGrave
+tags: 
+colorID: 4
+position: 1478,1210
+---
+Bea: ok. that didn’t sound right.
+===
+title: InSinkhole
+tags: 
+colorID: 4
+position: 1748,1204
+---
+//<<hide Collision:Ground>>
+//<<show Collision:Ground2>>
+<<warp Bea BeaSinkhole>>
+<<warp Mae MaeSinkhole>>
+<<flip Mae -1>>
+<<freezePlayer>>
+Bea: HOLY SHIT!
+Mae: HOLY SHIT!
+Bea: WHAT DID YOU DO???
+Mae: You were right!
+Bea: About what??? I didn’t tell you to do that?
+Mae: About the sinkholes!
+Bea: We’re lucky it wasn’t deeper.
+Bea: Wait... is that...
+Mae: Yeah. That’s a coffin.
+Bea: Oh crap.
+Mae: So, we're gonna... open it... right?
+Bea: no. we're not going to open a coffin
+Bea: with a rotting corpse in it.
+Mae: Bea, it's been a long time.
+Mae: he's not rotting anymore.
+    <<if $did_bea_friendship_quest_2>>
+        Mae: we got more a Mr. Miranda situation going on here.
+    <<endif>>
+Bea: geez god we are not doing this we are leaving
+Mae: aren't you kinda curious at least?
+Bea: ...
+Bea: ...
+Bea: ...yeah.
+Mae: ok! let's do this!
+Bea: you're doing it. I'm standing here.
+<<close>>
+<<irisOut 1 wait>>
+<<scene PawsModeBeaCoffin>>
+===
+title: InSinkhole2
+tags: 
+colorID: 4
+position: 2004,1203
+---
+Mae: so what, foul play?
+Bea: who knows.
+Mae: we're detectives!
+Bea: we're not. we're like
+Bea: criminal vandals
+Bea: or like graverobbers or something.
+Mae: those too!
+Mae: we're a lot of things right now.
+Bea: SHH!
+Mae: what?
+<<playAmbientSFX _AmbientSFX:amb_ibon 3>>
+<<wait 2>>
+Bea: So there’s someone back there watching us.
+Mae: Oh god...
+Bea: i don't know where they went
+Bea: just like
+Bea: out of the corner of my eye...
+Mae: is it...
+Bea: I don’t know. But we need to leave. NOW!
+Mae: it could be the ghost!
+Bea: NO! We're gone! Now!
+Mae: ok fine geez!
+<<set $graveyard_branch_break to 1>>
+<<close>>
+<<run Mae OffLeft>>
+<<run Bea OffLeft>>
+<<wait 2>>
+<<trigger GraveyardEide Run>>
+<<wait 4>>
+<<set $want_graveyard_ending to 1>>
+<<fadeOut 1 wait>>
+<<scene BeaIQGraveyard left>>
+===
+title: NeedBea
+tags: 
+colorID: 4
+position: 455,1133
+---
+<<if $graveyard_need_bea is 0>>
+    Mae: There's no way I'm going to leave Bea behind...
+    Mae: Ugh Beatrice.
+    Mae: just learn to jump.
+    Mae: not with those scrawny legs I guess.
+    Mae: how do I break that gate open?
+    <<set $graveyard_need_bea to 1>>
+<<elseif $graveyard_need_bea is 1>>
+    Mae: Hmm, there's gotta be a way to break that gate open...
+<<endif>>
+===

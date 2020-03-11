@@ -1,0 +1,107 @@
+title: Convo1
+tags: 
+colorID: 0
+position: 373,227
+---
+Mae: so how's our son working out?
+Angus: he's in our living room.
+Mae: he sure is!
+Mae: pretty great.
+Angus: yep.
+<<wait 1>>
+<<tell AngusFoodPaw Reach>>
+===
+title: Convo2
+tags: 
+colorID: 0
+position: 624,230
+---
+Mae: Gregg, you're awful quiet?
+Gregg: just eating.
+Mae: you've never had a problem talking and eating at the same time.
+Gregg: ...
+Angus: ...
+<<wait 1>>
+<<tell GreggFoodPaw Reach>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: 57,118
+---
+Mae: oh god
+Mae: if god even exists
+Mae: these donuts
+Mae: you're not religious, right angus?
+Angus: no.
+Mae: have donuts ever made you think twice?
+Angus: no.
+<<close>>
+<<wait 1>>
+<<tell GreggFoodPaw Reach>>
+===
+title: Convo3
+tags: 
+colorID: 0
+position: 868,228
+---
+<<playOneShot event:/paws_mode_pizza/mae_pizza_sick>>
+Mae: ugh. donut sick already.
+<<wait 2>>
+Angus: it smells.
+Gregg: dude.
+Mae: Donut wolf?
+Angus: the robot thing.
+Gregg: I thought you'd like it!
+Gregg: I smell, and you like me!
+Mae: yeah! to both of those things!
+Mae: Gregg spent a lot of time and effort on that robot
+Mae: because he thought you'd love it.
+Angus: No, he did it because it was fun.
+Angus: No matter what could happen.
+Mae: geez.
+Gregg: ...
+<<wait 1>>
+<<tell AngusFoodPaw Reach>>
+===
+title: Convo5
+tags: 
+colorID: 0
+position: 1362,227
+---
+<<playOneShot event:/paws_mode_pizza/mae_pizza_sick>>
+<<wait 2>>
+<<fadeOutMusic 10>>
+Mae: oh cripes
+<<wait 2>>
+Mae: oh sweet cripes
+<<playOneShot event:/paws_mode_donut/donut_sick_transition>>
+Mae: i'm falling into the sky
+===
+title: Convo4
+tags: 
+colorID: 0
+position: 1108,224
+---
+<<playOneShot event:/paws_mode_pizza/mae_pizza_sick>>
+Mae: oof. feeling woozy.
+<<wait 2>>
+Mae: Angus, you're being rude.
+Angus: *I'M* being rude?
+Angus: we're trying to get out of here
+Angus: both working our asses off
+Angus: and you come waltzing back into town
+Angus: and suddenly Gregg is breaking into grocery stores
+Gregg: abandoned ones!
+Angus: and like stealing car batteries
+Gregg: abandoned ones!
+Angus: and messing up our already crappy apartment,
+Gregg: hey. dude. c'mon.
+Mae: wait, how is this my fault?
+Angus: ...
+Gregg: ...
+Mae: whatever. i'm eating.
+<<wait 1>>
+<<tell GreggFoodPaw Reach>>
+<<tell AngusFoodPaw Reach>>
+===

@@ -1,0 +1,167 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: 472,56
+---
+Bea: alright, so what are we looking for?
+Mae: I want to steer!
+Bea: No.
+Mae: MOVE! I’M STEERING!
+<<playAmbientSFX _AmbientSFX:mae_push_bea>>
+<<wait 1>>
+Bea: OW!
+Bea: Geez! Mae!
+Mae: ...
+Mae: I’m sorry.
+Bea: ...
+Mae: Ok ok ok ok how do we do this?
+Bea: Uh.
+Bea: Step one: Look at the screen.
+Bea: Step two: Move around and look at stuff.
+Mae: Step three: Find Ghost
+Bea: Sure.
+===
+title: Clue1
+tags: 
+colorID: 0
+position: 256,304
+---
+<<set $found_microfiche_clue_1 to 1>>
+<<tell AmbientSFX:found_clue Play>>
+<<wait 1>>
+Mae: Heeeey look at this.
+Bea: Hm yeah. 
+Mae: Looks like... Possum Jump?
+Bea: LET ME READ IT.
+Mae: It’s Possum Jump.
+Bea: Ok yeah. That’s back up in the state park, right?
+Mae: yeah.
+Bea: ever been up there?
+Mae: Nope!
+Mae: Gonna check it out though!
+Bea: Go nuts.
+<<if $did_bea_friendship_quest_2>>
+    Bea: That’s actually probably only a mile to so from Mrs. Miranda's house.
+    Bea: Back up in the hills.
+    Bea: All kinds of stuff up there.
+    Mae: Well I’ll try to avoid any basements
+    Mae: or corpse husbands.
+    Bea: cosigned.
+<<endif>>
+[[AdvanceClue]]
+===
+title: Clue2
+tags: 
+colorID: 0
+position: 498,311
+---
+<<set $found_microfiche_clue_2 to 1>>
+<<tell AmbientSFX:found_clue Play>>
+<<wait 1>>
+Mae: Ooh look.
+Bea: Scootch so I can see.
+Bea: Graveyard. That’s a gimme.
+Mae: I mean if you’re looking for ghost stuff
+Mae: that’s where they make a lot of ‘em.
+Bea: Looks like they saw him in the old section...
+Bea: oh cool! That’s where his grave is!
+Bea: I’m actually interested in that.
+Mae: How could you NOT be interested?
+Mae: This is like actual dangerous ghost stuff!
+Bea: ... i like history.
+Mae: Ghosts are history! 
+Mae: History that won’t stay history!
+Bea: Ha ha ha. That’s actually pretty good.
+[[AdvanceClue]]
+===
+title: Clue3
+tags: 
+colorID: 0
+position: 732,303
+---
+<<set $found_microfiche_clue_3 to 1>>
+<<tell AmbientSFX:found_clue Play>>
+<<wait 1>>
+Mae: Hey hey hey.
+Mae: Ghost spotted.
+Bea: Historical Society?
+<<if $found_microfiche_clue_2>>
+	Mae: History that won’t stay history
+	Mae: in a history place!
+	Bea: History place?
+<<endif>>
+Mae: Yeah. I’ve never been!
+Bea: You didn’t go back in school?
+Mae: I think this was when I wasn’t in school.
+Bea: Oh. After The Softball Incident.
+Mae: Yeah. Mostly just watched tv and did therapy.
+Bea: Well it’s actually a pretty cool old house
+Bea: Used to be owned by one of the mine owners or something?
+Bea: Railroad? Mine? Steel Mill? Something like that?
+Mae: An actual haunted house!
+Bea: uh... no.
+Bea: elementary school kids are there all the time.
+Bea: they have like, summer arts and crafts programs.
+Mae: Oh. Well, still worth checking out.
+[[AdvanceClue]]
+===
+title: AdvanceClue
+tags: 
+colorID: 0
+position: 512,560
+---
+<<set $microfiche_clues += 1>>
+
+<<if $microfiche_clues is 3>>
+    <<set $microfiche_done to 1>>
+    Mae: Ok well. That’s like three leads.
+    Mae: Let’s boogie.
+    Bea: "Let’s boogie"?
+    Bea: Also, is that it?
+	->Yeah
+		Mae: Three clues! We got three leads!
+		Bea: You’re a regular detective
+		Mae: Mae Borowski: A Detective Of Ghosts
+		Bea: Alright alright let’s go.
+		<<irisOut 1 wait>>
+        <<scene Library>>
+	->Naw, let’s look at more stuff.
+<<endif>>
+
+<<if $microfiche_clues >= 3>>
+    <<tell Microfiche CanExit>>
+<<endif>>
+===
+title: Tooth
+tags: 
+colorID: 0
+position: 1036,311
+---
+Mae: oh wow. this is gnarly.
+Mae: and AWESOME.
+Mae: ha ha ha ha.
+Mae: oh my god.
+<<set $knows_tooth to 1>>
+===
+title: NotClue
+tags: 
+colorID: 0
+position: -149,291
+---
+<<if $microfiche_not_clue is 0>>
+    Mae: Hmm, this is interesting but...
+    Bea: Yeah, not exactly about a "ghost."
+    <<set $microfiche_not_clue += 1>>
+<<elseif $microfiche_not_clue is 1>>
+    Bea: No "ghost" to be found here.
+    Mae: The way you say "ghost" it sounds like you don't believe me.
+    Bea: ...
+    <<set $microfiche_not_clue += 1>>
+<<elseif $microfiche_not_clue is 2>>
+    Bea: This one?
+    Mae: No ghost!
+    <<set $microfiche_not_clue += 1>>
+<<elseif $microfiche_not_clue is 3>>
+    Mae: No ghost here...
+<<endif>>
+===

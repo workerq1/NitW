@@ -1,0 +1,736 @@
+title: EnterLevel
+tags: 
+colorID: 4
+position: -396,241
+---
+<<set $check_grave_1_done to 1>>
+<<set $check_grave_2_done to 1>>
+<<set $check_grave_3_done to 1>>
+<<if $want_graveyard_ending>>
+    [[Ending]]
+<<else>>
+    [[Intro]]
+<<endif>>
+===
+title: ThreeWyrdTeens
+tags: cut
+colorID: 4
+position: 561,256
+---
+// check variable if they've met the teens before or not
+WyrdTeen1: You must talk to us before you pass.
+Bea: Ugh.
+Bea: Fine, okay we'll talk to you.
+===
+title: BeaVisitMom
+tags: 
+colorID: 4
+position: 293,264
+---
+Bea: ok so
+Bea: i’m gonna go visit my mom
+Bea: she’s right down there
+Mae: oh. Ok.
+Bea: gimme a minute or two, ok?
+Mae: totally no problem.
+Mae: Sorry.
+Bea: Sorry about what?
+Mae: about your mom and all.
+Bea: it’s ok. It happens.
+Mae: Cool cool cool. I’ll check out some graves.
+Bea: alrighty.
+Mae: I took a class on death and dying
+Mae: when I couldn’t get into the dinosaur class back at school.
+Mae: it’s like… something I actually know about.
+Bea: Cool. I’ll meet you back up here then.
+<<close>>
+//bea walks to grave//
+<<stopFollowing Bea>>
+<<walk Bea BeaMomGrave>>
+//<<show Gravedigger>>
+<<set $check_grave_1_done to 0>>
+<<set $check_grave_2_done to 0>>
+<<set $check_grave_3_done to 0>>
+<<setCanInteract Bea 1>>
+Mae: Let’s check out a grave or three.
+<<playMusic graveyard_main_section 10>>
+===
+title: Statue
+tags: 
+colorID: 4
+position: 23,283
+---
+Bea: well, there’s the statue
+Mae: ooh! also Spooky!
+Bea: i thought you were like, actually kind of afraid.
+Mae: i mean, i am but like
+Mae: whatever
+Bea: so we wait here?
+Mae: yeah
+Bea: and a ghost shows up?
+Bea: ...
+Mae: this isn’t dumb!
+Mae: don’t act like this is dumb!
+Bea: hey, i’m along for the ride.
+<<close>>
+<<wait 5>>
+Mae: know any ghost stories?
+Bea: not off the top of my head.
+Mae: ok, what’s scary?
+Bea: uh.
+Bea: Things are like monumentally screwed right now
+Bea: and no one in power gives a shit
+Bea: or they’re actively making it worse
+Bea: out of spite or profit.
+Mae: WHOA! GEEZ!
+Mae: I meant like
+Mae: a skeleton or something.
+Bea: Oh right. Sorry.
+Mae: ok ok ok
+Mae: we’ll have a spook-off
+Mae: i say something, and you make it spookier.
+Bea: alright
+Mae: how about this-
+    ->a skeleton in your hallway at night
+        Bea: a regular stranger dude in your hallway at night
+            ->and he’s got a knife
+                Bea: and he’s a pharmaceutical CEO
+                Mae: what?
+                Bea: and he jacked up the price of meds that keep people from dying
+                Mae: um
+                Bea: ...and he’s a skeleton
+                Mae: aw yeah. Skeleton CEO with a knife.
+            -> and he’s whisssspering things
+            	Bea: and he’s a health insurance industry exec
+            	Mae: ok?
+            	Bea: he wants to profit off your sickness and fear
+            	Mae: what’s he whispering?
+            	Bea: complicated fine print.
+            	Mae: Bea, this isn’t fun.
+            	Bea: ...and he’s a ghost.
+				Mae: THANK YOU.
+                Mae: the whispering ghost of a… um
+				Mae: healthcare executive?
+	->a skeleton outside your window
+		Bea: a regular stranger person outside your window
+			->he’s smiling
+				Bea: and he’s from the bank
+				Mae: oh come on
+				Bea: he’s here to tell you they’re gonna take your house
+				Mae: this is just depressing
+				Bea: and he’s a zombie
+				Mae: ok fine that works
+				Mae: zombie bank guy!
+            ->he’s frowning
+				Bea: and he’s your landlord
+				Mae: that’s not-
+				Bea: you’re late on rent
+				Bea: and you can’t pay
+				Bea: and he’s there to evict you
+				Mae: geez Bea
+				Bea: and he’s like headless
+				Mae: HEADLESS LANDLORD!!
+				Mae: brutally beheaded, now wandering the earth
+				Bea: i friggin’ wish.
+Mae: all the things you’re afraid of are [wave]BORING[/wave].
+Bea: the scariest stuff is like really really boring
+Mae: oh my god beatrice
+Bea: what were we supposed to be doing?
+Mae: watching a statue or something
+Mae: this is dumb. Let’s go.
+===
+title: Gravedigger
+tags: cut
+colorID: 4
+position: 49,31
+---
+Mae: Hey.
+Gravedigger: Evenin'
+Mae: Evenin'.
+Gravedigger: whatchoo up to, bud?
+Mae: looking for a ghost while my friend visits her mom's grave.
+Mae: you?
+Gravedigger: i'm the gravedigger, groundskeeper, what have ya.
+Mae: can we talk shop for a sec?
+Gravedigger: shoot.
+    -> do you dig the graves with a shovel?
+        Mae: in the pale moonlight?
+        Mae: when the ghosts stalk the rows?
+        Gravedigger: nah. we got a little backhoe.
+        Gravedigger: scares the ghosts away too, i reckon.
+    -> do you get spooked out here all by your lonesome?
+        Gravedigger: nah. I work here.
+        Gravedigger: tends to take the spook out of the place.
+Mae: this job pay well?
+Gravedigger: you thinkin bout diggin graves?
+Mae: depends on the pay
+Gravedigger: not much.
+Mae: oh.
+Gravedigger: I'm a wedding dj on the side.
+Mae: friggin sweet.
+Gravedigger: I will rock you. Hard.
+Mae: sounds great, my man.
+<<wait 2>>
+Mae: welp, see ya!
+Gravedigger: good luck findin' yer ghost!
+<<set $gravedigger_done to 1>>
+===
+title: CheckGrave1
+tags: 
+colorID: 4
+position: 585,-212
+---
+Mae: oooh! fancy.
+Mae: this guy was a fancy guy.
+Mae: Hm.
+Mae: Ok I'm gonna guess...
+    ->he crashed his bike.
+        Mae: aw yeah i bet it was like
+        Mae: he was racing to his sweetie's house
+        Mae: to beg her not to leave town
+        Mae: and he took a dangerous curve too fast
+        Mae: and went flying off a cliff
+        Mae: and his last words
+        Mae: whispered into the rain
+        Mae: in mid-air
+        Mae: were
+        Mae: "actually i love my bike more please put it on my grave ok"
+    ->he was hit by a bike.
+        Mae: and they... uh...
+        Mae: engraved his murderer on his gravestone.
+        Mae: forever shamed, that bike.
+    ->he loved his bike.
+        Mae: he loved it so hard.
+        Mae: he smooched it
+        Mae: so right.
+<<close>>
+<<set $checked_graves += 1>>
+<<set $check_grave_1_done to 1>>
+<<tell GraveBubble1 Hide>>
+<<wait .5>>
+<<destroy GraveBubble1>>
+<<destroy GraveLeaves1>>
+[[VerifyGraves]]
+===
+title: CheckGrave2
+tags: 
+colorID: 4
+position: 886,-260
+---
+Mae: hm. Standard headstone, nothing fancy. 
+Mae: clearly religious.
+    ->Can't really be sad about this.
+        Mae: She had a really good run.
+        Mae: like if life was an arcade game
+        Mae: this would be on the high score screen.
+    ->95 years. Wow.
+        Mae: when she was born the most high-tech thing was horses
+        Mae: she had to like look out the window to see a horse.
+        Mae: and now we have, like, pictures of horses on the internet.
+        Mae: like any horse you can think of.
+        Mae: she saw us from horses to internet horses.
+        Mae: decent run.
+<<close>>
+<<set $checked_graves += 1>>
+<<set $check_grave_2_done to 1>>
+<<tell GraveBubble2 Hide>>
+<<wait .5>>
+<<destroy GraveBubble2>>
+<<destroy GraveLeaves2>>
+[[VerifyGraves]]
+===
+title: CheckGrave3
+tags: 
+colorID: 4
+position: 1231,-228
+---
+Mae: Aw dang.
+Mae: lived like 14 years.
+    ->that's not enough time.
+        Mae: probably never said anything anyone could understand.
+        Mae: you should get off at least one good sentence in life.
+    ->poor family.
+        Mae: ok i'm just sad now.
+<<close>>
+<<set $checked_graves += 1>>
+<<set $check_grave_3_done to 1>>
+<<tell GraveBubble3 Hide>>
+<<wait .5>>
+<<destroy GraveBubble3>>
+<<destroy GraveLeaves3>>
+[[VerifyGraves]]
+===
+title: MaeDoneWithGraves
+tags: 
+colorID: 4
+position: 943,338
+---
+<<set $graves_done to 1>>
+Mae: Geez Bea.
+<<close>>
+<<warp Bea BeaMidWay>>
+<<walk Bea BeaAtSteps>>
+Mae: How long does a mom visit take?
+Mae: Tick tock, Beatrice. We got places to be.
+<<wait 1>>
+Mae: holy crap. i am a jerk.
+<<setCanInteract Bea 1>>
+===
+title: VerifyGraves
+tags: 
+colorID: 4
+position: 952,1
+---
+<<if $checked_graves >= 3>>
+    [[MaeDoneWithGraves]]
+<<endif>>
+===
+title: InitLevel
+tags: 
+colorID: 4
+position: -803,124
+---
+<<setCanInteract Bea 0>>
+<<setCanInteract Britt 0>>
+<<setCanInteract Pam 0>>
+<<setCanInteract Karla 0>>
+//<<hide Gravedigger>>
+
+<<if $want_graveyard_ending>>
+    <<warp Bea BeaEnding>>
+    <<flip Bea 1>>
+    <<warp Mae MaeEnding>>
+    <<flip Mae -1>>
+    <<cameraLookAt CameraEnding>>
+<<else>>
+    <<warp Bea BeaOffLeft>>
+    <<warp Mae MaeOffLeft>>
+<<endif>>
+===
+title: Ending
+tags: 
+colorID: 4
+position: -236,515
+---
+<<unlockDoodle BeaIQ>>
+Mae: WELL THAT WAS WEIRD HUH
+Bea: Weird?! That was not weird!
+Bea: that was a crime!
+Mae: Did you see the ghost???
+Mae: He was there!!!
+Bea: how do you know the ghost is a dude?
+Mae: ...
+Mae: ok fine but HE WAS THERE!!!
+Bea: Mae it was the groundskeeper or something
+Bea: investigating WHO WAS RUINING HIS GRAVEYARD!!!
+Mae: how do you know the groundskeeper is a dude?
+Bea: oh shut up!!
+Mae: RAAAAAGH! I SAW THE EFFING GHOST!!!!
+<<set $night to 1>>
+<<set $did_bea_investigation_quest to 1>>
+<<if $act is 3 and $day is 2>>
+    <<set $did_bea_investigation_quest_on_a3d2 to 1>>
+<<endif>>
+<<set $completed_investigation_quests += 1>>
+<<if $act is 3 and $day is 4>>
+	Mae: WHY DOES NOB-
+    //freakout animation and sound plays//
+    <<close>>
+    <<fadeOutMusic 2>>
+    <<wait 2>>
+    <<enableAnimator _CameraControl>>
+    <<playAnimation Mae MaeFreakoutHeadLeft>>
+    <<trigger _CameraControl Freakout>>
+    <<wait 12>>
+    <<playAmbientSFX _AmbientSFX:mae_head_hurt 3>>
+    <<wait 3>>
+    Mae: AAAAAAAAAAAAAAAGH!!!
+    Bea: Mae?!!! What’s wrong?!!
+    Mae: AAAAAUUGHHHGH.
+    Bea: Holy crap... uh...
+    Mae: Ugh. My head... geez... ugh
+    Bea: Let’s get to the car. I’ve got migraine pills and we can get you home.
+    Mae: NO!
+    Mae: Need to talk to... everyone... tonight...
+    Bea: What?
+    Mae: Everyone.
+    Bea: OK ok ok.
+    Mae: I need everyone.
+    Bea: Stop talking!!! Go get in the car!!!
+    <<close>>
+    <<fadeOut 1 wait>>
+    <<scene GreggAngusApartment>>
+<<else>>
+    Bea: we saw *someone*
+    Bea: there are other people in the graveyard, you know?
+    Mae: Ugh. Whatever
+    Bea: We're leaving before the cops get here.
+    <<close>>
+    <<walk Bea BeaEnter>>
+    <<walk Mae MaeEnter>>
+    <<wait 3>>
+    <<fadeOut 1 wait>>
+    <<scene MaeHouse left>>
+<<endif>>
+===
+title: Intro
+tags: 
+colorID: 4
+position: -579,511
+---
+<<hide Collision:Left>>
+<<walk Mae MaeEnter>>
+<<walk Bea BeaEnter>>
+<<waitForMove Mae>>
+<<show Collision:Left>>
+<<wait 1>>
+Mae: Foggy.
+Bea: Always got that evening fall fog.
+Bea: Collects between the ridges.
+Mae: It’s spooky.
+Bea: I dunno. Good spooky.
+Bea: I get really sad because it’s not here year-round.
+<<if $did_bea_friendship_quest_4>>
+	Mae: Hey Bea?
+    Bea: Yep?
+    Mae: Sorry again about last night.
+	Bea: aaah. It’s cool.
+    Bea: who needs a social life?
+    Mae: this is social!
+    Bea: it sure is.
+<<endif>>
+<<generateFollowPoints Mae Bea>>
+<<follow Bea Mae>>
+===
+title: Bea
+tags: 
+colorID: 4
+position: 309,25
+---
+<<if $check_grave_1_done and $check_grave_2_done and $check_grave_3_done>>
+    <<hide Gravedigger>>
+    <<setCanInteract Bea 0>>
+    Mae: Hey.
+    Mae: Uh. How’d it go?
+    Bea: Fine.
+    Bea: She’s still there.
+    Mae: Were you worried that...
+    Bea: You know how we’ve been having sinkhole problems in town?
+    <<if $knows_sinkholes>>
+        Mae: Yes.
+        Bea: That’s what was wrong with your street
+    <<else>>
+        Mae: ...no?
+        Bea: We’ve been having sinkhole problems in town.
+        Bea: That’s what was wrong with your street
+        Mae: ?
+        Bea: Those guys who were working on your street?
+        <<if $did_germ_friendship_quest_3>>
+            Mae: Germ’s dad!
+            Bea: What?
+        <<endif>>
+    <<endif>>
+    Bea: Anyway, my mom’s buried in a pretty low spot
+    Bea: couldn’t afford the hill
+    Bea: so I was worried.
+    Mae: Like, you’re worried the ground’s just gonna like cave in?
+    Bea: What part of “sink-hole” is difficult to understand?
+    Mae: WE’RE IN A GRAVEYARD!
+    Mae: THEY SHOULDN’T MAKE THESE WHERE SINKHOLES ARE A PROBLEM!
+    Bea: yeah, and they shouldn’t build towns that flood
+    Bea: and yet here we are.
+    Mae: Ok, you ready?
+    Bea: You know, when I was down there
+    Bea: I think I heard music from the top of the hill
+    Bea: and like... voices...
+    Mae: Huh. That’s... uh...
+    Mae: Spooky.
+    Bea: Yeah. Not sure what’s going on up there.
+    Mae: Let’s go find out.
+    <<close>>
+    //mae autowalks a few feet. Bea doesn’t. Mae stops//
+    Mae: You coming?
+    Bea: Oh yeah. Sure.
+    <<generateFollowPoints Mae Bea>>
+    <<follow Bea Mae>>
+    <<set $graveyard_step_collision to 1>>
+<<else>>
+    Mae: Hey.
+    Bea: Hey.
+    Mae: Is this?
+    Bea: Yup.
+    Mae: oh.
+    Bea: Yup.
+    <<setCanInteract Bea 0>>
+<<endif>>
+===
+title: HillTop
+tags: 
+colorID: 4
+position: 1229,20
+---
+<<flip Bea 1>>
+Pam: HO, WEARY TRAVELERS
+Karla: You seek answers among the dead
+Britt: but they shall give you none.
+<<if $met_wyrd_teens>>
+	Mae: Ha ha ha oh wow.
+	Mae: Hey guys.
+	Bea: do you know these kids?
+	Mae: ha ha yeah. We’ve met.
+	Mae: What are y’all doing?
+	<<close>>
+	<<wait 3>>
+	Mae: Ok, so-
+<<else>>
+	<<set $met_wyrd_teens to 1>>
+	Bea: who the hell are you?
+	Pam: mere messengers
+	Karla: observers
+	Britt: meddlers
+	Mae: teens. They’re weird teens.
+    Bea: oh
+	<<close>>
+	<<wait 3>>
+	Mae: alright, well-
+<<endif>>
+Pam: We are the keepers of the gate
+Bea: there's a literal gate you're sitting in front of?
+Karla: We govern who shall pass
+Britt: and who shall remain
+Mae: alright well,
+Pam: answer us these questions
+Karla: truthfully
+Bea: what
+Britt: and you may pass into the realms of the dead
+Mae: ok ok ok fine whatever!
+Bea: get on with it!!
+Pam: FIRST QUESTION!!!
+Pam: HAVE YOU EVER DONE IT?
+    ->Done it?
+        Mae: "done"
+        Bea: "it"?
+        Pam: you heard me
+        Mae: how old are you teens?
+    ->You can just call it sex.
+        Mae: we're grownups here
+        Bea: well *we* are at least
+Pam: ANSWER!!
+    ->no
+        Mae: never got around to it.
+    ->yes
+        Mae: it was faaaaaaaaantastic.
+        Bea: really?
+        Mae: no i'm very much lying.
+        Bea: oh ok.
+Pam: AND YOU?
+Bea: yeah.
+Mae: What? When?
+Bea: Summer before 11th grade.
+Mae: really? how did i not know this?
+Bea: this was when you weren't talking to me.
+Mae: who? who did this happen with?
+Bea: ugh you don't know him.
+Bea: it was at math camp.
+Mae: "math camp?!"
+Pam: what is math camp
+Bea: you go and do like math stuff
+Bea: and camp stuff
+Mae: and apparently have lots of sex?!?
+Bea: it wasn't good.
+Bea: top notch math though.
+Pam: THIS IS BORING.
+Britt: NEXT QUESTION!!!
+Bea: geez. fine.
+Britt: DESCRIBE YOUR DREAM DATE
+Bea: these are the stupidest questions
+Mae: yeah don't you want to ask something like spooky at least?
+Britt: DREAM DATE!!!!
+Bea: ok fine.
+Bea: uh he'd be tall, dress cool,
+Bea: really smart, likes good music,
+Bea: and we go to the movies-
+Britt: BORING.
+Britt: YOU?
+Mae: Wrestling.
+Bea: like you're gonna wrestle or you're gonna like watch wrestling?
+    ->We go to see wrestling.
+        Mae: yeah they'd buy us tickets
+        Britt: THEY???
+        Mae: guy or gal. i'm not picky.
+        Mae: and we'd drive out to Hucklesburgh
+        Mae: to the convention center
+        Mae: and we watch
+        Mae: Unstoppable Hayseed vs The Impending Cronk.
+        Mae: and eat corndogs.
+        Bea: oof. I could eat a corndog right now.
+        Bea: I don't watch wrestling
+        Pam: I do.
+        Pam: It's great.
+        Britt: NOBODY CARES
+    ->I could wrestle.
+        Mae: I don't care if it's a guy or girl
+        Mae: but they'd have to be like GRRRR
+        Mae: because I don't even want to date someone
+        Mae: who's not
+        Mae: GRRR.
+        Bea: so you're gonna wrestle this person
+        Mae: yeah they'd be super tough and cool
+        Mae: and we'd be all tired and dirty and bleeding
+        Mae: and then we'd like lay on the floor
+        Mae: and tell each other secrets
+        Bea: that's actually really sweet.
+        Britt: I GUESS.
+Mae: what do you want from me?
+Karla: NEXT QUESTION
+Karla: what is your most embarrassing experience?
+Bea: what?!
+Mae: just go with it.
+Karla: ANSWER!
+Bea: one time I farted in front of the class.
+<<wait 1>>
+Mae: HA HA HA
+Karla: That's it?
+Bea: what were you expecting?
+Karla: ok that sucked. now you go.
+Mae: uh... oh... god...
+    ->one time in junior high
+        Mae: i.. oh god.
+        Karla: TELL.
+        Mae: i'd just started getting my period.
+        Mae: and i bled on the chair in science class
+        <<fadeOutAmbientSFX _AmbientSFX:WyrdTeens .5>>
+        <<playOneShot event:/snack_falcon/switch_music Mae>>
+        <<wait 1>>
+        Karla: oh god.
+        Bea: oh god.
+        Mae: and i got up at the end of class and ran
+        Bea: oh no
+        Mae: and this kid came in and sat in the chair
+        Bea: oh NOOOOOOOOOOOO
+        Mae: and later i walked by the nurse office
+        Mae: and the kid was sitting in there
+        Mae: with blood on his butt
+        Mae: and the nurse was calling his mom
+        Mae: and- and- and-
+        Mae: he looked at me as i went past and
+        //if we have a mae cry emote use it here//
+        Mae: I THINK HE KNEEEW-EW-EW....
+        <<wait 2>>
+        <<playAmbientSFX _AmbientSFX:WyrdTeens 5>>
+        Karla: ok.
+        Karla: that was pretty messed up.
+    ->one time in high school
+        Mae: I went to the prom with this guy Cole...
+        Bea: oh wow I've been wanting this story for years.
+        Mae: and it was awkward and i had to wear a dress
+        Mae: and i couldn't slow-dance
+        Mae: and he was really nice and stuff i guess
+        Mae: and i tried to kiss him
+        Mae: but somehow i screwed it up and drew blood?
+        Karla: you bit him?
+        Bea: how bad did you mess up this kiss?
+        Mae: i have no idea! but he was bleeding a lot.
+        <<fadeOutAmbientSFX _AmbientSFX:WyrdTeens .5>>
+        <<playOneShot event:/snack_falcon/switch_music Mae>>
+        <<wait .5>>
+        Mae: so i like rushed him to the bathroom to get paper towels
+        Mae: so i'm shoving these paper towels into his mouth
+        Mae: and i overdo it and he starts choking and like fighting back
+        Mae: and I'm like chowing down on candy almonds
+        Bea: from where???
+        Mae: i stole them from the tables and shoved them down my dress!
+        Mae: so i'm like plowing through these almonds
+        Mae: and one gets caught in my throat
+        Mae: poor Cole has like slumped against the bathroom wall
+        Mae: i try to give myself the heimlich maneuver
+        Mae: and it works but... but...
+        Mae: i puke all over Cole
+        Mae: chicken cordon bleu.
+        Karla: this is amazing
+        Mae: right then someone walks in and sees Cole dazed and bleeding and choking
+        Mae: and me puking into the sink
+        Mae: so i pull all the paper towels out of Cole's mouth
+        Mae: and for some reason I think to flush them down the toilet
+        Mae: and that makes it overflow
+        Mae: so I grabbed Cole and pulled him out of the bathroom
+        Mae: both of us covered in puke and blood and toilet water
+        Mae: and he ran away and left.
+        Mae: and he was my ride.
+        Bea: how did you get home?
+        Mae: that kid Josh who rode his tractor to prom
+        Mae: so we're slowly driving to my house
+        Mae: cars slowing down and honking
+        Mae: while I'm on the back, crying my eyes out.
+        <<wait 2>>
+        <<playAmbientSFX _AmbientSFX:WyrdTeens 5>>
+        Karla: THAT WAS SERIOUSLY MESSED UP.
+        Bea: Mae I... I...
+        Mae: i have nightmares about it like once a week.
+        Karla: *I'M* GONNA HAVE NIGHTMARES ABOUT IT.
+        Bea: ...
+        Bea: can we pass now? 
+        Karla: YEAH. NOBODY'S GONNA TOP THAT.
+    ->one time in college
+        Mae: One time at college...
+        Mae: There was this cute girl I saw at the cafeteria
+        Mae: like a few times a week
+        Mae: i guess our schedules lined up or something
+        Mae: which is weird about college, it's like a little town-
+        Britt: CUT TO THE CHASE.
+        Bea: geez
+        Mae: ok so...
+        Mae: i got up the nerve to talk to her
+        Mae: and i followed her out into the hallway
+        Mae: and i don't know why but i shouted
+        Mae: [shake=.05]HEY![/shake]
+        Mae: and she turned around and and and
+        Mae: all i could do was wave????
+        Bea: ooof.
+        Britt: this is funny.
+        Mae: and and and
+        <<fadeOutAmbientSFX _AmbientSFX:WyrdTeens .5>>
+        <<playOneShot event:/snack_falcon/switch_music Mae>>
+        <<wait .5>>
+        Mae: and then i turned around and tried to walk away all cool
+        Mae: but i ran into this doorframe right behind me
+        Mae: and it hurt and i staggered back and and and
+        Mae: fell into the trash can outside the cafeteria
+        Mae: and my face went into trash spaghetti
+        Bea: holy shit dude.
+        Britt: CONTINUE!
+        Mae: and i like flailed until the trash tipped over...
+        Mae: and i got up and the girl had had had...
+        Mae: she'd watched all of it...
+        Mae: and i tried to give her this smile like
+        Mae: i'd some how meant to do that
+        Mae: but it turns out i'd swallowed some of the trash
+        Mae: spaghetti
+        Mae: and and and
+        Mae: I puked all over myself!!!
+        <<wait 2>>
+        Bea: no wonder you came home.
+        Mae: oh shut up.
+        <<wait 2>>
+        <<playAmbientSFX _AmbientSFX:WyrdTeens 5>>
+        Karla: Wow that's messed up.
+        Pam: i'm going to throw up. thanks for nothing.
+Britt: you have come face to face with your lowest moment.
+Britt: you may pass unburdened.
+Mae: UNBURDENED?!?!
+Bea: yeah for real.
+Mae: ok let us pass already.
+Pam: the power to pass... was in your hands all along...
+Mae: WHAT?!
+Bea: WHAT THE EFFING HELL?!??
+Karla: you may go.
+Mae: goddammit!
+Bea: go to hell, teens.
+Pam: ha ha ha
+Karla: ha ha ha
+Britt: ha ha ha
+<<close>>
+//gate opens//
+Mae: i hate everything right now.
+Bea: forget it. let's go.
+===

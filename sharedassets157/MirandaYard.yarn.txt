@@ -1,0 +1,195 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: 197,193
+---
+<<if $miranda_yard is 0>>
+     [[Dialogue1]]
+<<else>>
+    [[Dialogue3]]
+<<endif>>
+===
+title: Dialogue1
+tags: 
+colorID: 3
+position: 520,253
+---
+<<playMusic miranda_yard_intro>>
+<<cameraLookAt IntroFocus0>>
+<<cameraLookAt IntroFocus1 6>>
+<<wait 6>>
+Mae: couldn’t you just like refuse to do housecalls?
+Bea: Nope.
+Mae: Why?
+Bea: It’s called a job. People pay you to do it.
+<<walk Bea BeaYard1>>
+Bea: Ideally, at least.
+<<close>>
+<<wait 1>>
+<<look Bea Mae>>
+Bea: You coming?
+<<close>>
+Mae: There’s a thing back here by the driveway!
+Bea: Yeah. She’s an old lady.
+//look Bea right ?!?!} at other weird thing in yard//
+Bea: She’s got weird shit in her yard.
+<<run Mae MaeYard1>>
+Mae: It’s like a windmill!
+Bea: Yep.
+<<walk Bea BeaYard2>>
+Mae: I’ve never been back up here before.
+Bea: Mae Borowski, you have now been here.
+<<cameraLookAt IntroFocus2 6>>
+<<walk Mae MaeYard2>>
+Mae: It’s nice!
+Bea: Yeah. Just a bunch of old cabins people turned into houses.
+Bea: Some hunting camps.
+<<walk Bea BeaPorch1>>
+Bea: So don’t like get shot or anything.
+Mae: Buck season isn’t for a few days, right?
+<<walk Mae MaePorch1>>
+Bea: Well,
+Bea: folks get impatient.
+Mae: For [wave]muuuuuurder[/wave].
+Bea: It ain’t murder if it’s animals.
+Mae: That’s… dark.
+Bea: Hold that thought.
+//aperture out or whatever//
+
+<<close>>
+[[Dialogue2]]
+===
+title: Dialogue2
+tags: 
+colorID: 3
+position: 842,260
+---
+Mae: You gonna knock?
+<<close>>
+<<playAmbientSFX _AmbientSFX:door_knock>>
+<<wait 1.5>>
+<<irisOut 1 wait>>
+<<set $miranda_yard to 1>>
+<<scene MirandaHouse>>
+===
+title: Dialogue3
+tags: 
+colorID: 3
+position: 326,498
+---
+Mae: Well that was fun!
+Bea: uh huh.
+Bea: ...
+Mae: you alright?
+Mae: she gave us lemonade! \o/
+Bea: yeah.
+    ->you not like lemonade?
+        Bea: it's faaaaantastic.
+    ->it's such a nice night out!
+        Bea: lovely.
+Mae: then what's up? _o_
+Bea: nothing. just
+Bea: tired.
+Bea: worked all day.
+Mae: i'm all hyper!
+Bea: good for you.
+Mae: ugh. you are zero fun.
+Bea: yup.
+Mae: you need like
+Mae: some magical shit
+Mae: to like, give you a new perspective.
+Bea: let me know when that happens.
+Bea: wouldn't want to miss it.
+<<playMusic fireflies_on_the_porch 10>>
+===
+title: GotFireflies
+tags: 
+colorID: 3
+position: 810,52
+---
+<<freezePlayer>>
+<<playerFace 1>>
+<<playAmbientSFX _AmbientSFX:firefly_deliver>>
+Bea: Wow.
+Bea: ha ha ha
+Bea: are you like a firefly whisperer or something?
+Mae: they just like me i guess!
+Bea: that's...
+Bea: You're an interesting person, Mae Borowski.
+    ->No, Mrs Miranda is an interesting person.
+        Mae: she like mummified a dude
+        Bea: ok, you're a more benign interesting.
+    ->Granddad said being interesting is all you can hope to be.
+        Bea: well, mission accomplished. 
+Mae: woohoo.
+<<wait 2>>
+Bea: you know
+Bea: i have to say this would have been a much less exciting evening
+Bea: if you weren't along for the ride
+    ->along for the ride?!
+        Mae: i believe i worked pretty hard down there.
+        Mae: i should get a cut of the bill.
+        Bea: not a chance. you're an unpaid intern.
+        Mae: fight you for it! right here and now!
+    ->see? i'm good to have around.
+        Bea: i mean you can certainly beat the shit out of a furnace.
+        Mae: i can beat the shit out of anything.
+Bea: you should like
+Bea: channel that aggression you always have
+Bea: into something useful.
+Mae: eh. Dr Hank said way back i needed to repress it.
+Bea: "repress"? not like "learn to deal with it"?
+Mae: he specifically said "repress".
+Bea: uh. ok. hm.
+<<wait 2>>
+Mae: so do you think Mrs Miranda like
+Mae: pulled her husband's guts out?
+Mae: isn't that what you do for mummies?
+Bea: i dunno, mae.
+<<close>>
+<<cameraLookAt CameraDriftAway 10>>
+//start drifting camera up into the skies
+Mae: do you think you'd have the stomach for it?
+Bea: nope.
+Mae: i probably took a lot of heart.
+Bea: yep.
+Mae: i wish she would ex-spleen it to us
+Bea: i get it, mae.
+Mae: she really rectum!
+Bea: ok that probably stayed in place
+Mae: yeah that should stay where it be-lungs!
+<<setAnimInt sitting Bea 0>>
+<<warp Bea BeaSit>>
+<<walk Bea WalkOffLeft>>
+//walk bea off to the left//
+Bea: i'm leaving
+Mae: hey, you gotta liver your life!
+Bea: bye. this is me gone.
+<<walk Mae WalkOffLeft>>
+//walk mae off to the left//
+Mae: hey! wait up!
+Bea: you're walking back to town
+Mae: you've got a lot of gall to say that!
+Bea: i'm calling the cops.
+<<wait 3>>
+<<fadeOut 1 wait>>
+<<unlockDoodle BeaFQ2>>
+<<set $night to 1>>
+<<set $did_bea_friendship_quest_2 to 1>>
+<<set $completed_bea_friendship_quests += 1>>
+<<scene MaeHouse left>>
+===
+title: InitLevel
+tags: 
+colorID: 0
+position: -85,83
+---
+<<if $miranda_yard>>
+    <<warp Bea BeaSit>>
+    <<sit Bea>>
+    <<flip Bea -1>>
+    <<warp Mae Sit>>
+    <<playerFace -1>>
+    <<setCanInteract Bea 0>>
+<<endif>>
+===

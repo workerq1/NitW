@@ -1,0 +1,197 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: 79,276
+---
+<<setCanInteract Mom 0>>
+<<flip Mom -1>>
+<<flip Mae -1>>
+Mae: I don't think I've ever been up here.
+Mom: We used to come here all the time.
+Mae: Did we?
+Mom: No, we as in "my friends and I when we were your age."
+Mae: Oh ok. I'm not used to you using any other we's.
+Mom: Believe it or not I've had several we's.
+Mae: Huh.
+<<close>>
+<<walk Mom HillPoint_1>>
+===
+title: Jenny
+tags: 
+colorID: 0
+position: 636,399
+---
+Mae: So what is this place?
+Mom: Jenny's Field. Ever heard of it?
+Mae: No? I don't think?
+Mom: Back in the 30s
+Mom: there was this woman and her daughter
+Mom: walking here...
+Mom: and the woman's daughter is in front of her
+Mom: and then she's just gone. Like disappeared.
+Mae: What happened?
+Mom: Turns out there was a sinkhole that opened up
+Mom: when a pillar collapsed in the mines in the hill.
+Mae: Geez.
+Mom: Yep. No one could see it because of the grass.
+Mom: Her name was Jenny. This is Jenny's Field.
+Mom: They never found her.
+Mom: Just.
+Mom: *wwssssp!*
+Mom: Gone.
+Mae: So... wait, why are we here?
+Mom: What, you not up for a little risk taking?
+Mae: ...
+<<close>>
+<<walk Mom Furnace_Mom1>>
+===
+title: Hillstop
+tags: 
+colorID: 0
+position: 357,273
+---
+Mae: This is nice.
+Mom: Used to be a lot more trees around up here.
+Mom: They got cut down when they put in the towers.
+Mae: I don't remember that.
+Mom: You know, all kinds of things happened before you were born.
+Mae: WHAT?!?!
+Mom: Some minor parts of history took place, yes.
+<<close>>
+<<walk Mom JennyPoint_1>>
+===
+title: Hole
+tags: 
+colorID: 0
+position: 641,147
+---
+<<playOneShot event:/mom_quest/mae_fall_meadow Mae>>
+Mae: AAAAGH!!
+Mom: What's wrong?
+Mae: I thought it was a... sinkhole thing...
+Mom: Hm. How about that.
+Mae: ...
+===
+title: Furnace1
+tags: 
+colorID: 0
+position: 880,254
+---
+Mae: Ok... what is that?
+Mom: For some reason before Unified pulled out
+Mom: they brought this old lime furnace up on the mountain.
+Mae: Why?
+Mom: Who knows. Unified did a lot of things.
+Mae: Looks like it's been here forever.
+Mom: It's just sunk into the ground a lot.
+Mae: Like Jenny!
+Mom: But slower.
+Mom: We used to climb up there.
+Mae: Wanna try?
+Mom: Ha ha ha. Oh sweetie.
+Mom: I had you and also a lot of birthdays and donuts since then.
+Mom: And not much climbing.
+===
+title: FurnaceTop
+tags: 
+colorID: 0
+position: 874,471
+---
+Mae: So.. uh...
+Mae: Good thing this chimney is sealed up here!
+Mom: Ha ha ha. Yes, good thing.
+Mom: What can you see up there?
+Mom: It's been a while.
+Mae: Uh...
+    -> Possum Springs and most of the valley!
+        Mom: What does it look like?
+            -> A quilt?
+                Mom: Well, it's a cozy valley.
+            -> Like someone dumped out some blocks?
+                Mom: Ha ha. Sounds about right.
+    -> The highway!
+        Mom: What does it look like?
+            -> A river? But like made of concrete? With cars?
+                Mom: [wave]Always rolling by, the river.[/wave]
+                Mom: [wave]Oh,that river. It's big.[/wave]
+                Mae: Are you... singing?
+                Mom: Yeah, it's from a musical?
+                Mom: Maybe?
+                Mae: :) \o/
+                Mae: [wave]IT IS NOOOOOOOOW!!!![/wave]
+                Mom: Very nice.
+            -> A snake? But like made of concrete? With cars?
+                <<if $eels is 1>>
+                    Mom: Heh heh. An eel maybe?
+                    Mae: Oh my god yes. A massive eel.
+                    Mom: Eels, honey.
+                    Mae: Eels, mom.
+                    Mae: What happened to the eel kid, by the way?
+                    Mom: Someone finally noticed him down there
+                    Mom: and emergency rescue pulled him out of the well.
+                    Mom: And years later he wrote a book about it
+                    Mom: and got rich!
+                    Mae: Did the eels get a cut of it?
+                    Mom: I don't think so.
+                    Mae: That's a crime.
+                    Mom: Won't anyone think of the poor eels?
+                <<else>>
+                    Mom: Big snake.
+                    Mae: Big snake.
+                    Mom: I got bit by a snake once up here, actually!
+                    Mae: I haven't heard this story.
+                    Mom: Yeah it was a copperhead. Jumped out from under a log.
+                    Mom: My boyfriend at the time, Charlie, he was such a sweetie
+                    Mom: tried to suck the snake poison from the bite on my leg.
+                    Mae: Wow. That's a good boyfriend.
+                    Mom: His mouth went numb and he suffered some tissue damage.
+                    Mom: And I still had to go to the hospital.
+                    Mae: Oh wow.
+                    Mom: Don't suck poison from snakebites, sweetie.
+                    Mae: Right.
+                    Mom: It doesn't work.
+                    Mae: Noted.
+                <<endif>>
+Mae: _o_ :|
+Mom: I remember I couldn't tell if being up there
+Mom: made everything feel bigger or smaller.
+Mom: It's a weird feeling.
+Mae: Yeah. I know that one.
+Mom: I used to have a dream when I was your age.
+Mom: Where I was in the big parking lot out by the tracks
+Mom: and I'd start running, but there was always more parking lot.
+Mae: Hm.
+Mom: What do you think it meant?
+Mae: I don't know. Feels weird to tell you what your dreams mean.
+Mom: Why?
+Mae: You're my mom.
+Mom: ...
+Mom: Fair.
+Mae: Why did we come up here today?
+Mom: Well I was hoping you'd fall into a sinkhole, obviously.
+Mae: That didn't work out.
+Mom: Drat.
+Mom: Guess I'll just have to keep you.
+<<close>>
+<<wait 1>>
+Mae: I couldn't see what your expression was when you said that.
+Mom: Do you need to?
+<<close>>
+<<wait 1>>
+Mae: :)
+Mae: No.
+<<close>>
+<<wait 2>>
+<<walk Mom JennyPoint_1>>
+Mom: Well, see you at home!
+Mae: :(
+Mae: HEY!
+<<unlockAchievement Jenny's_Field>>
+<<wait 1>>
+<<unlockDoodle JennysField>>
+<<wait 1>>
+<<close>>
+<<set $did_mom_friendship_quest to 1>>
+<<fadeOut 1 wait>>
+<<scene ChurchHill>>
+===

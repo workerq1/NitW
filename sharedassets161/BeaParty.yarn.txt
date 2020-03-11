@@ -1,0 +1,404 @@
+title: InitLevel
+tags: 
+colorID: 4
+position: -1855,651
+---
+<<if $bea_party is 0>>
+<<endif>>
+
+<<hide Collision:Left>>
+===
+title: EnterLevel
+tags: 
+colorID: 4
+position: -1605,795
+---
+<<if $bea_party is 0>>
+    <<wait .1>>
+    <<walk Mae Mae1 wait>>
+    <<show Collision:Left>>
+    [[Dialogue1]]
+<<endif>>
+
+===
+title: Dialogue1
+tags: 
+colorID: 4
+position: -1327,664
+---
+<<cameraLookAt CameraConvo 2>>
+Jackie: that's why you gotta take it seriously
+Jackie: put your foot down
+<<setAnimInt Jackie point 1>>
+<<setTalkAnimType Jackie 2>>
+Jackie: no fascists at this party!
+<<setAnimInt Jackie point 0>>
+BeaPartyGuy1: ha ha ha right. O_O :)
+Jackie: you don't talk this shit out
+Jackie: you punch that shit out.
+BeaPartyGuy1: do you think that's best? 
+Jackie: uh yeah.
+Jackie: carry a knife and learn to throw a punch
+Jackie: we can't have no sense of humor about this shit!
+Bea: Mace works too. 
+Jackie: Mace against fascists!!!
+Bea: ha ha.
+Mae: Hey! :) o/
+Bea: Hey, this is Mae.
+Mae: _o_
+BeaPartyGuy2: hey mae.
+Jackie: yep. that's mae.
+Bea: so where are you guys from?
+BeaPartyGuy1: suburban Bright Harbor
+BeaPartyGuy2: couple a' born and bred harbor rats!
+Jackie: wow. what are you doing out here?
+BeaPartyGuy1: long story, for both of us.
+Bea: I got... time...
+BeaPartyGuy2: hold up, we're gonna go yell at the dj real quick
+BeaPartyGuy1: we know him. he's a total dink.
+Bea: ok! i'll be here!
+Jackie: bye boys!
+<<close>>
+<<walk BeaPartyGuy1 BeaPartyGuy1BehindStairs>>
+<<walk BeaPartyGuy2 BeaPartyGuy2BehindStairs>>
+<<wait 4>>
+Bea: o_o :|
+Mae: They seem nice!
+Mae: This is very cool!
+Bea: NO DRINKING, MAE. 
+Mae: ok fine :\
+Jackie: You guys wanna dance?
+Mae: yeah! :)
+Bea: Can you dance, Mae?
+Mae: O_o
+Mae: Can, like, anyone here dance?
+Mae: o_o :|
+<<close>>
+<<cameraFollowPlayer 2>>
+//<<walk Jackie Jackie2 wait>>
+//<<flip Jackie -1>>
+<<walk Bea BeaDance>>
+<<walk Jackie JackieDance>>
+<<walk Mae MaeDance wait>>
+<<waitForMove Bea>>
+<<fadeOutMusic 4>>
+<<wait 4>>
+<<playMusic bea_dance_close 4>>
+<<setAnimInt Jackie dancing 1>>
+<<tell DanceBrain DanceWithBeaAndJackie>>
+===
+title: AfterFirstDance
+tags: 
+colorID: 4
+position: -1052,631
+---
+<<setAnimInt Jackie dancing 0>>
+Jackie: Hey, I think those guys are back over there!
+Bea: Ooh... yeah...
+Bea: Should we go talk to them???
+Jackie: YEAH WE SHOULD!!
+Mae: I can dance! I never knew!
+Mae: I’m gonna keep dancing!
+Bea: Uh... are you sure?
+Mae: Yeah! I don’t think I’ve ever danced at a party before!
+Bea: Ok we’ll be like 10 feet away.
+Bea: Within eyeshot.
+Bea: And I’ll watch you.
+Bea: Don’t drink anything someone gives you
+Mae: BEA. I KNOW.
+Bea: No, seriously. If any-
+Mae: BEA. I’LL BE FINE.
+Jackie: Let’s go! She’ll be fine.
+Bea: ok ok ok
+
+//they walk away. And you’re free to walk around or dance until you go talk to Bea again.
+//How do we want to continue dancing?
+//Is it like an interact spot?
+//Otherwise you can wander and look at stuff
+<<close>>
+<<walk Bea Bea3 1>>
+<<walk Jackie Jackie3 1>>
+<<warp BeaPartyGuy1 BeaPartyGuy1Original>>
+<<warp BeaPartyGuy2 BeaPartyGuy2Original>>
+<<flip BeaPartyGuy1 -1>>
+<<flip BeaPartyGuy2 -1>>
+<<wait 1>>
+<<tell DanceBrain DanceAfterBeaAndJackie>>
+===
+title: AfterSecondDance
+tags: 
+colorID: 4
+position: -785,618
+---
+Mae: Dancing is easy! What's the big fuss?
+<<close>>
+===
+title: Bea
+tags: 
+colorID: 4
+position: 590,572
+---
+Mae: HEY BEA!
+Bea: oh hey, mae. This is Chris.
+Mae: Hey Chris.
+BeaPartyGuy2: Hey!
+BeaPartyGuy2: Your friend Bea is pretty cool.
+Mae: AAAAW she’s ok.
+<<if $did_bea_investigation_quest>>
+	Mae: did she tell you we saw a skeleton last night?
+	BeaPartyGuy2: Whoa!
+	Bea: Yeah. ha ha.
+	BeaPartyGuy2: Like memento mori and shit.
+	    ->what’s that?
+            Jackie: remember you are gonna die
+            Mae: geez. does anyone need help with that?
+        ->yeah yeah sick transit glorya nerd
+<<endif>>
+Bea: ha ha ha
+Mae: You’re laughing a lot.
+Bea: ha ha ha ha 
+BeaPartyGuy2: BE-AH-TRISS
+BeaPartyGuy2: that's like an old name
+BeaPartyGuy2: like a book you read in second grade.
+Bea: ha ha. well. a book you liked?
+    ->I liked ghost stories!
+        Mae: my granddad died
+        Mae: and left me an apple crate full!
+    ->I used to be a big reader!
+        Mae: then I got bored with books
+        Mae: my granddad used to read to me
+        Mae: before he got dementia and died!
+<<wait 2>>
+Bea: ha ha ha
+BeaPartyGuy2: sorry about your granddad
+Mae: it's ok! it was years ago.
+Mae: bea's mom is dead too.
+Bea: ha ha ha ha ha ha
+Bea: mae. mae. stop.
+Mae: i'm sure everyone here knows someone who died!
+BeaPartyGuy1: my dog died last spring.
+BeaPartyGuy1: when my house exploded.
+BeaPartyGuy1: because there was a gas leak
+BeaPartyGuy1: from when my dad hit a line
+BeaPartyGuy1: trying to dig up the dog we had before that
+BeaPartyGuy1: because we were going to move
+BeaPartyGuy1: and dad said he had to come with us.
+<<wait 3>>
+Jackie: wow.
+Bea: So Chris, what are you majoring in?
+BeaPartyGuy2: Poli Sci.
+Bea: oh that's cool.
+Bea: are there a lot of jobs in that?
+BeaPartyGuy2: oh i don't know.
+BeaPartyGuy2: i just find it interesting.
+BeaPartyGuy2: i feel like you have to be pretty materialistic
+BeaPartyGuy2: to go to college just so you can get a job after.
+Bea: That's interesting, because-
+Mae: HA HA WHOA. WHOA.
+Mae: Check out rich kid over here!
+Mae: gonna pay zillions of dollars to go to college
+Mae: just cuz something's "interesting".
+Mae: Bea. Bea. Check this dude out.
+Mae: you ever worked a day in your life, Chaz?
+BeaPartyGuy2: i interned at my uncle's firm, yes.
+Mae: well *I* bagged groceries.
+BeaPartyGuy2: ok.
+Bea: ha ha ha mae do you want to dance some more
+    ->sure!
+        Bea: you should go dance
+    ->nah. i'm good.
+        Bea: you sure you don't want to go dance?
+BeaPartyGuy2: yeah my parents own their own business, so-
+Bea: ooh! tell me about it?
+Bea: I know a bit about running a small business.
+BeaPartyGuy2: wanna go across the street and get some pizza?
+Bea: I could eat. And it's a small business!
+BeaPartyGuy2: you'll speak their language, get us free slices.
+Mae: Bea doesn't like spoiled rich kids, Chuck.
+Jackie: I'll come along if that's ok, Bea?
+Bea: yeah! let's go!
+BeaPartyGuy2: ok
+    ->Bea knows *all* about business
+    ->Hey Cody, let me tell you about Beatrice Santello
+Mae: she's super on top of things.
+Mae: super smart and responsible.
+Mae: she runs like the biggest store in Possum Springs.
+Bea: ha ha ha ha mae no
+BeaPartyGuy1: what even is possum springs?
+BeaPartyGuy2: it's west. in the mountains.
+Mae: while rich kid over here is studying politicians or whatever
+Mae: Bea's out in the real world.
+Mae: not like you college kids.
+Jackie: MAE!
+BeaPartyGuy2: what?
+Bea: ha ha ha ha ha
+Mae: i'm kinda over the whole college thing myself.
+Mae: bea and i basically run Possum Springs.
+Mae: except there's like a ghost or something.
+BeaPartyGuy1: You two live in Possum Springs?
+Mae: yeah! got a problem with that?
+BeaPartyGuy2: Wow, you drove all the way here from Deep Hollow county?
+BeaPartyGuy2: Isn’t that like 2 hours away?
+Bea: No, I... uh...
+BeaPartyGuy2: Why would you do that?
+BeaPartyGuy2: Hey Rick! Bea here drove in from Deep Hollow!
+Jackie: ...
+BeaPartyGuy1: Are you not a student?
+Bea: Yeah!
+Mae: What?
+Bea: Yeah! I am! I’m... ha ha...
+<<close>>
+<<wait 2>>
+<<cameraLookAt CameraBeaLeft 2>>
+<<run Bea ExitLeft>>
+<<wait 1.5>>
+Jackie: BEA! WAIT!
+<<close>>
+//Jackie runs up stairs//
+<<run Jackie ExitLeft>>
+<<wait 2.5>>
+BeaPartyGuy1: What was that about?
+BeaPartyGuy2: I think she doesn’t go here.
+BeaPartyGuy1: So?
+BeaPartyGuy2: Dude, I don’t even know.
+<<set $bea_party_block_right to 1>>
+//you can freerun now until you leave up the stairs//
+<<close>>
+<<set $bea_town to 1>>
+<<hide Collision:Left>>
+<<hide CoolPartyGirl>>
+===
+title: DanceAgain
+tags: 
+colorID: 4
+position: -516,609
+---
+<<tell DanceBrain DanceAgain>>
+===
+title: AfterDanceAgain
+tags: 
+colorID: 4
+position: -265,603
+---
+Mae: Still got it! :) \o/
+Mae: _o_
+<<close>>
+===
+title: CoolPartyGirl
+tags: 
+colorID: 4
+position: 11,603
+---
+<<if $cool_party_girl is 0>>
+    <<set $cool_party_girl += 1>>
+    <<setCanInteract CoolPartyGirl 0>>
+    <<animationTrigger CoolPartyGirl ArmUp>>
+    CoolPartyGirl: Hey you.
+    Mae: Hey... you.
+    Mae: Do I know you?
+    CoolPartyGirl: Nope.
+    <<animationTrigger CoolPartyGirl ArmDown>>
+    CoolPartyGirl: What's your name?
+    ->Mae Borowski
+        <<set $party_girl_mae to 1>>
+        CoolPartyGirl: Brrrrrowski.
+        CoolPartyGirl: nice.
+        CoolPartyGirl: sounds so tough.
+        Mae: I'm extremely tough.
+        Mae: I'll wrestle anyone.
+    ->Samantha Stevenson
+        <<set $party_girl_sam to 1>>
+        CoolPartyGirl: Sa-man-tha.
+        CoolPartyGirl: I like it
+        CoolPartyGirl: it sounds like a magic spell.
+        Mae: you've found me out. it was magic.
+        Mae: now you're good and hexed.
+    CoolPartyGirl: Woooow.
+    <<if $party_girl_mae is 1>>
+        CoolPartyGirl: so what's your story, Mae Borowski?
+    <<else>>
+        CoolPartyGirl: So what's your story, Samantha Stevenson?
+    <<endif>>
+    -> I'm a grad student studying... uh... vampires... and I play bass.
+        CoolPartyGirl: wow! that's interesting.
+        ->i mean it's just a regular bass guitar
+            CoolPartyGirl: nothing special about it?
+            Mae: got it for my 16th birthday
+            Mae: it's got my blood on it.
+            CoolPartyGirl: is that a problem? with the vampires?
+            Mae: yeah they totally covet that shit.
+        ->yep. vampire science.
+            CoolPartyGirl: what does that entail?
+            Mae: fang measurement
+            Mae: being up all night
+            Mae: going to a lot of goth dork parties
+            Mae: it's why I'm here tonight
+            CoolPartyGirl: there aren't a lot of goth dorks here
+            Mae: i know. total bust.
+        CoolPartyGirl: that's pretty cool.
+        Mae: ha ha i guess!
+        Mae: i guess i'm so used to awesome stuff
+        Mae: that i'm pretty cool in most situations
+        CoolPartyGirl: oh really?
+    -> I'm a college dropout, a ghost is chasing me, and I recently met god.
+        Mae: I've had these dreams that I'm not sure were dreams
+        Mae: where I was running around jumbled bits of like history or something
+        Mae: like it was all a hairball stuck in the shower drain
+        Mae: And yeah there's a ghost
+        Mae: and I'm pretty sure it like kidnapped someone on halloween
+        Mae: pretty sure i didn't imagine that
+        Mae: and my friends don't completely buy it
+        Mae: and i have this thing going on in my head
+        Mae: and i dropped out of college and i don't even want to get into that
+        Mae: and all i wanted to do was come home and for things to be normal
+        Mae: and that's not really working out
+        Mae: and i found out tonight i can dance and then i saw you
+        <<wait 2>>
+        Mae: i've never just listed all of that out at once before.
+        CoolPartyGirl: Wow.
+        CoolPartyGirl: I stole your life story.
+        Mae: ha ha I guess.
+    CoolPartyGirl: Hey, give me your hand
+    Mae: oh... alright
+    <<close>>
+    <<tell PentagramHandshakeBrain Go>>
+<<endif>>
+===
+title: AfterPentagramHandshake
+tags: 
+colorID: 4
+position: 311,577
+---
+Mae: oh wow.
+CoolPartyGirl: secret handshake.
+Mae: wow.
+CoolPartyGirl: ha ha
+Mae: wooooow.
+CoolPartyGirl: it worked.
+Mae: wow. ok.
+Mae: ok, I should go find my friend
+Mae: let her know i'm over here.
+<<if $party_girl_mae is 1>>
+    CoolPartyGirl: that's a good idea
+    CoolPartyGirl: Brrrrrrrrowski. 
+    Mae: ha ha
+    CoolPartyGirl: it's a good name.
+    CoolPartyGirl: sounds
+    CoolPartyGirl: tough
+    Mae: mmmmmmmmokay
+    Mae: need to tell
+    Mae: friend
+    Mae: lo c a tion
+<<else>>
+    CoolPartyGirl: oh yeah you should
+    CoolPartyGirl: Sa-man-tha.
+    Mae: haaaaa. hexed again.
+    Mae: BOOM.
+<<endif>>
+CoolPartyGirl: ha ha.
+CoolPartyGirl: I’ll be here.
+Mae: wow. ok.
+Mae: be right back.
+<<set $found_pentagrams += 1>>
+<<unlockPentagramDoodle>>
+===

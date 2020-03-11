@@ -1,0 +1,165 @@
+title: Tracks1
+tags: 
+colorID: 3
+position: 475,470
+---
+<<fadeOutMusic 5>>
+<<if $tracks_1 is 0>>
+    <<walk Mae MaeEnd>>
+    <<walk Lori LoriEnd>>
+    <<cameraLookAt CameraEnd 16>>
+    Mae: Wow. Been a while since I've been here.
+    Lori: My house is like 3 minutes from here
+    Lori: got the Longest Night lights from last year still up
+    Mae: ha ha someone on my street does that too
+    Lori: we got pumpkins last year and we left them out too long
+    Lori: and they like
+    Lori: liquefied
+        ->gross
+            Lori: oh really? i'm sorry
+            Mae: ha ha it's cool
+            Mae: gross is fine
+        ->oh yeah i remember that happened with ours one year
+            Mae: my mom was so mad at my dad
+            Mae: it was his job to get rid of them
+            Mae: he had to like
+            Mae: mop it up
+    Lori: i seen like a timelapse video
+    Lori: of when a corpse decays
+    Lori: and like
+    Lori: everything liquefies
+    Mae: we're all goo, deep down
+    Lori: yep
+    Lori: Ok so like
+    Lori: a cool thing to do is squish a metal thing on the tracks.
+    Lori: i like that a lot.
+    Mae: cool.
+    Lori: I brought a little metal dude. Let's see what happens.
+    Mae: sounds good, kid.
+    <<set $tracks_1 to 1>>
+    <<irisOut 1 wait>>
+    <<scene OverheadTracks>>
+<<else>>
+    Mae: whoa!
+    <<set $tracks_quest to 1>>
+    <<set $did_lori_friendship_quest_1 to 1>>
+    <<unlockDoodle LoriTracks1>>
+    Lori: yay!!!
+    Mae: your little metal guy is all... wow.
+    Lori: He represents the human soul.
+    Lori: this is important art.
+    Mae: ha ha ha
+    Mae: well, i gotta get rolling
+    Lori: ok ok ok ok ok
+    Lori: let's roll.
+    <<close>>
+    <<irisOut 1 wait>>
+    <<unlockDoodle LoriMPage>>
+    <<scene TowneCentreEast>>
+<<endif>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: 589,146
+---
+<<if $did_lori_friendship_quest_1 is 0>>
+    [[Tracks1]]
+<<else>>
+    [[Tracks2]]
+<<endif>>
+===
+title: Tracks2
+tags: 
+colorID: 4
+position: 756,467
+---
+<<fadeOutMusic 5>>
+<<if $tracks_2 is 0>>
+    <<walk Mae MaeEnd>>
+    <<walk Lori LoriEnd>>
+    <<cameraLookAt CameraEnd 16>>
+    Mae: My friend Casey used to come out here and smoke.
+    Lori: I used to smoke when I was younger.
+        ->i'm allergic
+            Mae: but my friend Bea does it around me anyway
+            Mae: how long did you do it for?
+        ->oh really?
+    Lori: Ok it was once. I was younger though. I was 12.
+    Mae: Good age to quit.
+    Lori: i could vape.
+    Mae: you could vape.
+    Lori: i'm not gonna vape.
+    Mae: probably a good idea.
+    Lori: Um so do you have the thing we squished on the tracks last time?
+    Mae: Uh... yeah!
+    Mae: What are we doing? Gonna make it flatter?
+    Lori: Kinda but no. You'll see.
+    Lori: I'm gonna pick a new thing to squish him with.
+    Mae: Alright then.
+    <<set $tracks_2 to 1>>
+    <<irisOut 1 wait>>
+    <<scene OverheadTracks>>
+<<else>>
+    //Mae: whoa!
+    //Mae: WHOA.
+    //Mae: This looks tortured.
+    //Lori: Aaah look at mine!!!
+    <<set $tracks_quest to 2>>
+    <<set $did_lori_friendship_quest_2 to 1>>
+    <<unlockDoodle LoriTracks2>>
+    Lori: yaaaaaaaaaaay!
+    Mae: oh god your little dudes are...
+    Mae: it like hurts my soul.
+    Lori: it speaks. the art speaks, mae.
+    Mae: it calls my name!!!
+    Lori: uh
+    Lori: that was cool
+    Mae: yeah it was
+    Mae: i gotta get going
+    Mae: things are like... hectic right now
+    Lori: oh? what's up?
+    Mae: uh... geez.
+    Mae: just like, be careful ok?
+    Lori: how so?
+    Mae: like, go home at dark
+    Mae: there's some bad stuff going on
+    Lori: like what?
+    Mae: oh god i don't even know where to start
+    Mae: just like... be careful
+    Lori: alright.
+    Lori: thanks for the warning
+    Lori: about whatever you're warning me about
+    Mae: don't mention it.
+    <<close>>
+    <<irisOut 1 wait>>
+    <<scene TowneCentreEast>>
+<<endif>>
+===
+title: InitLevel
+tags: 
+colorID: 0
+position: 243,120
+---
+<<if $did_lori_friendship_quest_1 is 0>>
+    <<if $tracks_1 is 0>>
+        <<warp Mae MaeStart>>
+        <<warp Lori LoriStart>>
+        <<cameraLookAt CameraStart 0>>
+    <<else>>
+        <<warp Mae MaeEnd>>
+        <<warp Lori LoriEnd>>
+        <<cameraLookAt CameraEnd 0>>
+    <<endif>>
+<<else>>
+    <<if $tracks_2 is 0>>
+        <<warp Mae MaeStart>>
+        <<warp Lori LoriStart>>
+        <<cameraLookAt CameraStart 0>>
+    <<else>>
+        <<warp Mae MaeEnd>>
+        <<warp Lori LoriEnd>>
+        <<cameraLookAt CameraEnd 0>>
+    <<endif>>
+<<endif>>
+===

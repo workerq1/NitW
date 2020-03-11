@@ -1,0 +1,74 @@
+title: Zapped
+tags: 
+colorID: 0
+position: 527,187
+---
+Mae: {width=4}YAAAAAAAAAAAAAAAAAAAARGH!!!!!!
+<<irisOut 1 wait>>
+<<scene PawsModeBatteryConnect>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: -308,202
+---
+[[ClearedGarbage]]
+===
+title: ClearedGarbage
+tags: 
+colorID: 0
+position: 27,303
+---
+Mae: oof. This thing smells.
+Gregg: That’s just how old machines smell.
+Mae: no... like... I think something was living in here.
+<<close>>
+<<tell BatteryClampPaws ShowGreggClamp>>
+<<wait 2>>
+GreggClamp: Hey.
+GreggClamp: I’ve got an idea.
+GreggClamp: Why don’t you stop being so negative.
+<<close>>
+<<tell BatteryClampPaws ShowMaeClamp>>
+<<wait 1>>
+MaeClamp: Why don’t you eat your own neck?
+GreggClamp: That’s impossible.
+GreggClamp: Be serious.
+GreggClamp: This is serious business.
+MaeClamp: Oh! Well!
+MaeClamp: Well, don’t mind me!
+MaeClamp: See, I’ve already died once tonight.
+MaeClamp: No big deal or anything!!!!
+GreggClamp: What was it like?
+<<setOptionsCharacter MaeClamp>>
+->I saw a shark I think
+	MaeClamp: and it told me something important
+	GreggClamp: what was it?
+	MaeClamp: i don’t remember.
+	GreggClamp: couldn’t have been that important then.
+	MaeClamp: True.
+->I can taste my tooth fillings
+	MaeClamp: and it’s like they’re... ringing?
+	GreggClamp: Ringing.
+	MaeClamp: Like little bells
+	MaeClamp: inside my skull.
+	GreggClamp: Wow.
+	MaeClamp: Yeah.
+GreggClamp: Ok let’s do this!
+GreggClamp: Clamp it!!!
+<<close>>
+<<setOptionsCharacter Mae>>
+<<bigPawCaptureReturnToPosition>>
+<<tell BatteryClampPaws GreggClamp>>
+<<wait 3>>
+===
+title: Connected
+tags: 
+colorID: 0
+position: 247,406
+---
+<<wait 2>>
+<<set $gregg_friendship_quest_2 to 3>>
+<<irisOut 1 wait>>
+<<scene GreggAngusApartment>>
+===

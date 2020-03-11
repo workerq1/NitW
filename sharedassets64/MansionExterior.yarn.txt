@@ -1,0 +1,147 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: -91,369
+---
+<<if $gregg_iq_mansion is 0>>
+    [[Intro]]
+<<else>>
+    [[End]]
+<<endif>>
+===
+title: Intro
+tags: bikeCrash
+colorID: 0
+position: -337,640
+---
+<<walk Mae MaeNextToGregg wait>>
+Gregg: Sorry we crashed.
+Mae: It’s ok.
+<<if $did_germ_friendship_quest_2 or $did_gregg_friendship_quest_3>>
+	Mae: I’m getting used to it.
+<<endif>>
+Mae: is your bike ok?
+Gregg: yeah. i can fix it. i'm handy.
+Gregg: It's too bad you didn't get run over.
+Mae: It's too bad you didn't crash into a train.
+Gregg: It's too bad your corpse didn't get eaten by scavengers.
+Mae: It's too bad you didn't get eaten by scavengers alive.
+Gregg: heh heh.
+Mae: So that’s it, huh?
+Gregg: Yep.
+Mae: Never been out here before.
+Gregg: Me either.
+Mae: Oh… uh… I thought you had a plan.
+Gregg: Who needs a plan?
+Gregg: We’re just breaking into an old house.
+<<if $did_gregg_friendship_quest_4>>
+	Mae: I thought, you know, you weren’t doing crimes anymore.
+	Gregg: Eh.
+	Gregg: I got one left in me.
+	Gregg: And a promise is a promise.
+	Mae: Thanks dude
+	Gregg: Best bros forever
+	Gregg: Also if we get caught I’m blaming the entire thing on you
+	Mae: Ok that’s actually pretty fair.
+	Gregg: BUT we’re not gonna get caught.
+	Mae: Right.
+<<endif>>
+Mae: Crimes.
+Gregg: Yep.
+Mae: It looks kinda... uh...
+<<lookRight Gregg>>
+Gregg: ...exactly like a haunted house.
+Mae: Yeah
+<<lookNearest Gregg>>
+    ->like the one in that old movie
+        Mae: Figure In The Hall
+        Gregg: uh. that title.
+        Mae: yeah i know.
+        Mae: big old house
+    ->like the one on the cover of that book
+        Mae: Haunting Of Arbor Street
+        Gregg: we have an Arbor Street!
+        Mae: yeah. book spooked me pretty good as a kid.
+        Mae: big evil house.
+Mae: this place looks exactly like it.
+Gregg: Well, you’re looking for a ghost, right?
+<<if $did_angus_investigation_quest or $did_bea_investigation_quest>>
+	Mae: I think it might be looking for me, actually.
+	Gregg: Oh yeah, the other night.
+<<endif>>
+Mae: ...yeah...
+Gregg: Well, whoever this is, maybe we’ll get some info here.
+Mae: It’s not, like, a person, dude.
+Mae: It’s a ghost.
+Gregg: Uh.
+Gregg: Right. Well.
+Gregg: Let’s go find us a ghost.
+<<close>>
+<<fadeOut 1 wait>>
+<<scene MansionInterior>>
+===
+title: End
+tags: 
+colorID: 0
+position: 182,661
+---
+<<wait 1>>
+<<set $night to 1>>
+<<set $did_gregg_investigation_quest to 1>>
+<<if $act is 3 and $day is 2>>
+    <<set $did_gregg_investigation_quest_on_a3d2 to 1>>
+<<endif>>
+<<set $completed_investigation_quests += 1>>
+<<unlockDoodle GreggIQ>>
+Mae: You believe me now?
+Gregg: I believe we almost got caught by a security guard or something.
+Mae: No, I’m telling you I can like… feel it.
+Gregg: Ok fine. Ghost. Ghost security guard.
+Mae: Sorry about all of this.
+//Owl cut, needs changing.
+Mae: you crashed your bike
+Mae: broke through a window
+Mae: and jumped off a fire escape.
+Gregg: Nah, dude. Wasn’t nothing.
+Mae: You’re a really good friend, Gregg.
+Gregg: Psssh.
+Gregg: Crimes.
+Mae: Crimes.
+<<close>>
+<<if $act is 3 and $day is 4>>
+	<<wait 2>>
+    <<enableAnimator GreggIQMansionExterior>>
+    <<playAnimation Mae MaeFreakoutHeadRight>>
+    <<trigger GreggIQMansionExterior Freakout>>
+    <<wait 12>>
+    <<playAmbientSFX _AmbientSFX:mae_head_hurt 3>>
+    <<wait 3>>
+	Mae: AAAAAGH
+	Gregg: DUDE! WHAT’S WRONG?!
+	Mae: uuuughh
+	Mae: uuuhmmunhmghggm
+	Gregg: DUDE! TALK TO ME!
+	Mae: ugh... geez, my head...
+	Mae: we need to talk to... everyone... tonight...
+	Gregg: Ok ok ok can you get on the bike?
+	Mae: I... think so
+	Gregg: ok. Grab onto me and I’ll get us home quick.
+	Mae: what about the ghost?
+	Gregg: ain’t no ghosts here.
+	Mae: let’s go.
+    <<fadeOut 1 wait>>
+    <<scene GreggAngusApartment>>
+<<else>>
+    <<irisOut 1 wait>>
+    <<scene MaeHouse left>>
+<<endif>>
+===
+title: InitLevel
+tags: 
+colorID: 0
+position: -93,148
+---
+<<if $gregg_iq_mansion is 0>>
+    <<warp Mae MaeOffscreen>>
+<<endif>>
+===

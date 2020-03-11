@@ -1,0 +1,137 @@
+title: EnterLevel
+tags: 
+colorID: 5
+position: 448,76
+---
+<<if $boss_convo is 0>>
+    [[Intro]]
+<<else>>
+    [[AfterBossConvo]]
+<<endif>>
+===
+title: InitLevel
+tags: 
+colorID: 5
+position: 149,97
+---
+<<setCanInteract Bea 0>>
+<<setCanInteract Angus 0>>
+<<setCanInteract Gregg 0>>
+<<playerCanRun 1>>
+
+<<if $boss_convo>>
+    <<warp Angus AngusAfterBossConvo>>
+    <<warp Bea BeaAfterBossConvo>>
+    <<warp Gregg GreggAfterBossConvo>>
+    <<warp Mae AngusAfterBossConvo>>
+    <<angusCarryMae>>
+<<else>>
+    <<setAnimInt Gregg crossbow 1>>
+    <<flip Mae -1>>
+    <<groupFollow>>
+    <<set $death_walk to 1>>
+    <<playIdleAnimationPlayer>>
+<<endif>>
+===
+title: GetInElevator
+tags: 
+colorID: 5
+position: 549,688
+---
+<<cameraLookAt CameraAtElevator 2>>
+<<walk Bea BeaOnElevator>>
+<<walk Gregg GreggOnElevator>>
+<<walk Angus AngusOnElevator>>
+<<waitForMove Angus>>
+<<waitForMove Bea>>
+<<waitForMove Gregg>>
+<<tell MineElevator ParentGroup>>
+<<tell MineElevator MoveUp>>
+//they get in the elevator. As they go up there’s a big BUMP//
+<<cameraLookAt CameraElevatorShaft 15>>
+<<alwaysUseWaitTime 1>>
+Bea: old, old stuff in here
+<<alwaysUseWaitTime 0>>
+<<close>>
+<<irisOut 1 wait>>
+<<scene MineEntrance>>
+===
+title: Intro
+tags: 
+colorID: 5
+position: 275,392
+---
+Gregg: well, here we are
+<<close>>
+//mae walks out and doubles over//
+Mae: *cough cough*
+Angus: Mae you ok? I have my inhaler!
+Mae: no... i’m fine... It’s just like...
+Mae:  it’s like... something huge is on top of me...
+Bea: i mean technically you’re not wrong.
+Angus: is it like asthma?
+Angus: that's how asthma is.
+Mae: it's not asthma, big guy.
+Mae: but thanks.
+<<close>>
+<<playAmbientSFX _AmbientSFX:eide_rock_noise>>
+Gregg: Sssh!
+Gregg: I heard something.
+Gregg: down there.
+Bea: you going to be ok, mae?
+Mae: yeah. I’m alright.
+Mae: we should be quiet.
+<<if $dom_friend_bea>>
+	Bea: yeah. gotta save up for the screaming later.
+	Mae: heh heh heh.
+<<else>>
+	Gregg: yeah. We’ll be silent terrors...
+	Mae: we’ll be ghosts.
+<<endif>>
+
+
+===
+title: Door
+tags: 
+colorID: 5
+position: 804,425
+---
+// walk through mine 2. Bad atmosphere getting slowly worse! You can’t double back past the screen as you go? The gang reaches the door(?) that’s down at the end//
+Angus: Door.
+Mae: Door.
+Bea: Tunnel
+Gregg: Whatever.
+Mae: here we go
+===
+title: AfterBossConvo
+tags: 
+colorID: 5
+position: 543,390
+---
+//fade in as they’re walking up to the elevator//
+<<walk Bea BeaBeforeElevator>>
+<<walk Gregg GreggBeforeElevator>>
+<<walk Angus AngusBeforeElevator>>
+<<if $dom_friend_bea>>
+	Bea: i have no idea what to even think about any of this
+	Mae: it’s just... horror?
+    Angus: that's not a word you get to use too often.
+	Mae: that’s all i’ve got left
+	Mae: like, everything else in my head is gone
+	Gregg: let’s get out of here, fast
+<<else>>
+	Gregg: my brain is in pieces right now
+	Mae: it’s all just empty
+	Mae: everything’s empty
+	Mae: what are we going to do
+	Gregg: we’ll crack that one when we’re far away from here
+<<endif>>
+Mae: I don’t know if I...
+Angus: shhh
+Angus: talk later
+<<close>>
+<<waitForMove Angus>>
+<<waitForMove Gregg>>
+<<waitForMove Bea>>
+[[GetInElevator]]
+===

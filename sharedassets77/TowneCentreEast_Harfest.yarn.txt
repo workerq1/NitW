@@ -1,0 +1,97 @@
+title: EnterLevel
+tags: 
+colorID: 3
+position: 567,98
+---
+<<if $did_harfest_play>>
+    [[AfterHarfestPlay]]
+<<else>>
+    <<playMusic harfest_march>>
+    <<playAmbientSFX _AmbientSFX:amb_parade_people>>
+<<endif>>
+===
+title: AfterHarfestPlay
+tags: 
+colorID: 3
+position: 566,373
+---
+Bea: Geez. Thanks guys.
+Bea: I am never doing that again.
+Mae: So what are we doing now? :)
+Gregg: Well *I’M* going home.
+Gregg: Angus is making dinner and we’re gonna watch horror movies.
+Mae: Can I come?
+Gregg: It’s more a... date thing.
+Mae: oh. :|
+Mae: What are you doing Bea?
+Bea: Chamber of Commerce folks are going to the buffet out by Ham Panther.
+Bea: Kinda have to go. Business stuff.
+Bea: I hate this.
+Mae: but you're good at it!
+Bea: both of those things can be true.
+Mae: Can I come? :)
+Bea: Nope.
+Mae: Ok. Well... :|
+Gregg: G’night!
+Bea: Night!
+<<close>>
+<<walk Gregg OffScreenLeft>>
+<<walk Bea OffScreenRight>>
+<<waitForMove Gregg>>
+<<waitForMove Bea>>
+<<hide Gregg>>
+<<hide Bea>>
+//the last stragglers of the crowd are gone.
+//just mae and some kid sitting in the park//
+Mae: this is garbage. =_= :\
+<<lookLeft Mae>>
+<<close>>
+<<cameraLookAt CameraKidnapping 6>>
+<<wait 3>>
+//dude in a hood pops out from behind the ol’pickaxe
+//incapacitates the kid, and runs off to the left//
+<<animationTrigger Kidnap Kidnap>>
+<<wait 10>>
+<<playMusic after_kidnapping>>
+<<dilate Mae .8 .5>>
+Mae: what the- O_O :(
+Mae: oh my god o_o
+<<lookRight Mae>>
+Mae: Hey! Anyone!?
+<<lookLeft Mae>>
+<<close>>
+<<wait 2>>
+Mae: Shit.
+<<close>>
+<<run Mae OffScreenLeft>>
+<<wait 2>>
+<<irisOut 1 wait>>
+<<scene Outskirts left>>
+===
+title: InitLevel
+tags: 
+colorID: 3
+position: 562,-130
+---
+<<flip Mae -1>>
+
+<<unlockDoodle Harfest>>
+
+<<if $did_harfest_play>>
+    <<warp Mae MaeOutsidePickaxe>>
+    <<warp Bea BeaOutsidePickaxe>>
+    <<warp Gregg GreggOutsidePickaxe>>
+    <<flip Gregg -1>>
+    <<cameraLookAt OutsidePickaxeCamera>>
+    <<hide Bargoer1>>
+    <<hide Bargoer2>>
+    <<hide Dan>>
+    <<hide MsQuelcy>>
+    <<hide TunnelTeen1>>
+    <<hide TunnelTeen2>>
+    <<hide TunnelTeen3>>
+    <<hide TZEmployee1>>
+    <<hide TZEmployee2>>
+    <<hide Varney>>
+<<endif>>
+===

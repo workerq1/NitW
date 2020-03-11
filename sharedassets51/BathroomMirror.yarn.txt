@@ -1,0 +1,73 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: 657,380
+---
+<<if $bathroom_mirror is 0>>
+    Mae: =_=
+    <<wait 8>>
+    Mae: this isn't fun.
+    Mae: this blows.
+    Mae: why are things weird.
+    Mae: why doesn't this feel good.
+    Mae: everything's stupid.
+    <<wait 4>>
+    <<lookleft Mae>>
+    <<wait 2>>
+    Mae: i'm going to break something.
+    <<close>>
+    <<fadeOutMusic 6>>
+    <<wait 6>>
+    <<set $bathroom_mirror to 1>>
+    <<fadeOut .1>>
+    <<wait 1>>
+    <<scene BathroomVandalism>>
+<<elseif $bathroom_mirror is 1>>
+    Mae: =_=
+    Gregg: What are you doing?
+    Mae: What does it look like I'm doing?
+    <<wait 3>>
+    Gregg: Ok fine that was a
+    Mae: dumb question.
+    Gregg: ok, *WHY* are you doing this?
+    Mae: Do I *NEED* a reason?
+    Gregg: Yeah! I kinda think you do!
+    Mae: Since when?
+    Mae: What are you even doing in here?
+    Gregg: Getting you!
+    Mae: I can find my way out myself!
+    Gregg: Fine!
+    Mae: Fine!
+    Gregg: Fine!
+    Mae: Fine!
+    Gregg: kind of a weird question, but
+    Gregg: did you go *before* you decided to trash the bathroom
+    Gregg: or...
+    Mae: *GOD* gregg i didn't even have to go.
+    Gregg: ok! geez!
+    <<wait 3>>
+    Mae: I DO NOW. o_o :( \o/
+    Gregg: we have a table for when you're done.
+    Mae: LEAVE.
+    Gregg: right ok
+    <<close>>
+    <<irisOut 1 wait>>
+    <<scene DonutWolfInterior>>
+<<endif>>
+===
+title: InitLevel
+tags: 
+colorID: 0
+position: 632,147
+---
+<<lookOut Mae instant>>
+
+<<if $bathroom_mirror is 0>>
+    <<hide Gregg>>
+<<else>>
+    <<warp Mae MaeWithGregg>>
+    <<show Gregg>>
+<<endif>>
+
+<<wait .5>>
+===

@@ -1,0 +1,47 @@
+title: Convo1
+tags: 
+colorID: 0
+position: -225,802
+---
+Mae: so what happened?
+Bea: we called the cops.
+Bea: your aunt and some guy fished you out of the woods.
+Angus: you were like in a coma.
+Gregg: did you die?
+Mae: nah. just took a very long nap.
+Gregg: nice.
+Bea: uh.
+Bea: yeah. nice.
+<<close>>
+<<tell GreggFoodPaw AnotherBite>>
+<<tell AngusFoodPaw AnotherBite>>
+<<tell BeaFoodPaw AnotherBite>>
+<<tell GermFoodPaw AnotherBite>>
+===
+title: Convo2
+tags: 
+colorID: 0
+position: 29,798
+---
+Mae: i had this dream
+Mae: or like a vision
+Mae: or i time traveled.
+Mae: i dunno. i'm like in and out of consciousness.
+Gregg: can you not eat?
+Bea: you should eat.
+Mae: i dunno if I can.
+<<irisOut 1 wait>>
+<<set $night to 1>>
+<<scene GreggAngusApartment>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: -490,806
+---
+<<wait 1>>
+<<tell GreggFoodPaw Reach>>
+<<tell BeaFoodPaw Reach>>
+<<tell AngusFoodPaw Reach>>
+<<tell GermFoodPaw Reach>>
+===

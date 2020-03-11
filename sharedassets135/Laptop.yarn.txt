@@ -1,0 +1,1166 @@
+title: GreggMessages_A2D1
+tags: demo2
+colorID: 3
+position: -3796,16077
+---
+<<set $gregg_laptop to 1>>
+GreggLaptop: HEY DUde #line:f39c37
+GreggLaptop: U ok? #line:cf1fe6
+GreggLaptop: Last night was p intens #line:998f31
+GreggLaptop: Bea said ur ok #line:d2bcb2
+GreggLaptop: I'm a Snack Falcon all day #line:4ce5df
+GreggLaptop: come by if ur not dead #line:7f5ba1
+GreggLaptop: Sincerely, #line:60f8d9
+GreggLaptop: Greggory #line:9a6218
+GreggLaptop: PS- BAND JAM LATER OMG #line:2aee85
+GreggLaptop: the end #line:14d377
+===
+title: GreggLaptop_A1D2
+tags: temp
+colorID: 2
+position: -5043,15968
+---
+<<set $gregg_laptop to 2>>
+GreggLaptop: hey you get that porn off your laptop????
+GreggLaptop: i heard you broke it with sooo much porn.
+-> i did not
+    GreggLaptop: i can smell your lies
+    GreggLaptop: why must you turn this internet into a den of lies
+    Mae: i deny everything!!!!!!
+-> dude you know it
+    GreggLaptop: rick rekkage told me that before the internet theyd hide porn in a hollow log in the woods
+    Mae: yeah that was a thing right?
+    GreggLaptop: be awkward if you were hiking out to the porn
+    GreggLaptop: and some dude was already there and your like sup dude
+    GreggLaptop: i guess were both here for the porn
+    Mae: i bet that happened. you know it did. i bet they became friends
+    GreggLaptop: pornlogbros4ever
+    <<set $porn_log to 1>>
+GreggLaptop: so dude your coming to the party tomorrow night righT????
+Mae: what party?????
+GreggLaptop: up in the state forest! lots of people home from school and stuff this weekend
+GreggLaptop: cool people, the big fire, the snakcs, the beers
+-> girl you know i will
+    GreggLaptop: girl im so excited
+    GreggLaptop: woods are so fun at night
+    GreggLaptop: im gonna get so wasted
+    GreggLaptop: there are no laws in the woods
+-> did you mean to write snacks or snakes
+    GreggLaptop: both dude
+    GreggLaptop: both
+GreggLaptop: cool well you should ask bea if she can drive us
+Mae: what no i dont think she likes me
+GreggLaptop: naw dude shes cool she drives us all the time and lets us borrow her car
+GreggLaptop: stop by her store tomorrow and ask ok pleeeeeeeeeeease?????
+Mae: ok whatever
+GreggLaptop: {width=400}yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaay!!!!!
+
+===
+title: AngusLaptop_A1D2
+tags: temp
+colorID: 2
+position: -5042,16233
+---
+<<set $angus_laptop to 2>>
+AngusLaptop: I guess it turned out ok then? Your computer?
+Mae: yea it did thanks!!!!
+AngusLaptop: I put something else on that drive! Do you remember Demontower?
+<<if $demontower_plays > 0>>
+    // if player has played demontower already
+    Mae: Yeah, I just played it!
+    AngusLaptop: Oh sweet
+    AngusLaptop: I’ve been playing again too. They’ve kept updating it.
+    AngusLaptop: we can talk Demontower sometime. It’s really cool still!
+    Mae: aw thanks angus!!!!
+    AngusLaptop: *tips hat*
+<<else>>
+    // if player hasn't played demontower yet
+    Mae: oh wow, yeah i used to play that all the time like 10 years ago
+    AngusLaptop: I’ve been playing again. They’ve kept updating it.
+    AngusLaptop: You can grab your old save game from their server and start right where you left off :)
+    Mae: oooo cool
+    AngusLaptop: You should check it out and we can talk Demontower sometime. It’s really cool still!
+    Mae: i am def doing this!!!!! aw thanks angus!!!!
+    AngusLaptop: *tips hat*
+<<endif>>
+
+===
+title: GreggMessages_A1D3
+tags: temp
+colorID: 2
+position: -4681,15964
+---
+<<set $gregg_laptop to 1>>
+GreggLaptop: oh btw bea works at the ol pickax so you can go there
+GreggLaptop: get some tools lol
+GreggLaptop: big axe and go on a rampage lol
+===
+title: GreggLaptop_A2D1
+tags: temp
+colorID: 3
+position: -3531,16373
+---
+<<set $gregg_laptop to 2>>
+<<if $did_bea_friendship_quest_1>>
+    Mae: hey hey dude. what did udo2nite
+    GreggLaptop: nothin much
+    GreggLaptop: stole something
+    GreggLaptop: FOr Angus
+    GreggLaptop: (it's a surprise)!
+    Mae: wow what is it?
+    GreggLaptop: hold on for a sec
+    GreggLaptop: oh crap I gotta go ttyl
+    Mae: ok weirdo u OK
+    <<set $gregg_ttyl to 1>>
+<<else>>
+    Mae: hey dude my entire muscles are going to hate u 4ever
+    Mae: 5 + 6ever eve
+    GreggLaptop: DUDE my muscles hate me enough for BOTH Of us
+    Mae: i am so angry at gravity rn
+    GreggLaptop: let's kill gravity
+    Mae: whats gravity done for me lately
+    GreggLaptop: hurt all of our muscles
+    Mae: ok i'm going to go lay on my bed and die probably
+    GreggLaptop: i'm already dead this is the robot head speeking
+    Mae: omg
+    GreggLaptop: i know where you live and what you said
+    Mae: omg2scared
+    GreggLaptop: ok gnight
+<<endif>>
+===
+title: PlayDemonTower
+tags: 
+colorID: 0
+position: -3016,16110
+---
+Mae: DEMONTOWER!!!!!!
+<<irisOut 1 wait>>
+<<scene Demontower>>
+===
+title: BeaMessages_A2D1
+tags: demo2
+colorID: 3
+position: -3826,16362
+---
+<<set $bea_laptop to 1>>
+BeaLaptop: Hey. #line:4fd1f0
+BeaLaptop: Sorry about last night. #line:8d9301
+BeaLaptop: Hope you're feeling ok. #line:f40f20
+BeaLaptop: Um. #line:b421c9
+BeaLaptop: Yep. #line:9b8685
+BeaLaptop: I'm at the Pickaxe all day. #line:4ee566
+BeaLaptop: If you want to stop by. #line:70baaf
+===
+title: BeaLaptop_A2D1
+tags: temp
+colorID: 3
+position: -3503,16081
+---
+<<set $bea_laptop to 2>>
+<<if $did_bea_friendship_quest_1>>
+    Mae: hey. cool mall times
+    BeaLaptop: Pretty cool mall times, yes.
+    Mae: i hope we didn't make too much of a mess
+    Mae: with the fountain
+    BeaLaptop: Who's “we”?
+    BeaLaptop: I was merely sitting there when I was ASSAULTED WITH MALL WATER.
+    Mae: i will not rest until that fountain is brought to justice
+    BeaLaptop: Tell the world my story.
+    BeaLaptop: They must know.
+    Mae: ok i'm going to sleep i hope the nightmares aren't 2horrible
+    BeaLaptop: It is a trauma I shall bear forever
+<<else>>
+    Mae: hey! what did u end up doing 2night
+    BeaLaptop: Watched a third of a season of Bleak Dominion.
+    <<set $bleak_dominion to 1>>
+    Mae: oh wow i like that show
+    BeaLaptop: I'm watching it for the first time.
+    Mae: niiiice. i've seen like all of it
+    BeaLaptop: Well don't spoil it.
+    Mae: what episode are you on?
+    BeaLaptop: Season 1, Episode 4.
+    Mae: oh crap
+    Mae: ok
+    Mae: we'll talk about it later
+    BeaLaptop: Sounds good. Gonna get back to watching it now.
+    Mae: enjoy!!!!!
+    BeaLaptop: Goodnight.
+<<endif>>
+===
+title: EnterLevel_A1D2
+tags: temp
+colorID: 0
+position: -5041,15688
+---
+<<if $night is 0>>
+    <<if $need_to_fix_laptop is 0>>
+        <<wait 2>>
+        MaeNotLaptop: AAAAGH NOOOOO!!!
+        MaeNotLaptop: What is wrong with you?
+        MaeNotLaptop: DAMMIT!
+        MaeNotLaptop: I bet Angus knows how to fix this.
+        MaeNotLaptop: He’s all computery.
+        MaeNotLaptop: I think.
+        MaeNotLaptop: But I can’t... let him see this...
+        MaeNotLaptop: Where does he work again?
+        <<set $need_to_fix_laptop to 1>>
+    <<endif>>
+<<else>>
+    <<if $talked_about_fixed_laptop is 0>>
+        MaeNotLaptop: Omg it's fixed!
+        <<set $talked_about_fixed_laptop to 1>>
+    <<endif>>
+<<endif>>
+
+===
+title: ChattrBox_A2D1
+tags: 
+colorID: 3
+position: -3744,15180
+---
+ChattrBox: Techonomy Today - Economist Pete Corgly: Job Growth Robust In Low Wage Sectors, So That's Kind Of A Wash I Guess
+
+===
+title: EnterLevel_A4D2
+tags: 
+colorID: 5
+position: 3204,15790
+---
+<<if $laptop_vignettes is 0>>
+    [[StartLaptopVignettes]]
+<<else>>
+    [[EndLaptopVignettes]]
+<<endif>>
+===
+title: StartLaptopVignettes
+tags: 
+colorID: 5
+position: 3060,16142
+---
+<<fadeIn 1 wait>>
+<<set $laptop_vignettes to 1>>
+Mae: hey guys
+Mae: uh
+Mae: are you there
+<<close>>
+<<wait 2>>
+Mae: anyone?
+<<close>>
+<<wait 2>>
+Mae: ok im gonna type anyway
+<<playMusic laptop_vignettes 20>>
+Mae: hard for me to say anything smart about what the hell even just happened
+Mae: easier for me to get it all out here
+Mae: and i need to talk
+Mae: even if you jerks are off doing whatever
+<<fadeOut 1 wait>>
+
+<<overrideLoadingScreenType Blank>>
+<<if $dom_friend_bea>>
+    <<scene BeaApartment>>
+<<else>>
+    <<scene GreggAngusApartment>>
+<<endif>>
+===
+title: EndLaptopVignettes
+tags: 
+colorID: 5
+position: 3375,16139
+---
+<<fadeIn 1 wait>>
+<<if $dom_friend_bea>>
+    Mae: Bea, you're definitely something.
+    Mae: I'm so sorry about all you've gone through.
+    Mae: I don't even understand all of your problems
+    Mae: but if I could I'd fix them.
+    Mae: I'd fix all of it.
+    Mae: And I'd buy the tools to do it from your store.
+    Mae: or like borrow them at least.
+    Mae: A better friend would buy, but I'm what you got.
+    Mae: And I'm glad.
+<<else>>
+    Mae: I think I pretty much love Gregg more than anyone ever.
+    Mae: I don't know if better friends exist.
+    Mae: We're like old shoes that go together.
+    Mae: I'm sorry I caused drama between you and Angus, man.
+    Mae: Angus, I give you Gregg. As a gift.
+    Mae: Remember to water and feed him.
+    Mae: if you ever hurt him I will kick your ass into the ground.
+    Mae: he was mine first.
+<<endif>>
+<<fadeOutMusic 8>>
+Mae: yep. There it is.
+Mae: nooooow i'm just gonna erase all that.
+<<wait 2>>
+Mae: oh shit.
+Mae: ha ha guys i was just kidding about a lot of that.
+Mae: i'm really tired, i don't know what i'm saying.
+Mae: log off, mae.
+Mae: log offff.
+<<fadeOut 1 wait>>
+<<fadeOutMusic 2>>
+<<wait 3>>
+<<endDay>>
+===
+title: InitLevel_A4D2
+tags: 
+colorID: 5
+position: 3201,15559
+---
+
+===
+title: GreggLaptop_A1D3
+tags: temp
+colorID: 2
+position: -4377,15974
+---
+<<set $gregg_laptop to 2>>
+GreggLaptop: hey, don't forget about the party tonight!
+Mae: I haven't!
+GreggLaptop: then what are you doing on your laptop! get ready already!
+Mae: geez! ok!
+GreggLaptop: :D
+===
+title: BeaLaptop_A1D3
+tags: temp
+colorID: 2
+position: -4375,16233
+---
+<<set $bea_laptop to 2>>
+Mae: omg party time. are you ready bea?
+BeaLaptop: I'm ready, are *you* ready?
+Mae: oh... maybe I should get ready.
+BeaLaptop: yeah. Maybe.
+===
+title: GreggMessages_A2D2
+tags: 
+colorID: 3
+position: -2215,15798
+---
+<<set $gregg_laptop to 1>>
+GreggLaptop: MORNING
+<<if $did_gregg_friendship_quest_1>>
+    GreggLaptop: I’M SOMEHOW EVEN MORE SORE
+    GreggLaptop: THIS IS BULLSHIT
+<<endif>>
+GreggLaptop: IM WORKING 2day
+GreggLaptop: ANGUS IS OUT OF TOWN AND I’M LONELY
+GreggLaptop: OK BYE
+GreggLaptop: Sincerely, greggorry
+===
+title: BeaMessage_A2D2
+tags: 
+colorID: 3
+position: -2228,16045
+---
+<<set $bea_laptop to 1>>
+BeaLaptop: Hey.
+<<if $did_bea_friendship_quest_1>>
+	BeaLaptop: I got sick from the mall food.
+	BeaLaptop: It wasn’t good mall food.
+<<endif>>
+BeaLaptop: I’m working today if you want to say hello.
+BeaLaptop: Yup. That’s my life right there.
+===
+title: GreggLaptop_A2D2
+tags: 
+colorID: 3
+position: -1899,15790
+---
+<<set $gregg_laptop to 2>>
+<<if $did_gregg_friendship_quest_2>>
+	Mae: hey punk
+	GreggLaptop: Are you still electric?
+	Mae: No. I think it’s gone now.
+	Mae: Hold on, let me touch something metal.
+	<<wait 3>>
+	Mae: Ok I touched my futon frame and we’re good.
+	GreggLaptop: good work dr science
+	Mae: Does Angus like the robot?
+	GreggLaptop: i think so
+	GreggLaptop: he’s just kinda looking at it.
+	GreggLaptop: hold on, I’ll ask him
+	<<wait 3>>
+	GreggLaptop: ok he says to say thank you
+	GreggLaptop: so i think that means he likes it.
+	Mae: alright duder im turning in
+	GreggLaptop: me 2
+	GreggLaptop: C U L8r
+<<else>>
+    GreggLaptop: Hey punk what you do 2nite
+    Mae: got trapped in a basement
+    Mae: beat up a furnace
+    GreggLaptop: right on man
+    GreggLaptop: night night
+<<endif>>
+===
+title: AngusLaptop_A2D2
+tags: 
+colorID: 3
+position: -1917,16065
+---
+<<set $angus_laptop to 2>>
+<<if $did_gregg_friendship_quest_2>>
+    AngusLaptop: Hey Mae. Are you alright?
+    AngusLaptop: I was afraid you were really hurt.
+    AngusLaptop: And you left so quickly.
+    Mae: I’m good, big guy.
+    AngusLaptop: ok. Just wanted to make sure.
+    Mae: aw. I appreciate it.
+    AngusLaptop: try not to almost die anymore tonight.
+    Mae: no promises.
+<<endif>>
+===
+title: BeaLaptop_A2D2
+tags: 
+colorID: 3
+position: -1902,16299
+---
+<<set $bea_laptop to 2>>
+<<if $did_bea_friendship_quest_2>>
+	Mae: hey! That was fun! 
+	Mae: let’s do that again sometime!
+	BeaLaptop: you are pretty handy when it comes to breaking stuff
+	Mae: i’m sure there’s a job in there somewhere
+	BeaLaptop: yeah. It’s called demolition.
+	BeaLaptop: you can actually get a job doing that
+	Mae: holy shit! Ive found my calling.
+	BeaLaptop: im glad i could help facilitate this
+	BeaLaptop: oh so i looked up “people who attract insects”
+	BeaLaptop: seems to come down a lot to heat and various odors
+	Mae: they can’t get enough of this
+	BeaLaptop: i guess not
+	BeaLaptop: goodnight mae
+	Mae: night
+<<else>>
+    BeaLaptop: hey mae. You awake?
+    Mae: sure am!
+    Mae: what’s up?
+    BeaLaptop: nothing. Watching tv.
+    Mae: what are you watching?
+    BeaLaptop: it’s a true crime show
+    Mae: is it any good?
+    BeaLaptop: no. the reenactments are terrible
+    BeaLaptop: but if they were good i’d like actually feel bad for them
+    BeaLaptop: as it stands it’s just like bad local commercial actors
+    BeaLaptop: pretending to murder or be murdered
+    Mae: i love those shows
+    BeaLaptop: they’re the best
+<<endif>>
+===
+title: GreggMessages_A2D3
+tags: 
+colorID: 3
+position: -1317,15842
+---
+<<set $gregg_laptop to 1>>
+<<if $did_gregg_friendship_quest_2>>
+	GreggLaptop: Update: the robot smells a little weird.
+	GreggLaptop: not sure what we missed there.
+	GreggLaptop: anyway
+<<endif>>
+GreggLaptop: hey boyo
+GreggLaptop: at work all day
+GreggLaptop: very bored
+GreggLaptop: work sucks
+GreggLaptop: crap falcon more like it
+===
+title: BeaMessages_A2D3
+tags: 
+colorID: 3
+position: -1310,16094
+---
+<<set $bea_laptop to 1>>
+BeaLaptop: hey	
+<<if $did_bea_friendship_quest_2>>
+	BeaLaptop: got a call from mrs miranda
+	BeaLaptop: apparently she’s upset that we messed up her basement
+	BeaLaptop: whatever. she didn’t pay us to clean it up.
+<<endif>>
+BeaLaptop: I’m at work all day.
+BeaLaptop: just saying. If you want to say hello.
+BeaLaptop: i am here to be hello-ed at
+===
+title: GreggLaptop_A2D3
+tags: 
+colorID: 3
+position: -999,15851
+---
+<<set $gregg_laptop to 2>>
+Mae: hey kiiiid
+GreggLaptop: heyoooooo
+<<if $did_gregg_friendship_quest_3>>
+	GreggLaptop: thanks for hanging earlier
+	Mae: no prob dude
+	<<if $won_knife_fight is 0>>
+		GreggLaptop: how are your knife wounds
+		Mae: i ran them under some water
+		Mae: i figure that’ll fix them
+		GreggLaptop: sounds right
+    <<else>>
+		Mae: how’s your knifed-up hand?
+		GreggLaptop: i’ll live.
+		GreggLaptop: Angus fixed me.
+		Mae: aw. Good boyfriend.
+		GreggLaptop: yeah he’s a keeper.
+    <<endif>>
+	GreggLaptop: sorry i was a bummer there at the end
+	Mae: it’s fine, dude. Seriously.
+	GreggLaptop: i just… yeah.
+	Mae: get some sleep man
+	GreggLaptop: will do.
+	GreggLaptop: night brah
+<<else>>
+    Mae: whatcha up to
+    GreggLaptop: nothing. Kinda bummed tonight.
+    Mae: aw. Why?
+    GreggLaptop: no reason. Just happens.
+    Mae: must be going around
+    Mae: i just got into a fight with bea
+    GreggLaptop: oh no! About what?
+    Mae: i don’t even know. I think I’m just an asshole.
+    GreggLaptop: you and me both
+    Mae: the asshole twins
+    GreggLaptop: we can get matching jackets with that on the back
+    Mae: varsity jackets
+    Mae: with giant asshole patches on the sleeves.
+    GreggLaptop: ha ha ha
+    Mae: alright dude. I’m cashing out for the day.
+    GreggLaptop: seeya duder
+<<endif>>
+===
+title: BeaLaptop_A2D3
+tags: 
+colorID: 3
+position: -1002,16103
+---
+<<set $bea_laptop to 2>>
+Mae: hey bea. You there?
+<<if $did_bea_friendship_quest_3>>
+	<<wait 4>>
+	BeaLaptop: yep.
+	Mae: i don’t really know how i screwed that up but im sorry
+	BeaLaptop: it’s fine. Going to sleep. See you later.
+	Mae: ok.
+<<else>>
+    BeaLaptop: yessir.
+    Mae: what are you up to?
+    BeaLaptop: doing budget stuff for the shop and watching music videos from the 80s
+    Mae: those are the exact things you’d be doing if you were like 20 years older than you are
+    BeaLaptop: well, someone had to take over for my mom.
+    BeaLaptop: I’m just being thorough.
+    Mae: well your doing a good job
+    BeaLaptop: thanks
+    BeaLaptop: gonna get back to work
+    Mae: night night
+<<endif>>
+===
+title: GreggMessages_A2D4
+tags: 
+colorID: 3
+position: -566,15852
+---
+<<set $gregg_laptop to 1>>
+GreggLaptop: HAPPY HALLOWEEN DUDE
+GreggLaptop: GET SPOOKED OR SOMETHING
+===
+title: BeaMessages_A2D4
+tags: 
+colorID: 3
+position: -552,16092
+---
+<<set $bea_laptop to 1>>
+BeaLaptop: -away message- ANNUAL HARFEST PLAY TONIGHT AT THE OL PICKAXE! COME OUT AND SEE THE HAUNTED HISTORY OF POSSUM SPRINGS!
+===
+title: GreggMessages_A3D1
+tags: 
+colorID: 4
+position: -114,15856
+---
+<<set $gregg_laptop to 1>>
+GreggLaptop: hey dude sorry couldnt hang last night
+GreggLaptop: angus says hes sorry 2
+GreggLaptop: band practice todya!!!! Because im in charge and i say so
+GreggLaptop: off2work bye
+===
+title: BeaMessages_A3D1
+tags: 
+colorID: 4
+position: -114,16112
+---
+<<set $bea_laptop to 1>>
+BeaLaptop: hey mae! Thanks so much for your help last night.
+BeaLaptop: woke up and realized that i completely imposed in a big way.
+BeaLaptop: thank you. I really appreciate it.
+BeaLaptop: I’ll be at work cleaning up after last night if you want to say hello
+===
+title: GreggLaptop_A3D1
+tags: 
+colorID: 4
+position: 192,15866
+---
+<<set $gregg_laptop to 2>>
+GreggLaptop: yo i looked up the historical society on the internet
+GreggLaptop: it’s real old but then they did big renovations
+Mae: o rly
+GreggLaptop: i mean listen im not saying theres a ghost but
+GreggLaptop: old stuff that just got torn up seems like ghost central
+Mae: how so
+GreggLaptop: you’re a ghost hanging out in an old house
+GreggLaptop: and then someone puts in a pool where you died or something
+Mae: haunted pools would be actually p scary
+GreggLaptop: im spooked. Im going to bed
+===
+title: BeaLaptop_A3D1
+tags: 
+colorID: 4
+position: 185,16110
+---
+<<set $bea_laptop to 2>>
+BeaLaptop: hey let me know when you want to hit the cemetery.
+BeaLaptop: i should be around most nights this week.
+Mae: idk. Thanks bea
+BeaLaptop: dont thank me too hard
+BeaLaptop: im going there anyway and it’s like right down the road
+Mae: you’re ruining this
+BeaLaptop: oh, in that case-
+BeaLaptop: you are so incredibly welcome and also you better not forget this big favor.
+Mae: that’s more like it.
+BeaLaptop: im falling asleep. Had fun tonight. Sorry if i was grouchy, it’s juststttstt,.
+Mae: it’s fine.
+<<wait 1>>
+Mae: wait, did you fall asleep?
+<<wait 1>>
+Mae: lol
+===
+title: AngusLaptop_A3D1
+tags: 
+colorID: 4
+position: 193,16350
+---
+<<set $angus_laptop to 2>>
+AngusLaptop: Hey Mae.
+AngusLaptop: Let me know when you want to go to the park.
+AngusLaptop: I looked up a map and it’s a pretty straight shot up to Possum Jump.
+Mae: ok great! we never really get a chance to hang out
+AngusLaptop: It’ll be fun I think!
+AngusLaptop: ok i’m going to sleep
+Mae: night sir.
+AngusLaptop: *tips hat*
+===
+title: GreggMessages_A3D2
+tags: 
+colorID: 4
+position: 639,15919
+---
+<<set $gregg_laptop to 1>>
+GreggLaptop: Dude my mouth tastes weird this morning
+GreggLaptop: like a tire
+GreggLaptop: I’ll be at work trying to wash it out with whatevers in the cooler
+===
+title: AngusMessages_A3D2
+tags: 
+colorID: 4
+position: 660,16171
+---
+<<set $angus_laptop to 1>>
+AngusLaptop: -away message- “Planets Are To Be Pitied As They Cannot Know How Big And Cool They Are” - Dr Cathy Conklin, National Astronomy Agency
+===
+title: BeaMessages_A3D2
+tags: 
+colorID: 4
+position: 653,16428
+---
+<<set $bea_laptop to 1>>
+BeaLaptop: last night inspired me
+BeaLaptop: for Longest Night im getting you a library card
+BeaLaptop: you’re welcome.
+===
+title: GreggMessages_A4D3
+tags: 
+colorID: 5
+position: 3935,15828
+---
+<<set $gregg_laptop to 1>>
+GreggLaptop: Hey man. 
+GreggLaptop: nice messages last night
+GreggLaptop: i mean like… really
+GreggLaptop: you massive dork lol
+GreggLaptop: band practice today
+GreggLaptop: bc i feel like we need to do something normal
+GreggLaptop: im at the snalcon
+GreggLaptop: hope your feeling ok
+GreggLaptop: sincerely, greggory
+===
+title: AngusMessages_A4D3
+tags: 
+colorID: 5
+position: 3942,16090
+---
+<<set $angus_laptop to 1>>
+AngusLaptop: -away message- it’s good to be alive this morning. That’s all.
+===
+title: BeaMessages_A4D3
+tags: 
+colorID: 5
+position: 3940,16360
+---
+<<set $bea_laptop to 1>>
+BeaLaptop: Hey Mae.
+BeaLaptop: you ok this morning?
+BeaLaptop: I’m not opening the pickaxe today.
+BeaLaptop: Gregg informs me we’re doing band practice though.
+BeaLaptop: I’ll see you there.
+=======
+title: Node46
+tags: empty
+colorID: 0
+position: -2421,16462
+---
+Empty Text
+===
+title: ChattrBox_A1D2
+tags: 
+colorID: 2
+position: -3744,14930
+---
+ChattrBox: Bright Harbor Gazette - Secretary Of Education: "Having Public Schools Is Like Having Public Hamburgers. That's Insane. Everyone should buy their own Hamburgers."
+===
+title: ChattrBox_A2D2
+tags: 
+colorID: 3
+position: -3497,15178
+---
+ChattrBox: SCIENCE BEAT - Jobs cannot be soul crushing because there is no proof that souls exist.
+===
+title: ChattrBox_A1D3
+tags: 
+colorID: 2
+position: -3495,14932
+---
+ChattrBox: Back To School Tips: Cover TextBooks In Tin Foil. Just Do It.
+===
+title: ChattrBox_A4D3
+tags: 
+colorID: 6
+position: -3755,15723
+---
+ChattrBox: WEATHER SERVICE - Snow In The Forecast! Are You Ready For What's Coming Your Way?
+===
+title: ChattrBox_A2D3
+tags: 
+colorID: 3
+position: -3249,15183
+---
+ChattrBox: Home Dome - Mortgage Got You Down? New App Allows You To Rent Out Your Bathroom As a Public Toilet!
+===
+title: ChattrBox_A2D4
+tags: 
+colorID: 3
+position: -2981,15184
+---
+ChattrBox: Ghostly Gourd: World's Largest Pumpkin "Brock" Conduit To The Dead?
+===
+title: ChattrBox_A3D1
+tags: 
+colorID: 5
+position: -3752,15447
+---
+ChattrBox: Bright Harbor Post - Is Autumn Secretly Killing You?
+===
+title: ChattrBox_A3D2
+tags: 
+colorID: 5
+position: -3492,15445
+---
+ChattrBox: Scientists: "Rising Sea Levels Will Increase Shark Attack Frequency For Obvious Reasons"
+===
+title: ChattrBox_A3D3
+tags: 
+colorID: 5
+position: -3247,15451
+---
+ChattrBox: Techonomy Today: TurnUP founder Mike Eggplant To Buy Postal Service
+===
+title: ChattrBox_A3D4
+tags: 
+colorID: 5
+position: -2989,15452
+---
+ChattrBox: SCIENCE BEAT - New Research Indicates That Things Don't Necessarily Have To Be As Bad As They Are
+===
+title: EnterLevel_A2D2
+tags: 
+colorID: 3
+position: -2047,15511
+---
+<<if $night>>
+    <<if $did_gregg_friendship_quest_2 is 0>>
+        <<set $angus_laptop to 2>>
+    <<endif>>
+<<endif>>
+===
+title: GreggLaptop_A3D2
+tags: temp
+colorID: 4
+position: 928,15931
+---
+<<set $gregg_laptop to 2>>
+Mae: hey hey hey
+GreggLaptop: yo yo yo
+<<if $did_gregg_investigation_quest_on_a3d2>>
+	Mae: How are your shins?
+	GreggLaptop: oh they’re fine. I jump off second story fire escapes all the time.
+	GreggLaptop: no actually they hurt like ballz
+	GreggLaptop: so anyway did you find what you were looking for?
+    	->uh. I think he found us.
+    	->dude we found lots of stuff
+    		Mae: the map thing, the scary robot
+    		Mae: the weird bad art in the attic
+    		Mae: the crazy amount of elevators
+    		Mae: and! The! ghost!
+	GreggLaptop: the janitor that was working on that historical robot guy?
+	Mae: Greggggggggggor
+	GreggLaptop: listen, I know janitors exist so
+	GreggLaptop: that means there’s like a zillion percent more chance
+	GreggLaptop: it was a janitor and not a ghost.
+	Mae: I *felt* it dude.
+	//No more owl
+	//GreggLaptop: well I felt getting attacked by an owl
+	//GreggLaptop: maybe the owl was stalking us inside there
+	GreggLaptop: i’m asking Angus if that could happen
+	<<wait 3>>
+	GreggLaptop: He’s not answering.
+	Mae: alright, I’m gonna get some sleep.
+	Mae: thanks for going with me tonight.
+	GreggLaptop: Crimes, dude.
+	Mae: crimes.
+<<elseif $did_angus_investigation_quest_on_a3d2>>
+	Mae: Hey hey
+	GreggLaptop: Did u and Angus have a good time??????
+		->did he not tell you about it?
+			GreggLaptop: yeah he did.
+		->yeah it was great until it was super scary!!!
+	GreggLaptop: u guys saw a weird creepo huh
+	Mae: yeah. It was the effing ghost again!!!
+	GreggLaptop: hold on
+	<<wait 2>>
+	GreggLaptop: Angus is thinking it was a hunter. Buck season starts in like 2 dayz
+	Mae: oh what the hell
+	Mae: put him on
+	GreggLaptop: kkkkk
+	<<wait 4>>
+	GreggLaptop: Hey Mae. This is Angus.
+	Mae: DUDE! YOU SAW HIM WITH YOUR OWN EYES!
+	GreggLaptop: I mean we saw a guy who was being weird.
+	GreggLaptop: But there are folks that live up there in the park
+	GreggLaptop: and there are hunting camps and stuff.
+	<<set $angus_laptop to 1>>
+	GreggLaptop: So it was most likely a guy out hunting buck early.
+	Mae: Dude. I like /felt/ it.
+	GreggLaptop: I know. I don’t know what to say about that.
+	GreggLaptop: I think all three of us were spooked.
+	Mae: ok fine. Thanks for going and being brave and stuff.
+	GreggLaptop: anytime. I had fun!
+	Mae: you can put gregg back on.
+	<<wait 3>>
+	GreggLaptop: hey hey hey dude.
+	GreggLaptop: im an arteest
+	Mae: were you doing art just now
+    GreggLaptop: sure was
+    GreggLaptop: alright, off to bed
+    Mae: night, dude.
+<<else>>
+	Mae: dude
+	GreggLaptop: hey hey hey
+	GreggLaptop: how was your spooky night
+	Mae: dude we went to the cemetery
+	Mae: and we accidentally like opened a coffin
+	Mae: it was totally like the corpse of the ghost
+	Mae: or… you know what i mean
+	GreggLaptop: WHOOOAAA!!!
+    Mae: and it was like effing nuts man
+	GreggLaptop: Did you see your ghost!
+	Mae: I TOTALLY DID!!!
+	Mae: must be on the right track
+	GreggLaptop: dude’s probably pissed that you messed with his grave
+	Mae: oof. You’re right.
+	Mae: whatever.
+	GreggLaptop: ok I’m going to bed.
+	GreggLaptop: good job on like… all of that.
+	Mae: you know it dude
+	GreggLaptop: goodnight as hell brah
+	Mae: goodnight as eff
+<<endif>>
+===
+title: AngusLaptop_A3D2
+tags: 
+colorID: 4
+position: 931,16219
+---
+<<set $angus_laptop to 2>>
+AngusLaptop: hey mae this is gregg
+AngusLaptop: you and angus are talking on my computer
+AngusLaptop: oh hey i’m angus i’m so smart and have a great ass
+AngusLaptop: blah blah blah u 2 are talking a lot
+AngusLaptop: hold on I’m drawing him a dirty message in the paint program
+AngusLaptop: it’s a dick with his hat on it and smiley face
+AngusLaptop: i don’t know what it even means
+AngusLaptop: looks like u 2 are wrapping up
+AngusLaptop: peace out yo
+AngusLaptop: Hey Mae it’s Angus.
+AngusLaptop: You and Gregg are talking.
+AngusLaptop: I can attest that this picture is kind of baffling.
+AngusLaptop: Goodnight.
+===
+title: EnterLevel_A3D2
+tags: 
+colorID: 4
+position: 885,15679
+---
+<<if $night>>
+    <<set $angus_laptop to 2>>
+<<endif>>
+===
+title: BeaLaptop_A3D2
+tags: 
+colorID: 4
+position: 917,16505
+---
+<<set $bea_laptop to 2>>
+Mae: hey Bea. you awake?
+BeaLaptop: I very much am.
+BeaLaptop: doing bills and eating a grilled cheese.
+BeaLaptop: what’s up?
+<<if $did_bea_investigation_quest_on_a3d2>>
+	Mae: Hey sorry I kinda wrecked the cemetery
+	Mae: I know that’s not something youd normally want to do
+	BeaLaptop: it’s ok. I know you didn’t mean to.
+	BeaLaptop: i mean what’s a grave defilement or two
+	Mae: how about that ghost tho????
+	BeaLaptop: mae seriously, it was the groundskeeper.
+		-> !!!!
+			Mae: BEA!
+			BeaLaptop: what?
+			Mae: he was like RIGHT THERE!
+			Mae: it was totally the same guy from the other night!
+			BeaLaptop: it was just a normal dude!
+		-> !?!?!?
+			Mae: I thought you believed in ghosts!
+			BeaLaptop: I do! Kinda! I think!
+			Mae: why couldn’t that have been a ghost?
+			BeaLaptop: i just don’t assume every person is a ghost!
+			Mae: everyone could be a ghost!
+			BeaLaptop: am i a ghost, mae?
+			Mae: oh you’d like that wouldn’t you.
+			Mae: just haunting me forever.
+			BeaLaptop: i’d make you learn how to drive at the very least.
+			BeaLaptop: But anyway-
+	BeaLaptop: How could you even make him out anyway? It was so foggy!
+	Mae: I could tell ok. I could /feel/ it.
+	BeaLaptop: honestly we’re lucky it was so foggy
+	BeaLaptop: or he’d be able to identify us to the police
+	Mae: AAAAAAAAAAAAAAAAAGH!!!!
+	Mae: fine whatever.
+	BeaLaptop: i’m sorry i made you mad!!
+	Mae: it’s fine. It’s fine.
+	Mae: thanks for going with me.
+	BeaLaptop: i drove. You came with me.
+	Mae: ok thanks for going.
+	BeaLaptop: you’re welcome.
+	BeaLaptop: get some sleep. You need it.
+	Mae: i so do.
+	Mae: night dude
+	BeaLaptop: goodnight!
+<<elseif $did_gregg_investigation_quest_on_a3d2>>
+	Mae: went to the historical society
+	BeaLaptop: oh, how was it?
+	Mae: uh we definitely were chased around by a ghost
+	BeaLaptop: really?
+	BeaLaptop: hold on i’m texting gregg to confirm this.
+	Mae: why do you need to confirm it! Dont you trust me???
+	BeaLaptop: sorry, I need a second opinion.
+	<<wait 4>>
+	BeaLaptop: Gregg says it was probably a janitor or something.
+	Mae: UUUUUUUUGH.
+	Mae: ok. I’m going to bed.
+	BeaLaptop: don’t go to sleep angry. You’ll have bad dreams.
+	Mae: thanks.
+	BeaLaptop: goodnight, mae.
+<<else>>
+    // angus IQ
+	Mae: went to the park with Angus
+	BeaLaptop: how’d it go?
+	Mae: it was fun until it was scary.
+	BeaLaptop: how so?
+	Mae: we totally saw the ghost in the woods.
+	BeaLaptop: REALLY? Angus saw this?
+	Mae: he did!
+	BeaLaptop: wow ok. Hold on. I’m texting Angus.
+	Mae: why?
+	BeaLaptop: Angus is an annoyingly strident atheist.
+	BeaLaptop: he doesn’t believe in ghosts.
+	Mae: why can’t you just take my word for it.
+	BeaLaptop: hold on
+	<<wait 4>>
+	BeaLaptop: he said it was probably a hunter
+	Mae: AAAAAAAAAAAGH.
+	Mae: ok whatever.
+	BeaLaptop: sorry. For what it’s worth i don’t *not* believe you.
+	Mae: thanks.
+	BeaLaptop: you have a good time otherwise?
+	Mae: yeah. Learned a lot about Angus.
+	Mae: he’s had kind of a rough life???
+	BeaLaptop: oh yeah. He definitely has.
+	Mae: wait, how do you know about this?
+	BeaLaptop: uh because Angus and I have been friends since like 8th grade?
+	Mae: oh yeah. I forgot.
+	BeaLaptop: you’re not like the glue holding all of us together. Angus kind of is.
+	BeaLaptop: he’s the common denominator. Me and Gregg don’t hang out.
+	Mae: hm. Angus is good.
+	BeaLaptop: he is.
+	Mae: ok I’m going to sleep.
+	BeaLaptop: ttyl
+<<endif>>
+===
+title: GreggMessages_A3D3
+tags: 
+colorID: 4
+position: 1442,15953
+---
+<<set $gregg_laptop to 1>>
+GreggLaptop: hey dood
+GreggLaptop: at the ol’ snalcon
+GreggLaptop: come save me from boredome supreme
+GreggLaptop: sincerely, greggory
+===
+title: AngusMessages_A3D3
+tags: 
+colorID: 4
+position: 1449,16230
+---
+<<set $angus_laptop to 1>>
+AngusLaptop: -away message- “Planets Are To Be Pitied As They Cannot Know How Big And Cool They Are” - Dr Cathy Conklin, National Astronomy Agency
+===
+title: BeaMessages_A3D3
+tags: 
+colorID: 4
+position: 1448,16491
+---
+<<set $bea_laptop to 1>>
+BeaLaptop: morning. At the pickaxe if you’re in towne centre today.
+BeaLaptop: i don’t even know why i’m saying this. You’re in towne centre everyday.
+BeaLaptop: anyway. See you later.
+===
+title: GreggLaptop_A3D3
+tags: 
+colorID: 4
+position: 1733,15951
+---
+<<set $gregg_laptop to 2>>
+<<if $did_gregg_friendship_quest_4>>
+	Mae: hey man
+	GreggLaptop: hey man
+	Mae: sorry about like everything
+	GreggLaptop: are we still apologizing?
+	GreggLaptop: can we be past that part?
+	Mae: ha ha sorry
+	Mae: i mean
+	Mae: you know
+	GreggLaptop: ha ha ha ha ha ah
+	GreggLaptop: night duder
+	Mae: night
+<<else>>
+    Mae: hey kiiiid
+    Mae: went to a party
+    Mae: danced at a party
+    Mae: ran around in the rain
+    <<if $cool_party_girl>>
+    	Mae: met a hot girl
+    	Mae: totally didn’t get her number
+    	Mae: she’s a bombshell tho
+    <<endif>>
+    GreggLaptop: wow. Sounds like an awesome night
+    Mae: it was a mixed bag
+    Mae: but all in all i’d party again
+    GreggLaptop: we need 2 do more parties
+    Mae: you are very right
+    Mae: alright I’m off to bed
+    GreggLaptop: laterz
+<<endif>>
+===
+title: BeaLaptop_A3D3
+tags: 
+colorID: 4
+position: 1725,16232
+---
+<<set $bea_laptop to 2>>
+<<if $did_gregg_friendship_quest_4>>
+	Mae: hey hey bea. You up?
+	BeaLaptop: Yes ma’am.
+	BeaLaptop: what’s up?
+	Mae: nothing.
+	Mae: little sick from donut wolf
+	BeaLaptop: yeah that’s why i don’t go there.
+	Mae: it’s so good
+	Mae: how can it be so good and so like… mean to you
+	BeaLaptop: it’s a wild world, Mae.
+	Mae: anyway i puked and then we dropped a robot in the woods.
+	BeaLaptop: ok. I’m too sleepy to try to decipher that.
+	Mae: go to sleep
+	BeaLaptop: i’m going to sleep
+<<else>>
+    Mae: hey you
+    BeaLaptop: hey me.
+    Mae: I am so tired from tonight.
+    BeaLaptop: i bet. Did you run all the way to the river?
+    Mae: yeah. On the roofs and stuff.
+    Mae: that and dancing really take it out of you.
+    BeaLaptop: that’s like really
+    BeaLaptop: that’s really nice, mae.
+    BeaLaptop: that you did that.
+    Mae: aw. It wasnt nothing
+    BeaLaptop: go get some sleep.
+    Mae: ok. I’ll do that.
+    BeaLaptop: thanks for running after me.
+    Mae: oh i never go away. You’ll never be rid of me.
+    <<wait 2>>
+    BeaLaptop: I can think of worse fates.
+<<endif>>
+===
+title: GreggMessages_A3D4
+tags: 
+colorID: 4
+position: 2195,15966
+---
+<<set $gregg_laptop to 1>>
+GreggLaptop: hey kid
+GreggLaptop: snack falconing
+GreggLaptop: work work work
+GreggLaptop: til i die die die
+===
+title: AngusMessages_A3D4
+tags: 
+colorID: 4
+position: 2200,16198
+---
+<<set $angus_laptop to 1>>
+AngusLaptop: -away message- “Come pick your fight/ give arrows flight/ you mess with me/ you mess with all of us” - Going To See The Blanktones Next Week!!!!!!
+===
+title: BeaMessages_A3D4
+tags: 
+colorID: 4
+position: 2202,16412
+---
+<<set $bea_laptop to 1>>
+BeaLaptop: Hello Mae.
+BeaLaptop: Pickaxe. At it. Me.
+BeaLaptop: You know the drill.
+===
+title: CaseyAwayMessage
+tags: 
+colorID: 0
+position: -4247,17116
+---
+CaseyLaptop: -away message-| Born 2 Lose| Country Trash Proud| drummer| Sk8 and Destroy| Sk8 2 Cre8| bound for glory
+===

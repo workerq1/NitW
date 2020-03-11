@@ -1,0 +1,179 @@
+title: EnterLevel
+tags: 
+colorID: 4
+position: -280,131
+---
+<<flip Angus -1>>
+<<playerFace -1>>
+<<setCanInteract Angus 0>>
+<<set $angus_investigation_quest to 1>>
+<<fadeOutMusic 3>>
+Angus: Nice evening.
+Mae: Yeah, it’s alright.
+Angus: My mom used to take us up here to play frisbee.
+Mae: I got hit in the teeth with a frisbee once. full speed.
+Angus: geez.
+Mae: Casey and me were throwing things at each other's heads.
+Angus: oh.
+Mae: we stopped after the frisbee.
+<<playMusic angus_climbs_the_hill 3>>
+[[Move1]]
+===
+title: Move1
+tags: 
+colorID: 4
+position: -278,379
+---
+<<walk Angus AngusSign>>
+===
+title: AngusSign
+tags: 
+colorID: 4
+position: 16,200
+---
+Angus: POSTED -
+Angus: DO NOT FEED
+Angus: OR TOUCH
+Angus: THE WILDLIFE.
+    ->well, that seems extreme
+        Angus: I dunno.
+        Angus: you can't go to the woods to like
+        Angus: socialize
+        Angus: with the woods.
+        Mae: i guess.
+    ->well, clearly
+Angus: there's some folks living in cabins up here
+Angus: you can... uh... feed and touch them if you want.
+Mae: ...
+Mae: it's a weird, old place up here
+Angus: there's all kinda of weird stuff back up in the park
+Angus: old stuff just hanging out in the woods
+Angus: we'll hit my old scout camp on the way up i think
+Mae: busy woods
+Angus: ok, better get going before it gets dark.
+<<walk Angus AngusPillar1>>
+===
+title: AngusPillar1
+tags: 
+colorID: 4
+position: 279,194
+---
+Angus: *puff puff*
+Mae: you alright?
+Angus: yeah, i got asthma is all.
+Angus: sorry you gotta wait for me.
+    ->do you have an inhaler?
+        Angus: yeah, but i save that for emergencies.
+        Angus: being slow isn't an emergency.
+    ->didn't you run cross country back in junior high?
+        Angus: yeah but i never finished a race.
+        Mae: why'd you keep doing it?
+        Angus: i have no idea.
+Mae: what is this thing?
+Angus: this is like
+Angus: a lime kiln i think?
+    ->limes?
+    ->kiln?
+        Angus: like a furnace.
+        Mae: oh. furnace for what?
+Angus: limestone
+Angus: you like do something with it in there
+Angus: and it becomes this other thing.
+Mae: oh.
+Angus: limestone's weird because
+Angus: it's mostly made of skeletons of sea creatures
+Angus: from millions of years ago
+Angus: so like
+Angus: this was all underwater or something at one point.
+    ->whoa
+        Angus: i know, right?
+    ->no way
+        Angus: i mean, rocks don't lie
+Angus: like right where we're standing
+Angus: there were like ancient horrible sea monsters
+Mae: creepy. and awesome.
+Angus: thaaaaaaat's history!
+Angus: ok, I'm ready to go.
+<<walk Angus AngusPillar2>>
+===
+title: AngusPillar2
+tags: 
+colorID: 4
+position: 525,205
+---
+Angus: *puff puff*
+Angus: Phew.
+Mae: Need to take a break?
+Angus: I'm okay, I'm okay.
+Mae: no prob.
+Angus: *huff huff*
+Mae: so if this place was underwater
+    ->where'd the water go?
+        Angus: i dunno. to the ocean i guess.
+        Angus: and like the earth is always shifting
+        Angus: so mountains get all pushed up
+        Angus: where it used to be just flat ground.
+    ->why aren't there like ancient shark bones up here?
+        Angus: i dunno. there might be i guess.
+        Angus: but not everything becomes a fossil
+        Mae: why?
+        Angus: i dunno. i'm not an expert on any of this.
+        Angus: but there were definitely ancient sharks around here.
+Mae: weird because things are so boring nowadays
+Mae: to think like all that crazy stuff was going on here.
+Angus: there's always more weird stuff that happened
+Angus: to find out about later.
+Angus: ok, i'm ready to go.
+Mae: cool cool.
+<<walk Angus AngusPillar3>>
+===
+title: AngusPillar3
+tags: 
+colorID: 4
+position: 794,227
+---
+Angus: *puff puff puff*
+Angus: *wheeze*
+Mae: are you sure you're ok?
+Angus: yeah... *huff*
+Angus: ... sorry... *puff puff*
+Mae: seriously, it's fine.
+Mae: hang for a minute.
+Angus: ok.
+Mae: i should know all this stuff about like
+Mae: ancient sea creature rock or whatever
+Angus: lime... *puff*... stone...
+Mae: i was gonna take a class on dinosaurs back at school.
+Angus: what happened?
+Mae: it was all full up!
+Mae: that class fills up fast.
+Angus: i bet.
+    ->i love dinosaurs
+        Angus: who doesn't?
+    ->dinosaurs are like the most interesting animals
+        Angus: you knew they had feathers?
+        Angus: or some of them?
+        Mae: i know, right?
+        Mae: big freaky chickens.
+Mae: things were so scary and cool back then.
+Mae: we'd die in like 5 minutes ha ha
+Angus: oh yeah ancient creatures would eat us, no problem.
+Angus: be glad for the millions of years between us
+Mae: weird.
+Mae: time, dude.
+Angus: time makes most dangerous things less dangerous.
+Angus: most things, at least.
+Mae: ok, you ready to roll?
+Angus: yeah, we're almost to the top.
+<<hide Collision:LeftTop>>
+<<set $interaction_park_entrance_should_go_back_done to 1>>
+<<walk Angus AngusOffLeft>>
+===
+title: ShouldGoBack
+tags: temp
+colorID: 4
+position: 149,488
+---
+Mae: Hmm... I should go back for Angus.
+Mae: he'd go back to me.
+===

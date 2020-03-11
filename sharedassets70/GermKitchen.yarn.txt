@@ -1,0 +1,59 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: 211,280
+---
+[[HomeQuest]]
+===
+title: HomeQuest
+tags: 
+colorID: 0
+position: 489,317
+---
+<<hide Collision:Right>>
+<<hide Collision:Left>>
+
+<<warp Mae Mae0>>
+<<warp Germ Germ0>>
+
+<<walk Mae Mae1>>
+<<walk Germ Germ1>>
+
+<<waitForMove Mae>>
+
+//germ and mae walk in. GermMom is in the FG//
+Germ: hey mom!
+Germ: This is mae!
+Germ: she’s eating dinner with us!
+Mae: uh. Hi.
+GermMom: Hello Mae.
+GermMom: I hope you like Sloppy Joes!
+Mae: Who doesn’t?
+GermMom: Nobody in this house.
+Germ: I thought you two should meet before dinner!
+GermMom: that’s very thoughtful, Jeremy.
+Germ: I’m gonna introduce Mae to Gramma!
+GermMom: Oh. Is that what this is about?
+Mae: what?
+Germ: Can I?
+GermMom: You don’t need my permission.
+GermMom: Whatever happens is on you.
+Mae: What?
+Germ: Come on!
+<<walk Germ Germ2>>
+->Nice meeting you!
+	GermMom: You too, Mae!
+->...
+    GermMom: What is it?
+    Mae: I.. uh... never pictured Germ having a mom?
+    GermMom: He's full of surprises.
+    Mae: Sure is!
+    GermMom: You shouldn’t keep Gramma waiting.
+    Mae: oh right
+<<close>>
+<<walk Mae Mae2>>
+<<waitForMove Mae>>
+
+<<irisOut 1 wait>>
+<<scene GermLivingRoom -1>>
+===

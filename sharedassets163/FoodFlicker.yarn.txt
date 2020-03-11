@@ -1,0 +1,59 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: -120,288
+---
+Mae: Alright stay just like that.
+Gregg: OKAH.
+===
+title: GreggEat
+tags: 
+colorID: 0
+position: 276,266
+---
+Gregg: [shake=.05]NOMNOMNOMNOMNOM[/shake]
+<<if $last_flicked_food_type is 1>>
+    Gregg: I LAHVE AHNIAN.
+<<endif>>
+===
+title: Miss
+tags: 
+colorID: 0
+position: 550,274
+---
+Gregg: Pierogi waster!
+===
+title: HitFace
+tags: 
+colorID: 0
+position: 827,282
+---
+<<if $last_flicked_food_type is 2>>
+    Gregg: [shake=.05]o god it burns![/shake]
+<<else>>
+    Gregg: [shake=.05]AAAH MY FACE[/shake]
+<<endif>>
+===
+title: End
+tags: 
+colorID: 0
+position: 1089,271
+---
+Mae: Out of pierogis!!!
+Gregg: Dang.
+<<close>>
+<<wait 1>>
+<<if $flicked_foods_mostly_hit_face>>
+    Gregg: You know, a majority of those attempts hit me directly in the face.
+    Mae: Sorry about that.
+<<elseif $flicked_food_mostly_eaten>>
+    Gregg: A majority of those made it into my mouth so I'm happy.
+    Mae: Alright!
+<<else>>
+    Gregg: A lot of those ended up on the floor. I'm sad now.
+    Mae: Aw, sorry Gregg.
+<<endif>>
+<<set $did_food_flicker to 1>>
+<<irisOut 1 wait>>
+<<scene Diner>>
+===

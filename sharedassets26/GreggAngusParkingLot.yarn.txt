@@ -1,0 +1,205 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: -90,111
+---
+<<if $gregg_friendship_quest_2 < 2>>
+    <<set $gregg_friendship_quest_2 to 1>>
+    [[GreggFQ2Intro]]
+<<elseif $gregg_friendship_quest_2 is 2>>
+    [[AfterDisconnect]]
+<<endif>>
+===
+title: GreggFQ2Intro
+tags: 
+colorID: 0
+position: 170,129
+---
+<<playMusic gregg_manic>>
+<<walk Gregg GreggEnter>>
+<<walk Mae MaeEnter>>
+//walking across to the car, which is on the right//
+Mae: rain sure cleared up.
+Gregg: weather moves for us.
+Mae: So what do I need the bat for?
+<<close>>
+<<waitForMove Mae>>
+<<waitForMove Gregg>>
+//they stop in front of the car//
+Gregg: Ta-Da!!!!
+Mae: Ooh la la!
+Gregg: Eff that car up, Private Borowski!
+Mae: so...
+-> you brought me out here to watch me beat up a car?
+	Mae: Is this like that thing? Where people are all hot for car crashes?
+	Gregg: No. And I don’t know that movie
+	Mae: Look it up.
+	Gregg: eh.
+->why?
+	Gregg: do you need a reason?
+	Mae: No, but I’d like one.
+	Gregg: Fair.
+Gregg: So we need the battery out of this car.
+Mae: What for?
+Gregg: That’s privileged info, Private.
+Mae: Stop calling me private.
+-> I’m a general at least
+	Gregg: No, *I’M* the general.
+	Gregg: I got a hat.
+	Mae: War is stupid.
+	Gregg: Watch it! War got me this hat!
+-> I ain’t in your army.
+	Gregg: You’ve been drafted.
+	Mae: That’s, like, very unjust.
+	Gregg: The world ain’t just, Private Borowski.
+Mae: ok, but what if someone needs this car?
+Gregg: I think it’s safe to say no one’s gonna miss it.
+Mae: yeah. I guess it’s got a tree growing through it.
+->So we’re just beating it until the hood pops open?
+->Why aren’t you helping?
+	Gregg: I’m carrying the battery all the way back!
+	Gregg: Division of labor!
+	Gregg: You get the fun part anyways.
+	Mae: True!
+Gregg: Yeah! Just smash it up!
+Mae: Smash it all up!
+Gregg: Smash capitalism!
+Mae: Smash the government!
+Gregg: Smash this car!
+Mae: YEEEAAAAARGH!!!!
+<<set $gregg_angus_parking_lot_block_left to 1>>
+===
+title: CarDestroyed
+tags: 
+colorID: 0
+position: 2704,105
+---
+<<fadeOut .1 wait>>
+<<warp Mae MaeStandForGregg>>
+<<flip Mae 1>>
+<<fadeIn .5 wait>>
+Gregg: Excellent work.
+Mae: Thank you. I agree.
+Gregg: You want to do the honors?
+Mae: Am I gonna get electrocuted?
+Gregg: Should be fine.
+Gregg: The car’s got a tree growing through it.
+Gregg: Probably not electric anymore.
+Mae: Wait. But...
+Gregg: Do you want to do it or not?
+Mae: ...
+Mae: I do.
+<<close>>
+<<set $has_bat to 0>>
+<<irisOut 1 wait>>
+<<scene PawsModeBatteryDisconnect>>
+===
+title: AfterDisconnect
+tags: 
+colorID: 0
+position: 211,397
+---
+//mae is on the ground, gregg is standing on top of the car//
+Gregg: HA HA HA HA HA HA HA HA HA HA
+Mae: Uuuuugh.
+Gregg: Oh shit
+Gregg: you ok?
+->I think I died
+->No
+Mae: How long was I out?
+Gregg: Like 5 seconds?
+Mae: oh weird
+Mae: Time, like, stretches.
+Gregg: It’s a mysterious universe.
+Mae: We good to go with the battery?
+Gregg: You know it!
+Gregg: Let's get back to the apartment!
+Mae: ...I taste pennies...
+<<set $hasBat to 0>>
+<<irisOut 1 wait>>
+<<scene GreggAngusApartment>>
+===
+title: InitLevel
+tags: 
+colorID: 0
+position: -347,90
+---
+<<if $gregg_friendship_quest_2 < 2>>
+    <<getBat>>
+    <<warp Gregg GreggOffLeft>>
+    <<warp Mae MaeOffLeft>>
+    <<set $gregg_angus_parking_lot_block_left to 0>>
+<<else>>
+    <<warp Gregg GreggTopOfCar>>
+    <<flip Gregg -1>>
+    <<setAnimInt Mae layingSide 1>>
+<<endif>>
+<<set $gregg_hat to 1>>
+<<setCanInteract Gregg 0>>
+===
+title: CarDamage00
+tags: 
+colorID: 0
+position: 422,87
+---
+Gregg: YEAH! DESTROY THE FASCIST CAR!
+===
+title: CarDamage01
+tags: 
+colorID: 0
+position: 688,69
+---
+Gregg: ONWARD! REVOLUTION!
+===
+title: CarDamage02
+tags: 
+colorID: 0
+position: 929,99
+---
+Gregg: YEEEEAAAAAAAAAARGH!!!
+===
+title: CarDamage03
+tags: 
+colorID: 0
+position: 1164,134
+---
+Gregg: YOUR TIME HAS COME, CAR!!
+===
+title: CarDamage04
+tags: 
+colorID: 0
+position: 1398,87
+---
+Gregg: SAY YOUR PRAYERS, CAR!
+Gregg: TO WHATEVER GOD CARS PRAY TO!
+===
+title: CarDamage05
+tags: 
+colorID: 0
+position: 1632,119
+---
+Gregg: GHOST TIGER VAMPIRES RISE FROM THE MOON!!!
+Mae: What?
+Gregg: I dunno! I go where the moment takes me!
+===
+title: CarDamage06
+tags: 
+colorID: 0
+position: 1883,94
+---
+Gregg: BLOOD!!! GIMME BLOODDDDD!!!!!
+===
+title: CarDamage07
+tags: 
+colorID: 0
+position: 2114,131
+---
+Gregg: THE FINAL BLOW!!!
+===
+title: CarDamage08
+tags: 
+colorID: 0
+position: 2362,77
+---
+Gregg: DESTROOOOOOOOOOOOY!!!
+===

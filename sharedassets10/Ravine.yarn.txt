@@ -1,0 +1,135 @@
+title: Creek.2
+tags: 
+colorID: 0
+position: 1000,535
+---
+Mae: Shopping bags are little ghosts
+Mae: of grocery stores
+Mae: haunting everywhere else.
+===
+title: Creek.3
+tags: 
+colorID: 0
+position: 1277,541
+---
+Mae: Oh wow I heard a toad.
+Mae: And a ghost owl.
+Mae: I bet there are any number of potential witch familiars down here.
+<<end>>
+===
+title: Creek.1
+tags: 
+colorID: 0
+position: 704,505
+---
+Mae: There used to be an old sawmill around here I think.
+Mae: I mean the park up there's called Sawmill Park.
+Mae: Looks like they lost a log load at some point.
+Mae: *sigh*
+Mae: Gonna have to climb this I guess.
+
+===
+title: BottomOfCliff
+tags: 
+colorID: 0
+position: 399,512
+---
+Mae: Well...
+Mae: ...shit.
+Mae: hm...
+===
+title: BottomOfPipes.1
+tags: 
+colorID: 0
+position: 491,834
+---
+Mae: Ugh. This is some dank nature.
+Mae: Dank nature and garbage.
+===
+title: BottomOfPipes.2
+tags: 
+colorID: 0
+position: 728,832
+---
+Mae: Are these Food Donkey shopping carts?
+Mae: That's all the way across town!
+Mae: That's dedication!
+<<end>>
+===
+title: TopPipe
+tags: 
+colorID: 0
+position: 913,250
+---
+<<if $firefliesInTargets is 0>>
+	<<if $ravineTopPipe is 0>>
+		Mae: Wow. Ok. Um.
+		Mae: Town's on the other side of this
+		Mae: but this is...
+		Mae: it's just really dark
+		Mae: and i'm alone.
+		<<set $ravineTopPipe to 1>>
+	<<elseif $ravineTopPipe is 1>>
+		Mae: Really dark, really lonely.
+	<<endif>>
+<<elseif $firefliesInTargets < 6>>
+	<<if $ravineTopPipe < 10>>
+		Mae: Hey little guys, you gonna light my way?
+		Mae: Do something useful?
+		Mae: Maybe if more of your bug friends came along...
+		Mae: Hm... ok
+		<<set $ravineTopPipe to 10>>
+	<<elseif $ravineTopPipe is 10>>
+		Mae: Need more bugs probably.
+		Mae: Not that I'm scared of the dark.
+		Mae: But yeah.
+		Mae: Need more bugs probably.
+		<<set $ravineTopPipe to 11>>
+	<<elseif $ravineTopPipe is 11>>
+		Mae: Need more bugs probably.
+	<<endif>>
+<<elseif $firefliesInTargets < 9>>
+	<<if $ravineTopPipe < 20>>
+		Mae: Well it's pretty dark down there.
+		Mae: But you bugs are doing an ok job of fixing that.
+		Mae: Maybe we just need a few more of your friends...
+		<<set $ravineTopPipe to 21>>
+	<<elseif $ravineTopPipe is 21>>
+		Mae: Listen, bugs:
+		Mae: We need more bugs.
+		Mae: Oh my god, I'm herding bugs.
+		Mae: So I can jump off a pipe into a ravine.
+		Mae: What has happened to my life?
+		<<set $ravineTopPipe to 22>>
+	<<elseif $ravineTopPipe is 22>>
+		Mae: A few more bugs and I'll jump off this pipe probably.
+	<<endif>>
+<<elseif $firefliesInTargets >= 9>>
+	<<if $ravineTopPipe < 30>>
+		<<releaseFireflies>>
+		<<wait 3>>
+		Mae: Wow.
+		Mae: I mean screw college anyway
+		Mae: I'm a bug whisperer!
+		Mae: Alright! Onward!
+		<<set $ravineTopPipe to 30>>
+		<<end>>
+	<<endif>>
+<<endif>>
+
+	
+
+===
+title: AfterLogSlide
+tags: 
+colorID: 0
+position: 456,188
+---
+Mae: Oh my god.
+Mae: That was dangerous!
+Mae: I could have died!
+Mae: That was amazing!
+<<close>>
+<<wait 1.5>>
+Mae: I am not gonna die in this hole.
+===

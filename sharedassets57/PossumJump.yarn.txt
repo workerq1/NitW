@@ -1,0 +1,219 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: -436,157
+---
+<<if $did_angus_constellations is 0>>
+    [[Enter00]]
+<<else>>
+    [[Enter01]]
+<<endif>>
+===
+title: CliffEdge
+tags: 
+colorID: 0
+position: 205,178
+---
+Mae: wow. We’re up really high. 
+Mae: and really far out!
+Mae: I can’t see town from here
+Angus: It’s south of us, behind whatever ridge that is.
+<<close>>
+<<walk Mae MaeLog wait>>
+<<warpSit>>
+<<allSpeechBubblesToY 2.6>>
+Mae: so what, are we just supposed to wait here and see if anything happens?
+Angus: you tell me! You’re the expert.
+Mae: i guess we’ll just wait here and see if anything happens.
+<<close>>
+<<wait 4>>
+Angus: Nice night.
+Mae: Yeah.
+Mae: Back at school I couldn’t see as many stars.
+Mae: That always made me sad.
+Angus: Oh yeah. They’re really nice up here.
+Mae: I wish I knew the constellations like you did.
+Angus: What?
+Mae: You know all the names and the stories and stuff.
+Angus: I wish. I can never remember them other than...
+Angus: I think that one up there is like a bell or something?
+Mae: No. No no no.
+Mae: Remember that time we were all at that Longest Night bonfire?
+Mae: And we spotted the constellations together
+Mae: and you told us all about them???
+Angus: That’s not a thing that happened.
+Mae: Oh wow. Maybe it was like a dream or something.
+Mae: God, I barely remember now.
+Angus: I wonder what fake constellations and stories you dreamed up.
+Mae: Ok, humor me.
+Mae: I’ll find the constellations, you tell me about them.
+Angus: ok then.
+//aperture out//
+<<close>>
+<<wait 1>>
+<<allSpeechBubblesToY 0>>
+<<irisOut 1 wait>>
+<<scene AngusConstellations>>
+===
+title: InitLevel
+tags: 
+colorID: 0
+position: -685,134
+---
+<<flip Angus -1>>
+<<playerFace -1>>
+<<setCanInteract Angus 0>>
+
+<<if $did_angus_constellations>>
+    <<warp Mae MaeLog>>
+    <<warp Angus AngusLog>>
+    <<warpSit>>
+    <<sit Angus>>
+<<else>>
+    <<warp Mae MaeOffRight>>
+    <<warp Angus AngusOffRight>>
+    <<hide Eide>>
+<<endif>>
+===
+title: Graves
+tags: 
+colorID: 0
+position: -115,167
+---
+Mae: graves, huh?
+Angus: yeah these were... i forget.
+Angus: they were involved in the possum massacre.
+Angus: that like labor strike thing
+Angus: where it was like the miners vs national guard?
+Angus: happened back in town like a hundred years ago.
+Mae: why are they up here?
+Angus: i think these were some of the bad guys.
+Angus: and some of the miners
+Angus: didn't want them buried in town.
+Mae: oh. huh.
+Angus: there's like a few old graveyards up here from like
+Angus: colonial times.
+Angus: i guess there's one up here somewhere too.
+Mae: well.
+Mae: that's spooky.
+Angus: eh. just bones.
+Mae: ancient shark bones!!!
+Angus: yeah see? nothing left to be scary.
+<<close>>
+//Angus walks up to the log and sits down. You can wander until you go and talk to him//
+<<walkAndSit Angus AngusLog>>
+===
+title: Enter01
+tags: 
+colorID: 0
+position: -288,498
+---
+<<allSpeechBubblesToY 2.6>>
+Angus: yep.
+Mae: yep.
+Mae: i should come out here more often.
+Angus: ha ha ha.
+Angus: yeah.
+<<toggleSitSwings Mae false>>
+<<musicFadeOut 8>>
+<<playAmbientSFX _AmbientSFX:amb_ibon 8>>
+Angus: Don’t look at him.
+Mae: Who?
+Angus: There’s someone standing behind us.
+<<cameraLookAt CameraEide 8>>
+Angus: In the trees.
+Mae: Holy shit.
+Mae: Holy shit.
+Mae: What do they look like?
+Angus: Tall. Wearing some kind of weird coat.
+Angus: Like a utility coat or something.
+Mae: oh god
+Mae: that’s the ghost
+Angus: I’m more worried about it being a living person
+Angus: standing in the woods, staring at us
+Mae: oh god oh god
+Angus: Well
+Angus: don’t panic
+Angus: follow my lead
+<<close>>
+<<wait 1>>
+<<allSpeechBubblesToY 0>>
+//angus stands up and turns around//
+<<walk Angus AngusTurnAround wait>>
+Angus: hey there
+<<close>>
+<<wait 2>>
+Angus: out for a hike?
+Angus: nice night
+<<close>>
+<<wait 2>>
+Angus: he’s... not... answering...
+Mae: that’s a little hostile right?
+Angus: that’s definitely a little hostile
+<<close>>
+<<jump>>
+<<wait 1>>
+<<walk Mae MaeTurnAround>>
+Mae: HEY!!!
+Mae: I KNOW WHAT YOU DID!!!
+Angus: Mae, no-
+Mae: I SAW YOU!!!
+Angus: ok well we’re gonna run now.
+Angus: we need to get to the car
+Mae: but your asthma
+//angus does inhaler animation//
+Angus: I got an inhaler.
+Angus: The good kind, too.
+Angus: no one in heaven or earth can stop me
+Mae: ok ok ok let’s go
+Angus: Deep breaths.
+Angus: In.
+Angus: Out.
+Angus: alright.
+<<run Angus AngusOffRight>>
+//Angus begins running to the right.//
+// next plays as he runs until he gets offscreen
+<<alwaysUseWaitTime 1>>
+<<waitTime .5>>
+Angus:{width=4}RAAAAAAAAAAAAAAAWR!!!
+//After half a second Mae starts running right behind him.
+<<run Mae MaeOffRight>>
+<<cameraLookAt CameraGraves 12>>
+//The camera follows them until it stops on the graves.
+<<wait 9>>
+//They run offscreen.
+<<wait 6>>
+//It’s quiet.
+<<wait 4>>
+//After several seconds Eide across the screen through the trees
+//and the screen cuts to black//
+<<trigger EideRun Run>>
+<<wait 2.16>>
+<<alwaysUseWaitTime 0>>
+<<fadeOut .0001 wait>>
+<<wait 4>>
+<<scene BeaCar>>
+===
+title: Enter00
+tags: 
+colorID: 0
+position: -578,483
+---
+<<hide Collision:Right>>
+<<walk Angus AngusInFromRight>>
+<<walk Mae MaeInFromRight>>
+<<fadeOutMusic 3>>
+<<waitForMove Angus>>
+<<wait 1>>
+Mae: Well
+Mae: That was a hike.
+Angus: That was a lot easier when I was 11.
+Angus: We passed what, 3 gates on the way up here?
+Mae: I lost count.
+Angus: Weird. Used to be open back then.
+Mae: Hm.
+Mae: Ready to go?
+Angus: Not far now, just up ahead.
+<<walk Angus AngusGraves 1>>
+<<show Collision:Right>>
+===

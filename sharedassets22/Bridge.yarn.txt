@@ -1,0 +1,202 @@
+title: JumpSitOnBridge
+tags: 
+colorID: 0
+position: 471,110
+---
+<<extraZoom -2 3>>
+<<waitForRabies>>
+===
+title: Rabies
+tags: 
+colorID: 0
+position: 769,119
+---
+<<setAnimBool Rabies hidden 1>>
+<<warp Rabies RabiesBridge>>
+<<set $saw_rabies_today to 1>>
+<<setAnimBool Rabies dropped 1>>
+<<wait 1.5>>
+
+<<lookAt Mae Rabies>>
+<<if $act is 4 and $day is 3>>
+    Mae: Hey Rabies.
+    <<wait 1>>
+    Mae: I bet your life is exciting.
+    Mae: playing with your friends.
+    Mae: i mean you're a champ, you've gotta be popular.
+    Mae: eating garbage.
+    Mae: and common pests.
+    Mae: i feel like
+    Mae: i'm just glad the world includes you, dude.
+    <<wait 2>>
+    Mae: alright. I gotta jet.
+    Mae: see ya later, Rabies.
+    Mae: stay cool, stay alive.
+<<elseif $saw_rabies_times is 0>>
+    Mae: whoa!
+    Mae: hey rabies!!!
+    Mae: who's a good little trash king???
+    Mae: it's you.
+    Mae: so tell me, rabies.
+    Mae: what do you make of this ghost stuff?
+    Mae: it sure is something, eh?
+    <<wait 2>>
+    Mae: oh yes. good point.
+    Mae: i guess I don't entirely know what to think
+    Mae: i like *feel* it, though?
+    Mae: wish everyone just believed me.
+    <<wait 2>>
+    Mae: thank you, rabies. your support means a lot.
+    Mae: you're a good-ass possum, rabies.
+    Mae: alright, I'm off!
+    Mae: stay safe! eat some trash!
+    Mae: and common pests!
+    <<set $saw_rabies_times += 1>>
+
+<<elseif $saw_rabies_times is 1>>
+    Mae: hey Rabies.
+    Mae: how's life?
+    <<wait 2>>
+    Mae: that's good to hear.
+    <<wait 2>>
+    Mae: back in school we had to write this thing
+    Mae: Like, if you could be anywhere in… uh… 15 years, where would you be?
+    Mae: and it was an easy assignment
+    Mae: because i drew it when i was 15
+    Mae: and it hasn’t changed
+    Mae: except it was 20 years then
+    <<wait 2>>
+    Mae: i’m on a farm. Or something like that.
+    Mae: but not with like animals or crops or something
+    Mae: maybe corn? I like corn fields
+    Mae: maybe here, maybe in like Idaho or something
+    Mae: and we’re there- she’s there- in the drawing she’s a she
+    Mae: and we’re married, or no… like, whatever they do in Idaho
+    Mae: my teacher wrote "i think they just get married"
+    Mae: but no like i mean out on the frontier
+    Mae: you just stay with someone long enough that it’s a thing.
+    Mae: whatever. I can call it what i want. 
+    Mae: anyway, we go out and wander around and do work together
+    Mae: and we come home and we’re all gross
+    Mae: and your face feels like it does when it’s been windy all day
+    Mae: it’s cold out
+    Mae: and we order pizza
+    Mae: my teacher was like "on a farm? in idaho?"
+    Mae: yeah there’s a town nearby in this drawing
+    <<wait 1>>
+    Mae: it was a big drawing.
+    <<wait 1>>
+    Mae: and we eat pizza and I’m playing a video game
+    Mae: and she’s making something
+    Mae: like she does woodworking or she’s a blacksmith or something
+    Mae: so she has really rough hands
+    Mae: Teacher was like "She’s doing woodworking and-or blacksmithing in the living room?"
+    Mae: and she has boots but like
+    Mae: mine are muddy
+    Mae: but hers are all scuffed up from work
+    Mae: from the wood. Or the fire. Or something.
+    Mae: and we have 2 big burly cats from a barn
+    Mae: and a dog
+    Mae: and we all howl at the moon together
+    <<wait 2>>
+    Mae: parts of it I’ve wanted since I was a kid
+    Mae: the cats and the dog at least
+    Mae: no children
+    Mae: no children
+    Mae: no children
+    <<wait 2>>
+    Mae: how about you, rabies?
+    Mae: does rabies want babies?
+    Mae: do you have big plans?
+    <<wait 2>>
+    Mae: mmm. too true, rabies. too true.
+    Mae: alright, i'm off!
+    Mae: thanks for saying hello!
+    Mae: see ya around! be safe and eat trash!
+    Mae: and common pests!
+    <<set $saw_rabies_times += 1>>
+
+<<endif>>
+
+<<wait 1>>
+<<setAnimBool Rabies dropped 0>>
+<<lookNearest Mae>>
+<<wait 1.5>>
+<<unlockAchievement RABIES!>>
+<<unlockDoodle Rabies1>>
+// note there is a matching extraZoom in the waitForRabies code
+<<extraZoom 0 3>>
+<<setSortingLayerName Player>>
+===
+title: FrontOfFarm.1
+tags: 
+colorID: 4
+position: 527,480
+---
+Mae: Farming.
+Mae: I could farm.
+Mae: If I stay in town long enough
+Mae: I could see getting into the farm life.
+===
+title: FrontOfFarm.2
+tags: 
+colorID: 4
+position: 794,474
+---
+Mae: the problem with farms
+Mae: is the amount of poop.
+Mae: like even if you don't have animals.
+Mae: you actually buy poop or something
+Mae: and shovel it all over the place.
+Mae: it's madness.
+Mae: it's poop madness.
+<<end>>
+===
+title: NearSignAct3.1
+tags: 
+colorID: 4
+position: 515,774
+---
+Mae: After this, a few miles and you go under the highway
+Mae: and it's just rolling fields and farms.
+Mae: I missed the corn mazes this fall.
+Mae: And the haunted barn in Briddle.
+Mae: always next year.
+Mae: for campfires and corndogs.
+===
+title: NearSignAct3.2
+tags: 
+colorID: 4
+position: 787,782
+---
+Mae: weird that town ends like
+Mae: *BAM!*
+Mae: right here.
+Mae: there's like a line
+Mae: somewhere
+Mae: that no one can see.
+Mae: but you can put it on a map.
+<<end>>
+===
+title: NearSignA4D3.1
+tags: 
+colorID: 6
+position: 519,1028
+---
+Mae: wonder if we'll ever be a big booming town again.
+Mae: those guys last night were like
+Mae: deluded.
+Mae: but it'd be really nice.
+Mae: if there was a god
+Mae: i might ask.
+Mae: but i think they'd have to fight the other gods
+Mae: that bled this place nearly to death.
+Mae: i'm like
+Mae: proud of us all
+Mae: for having good-ass lives
+Mae: in a shitty, stupid, good-ass town.
+<<wait 2>>
+Mae: here's to you, Possum Springs.
+Mae: here's to survival.
+<<end>>
+===

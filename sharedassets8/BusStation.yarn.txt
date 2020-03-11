@@ -1,0 +1,349 @@
+title: Brochures
+tags: 
+colorID: 0
+position: -1343,690
+---
+Mae: Hey look, some brochures!
+===
+title: excuse
+tags: 
+colorID: 0
+position: 639,796
+---
+Mae: Tôi xin lỗi, nhưng mọi người đâu hết rồi?
+Janitor:{width=4} 10:45 rồi. chỗ này đã đóng cửa.
+Janitor: Không có nhiều người đi xuống từ chuyến xe bus cuối cùng đến Possum Springs những ngày này.
+Janitor: trừ cô.
+<<close>>
+<<trigger Janitor Drill>>
+<<wait 2>>
+<<set $janitor to 1>>
+[[Isn't there supposed to be someone at the desk?|someone]]
+[[So are you the Janitor or something?|something]]
+
+
+===
+title: how
+tags: 
+colorID: 0
+position: 315,808
+---
+Mae: How's that door coming? -_-
+Janitor: How's that soda coming?
+<<eyes Mae Neutral>>
+<<mood Mae Neutral>>
+===
+title: Janitor
+tags: 
+colorID: 0
+position: 383,500
+---
+<<if $soda is 0>>
+	<<if $janitor is 0>>
+		[[excuse]]
+	<<elseif $janitor is 1>>
+		[[squeeze]]
+	<<elseif $janitor is 2>>
+		[[how]]
+	<<endif>>
+<<elseif $soda is 1>>
+	[[seeya]]
+<<endif>>
+
+===
+title: Mural
+tags: 
+colorID: 0
+position: -390,738
+---
+<<if $bus_station_mural is 0>>
+	[[wow]]
+<<elseif $bus_station_mural is 1>>
+	[[visitors]]
+<<elseif $bus_station_mural is 2>>
+	[[forest]]
+<<elseif $bus_station_mural is 3>>
+	[[mine]]
+<<endif>>
+===
+title: Phone
+tags: 
+colorID: 0
+position: -127,63
+---
+<<if $bus_station_phone is 0>>
+	[[reception]]
+<<elseif $bus_station_phone is 1>>
+	[[whosteals]]
+<<endif>>
+
+===
+title: seeya
+tags: 
+colorID: 0
+position: 1091,733
+---
+<<trigger Janitor DrillRelax>>
+<<wait 1>>
+Mae: One Freeasscola.
+<<close>>
+<<trigger Janitor GrabbyHand>>
+<<setHoldItem SodaCan>>
+<<setGiveFunction JanitorSodaDrink>>
+<<trigger Mae Give>>
+<<wait 2>>
+<<lookRight Mae>>
+<<wait 5>>
+<<lookNearest Mae>>
+Janitor: Yummers.
+Janitor: So what are you doing here?
+<<trigger Janitor Drill>>
+Mae: I live here.
+Mae: Well, lived here.
+Janitor: Huh. Strange.
+Mae: When do you think that door's gonna be finished?
+<<close>>
+<<trigger Janitor DrillRelax>>
+<<wait 1>>
+Janitor: Now.
+<<close>>
+<<trigger Janitor Idle>>
+<<wait .75>>
+Janitor: Goodbye.
+<<close>>
+<<flip Janitor -1>>
+<<walk Janitor ExitLeft>>
+<<wait 1>>
+<<playOneShot event:/bus_station/bus_station_door BusStationDoor>>
+<<waitForMove Janitor>>
+<<hide Janitor>>
+<<setSceneMood LightsOff>>
+<<stopDialogue TV>>
+<<closeAll>>
+<<animate TV Static>>
+<<set $janitor to 5>>
+Mae: uh. bye.
+===
+title: someone
+tags: 
+colorID: 0
+position: 1041,1014
+---
+Janitor: Closed.
+Mae: Why are the lights on? Why is the TV on?
+Janitor: I get spooked when I'm here by my lonesome.
+Mae: Oh.
+
+===
+title: something
+tags: 
+colorID: 0
+position: 600,1155
+---
+Janitor: Looks that way.
+Mae: What do you do?
+Janitor: I fix this door.
+Mae: That's it?
+Janitor: Nope.
+
+===
+title: squeeze
+tags: 
+colorID: 0
+position: 87,705
+---
+Mae: Can I squeeze past you?
+Janitor: Nope. Just broke the damn thing.
+Mae: When do you think it might be done?
+Janitor: Right after you go grab me a Fiascola from the machine.
+Mae: ...
+Mae: Am I paying for this?
+Janitor: I always rig it when I'm here after hours.
+Mae: Nice. Free as in free? :)
+Janitor: Free as in no one's here to say otherwise.
+<<eyes Mae Neutral>>
+<<mood Mae Neutral>>
+<<set $janitor to 2>>
+<<set $vending_machine_done to 0>>
+===
+title: TicketStand
+tags: 
+colorID: 0
+position: -1306,427
+---
+Mae: It's the ticket stand.
+===
+title: TV
+tags: 
+colorID: 0
+position: -626,417
+---
+<<animate TV Logo>>
+<<wait 5.5>>
+<<animate TV MalloyTalk>>
+TV: chào mừng bạn quay lại với Garbo và Malloy!
+<<animate TV GarboTalk>>
+TV: tin tức gì sẽ đến hôm nay, Malloy?
+<<animate TV MalloyTalk>>
+TV: lượng mua bán tiêu dùng đã tăng đáng kể hôm nay!
+<<animate TV GarboTalk>>
+TV: tăaaang khá cao!
+<<animate TV MalloyStare>>
+<<playOneShot event:/bus_station/tv_applause TV>>
+<<wait 2>>
+<<animate TV GarboTalk>>
+TV: [color=aaaaaa]I'm looking at a chart and it's pretty impressive![/color]
+<<animate TV MalloyTalk>>
+TV: The economy added 15,000 jobs
+TV: mostly in the chart sector
+<<animate TV GarboTalk>>
+TV: which is notoriously recession proof!
+<<animate TV MalloyStare>>
+<<playOneShot event:/bus_station/tv_laughter_applause TV>>
+<<wait 2>>
+<<animate TV MalloyTalk>>
+TV: My my, Garbo, we got a little political there!
+<<animate TV GarboTalk>>
+TV: Gotta get political every now and then.
+<<animate TV MalloyStare>>
+<<playOneShot event:/bus_station/tv_laughter_applause TV>>
+<<wait 2>>
+<<animate TV MalloyTalk>>
+TV: I went on one of those internet dates last week.
+<<animate TV GarboTalk>>
+TV: Oh?
+<<animate TV GarboTalk>>
+TV: Yeah the internet is a truly giving lover.
+<<animate TV GarboStare>>
+<<wait 2>>
+<<playOneShot event:/bus_station/tv_cough TV>>
+<<wait 3>>
+<<animate TV GarboTalk>>
+TV: Hey, any lovely ladies out there looking for an eligible bachelor?
+TV: Get in touch!
+<<animate TV GarboLaugh>>
+TV: And I'll let you know if I find one!
+<<animate TV MalloyStare>>
+<<playOneShot event:/bus_station/tv_laughter_applause TV>>
+<<wait 3>>
+<<close>>
+<<animate TV Static>>
+<<wait 3>>
+
+===
+title: VendingMachine
+tags: 
+colorID: 0
+position: 539,251
+---
+<<if $janitor >= 2 and $soda is 0>>
+	Mae: What the?
+    Mae: They have Lime Fiasco and he wants a Fiascola?
+    Mae: That's just a waste.
+	<<close>>
+	<<wait 1>>
+	<<tell VendingMachine to Vend>>
+	<<wait 5.5>>
+    <<set $can_grab_soda_can to 1>>
+    <<set $vending_machine_done to 1>>
+    Mae: Okay, just gotta grab it.
+	//<<set $soda to 1>>
+	//Mae: Got it!
+<<else>>
+	Mae: :) -_- Fiasco Fox you are too dreamy.
+    <<eyes Mae Neutral>>
+    <<mood Mae Neutral>>
+    <<set $vending_machine_done to 1>>
+<<endif>>
+
+
+===
+title: wow
+tags: 
+colorID: 0
+position: -765,1046
+---
+Mae: Wow. When did they put this up?
+Mae: Possum Springs has never looked more...
+Mae: ...falsely advertised. :\
+<<eyes Mae Neutral>>
+<<mood Mae Neutral>>
+<<set $bus_station_mural to 1>>
+===
+title: visitors
+tags: 
+colorID: 0
+position: -562,1273
+---
+Mae: Visitors are going to be so let down when they see the actual town.
+Mae: Prepare to be disappointed, ye who enter here!
+Mae: Our Town Motto.
+<<set $bus_station_mural to 2>>
+===
+title: forest
+tags: 
+colorID: 0
+position: -294,1296
+---
+Mae: State forest up top,
+Mae: Regular forest everywhere else.
+Mae: Woods, woods, woods.
+<<set $bus_station_mural to 3>>
+
+===
+title: mine
+tags: 
+colorID: 0
+position: -114,1046
+---
+Mae: Look at that minecart.
+Mae: That's all long gone.
+Mae: Was this made by a time traveler?
+<<set $bus_station_mural_done to 1>>
+===
+title: reception
+tags: 
+colorID: 0
+position: 78,366
+---
+Mae: It must be such a relief to payphone companies that Possum Springs gets zero cell reception.
+Mae: It'd be cool to call my parents
+Mae: but some jerkhole took the time to actually rip it off.
+Mae: Who steals a phone?
+<<set $bus_station_phone to 1>>
+===
+title: whosteals
+tags: 
+colorID: 0
+position: -196,433
+---
+Mae: I wonder what they're doing with that phone.
+Mae: Sleeping with it at night.
+Mae: Taking it for walks.
+Mae: Holding it tight.
+Mae: Talking into it
+Mae: to nobody.
+Mae: Smooching it so right.
+<<set $bus_station_phone_done to 1>>
+
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: 346,-40
+---
+<<if $busStation is 0>>
+	<<set $busStation to 1>>
+<<endif>>
+<<playerFace -1>>
+<<if $janitor >= 5>>
+	<<hide Janitor>>
+<<else>>
+	<<flip Janitor -1>>
+<<endif>>
+Mae: chà, tuyệt thật.
+Mae: Tôi không cần tiệc tùng hay gì cả
+Mae: nhưng tôi đã nghĩ *ai đó* sẽ ở đây.
+Mae: ...
+Mae: chào mừng con trở về, Mae.
+===

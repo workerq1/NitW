@@ -1,0 +1,118 @@
+title: Convo1
+tags: 
+colorID: 0
+position: 77,109
+---
+<<if $just_ate_crust>>
+    Gregg: Woa you just ate my crust.
+    Mae: This was a mistake.
+    Gregg: oh looks like someone went off to school and got all fancy and eats CRUSTS now
+    <<set $crusts_eaten_at_diner += 1>>
+<<endif>>
+Angus: This pizza isn't great.
+Bea: It's pretty horrible.
+Gregg: Dudes, haven't you heard of the pizza scale?
+[[The What?|TheWhat]]
+[[Screw it. Pizza good.|PizzaGood]]
+===
+title: PizzaGood
+tags: 
+colorID: 0
+position: 389,416
+---
+Gregg: That's basically the pizza scale.
+Angus: He's explained it to me several times.
+Angus: That's about it.
+[[End]]
+===
+title: End
+tags: 
+colorID: 0
+position: 73,655
+---
+Mae: Pizza good.
+<<unlockDoodle PizzaScale>>
+<<tell GreggFoodPaw Reach>>
+<<tell AngusFoodPaw Reach>>
+<<tell BeaFoodPaw Reach>>
+===
+title: TheWhat
+tags: 
+colorID: 0
+position: -246,435
+---
+Gregg: There's a scale of pizza.
+Gregg: On one end there's the worst pizza.
+Gregg: But like everything right above that
+Gregg: is still really good.
+Bea: What's at the other end of the scale?
+Gregg: It's pizza all the way up.
+[[End]]
+===
+title: Diner
+tags: empty
+colorID: 0
+position: -529,742
+---
+Empty Text
+===
+title: Convo2
+tags: 
+colorID: 0
+position: 600,107
+---
+Bea: i mean it's no pastabilities.
+Mae: mmmm i missed pastabilities.
+<<if $just_ate_crust>>
+    <<set $crusts_eaten_at_diner += 1>>
+    <<if $crusts_eaten_at_diner >= 2>>
+        Gregg: So you're just all about crusts now?
+        Gregg: like some sort of maniac?
+        Mae: It's good.
+        Gregg: Weird.
+        <<unlockAchievement Crusty>>
+    <<else>>
+        Gregg: Whoa did you just eat my crust?
+        Mae: I like crusts!
+        Gregg: oh looks like someone went off to school and got all fancy and eats CRUSTS now
+    <<endif>>
+<<else>>
+    Mae: I am not touching those crusts.
+    Gregg: saaaaaaaaaaame.
+<<endif>>
+Mae: we should have gone to pastabilities.
+Gregg: the diner has ambience!!!!
+Angus: the seats are comfy.
+Bea: the food is terrible but
+Bea: it's got charm.
+Gregg: you too fancy for the diner now?
+Mae: guys.
+Mae: please.
+Mae: i was raised in this diner.
+Bea: you and like a zillion rats.
+<<irisOut 1 wait>>
+<<scene Diner>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: -239,2
+---
+Angus: mmmmmm.
+Gregg: Hell yeah. did you miss pizza, mae?
+Mae: they have pizza at school.
+Gregg: oh cool.
+<<tell GreggFoodPaw Reach>>
+<<tell BeaFoodPaw Reach>>
+<<tell AngusFoodPaw Reach>>
+===
+title: Convo1Short
+tags: cut
+colorID: 0
+position: 361,-60
+---
+Mae: Short!
+<<tell GreggFoodPaw Reach>>
+<<tell AngusFoodPaw Reach>>
+<<tell BeaFoodPaw Reach>>
+===

@@ -1,0 +1,68 @@
+title: Caught
+tags: temp
+colorID: 0
+position: 505,248
+---
+<<if $caught_stealing_pretzel is 0>>
+    Cook: Hey!
+    Mae: Hey!
+    <<set $caught_stealing_pretzel += 1>>
+<<elseif $caught_stealing_pretzel is 1>>
+    Cook: HEY! HANDS OFF!
+    Mae: ha ha sorry
+    <<set $caught_stealing_pretzel += 1>>
+<<elseif $caught_stealing_pretzel is 2>>
+    Cook: NEED SOMETHING MISS.
+    Mae: nope!
+    <<set $caught_stealing_pretzel += 1>>
+<<elseif $caught_stealing_pretzel is 2>>
+    Cook: THOSE COST MONEY YA KNOW
+    Mae: i know i know!
+    <<set $caught_stealing_pretzel += 1>>
+<<else>>
+    Cook: HEY!
+    Mae: AAAGH FINE.
+    <<set $caught_stealing_pretzel += 1>>
+<<endif>>
+<<irisOut 1 wait>>
+<<scene Tunnel>>
+===
+title: Complete
+tags: 
+colorID: 0
+position: 788,244
+---
+<<if $pretzels_stolen is 0>>
+    Mae: I. Am. The. Bandit. Queen.
+<<elseif $pretzels_stolen is 1>>
+    Mae: Getting the hang of this!
+<<elseif $pretzels_stolen is 2>>
+    Mae: This is unfairly easy now.
+<<else>>
+    Mae: Delicious, for rat babies.
+<<endif>>
+<<set $pretzels_stolen += 1>>
+
+<<close>>
+<<fadeOut 1 wait>>
+<<scene Tunnel>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: 235,269
+---
+<<if $pretzel_intro_done is 0>>
+    <<set $pretzel_intro_done to 1>>
+    Mae: Ok ok ok ok Mae.
+    Mae: You're only gonna get one shot at this.
+    Mae: Just gotta freeze when he looks over.
+    Mae: Even if you're holding a pretzel.
+    Mae: No. Movement.
+    Mae: It's simple psychology.
+    Mae: You've done this before.
+    Mae: You've still got it.
+    Mae: Easy easy easy.
+    Mae: Ok GO.
+<<endif>>
+===

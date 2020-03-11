@@ -1,0 +1,398 @@
+title: BossConversation
+tags: 
+colorID: 5
+position: 812,219
+---
+//walk mae into next room and stop//
+<<set $boss_convo to 1>>
+<<warp Mae MaeBossConvo>>
+<<warp Gregg GreggBossConvo>>
+<<warp Bea BeaBossConvo>>
+<<warp Angus AngusBossConvo>>
+<<flip Gregg -1>>
+<<flip Angus -1>>
+<<flip Bea -1>>
+Mae: I know you’re in here.
+<<wait 4>>
+Mae: Say something.
+<<wait 2>>
+<<cameraLookAt BossCamCenter 3>>
+HeadMiner: Well how about this:
+HeadMiner: take a couple more steps forward if you wanna die.
+Bea: show yourself!
+Gregg: yeah asshole we’re like 5 times scarier than you
+<<close>>
+<<set $found_pentagrams += 1>>
+//next wait is just for dialogue as the animations happen//
+
+//playMineBottom2.lightsTurnOn//
+<<trigger MineBottom2 LightsTurnOn>>
+//holdonMineBottom2.lightsOn//
+<<wait 8>> 
+Eide: there they are! They’re right there!
+Eide: I'm gonna kill them!
+HeadMiner: Eide, you'll do no such thing.
+HeadMiner: It's out of your hands now.
+Eide: he... shot... me!
+HeadMiner: Then I’d say we're even.
+HeadMiner: Little girl got shot at the other night.
+Miner1: Yeah. Sorry about that.
+Mae: You're... apologizing?
+Miner1: It was a bad call. I am sorry.
+Mae: Uh. It's ok?
+Mae: It didn’t actually hit me, so-
+Mae: Wait. What the- Who are you?
+HeadMiner: Buncha of old boys doing their damnedest
+HeadMiner: to protect their own and their neighbors.
+Mae: Th-... then. why are you trying to kill me?
+Miner2: Kill you?!
+Miner1: Nobody's gonna kill you!
+HeadMiner: All of you are part of this town.
+HeadMiner: by family relation or just by being hard workers.
+Miner2: Contributors!
+Mae: Um. ok.
+Mae: so we could just leave?
+HeadMiner: Well, *he* brought you down here for a reason
+HeadMiner: and he’s not gonna let you leave until he’s had his say.
+Mae: Well *he’s* already got an arrow through the shoulder.
+Mae: I don’t think he’s gonna be having much say in whatever.
+HeadMiner: …
+Miner1: ...
+HeadMiner: Wait. So you think that Eide-
+Mae: He kidnapped that kid at Harfest!
+Mae: He’s… been in my head somehow!
+Mae: I'm always tired! Constant headaches!
+Mae: He's been following me... following all of us!
+Mae: He-
+HeadMiner: Oh, little girl. 
+HeadMiner: You don’t know what this is, do you?
+<<playMusic boss_conversation 6>>
+Mae: What?
+//miner lights another lantern and we can see the hole now. Camera backs up a bit to show more blackness around.
+//Camera does some light blur/swimmy stuff for a second.//
+Mae: oh god
+<<cameraLookAt BossCamCenterLow 8>>
+<<close>>
+<<wait 1>>
+<<allSpeechBubblesToY 5>>
+<<extraZoom -5 8>>
+Mae: i’ve seen this
+Mae: or I’ve… I’ve felt it…
+HeadMiner: Was Ed Skudder and Jim Dorney who found it.
+HeadMiner: 20 years back or so.
+HeadMiner: After the west mine closed out past Briddle
+HeadMiner: Vest Schumacher. Last supervisor.
+HeadMiner: was out there when the company locked off the entrance
+HeadMiner: carved his initials and date in the door.
+HeadMiner: Then you got this mine, the Old One.
+HeadMiner: not even a proper mine. Big hole. Copper.
+HeadMiner: Abandoned, shoot, long before any of us were born.
+HeadMiner: too close to water.
+HeadMiner: And that water was poison
+HeadMiner: when the first settlers came out here.
+HeadMiner: that old spring used to be right above where we’re standin’.
+HeadMiner: but that water dried up.
+HeadMiner: 1992 or so some men from west mine
+HeadMiner: come back up here to try bootleggin,
+HeadMiner: practically built a new elevator, got the main tunnel cleared
+HeadMiner: never found no coal, just dug deeper n' deeper
+HeadMiner: til Ed busts through that wall and finds this place
+HeadMiner: and Jim walks right into that hole
+HeadMiner: and never hits bottom.
+HeadMiner: Ed calls down to Jim
+HeadMiner: Jim don’t answer
+HeadMiner: but someone else does.
+HeadMiner: I know you heard that voice, girl.
+HeadMiner: In dreams and in waking times.
+HeadMiner: ‘swhat brought you down here. 
+	-> what... what is it?
+		HeadMiner: black goat
+		HeadMiner: not even black like the color
+		HeadMiner: black like the space between the stars
+		HeadMiner: he’s down there, in that hole
+		HeadMiner: looking up at us right now
+		HeadMiner: he don’t talk to ya
+		HeadMiner: he... sings...
+		Mae: why would you just do something a hole in a cave told you to?
+	-> so what does this have to do with you, or me, or anyone?
+HeadMiner: you got to understand
+HeadMiner: in those days it was the end of the world
+HeadMiner: jobs gone. Our kids were leaving.
+HeadMiner: government didn’t care, only wanted our votes.
+HeadMiner: just puttin in more regulations, sendin our jobs overseas,
+HeadMiner: spendin our taxes on lazy people 'n immigrants
+HeadMiner: while we worked ourselves to death.
+Bea: ugh here we go.
+Bea: goddamn i hate this crap.
+Bea: you old dipshits.
+HeadMiner: you finished?
+<<wait 2>>
+Bea: yeah sure.
+HeadMiner: we prayed and prayed up at the church,
+HeadMiner: but when Ed Skudder came back down here and listened
+HeadMiner: he got answers back.
+	-> oh god… i think i know...
+		HeadMiner: yeah he’s already in there singin to ya, right?
+		Mae: I… I…
+	-> answers?
+HeadMiner: Ed explained it to a few folks, and they didn’t believe it
+HeadMiner: but he was persuasive
+HeadMiner: he had the glimmer.
+Mae: "the glimmer?"
+    Miner2: ones 'e takes a shining to
+    Miner2: it rubs off on ya.
+    Miner2: you can do things.
+    HeadMiner: I never seen it
+    HeadMiner: but they said Ed could walk through walls.
+    Mae: ok.
+HeadMiner: after Ed talked us into all this,
+HeadMiner: after that first time, after we picked one out
+HeadMiner: well...
+HeadMiner: not only was the town holdin' stable
+HeadMiner: but it was almost like we were getting younger, and money came too
+HeadMiner: still a few of us left from back then
+    -> “Picked”?
+        HeadMiner: first one was Tom Turner, who believe you me was a bastard
+        HeadMiner: just pure trash
+        HeadMiner: we got him down here
+        HeadMiner: and in the hole he went.
+        HeadMiner: the next week, flowers bloomin’ all over the hills
+	-> “First time?”
+		HeadMiner: First one into the hole by our own hands.
+		HeadMiner: We own up to what we do. I was there.
+		Miner2: I was too.
+Bea: You throw them in the hole?
+Mae: ...
+Mae: they’re... feeding him...
+HeadMiner: he's hungry like you wouldn't believe.
+HeadMiner: every few months or so he starts singin’
+HeadMiner: and it’s someone’s turn to find someone.
+    ->was that what you were doing the other night?
+        Miner1: No.
+        HeadMiner: What happened the other night was a shame.
+        HeadMiner: One of our number broke the rules.
+        HeadMiner: an' had to pay up.
+        HeadMiner: that was a hard thing to do
+    ->...
+Mae: i think i’m gonna be sick...
+HeadMiner: we never pick noone who’s gonna be missed
+HeadMiner: that’s a solid rule.
+HeadMiner: Drifters, drunks, and delinquents.
+Mae: you’ve been… oh god… oh no...
+	-> How many people have died down here???
+		HeadMiner: oh, I’d say…
+		Miner1: 3 dozen. Give or take.
+		Miner2: 39.
+		Miner2: am I the only one keeping steady count?
+		HeadMiner: I do now. Early on I think we all wanted to forget.
+        Miner1: i still got a feelin' heart. it still hurts.
+        Miner2: yeah that dirtbag kid from the spring...
+        Gregg: C...c...casey?
+	-> Casey? 
+HeadMiner: The Hartley kid?
+HeadMiner: all he was gonna contribute to society
+HeadMiner: 'cept a buncha kids growin up with no dad
+HeadMiner: was a rap sheet a mile long
+HeadMiner: before whatever sad end he’d wind up at.
+HeadMiner: we did him a FAVOR.
+Gregg: You... k-killed... Casey?
+Angus: oh my god.
+HeadMiner: we don’t use that word.
+HeadMiner: you know he was taking up business with his cousin, right?
+HeadMiner: you know what happened to his cousin?
+HeadMiner: burned alive when his little trailer lab exploded
+HeadMiner: they had to wear hazmat suits when they cleaned him up
+HeadMiner: that’s where Casey was headed.
+Gregg: You killed Casey.
+HeadMiner: and you want to act like we didn’t do him and this whole town a favor?
+Mae: oh god… Casey’s been down here the whole time.
+Mae: his parents put up posters!
+HeadMiner: maybe they shoulda cared more about him before it came to this.
+<<fadeOutMusic 1>>
+//play Gregg_bod_Crossbow_down2up and hold on Gregg_bod_crossbow_up//
+<<setAnimInt Gregg crossbow 2>>
+<<wait 1>>
+Gregg: D:
+Gregg: WHICH ONE OF YOU DID IT!!! 
+Bea: Gregg-
+Gregg: HE WAS MY FRIEND!!!!
+<<setAnimInt Miner1 raiseRifle 1>>
+//miner1 raises rifle//
+Miner1: Alright now. Throw it down right now or I will shoot.
+Gregg: :)
+Gregg: heh heh 
+Gregg: What if I get you first?
+Gregg: bolt stickin' right outta your eye
+Gregg: *bang*
+Gregg: *baaaaaaaaang*
+<<setAnimInt Miner2 raiseRifle 1>>
+//Miner2 raises rifle//
+Gregg: :|
+Angus: You brought guns down here?
+Miner2: Dangerous this far out in the woods at night. Basic safety.
+Gregg: I… I...
+Miner1: Throw it down, son.
+Miner1: Don’t make this our time.
+Bea: Gregg…
+<<wait 2>>
+Gregg: Dangit.
+//play Gregg_bod_Crossbow_drop//
+<<setAnimInt Gregg crossbow 1>>
+<<trigger Gregg DropCrossbow>>
+<<wait .5>>
+<<setAnimInt Gregg crossbow 0>>
+<<wait 2>>
+<<playMusic boss_conversation 6>>
+Mae: you’re monsters
+Mae: none of this
+Mae: none of this is happening
+//at this point we start mae’s cosmic tumble animation which is just some camera effects and some sprite overlays.
+//We prob wanna wait a few seconds for it to get going before we continue the convo//
+<<tell AmbientSFX:amb_cosmic_freakout Play3>>
+<<setAnimInt CosmicShit state 1>>
+<<extraZoom 0 20>>
+<<wait 3>>
+<<allSpeechBubblesToX -28.12>>
+<<allSpeechBubblesToY 5.1>>
+HeadMiner: we are not monsters
+HeadMiner: We do it because we love our home.
+HeadMiner: as long as we keep doing this,
+HeadMiner: Possum Springs survives
+HeadMiner: things *can* get better
+HeadMiner: these mines are gonna be humming again someday
+HeadMiner: old mills puffin’ smoke
+HeadMiner: you kids don’t understand that-
+HeadMiner: we lost what our world was built around
+HeadMiner: used to be you provided for a family, bought a house
+HeadMiner: now you’re stockin’ shelves at the grocery store
+HeadMiner: kids leavin’ more than they’re stayin’.. No opportunity here.
+HeadMiner: old people dyin’, houses left empty
+HeadMiner: you ever seen that?
+HeadMiner: A *HOME* become a tumbled-in pile of wood and plaster?
+HeadMiner: A *JOB* become a burned out brick box or a hole in the ground?
+HeadMiner: but we can change that.
+HeadMiner: we can put this place back together,
+HeadMiner: where it won’t be just…
+//would be good to cut the track here to something clearer for the duration of mae’s speech here
+//and then go back to previous ambience//
+<<close>>
+<<wait 1>>
+<<allSpeechBubblesToX 0>>
+<<allSpeechBubblesToY 0>>
+<<fadeOutMusic 1>>
+Mae: shapes.
+<<wait 6>>
+Mae: i’m going to die down here
+<<wait 2>>
+<<tell AmbientSFX:amb_cosmic_freakout FadeOut3>>
+<<setAnimInt CosmicShit state 0>>
+<<wait 3>>
+//cosmos stuff fades out, back to cave stuff//
+Mae: why are you telling us all this?
+HeadMiner: Because we’re getting old
+HeadMiner: and even with the fringe benefit of good health
+HeadMiner: we need new blood
+HeadMiner: to carry this on when we’re gone.
+Bea: Really? You’re like, pitching us on this?
+Bea: were any of you even miners back in the day?
+Bea: any of you hurting now? financially, like?
+Bea: or is this just some big costume party murder club
+Bea: for someone's shitty boss who's afraid of dying?
+<<wait 2>>
+HeadMiner: that don't matter.
+Bea: *snort*
+Bea: it does.
+Angus: this is real bad.
+Gregg: this is insane.
+	-> why should we help you?
+	-> why shouldn’t we just call the cops?
+		HeadMiner: And say...what?
+		HeadMiner: you saw some men you can’t identify
+        HeadMiner: in an abandoned mine behind a locked gate
+		HeadMiner: and an elevator that won’t run?
+		HeadMiner: that you saw a… hole?
+		Mae: ok fine. Why should we help you?
+HeadMiner: because if no one is here to do this
+HeadMiner: you remember that flood a few years back?
+HeadMiner: you remember the blizzard of 2010?
+HeadMiner: that’s what happens.
+HeadMiner: and beyond that
+HeadMiner: the jobs never come back. The kids never come back.
+HeadMiner: everything crumbles. Possum Springs bleeds to death.
+HeadMiner: and soon we’ll all be dead
+HeadMiner: and this town will just be fields and trees.
+Mae: I’ve... seen it.
+HeadMiner: I know you have.
+<<wait 3>>
+HeadMiner: I’ll understand if you need some time to think it over.
+Bea: so we can leave?
+HeadMiner: no one’s gonna stop you.
+HeadMiner: but understand that you don’t know who we are
+HeadMiner: out there
+HeadMiner: but we know who you all are
+Eide: ain’t fair they get to leave and I probably got permanent damage
+HeadMiner: shut it, eide!
+Eide: you don’t know a thing about what he wants! What he is!
+HeadMiner: eide i swear to god
+Bea: let’s go
+Gregg: yeah let's seriously get out of here
+HeadMiner: son, you leave that crossbow.
+Gregg: what? why?
+HeadMiner: well, i could bullshit you
+HeadMiner: but the truth is i just don't trust you.
+Gregg: fine whatever. It's a piece of shit anyway.
+HeadMiner: heh heh.
+Mae: I... I can’t move you guys
+Angus: I’ll carry you.
+//<<close>>
+//angus walks up and throws mae on his back, piggy-back style//
+//<<walk Angus AngusPickUpMae wait>>
+//Angus: you good?
+//Mae: yeah.
+//<<walk Angus WalkOutRight>>
+//<<walk Gregg WalkOutRight>>
+//<<walk Bea WalkOutRight>>
+//<<wait 1>>
+<<fadeOut 1 wait>>
+<<wait 1>>
+<<scene MineBottom1>>
+===
+title: InitLevel
+tags: 
+colorID: 5
+position: 174,166
+---
+<<setCanInteract Bea 0>>
+<<setCanInteract Angus 0>>
+<<setCanInteract Gregg 0>>
+
+<<playerCanRun 0>>
+
+<<setAnimInt Gregg crossbow 1>>
+
+<<flip Mae -1>>
+<<groupFollow>>
+
+<<set $death_walk to 1>>
+<<playIdleAnimationPlayer>>
+===
+title: Intro
+tags: 
+colorID: 5
+position: 512,226
+---
+//in church room//
+Gregg: aaaaaaaaaw geez
+Bea: what is this place?
+Angus: looks like a church or something?
+Bea: and like... junk...
+Mae: oh god...
+Mae: oh god...
+Bea: what is it?
+Mae: it’s here...
+Mae: it’s here
+Mae: oh god
+Gregg: what is it?
+Mae: i don’t know but it’s here
+Mae: it’s... through there...
+===

@@ -1,0 +1,74 @@
+title: Start
+tags: 
+colorID: 0
+position: 96,614
+---
+<<wait 5>>
+Mae: In the year Granddad died
+<<setIndentLevel 1>>
+<<shuffleNextOptions>>
+-> we had the worst flood since 1998
+    <<setIndentLevel 2>>
+    <<moveParameter WindSFX wind_intensity 1 1>>
+    Mae: Gregg got trapped on top of a dog house
+    Mae: the power was out for two days
+    Mae: Casey Hartley came by in his dad's boat
+    Mae: And I laughed when I saw him
+-> the highway extension came
+    <<setIndentLevel 2>>
+    <<moveParameter WindSFX wind_intensity 1 1>>
+    Mae: the road through Possum Springs
+    Mae: had been the only way to the state park
+    Mae: the highway took the traffic
+    Mae: but gave us Donut Wolf
+<<setIndentLevel 0>>
+<<moveParameter WindSFX wind_intensity 3 1>>
+Mae: Granddad left me an apple crate of books
+Mae: He loved ghost stories
+Mae: And quoted them to himself in the hospital bed
+<<setIndentLevel 1>>
+<<shuffleNextOptions>>
+-> "They went looking for the gods,
+    <<setIndentLevel 2>>
+    <<moveParameter WindSFX wind_intensity 5 1>>
+    Mae: And died in lonely places."
+-> "In their wings, in their trees
+    <<setIndentLevel 2>>
+    <<moveParameter WindSFX wind_intensity 5 1>>
+    Mae: All things die, be at peace."
+-> "They feared death
+    <<setIndentLevel 2>>
+    Mae: So they ate the young."
+<<setIndentLevel 0>>
+<<moveParameter WindSFX wind_intensity 7 1>>
+<<wrapPoem>>
+Mae: on his last day
+Mae: he sat up suddenly 
+Mae: and stared bug-eyed through the window
+<<setIndentLevel 1>>
+<<shuffleNextOptions>>
+-> at the old empty mill
+    <<setIndentLevel 2>>
+    <<moveParameter WindSFX wind_intensity 8 1>>
+    Mae: Windows half busted out
+-> at the old playground
+    <<setIndentLevel 2>>
+    <<moveParameter WindSFX wind_intensity 8 1>>
+    Mae: half washed away
+-> at the old trains
+    <<setIndentLevel 2>>
+    <<moveParameter WindSFX wind_intensity 8 1>>
+    Mae: rattling to somewhere else|from somewhere else
+-> at the old parking lots
+    <<setIndentLevel 2>>
+    Mae: wide and sparkling like oceans
+<<setIndentLevel 0>>
+<<moveParameter WindSFX wind_intensity 10 1>>
+Mae: he turned to my dad
+Mae: eyes still wide
+Mae: "this house is haunted"
+Mae: he said
+Mae: and died.
+<<fadeOut 2 wait>>
+<<scene BusStation>>
+===

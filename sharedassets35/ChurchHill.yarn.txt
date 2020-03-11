@@ -1,0 +1,382 @@
+title: InitLevel
+tags: 
+colorID: 0
+position: -83,99
+---
+<<set $taxi_stop to 2>>
+
+<<if $act is 2 and $day is 2 and $church_hill_background_a2d2_done is 0>>
+    <<show Molly>>
+    <<setCanInteract Molly 0>>
+    <<warp Molly MollyCamp>>
+<<else>>
+    <<hide Molly>>
+<<endif>>
+
+<<if $act is 2 and $day is 4>>
+    // show wyrd teens
+<<elseif $act is 4 and $day is 3 and $found_pentagrams >= 3>>
+    // show wyrd teens
+<<else>>
+    <<hide Britt>>
+    <<hide Pam>>
+    <<hide Karla>>
+<<endif>>
+
+<<if $act is 3 and $day is 2 and $big_fight is 0>>
+    <<set $church_locked to 1>>
+<<else>>
+    <<set $church_locked to 0>>
+<<endif>>
+===
+title: EnterLevel_A2D1
+tags: 
+colorID: 0
+position: 189,104
+---
+<<set $reminder_east_stairs_done to 1>>
+===
+title: ChurchClosedDemo2
+tags: 
+colorID: 3
+position: 618,161
+---
+Mae: Huh.
+Mae: Door's locked.
+Mae: What if I needed,
+Mae: like,
+Mae: Sanctuary from vampires or something.
+Mae: This is just irresponsible.
+<<end>>
+===
+title: Cliff
+tags: 
+colorID: 3
+position: 383,480
+---
+Mae: Huh. Never been up here.
+Mae: Looks like someone else has been, and recently.
+<<lookDown Mae>>
+Mae: something on the ground, drawn with ash...
+Mae: -_-
+Mae: {emote=pentagram}
+<<close>>
+Mae: o>
+Mae: huh.
+<<lookNearest Mae>>
+Mae: o_o
+Mae: something's been going on out here.
+Mae: Could be teens praying to whatever god teens pray to now
+Mae: Could be...
+Mae: -_-
+Mae: hmmm.
+Mae: _o_
+Mae: o_o
+
+<<end>>
+===
+title: Statue_Interaction
+tags: 
+colorID: 3
+position: 650,488
+---
+Mae: Saint Rubio.
+Mae: I think this guy breathed fire and ate people or something.
+Mae: And now he's a statue.
+Mae: In Possum Springs.
+Mae: Because life is weird sometimes.
+<<end>>
+===
+title: Quiet
+tags: 
+colorID: 3
+position: 923,481
+---
+Mae: Quiet up here.
+Mae: Most people up here are dead I guess.
+<<end>>
+===
+title: WyrdTeens_A2D4
+tags: 
+colorID: 3
+position: 1274,196
+---
+Mae: Hey.
+Britt: ...
+Mae: Hello.
+Pam: ...
+Mae: HEY!!!
+Karla: traveler, from distant lands
+Britt: you have journeyed far
+Pam: and it has brought you here
+Karla: to us
+Mae: Actually I walked like 15 minutes. From my house.
+Britt: walker, far from home
+Pam: we will tell of your future
+Karla: but first, be truthful:
+Pam: tell us
+Karla: which of these have you seen
+Britt: a shipwreck?
+Pam: a ghost on a hill?
+Karla: an arrow, loos’d?
+Mae: “loos’d?” really?
+Mae: I... um... hm
+Mae: you’re all like 14 year old goths. Why am I answering this?
+<<close>>
+<<wait 2>>
+<<shuffleNextOptions>>
+->the shipwreck
+	Mae: on my way into town
+	Mae: in the playground... this old ship
+	Mae: how did you...?
+	[[Shipwreck]]
+->the ghost
+->the arrow
+Britt: False
+Pam: You have failed
+Karla: We cannot help you
+Britt: You may see us once more
+Pam: But it is not certain
+Karla: And then never again.
+Mae: Ok.
+Mae: Uh.
+Mae: Have fun, kids.
+Britt: Fun is
+Pam: all we
+Karla: have.
+Mae: do you like, practice that talking in turn thing?
+Karla: ...
+Britt: you’re not gonna narc on us to the pastor, right?
+Pam: for being out here?
+Mae: nah.
+Karla: cool thanks
+<<set $wyrd_teens_done to 1>>
+<<unlockDoodle WeirdTeens>>
+===
+title: Shipwreck
+tags: 
+colorID: 3
+position: 1564,221
+---
+Britt: You have answered well
+Pam: We will peer into your future
+Karla: And give you what help we can
+Britt: In the coming dark
+->what, Daylight savings ending?
+    Pam: ha
+    Karla: ha
+    Britt: ha.
+    Mae: do you like, practice that talking in turn thing?
+->alright go for it
+Pam: tell us first
+Karla: what is god
+Britt: in this place
+Mae: wow. Uh.
+Pam: is it
+Karla: caring but absent?
+Britt: uncaring but distant?
+Pam: vicious and roaming?
+Mae: can we go with “nice and helpful?”
+<<close>>
+<<wait 2>>
+Mae: ok fine.
+->caring and absent
+	Karla: true enough
+	Britt: she works still
+	Pam: in hopes it will return
+	Mae: she? She who?
+	Karla: we see something
+	Britt: In your future
+	Pam: we know!
+	Karla: we know!
+	Britt: we know!
+	Mae: ok already! Geez!
+    Pam: if the sky is empty
+    Karla: is it enough
+    Britt: to be a good watcher?
+    Mae: that’s more a question than a fortune, guys
+->uncaring and distant
+	Karla: i can see it
+	Britt: on a distant shore
+	Pam: beneath the stars
+	Mae: ok
+	Karla: we see something
+	Britt: In your future
+	Pam: we know!
+	Karla: we know!
+	Britt: we know!
+	Mae: ok already! Geez!
+	Pam: you will swim out to sea
+	Karla: and meet it
+	Britt: on a distant shore
+	Mae: we’re like 6 hours from the ocean.
+	Mae: you guys are bad at this.
+->vicious and roaming
+	Karla: it ate our futures
+	Britt: and moved on
+	Pam: but we live in the ruins
+	Mae: uh huh
+	Karla: we see something
+	Britt: In your future
+	Pam: we know!
+	Karla: we know!
+	Britt: we know!
+	Mae: ok already! Geez!
+	Pam: they cry out to it
+	Karla: but it is others
+	Britt: who will sacrifice
+	Mae: ok cool well
+	Mae: that’s cryptic
+Mae: let’s try something easier.		
+Mae: What am I going to have for dinner tonight?
+Pam: don’t know, don’t care
+Karla: i want tacos
+Britt: we’ll have them soon
+Pam: we’ll all have tacos soon
+Mae: ok well i’m gonna get going
+Karla: STOP.
+Britt: do you see the mystical symbol
+Pam: etched upon this sacred rock?
+->the pentagram you guys drew?
+	Karla: yes. good.
+->the spooooky pentagram you teens drew? 
+	Karla: shut up. it’s full of mystical shit.
+Mae: ok?
+Britt: it is the first of three
+Pam: find it thrice
+Karla: and it shall find you
+Britt: in the dark
+Mae: ok cool well
+Mae: iiiiii’m gonna head out
+Mae: you guys are adorable
+Mae: and weird. But the fun kind of weird.
+Pam: this is serious
+Karla: like we’re not kidding
+Britt: we don’t care or anything
+Pam: but like
+Karla: dude.
+Mae: alright alright i’ll keep an eye out
+Mae: for pentagrams and what not
+Karla: cool
+Mae: ha ha you broke your speaking order
+Pam: um no
+Britt: we’re just going backwards now
+Karla: are you freaking out yet
+Mae: see ya, weird goth teens
+Pam: you’re not gonna narc on us to the pastor, right?
+Britt: for being out here?
+Mae: nah.
+Karla: cool thanks
+<<set $wyrd_teens_done to 1>>
+<<unlockDoodle WeirdTeens>>
+===
+title: WyrdTeens_A4D3
+tags: 
+colorID: 6
+position: 1847,250
+---
+Mae: Hey.
+Mae: It’s you guys.
+Britt: sup
+Pam: hi
+Karla: heeyyyy
+Mae: you guys still doing that talking in order thing?
+Pam: nah
+Britt: kept messing it up
+Pam: we’re kinda over the whole thing anyway
+Mae: oh really?
+Karla: yep.
+->because that pentagram thing was totally a thing
+	Mae: so like
+	Mae: thanks
+	Pam: huh. Cool.
+	Mae: and actually everything you said was pretty spot on
+	Britt: probably because we’re actually psychic
+	Karla: probably
+	Mae: alright well I can’t tell what level of sarcasm we’re working on here
+	Mae: oh god i sound like a mom
+	Pam: maybe no sarcasm
+	Karla: maybe we’re covering our tracks
+	Britt: so our cover isn’t blown
+	Mae: never change, weird teens
+	Mae: please grow and become weird adults
+	Pam: maybe we don’t age
+	Karla: maybe we stay young
+	Britt:{width=8} maybe we’re F O R E V E R.
+	Mae: thank you, again.
+	Pam: for what?
+	Karla: i don’t remember doing anything
+	Britt: who is this lady?
+->we all go through phases
+	Mae: I totally went through a witch phase.
+	Mae: Had one of those mirrors.
+	Mae: Then I dropped it and broke it.
+	Karla: bad omen
+	Britt: for reals
+	Mae: would’ve been good to know that back then
+	Mae: hey all that stuff you said before
+	Mae: actually kinda ended up being spot on
+	Britt: nice
+	Karla: niiiiiiiiiiice.
+	Mae: I had a really weird and bad week
+	Mae: but
+	Mae: the snow is nice.
+	Pam: seems to have worked out
+	Pam: the mirror probably did it 
+	Britt: what dude
+	Pam: dunno. I’m literally just making stuff up now
+	Mae: cool. Well,
+	Mae: i’ll see you around
+	Karla: yep
+	Britt: probably will
+	Pam: it’s a small town.
+<<set $wyrd_teens_done to 1>>
+===
+title: FrontOfStatueA2D4
+tags: 
+colorID: 3
+position: -25,881
+---
+Mae: breath some fire already dude
+<<end>>
+===
+title: FrontOfStatueA3D4
+tags: 
+colorID: 4
+position: 222,880
+---
+Mae: we got statues of stern dudes for miles here in possum springs.
+<<end>>
+===
+title: FrontOfStatueA4D3
+tags: 
+colorID: 6
+position: 461,876
+---
+Mae: he'll look a lot friendlier when he's covered in snow.
+<<end>>
+===
+title: FrontOfWatertower
+tags: 
+colorID: 0
+position: 9,1159
+---
+Mae: I always wanted to climb the water tower.
+Mae: but then that one kid died doing that.
+Mae: whatever.
+Mae: i'll get to it.
+Mae: probably see clear to briddle from there.
+<<end>>
+===
+title: ChurchLocked
+tags: 
+colorID: 3
+position: -18,441
+---
+Mae: Who locks a church? Mom must be out today...
+Mae: What if I needed,
+Mae: like,
+Mae: Sanctuary from vampires or something.
+Mae: This is just irresponsible.
+<<end>>
+===

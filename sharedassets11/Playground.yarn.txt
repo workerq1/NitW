@@ -1,0 +1,222 @@
+title: Molly
+tags: 
+colorID: 0
+position: 159,578
+---
+<<set $act to 1>>
+<<set $day to 0>>
+<<trackAllSpeechBubblesToCharacters 0>>
+<<fadeOutMusic .25>>
+<<wait 1>>
+<<setAnimBool Molly flashlight 1>>
+<<playOneShot event:/playground/flashlight_on MollyFlashlightSound>> 
+Mae: -_-
+Molly: Hello Mae. Been awhile.
+Mae: Hey. What are you doing out here? Nothing better to do?
+Molly: I was out here doing my rounds and I saw you in the very off-limits playground.
+Mae: So? :\
+<<setAnimBool Molly hip 1>>
+Molly: Get in the car, Mae.
+Mae: No. :|
+Molly: You want to spend your first night back in jail, Mae?
+<<close>>
+<<wait 2>>
+Mae: No. :(
+<<set $night to 1>>
+<<set $act to 1>>
+<<set $day to 0>>
+<<fadeOut 1 wait>>
+<<scene MaeHouse left>>
+
+===
+title: TowerTop
+tags: 
+colorID: 0
+position: 306,141
+---
+<<freezePlayer>>
+Mae: It's only been 2 years since I lived here.
+Mae: Not in this playground, Possum Springs I mean.
+Mae: This is all getting jumbled. I should write it down.
+<<close>>
+//journal time!//
+<<close>>
+<<unlockDoodle Intro>>
+<<unlockDoodle RipGranddad>>
+<<openJournal TowerTopB>>
+<<end>>
+
+===
+title: Branch
+tags: 
+colorID: 0
+position: 657,628
+---
+<<if $playground_branch is 0>>
+	Mae: Hey wow! Ok!
+	Mae: Now to the top of the tower
+	Mae: and I can take that wire right into town!
+	<<set $playground_branch to 1>>
+<<else>>
+	Mae: I hope no one cut the tree down out front of the house.
+	Mae: I used to make Mr. Penderson so mad
+	Mae: jumping all over it and running on the powerlines.
+	Mae: Whatever, everyone does it.
+	Mae: Practically another sidewalk.
+<<endif>>
+
+===
+title: BoatTop.1
+tags: 
+colorID: 0
+position: 27,931
+---
+Mae: Looks like the ladder's gone.
+Mae: If I could just get to the top of this thing...
+Mae: Ugh.
+
+===
+title: BoatTop.2
+tags: 
+colorID: 0
+position: 245,994
+---
+Mae: I could never make it up onto that tree when I was a kid.
+Mae: The number logs mocked me.
+Mae: The logs and the other kids.
+Mae: It was a log-people alliance.
+
+===
+title: BoatTop.4
+tags: 
+colorID: 0
+position: 691,1082
+---
+Mae: Run and jumpjumpjump!
+<<end>>
+
+===
+title: BoatWheel.1
+tags: 
+colorID: 0
+position: -186,1339
+---
+Mae: Ahoy!
+===
+title: BoatWheel.2
+tags: 
+colorID: 0
+position: 46,1378
+---
+Mae: I definitely remember barely reaching the top of this wheel.
+Mae: I definitely remember barely growing since then.
+<<end>>
+===
+title: X_BoatWheel.3
+tags: 
+colorID: 0
+position: 533,1542
+---
+Mae: There used to be one of those spinning block tic tac toe things.
+Mae: Because that's why you come to a giant boatcastle.
+Mae: To play a dumb game in the dumbest way.
+<<end>>
+===
+title: Fence.1
+tags: 
+colorID: 0
+position: 1006,430
+---
+Mae: OH COME ON.
+Mae: Don't think I have the upper body strength to climb this...
+
+===
+title: Fence.2
+tags: 
+colorID: 0
+position: 1257,425
+---
+Mae: You can't keep me out, Possum Springs.
+Mae: I am queen of you.
+Mae: ...
+Mae: ... could probably just jump off this telephone pole...
+<<end>>
+===
+title: BeneathTree
+tags: 
+colorID: 0
+position: 1600,579
+---
+Mae: Wow. I haven't been here in maybe 10 years.
+Mae: And apparently no one else has.
+<<end>>
+===
+title: BoatBottom.1
+tags: 
+colorID: 0
+position: 1038,896
+---
+Mae: I don't know what they were going for here.
+Mae: Some sort of boat castle?
+Mae: Most of it's gone now.
+Mae: Just a thing for weird animals to eat and have babies in.
+===
+title: BoatBottom.2
+tags: 
+colorID: 0
+position: 1315,973
+---
+Mae: I wonder what kind of weird animals have babies in there?
+Mae: Dirt Possums. Night Snakes. Mystery beasts of all shapes.
+===
+title: BoatBottom.3
+tags: 
+colorID: 0
+position: 1570,1019
+---
+Mae: I remember Cathy Daminco's boyfriend took her here
+Mae: to make out and then break up.	
+Mae: And then the next day Cathy pulled out Cindy Clark's nosering
+Mae: at the Fort Lucenne Mall.
+Mae: This entire area is so full of romance.
+// would be funny if two rats scurried out of the boat just then//
+
+===
+title: BoatBottom.4
+tags: 
+colorID: 0
+position: 1819,1103
+---
+Mae: Hey! You can still see Mr Snorkles on this!
+<<end>>
+===
+title: TowerTopB
+tags: 
+colorID: 0
+position: 620,232
+---
+<<trackAllSpeechBubblesToCharacters 1>>
+Mae: Here's a powerline.
+Mae: Let's go home.
+<<end>>
+===
+title: EnterLevel
+tags: 
+colorID: 0
+position: 35,7
+---
+<<lookAt Molly Mae>>
+<<hide Molly>>
+<<hide CopCarNight>>
+===
+title: BoatTop.3
+tags: 
+colorID: 0
+position: 466,1043
+---
+Mae: Just gotta run and then keep bouncing.
+Mae: one two three!
+Mae: no stopping.
+Mae: Third jump was usually the big one.
+Mae: It's physics or something.
+===

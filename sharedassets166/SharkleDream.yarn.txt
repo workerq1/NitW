@@ -1,0 +1,96 @@
+title: EnterLevel
+tags: 
+colorID: 0
+position: 540,260
+---
+<<fadeIn 5 wait>>
+<<setOptionsCharacter Sharkle>>
+<<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+Sharkle: [wave]Sharkle![/wave]
+Mae: Hey Sharkle.
+Mae: What are you doing here?
+    ->You've always been a good friend, Mae.
+        <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+        Sharkle: Every day you'd visit me.
+        <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+        Sharkle: You'd remember to click me.
+        <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+        Sharkle: Just to say hello.
+        Mae: Yes. I'm an excellent friend.
+    ->We've been through so much together, Mae.
+        <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+		Sharkle: The good times, the bad times,
+        <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+		Sharkle: the porn adware fiasco,
+        <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+		Sharkle: that weekend you tried to change the operating system.
+		Mae: You’re right. We have been through a lot together.
+Mae: Sharkle... am I dead?
+    ->Yes
+        Mae: Are you here to take me to the other side?
+        <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+        Sharkle: [wave]Yes, as in the old legends.[/wave]
+        <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+        Sharkle: [wave]Your soul has been weighed against your transgressions.[/wave]
+        Mae: Oh. How did that turn out?
+            ->[wave]Tonight you shall join your ancestors in the stars.[/wave]
+                Mae: Oh. That’s nice.
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: Yes. Yes it is nice.
+                Mae: So like, all of my ancestors?
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: Yes. All of them.
+                Mae: Like back to the fishes and dinosaurs?
+                Mae: because evolution?
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: Yes. Probably.
+                Mae: That’s neat.
+            ->Uh... could have gone better.
+                Mae: Aw frig.
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: I’m sorry, but it’s off to hell for you.
+                Mae: Dang.
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: Mae Borowski, I declare thee danged.
+                Mae: Oh well.
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: You’re in good company.
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: Lots of folks been danged.
+                Mae: I regret nothing.
+    ->No.
+        Mae: Oh. That’s good.
+	    Mae: I have things to do.
+        <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+	    Sharkle: [wave]You must go back. You are meant for great things.[/wave]
+	    Mae: Really?
+		    -> Yes.
+			    Mae: Wow.
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: Yes.
+                Mae: Can you be any more specific?
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: Nope.
+                Mae: Ok.
+		    -> Not really, no.
+                Mae: Oh.
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: Yeah, I'm not gonna lie here.
+                Mae: I appreciate it.
+                <<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+                Sharkle: This is awkward.
+                Mae: Don't feel bad, Sharkle.
+<<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+Sharkle: Heh heh.
+Mae: What?
+<<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+Sharkle: Ha ha ha.
+Mae: Dude.
+<<playOneShot event:/sharkle_dream/sharkle_speak Sharkle>>
+Sharkle: HA HA HA HA HA HA HA HA HA HA HA HA
+<<setOptionsCharacter Mae>>
+<<musicFadeOut .3>>
+<<fadeOut .3 wait>>
+<<overrideLoadingScreenType Blank>>
+<<scene GreggAngusParkingLot>>
+===
