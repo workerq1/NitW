@@ -3,18 +3,18 @@ tags:
 colorID: 0
 position: 1000,535
 ---
-Mae: Shopping bags are little ghosts
-Mae: of grocery stores
-Mae: haunting everywhere else.
+Mae: Shopping bags are little ghosts Mấy cái túi nilon như những con ma
+Mae: of grocery stores của những cái siêu thị 
+Mae: haunting everywhere else. đi ám hết mọi nơi. 
 ===
 title: Creek.3
 tags: 
 colorID: 0
 position: 1277,541
 ---
-Mae: Oh wow I heard a toad.
-Mae: And a ghost owl.
-Mae: I bet there are any number of potential witch familiars down here.
+Mae: Oh wow I heard a toad. Ồ, mình nghe một con cóc. 
+Mae: And a ghost owl. Và một con cú ma quái. 
+Mae: Chắc là có lâu la bọn phù thủy dưới đây. I bet there are any number of potential witch familiars down here.
 <<end>>
 ===
 title: Creek.1
@@ -22,11 +22,11 @@ tags:
 colorID: 0
 position: 704,505
 ---
-Mae: There used to be an old sawmill around here I think.
-Mae: I mean the park up there's called Sawmill Park.
-Mae: Looks like they lost a log load at some point.
-Mae: *sigh*
-Mae: Gonna have to climb this I guess.
+Mae: Mình nghĩ từng có một cái xưởng cưa gần đây. There used to be an old sawmill around here I think.
+Mae: I mean the park up there's called Sawmill Park. Cái sân trên kia gọi là Bãi Xưởng cưa cơ mà. 
+Mae: Looks like they lost a log load at some point. Trông như họ mất vài lốc gỗ dưới này. 
+Mae: *thở dài*
+Mae: Gonna have to climb this I guess. Chắc là phải leo thôi. 
 
 ===
 title: BottomOfCliff
@@ -34,8 +34,8 @@ tags:
 colorID: 0
 position: 399,512
 ---
-Mae: Well...
-Mae: ...shit.
+Mae: Ừm...
+Mae: ...đệt.
 Mae: hm...
 ===
 title: BottomOfPipes.1
@@ -43,17 +43,17 @@ tags:
 colorID: 0
 position: 491,834
 ---
-Mae: Ugh. This is some dank nature.
-Mae: Dank nature and garbage.
+Mae: Ugh. This is some dank nature. Eo. Nơi gì mà dơ dáy ướt át. 
+Mae: Đầy mốc rêu và rác rưới. 
 ===
 title: BottomOfPipes.2
 tags: 
 colorID: 0
 position: 728,832
 ---
-Mae: Are these Food Donkey shopping carts?
-Mae: That's all the way across town!
-Mae: That's dedication!
+Mae: Are these Food Donkey shopping carts? Đó chẳng phải xe đẩy siêu thị từ Food Donkey á? 
+Mae: That's all the way across town! Đi hết nguyên cái thị trấn luôn! 
+Mae: That's dedication! Ai mà tận tâm thế?! 
 <<end>>
 ===
 title: TopPipe
